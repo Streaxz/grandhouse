@@ -102,12 +102,12 @@ export const Catalog = () => {
                     <p className={'logoCatalogDescription'}>Вводка о каталоге компании до 150 знаков.</p>
                 </div>
             </div>
-            <div className={"flex flex-col justify-center w-12/12 z-50"}>
-                <div className={"inline-flex justify-between"}>
+            <div className={"flex flex-col justify-center w-12/12 z-50"} >
+                <div className={"inline-flex justify-between "} style={{height: "60vw"}}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft/>
                     </button>
-                    <div style={{width: "90vw", height: "40vw"}} className={"photo"}>
+                    <div style={{width: "90vw", height: "60vw"}} className={"photo"}>
                         <Swiper
                             ref={swiperRef}
                             spaceBetween={"10vw"}

@@ -228,6 +228,7 @@
 }
 .catalogContainer {
     margin-bottom: 4vw;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -300,7 +301,7 @@
 .catalogPhoto {
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     z-index: 1;
-    height: 35vw;
+    height: 55vw;
     display: inline-flex;
     justify-content: space-between;
     background-size: cover;
