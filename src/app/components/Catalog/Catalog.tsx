@@ -110,7 +110,7 @@ export const Catalog = () => {
                     <div style={{width: "90vw", height: "40vw"}} className={"photo"}>
                         <Swiper
                             ref={swiperRef}
-                            spaceBetween={swiperSlides === 2 ? "-10vw" :"0"}
+                            spaceBetween={"10vw"}
                             slidesPerView={swiperSlides}
                             pagination={false}
                         >
