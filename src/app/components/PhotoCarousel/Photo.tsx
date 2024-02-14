@@ -9,8 +9,10 @@ export const Photo = () => {
             >
                 <div className='photoGradient'/>
                 <div className='contentContainer'>
-                    <div className='discount' style={{margin: "70% 0 0 0"}}>
+                    <div className={'flex'}>
+                    <div className='discount' >
                         <span className={'discountText'}> Новый проект </span>
+                    </div>
                     </div>
                     <p className={"photoHeader"}> Дом для всей семьи</p>
                     <p className={"photoDescription"}> Рассказ о нашем новом проекте</p>

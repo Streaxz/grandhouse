@@ -1,7 +1,7 @@
 
 export const ArrowIconLeft = () => {
     return (
-        <img src={`/emojiWomanComputer.svg`} style={{ height: "5%"}}></img>
+        <img src={`/emojiWomanComputer.svg`} style={{ height: "5vw"}}></img>
 
     )
 }

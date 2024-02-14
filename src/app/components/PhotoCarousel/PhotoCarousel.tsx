@@ -82,7 +82,7 @@ export const PhotoCarousel = () => {
                         onClick={() => handlePaginationClick(index)}
                     />
                 ))}
-                <div className="pr-4" />
+                <div style={{paddingRight: "1vw"}} />
             </div>
         </div>
     );
