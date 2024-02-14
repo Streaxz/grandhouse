@@ -40,8 +40,8 @@
     width: 80%;
     font-size: 2vw;
     font-weight: 400;
-    padding-top: 12px;
-    padding-bottom: 24px;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
 }
 
 .gradient {
@@ -81,7 +81,7 @@
 
 .header {
     height: 3px;
-    padding: 24px 96px 24px 96px;
+    padding: 2vw 9vw 2vw 9vw;
     justify-content: space-between;
     background: #00e6ff;
 }
@@ -90,13 +90,13 @@
     z-index: 5;
     position: absolute;
     background-color: #CC00FF;
-    margin-top: 40px;
+    margin-top: 4vw;
     height: 1%; /* Используйте 100%, чтобы прямоугольник был по высоте контейнера */
     width: 8%; /* Ширина прямоугольника */;
     left: 0; /* Смещение прямоугольника влево на 5% относительно левого края родительского элемента */
 }
 .photo {
-    height: 40vw;
+    height: 50vw;
     z-index: 2;
     display: inline-flex;
     justify-content: space-between;
@@ -144,7 +144,7 @@
 
 .projectDiscountText {
     font-size: 1vw;
-    padding: 0 1vw 0 1vw;
+    padding: 1vw 2vw 1vw 2vw;
 }
 
 .photoHeader {
@@ -202,25 +202,27 @@
     justify-content: space-evenly;
     z-index: 5;
     margin-top: 4vw;
-    border-radius: 4vw;
+    border-radius: 8vw;
     border: 1px solid white;
 }
 
 .navigationButton {
     margin: 4vh 0 4vh 0;
-    border-radius: 1.5vw;
+    border-radius: 2.5vw;
     background: rgba(39, 43, 64, 0.5);
     font-size: 2.3vw;
     border: none
 }
 
 .leftArrow {
+    padding-left: 2vw;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
 }
 .rightArrow {
+    padding-right: 2vw;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -240,32 +242,33 @@
 
 .projectHeaderContainer {
     background: rgba(255, 255, 255, 0.75);
-    border-radius: 48px;
+    border-radius: 4vw;
     display: flex;
     align-items: center
 }
 
 .projectHeader {
     color: rgba(39, 43, 64, 1);
-    padding-inline: 24px;
+    padding-inline: 2vw;
     font-size: 2vw;
 }
 
 .projectSeriesContainer {
     background: rgba(39, 43, 64, 0.5);
-    border-radius: 48px;
+    border-radius: 4vw;
     display: flex;
     text-align: center;
 }
 
 .projectSeries {
     font-size: 1vw;
-    padding: 0 1vw 0 1vw;
+    padding: 1vw 2vw 1vw 2vw;
 }
 
 .amountContainer {
     background: rgba(39, 43, 64, 0.5);
-    border-radius: 24px;
+    border-radius: 8vw;
+    margin: 2vw 4vw 0 0;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -307,13 +310,13 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 4vw 4vw 0 0;
+    border-radius: 8vw 8vw 0 0;
     position: relative; /* Ensure position relative for absolute positioning */
     width: 100%;
 }
 
 .catalogContentContainer {
-    padding: 2vw 0 0 2vw;
+    padding: 4vw 0 0 4vw;
     display: inline-block;
     justify-content: space-between;
 }
@@ -359,7 +362,7 @@
     text-align: center;
     background: linear-gradient(180deg, #FFFFFF 0%, #D5DEED 100%),
     linear-gradient(0deg, #E3E8F1, #E3E8F1);
-    border: 4px solid rgba(227, 232, 241, 1);
+    border: 0.5vw solid rgba(227, 232, 241, 1);
 }
 
 .projectButtonText {
@@ -386,7 +389,7 @@
     font-size: 2vw;
 }
 .swiper {
-    border-radius: 4vw;
+    border-radius: 8vw;
     overflow:visible;
 }
 
@@ -483,6 +486,20 @@ label {
     color: rgba(39, 43, 64, 1);
 }
 
+.modalMain {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    width: 60vw;
+    height: 36vw;
+    border-radius: 2vw;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    border: none;
+    padding: 2vw;
+}
 @media (min-width: 770px) and (max-width: 1250px) {
     .philosophyPhoto {
         top: -30px;
@@ -577,6 +594,41 @@ label {
 }
 
 @media (min-width: 0px) and (max-width: 500px) {
+
+    .photoHeader {
+        font-size: 6vw;
+    }
+
+    .projectHeader {
+        font-size: 4vw;
+    }
+    .photoDescription {
+        font-size: 4vw;
+    }
+
+    .projectDiscountText {
+        font-size: 2vw;
+    }
+
+    .mainHeader {
+        padding: 4vw 0 0 4vw;
+        font-size: 6vw;
+    }
+
+    .amountFrom {
+        font-size: 3vw;
+    }
+
+    .amountNumber {
+        font-size: 4vw;
+    }
+
+    .amountMillions {
+        font-size: 3vw;
+    }
+    .mainDescription {
+        font-size: 3vw;
+    }
     .header {
         padding: 5vw 0 5vw 0;
     }
@@ -602,9 +654,12 @@ label {
         border-radius: 2vw;
     }
     .discountText {
-        font-size: 2vw;
+        font-size: 3vw;
     }
 
+    .projectSeries {
+        font-size: 2vw;
+    }
     .logoCatalog {
         width: 70vw;
     }

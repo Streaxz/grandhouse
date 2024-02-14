@@ -9,11 +9,13 @@ export const DifferentPhoto = () => {
             >
                 <div className='photoGradient'/>
                 <div className='contentContainer'>
-                    <div className='discount' style={{margin: "40vh 0 24px 0"}}>
-                        <span style={{padding: "0 12px 0 12px"}}> Новый проект </span>
+                    <div className={'flex'}>
+                        <div className='discount' >
+                            <span className={'discountText'}> Новый проект </span>
+                        </div>
                     </div>
-                    <p style={{fontSize: "48px", margin: "0"}}> Дом для всей семьи</p>
-                    <p style={{fontSize: "24px", margin: "0"}}> Рассказ о нашем новом проекте</p>
+                    <p className={"photoHeader"}> Дом для всей семьи</p>
+                    <p className={"photoDescription"}> Рассказ о нашем новом проекте</p>
                 </div>
             </div>
         </div>

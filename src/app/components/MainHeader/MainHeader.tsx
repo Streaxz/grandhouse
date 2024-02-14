@@ -7,15 +7,15 @@ export const MainHeader = () => {
 
             <div className={"mainHeader"}>
                 <div className="rectangle"/>
-            <span>
+            <span style={{padding: "0", margin: "0"}}>
                 Строим дома, в которых
             </span>
                 <br/>
-                <span style={{whiteSpace: "nowrap"}}>
+                <span style={{whiteSpace: "nowrap", padding: "0", margin: "0"}} >
                 вы будете&nbsp;
             </span>
                 <span/>
-                <span style={{fontWeight: "800", whiteSpace: "nowrap"}}>
+                <span style={{fontWeight: "800", whiteSpace: "nowrap", padding: "0", margin: "0"}}>
                     счастливы
             </span>
                 <span style={{color: "#CC00FF", fontWeight: "800",}}>
