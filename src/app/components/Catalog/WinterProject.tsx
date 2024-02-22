@@ -5,7 +5,7 @@ export const WinterProject = () => {
         <div className={'flex flex-col'}>
             <div
                 className='catalogPhoto'
-                style={{backgroundImage: `url(/winter.png)`}}
+                style={{backgroundImage: `url(/winter.png)`, height: '36vw'}}
             >
                 <div className='catalogContentContainer'>
                     <div style={{display: "flex"}}>
@@ -34,7 +34,7 @@ export const WinterProject = () => {
                     </div>
                 </div>
             </div>
-            <div className='photoFooter' style={{borderRadius: "0px 0px 2vw 2vw"}}>
+            <div className='photoFooter' >
                 <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
                             <span className={'footerText'}>
                                 Каменный

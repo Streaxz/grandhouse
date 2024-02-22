@@ -1,23 +1,64 @@
 import React from 'react';
 import './App.css';
-import {MainLogo} from "./icons/MainLogo";
-import {MainHeader} from "@/app/components/MainHeader/MainHeader";
-import {PhotoCarousel} from "@/app/components/PhotoCarousel/PhotoCarousel";
-import {Navigation} from "@/app/components/Navigation/Navigation";
-import {Catalog} from "@/app/components/Catalog/Catalog";
+import {Intro} from "@/app/components/Intro/Intro";
+import {Works} from "@/app/components/Works/Works";
 
 function App() {
     return (
         <div className="App">
-            <div className="gradient">
-                    <MainLogo/>
-                    <MainHeader/>
-                    <PhotoCarousel/>
-                    <Navigation/>
-                    <Catalog/>
+            <div>
+                <Intro/>
             </div>
-
-            <div className="ellipse"></div>
+            {/*<div>*/}
+            {/*    <MainHeader*/}
+            {/*        text*/}
+            {/*        description*/}
+            {/*        color*/}
+            {/*        rectangleColor*/}
+            {/*    />*/}
+            {/*    <div>*/}
+            {/*        <RoundItem/>*/}
+            {/*        <RoundItem/>*/}
+            {/*        <RoundItem/>*/}
+            {/*    </div>*/}
+            {/*    <Quote/>*/}
+            {/*    <Button/>*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <Shortcuts>*/}
+            {/*        <ShortCutItem/>*/}
+            {/*        <ShortCutItem/>*/}
+            {/*        <ShortCutItem/>*/}
+            {/*    </Shortcuts>*/}
+            {/*    <MainHeader/>*/}
+            {/*    <SberBlock/>*/}
+            {/*    <Button/>*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <MainHeader/>*/}
+            {/*    <DoubleCarousel>*/}
+            {/*        <PhotoTextVertical/>*/}
+            {/*        <PhotoTextVertical/>*/}
+            {/*    </DoubleCarousel>*/}
+            {/*    <Button/>*/}
+            {/*    <PhotoButton/>*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <Logo/>*/}
+            {/*    <Description/>*/}
+            {/*    <Socials/>*/}
+            {/*    <PhotoTextHorizontal/>*/}
+            {/*    <div>*/}
+            {/*        <JournalBox/>*/}
+            {/*        <JournalBox/>*/}
+            {/*    </div>*/}
+            {/*    <Button/>*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <Socials/>*/}
+            {/*    <DarkLogo/>*/}
+            {/*    <FooterContacts/>*/}
+            {/*</div>*/}
         </div>
     );
 }
