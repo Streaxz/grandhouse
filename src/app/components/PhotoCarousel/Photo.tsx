@@ -10,11 +10,11 @@ export const Photo = () => {
                 <div className='photoGradient'/>
                 <div className='contentContainer'>
                     <div className={'flex'}>
-                    <div className='discount' >
-                        <span className={'discountText'}> Новый проект </span>
+                    <div className='discount' style={{marginBottom:"1vw"}}>
+                        <h5 className={'discountText'}> Новый проект </h5>
                     </div>
                     </div>
-                    <p className={"photoHeader"}> Дом для всей семьи</p>
+                    <h2 className={"photoHeader"} > Дом для всей семьи</h2>
                     <p className={"photoDescription"}> Рассказ о нашем новом проекте</p>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {WinterProject} from "@/app/components/Catalog/WinterProject";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 import ReactModal from "react-modal";
+import {Works} from "@/app/components/Works/Works";
 
 const customStyles = {
     content: {
@@ -44,8 +45,6 @@ export const Catalog = () => {
         event.preventDefault();
         // Здесь вы можете добавить логику для отправки данных формы
     };
-
-
 
     const goNext = () => {
         //@ts-ignore
@@ -99,20 +98,22 @@ export const Catalog = () => {
                 <div className={'flex flex-col justify-center items-center'}>
                     <img src={`/logo_catalog.svg`}
                          className={"logoCatalog"}></img>
-                    <p className={'logoCatalogDescription'}>Вводка о каталоге компании до 150 знаков.</p>
+                    <p>Вводка о каталоге компании</p>
                 </div>
             </div>
             <div className={"flex flex-col justify-center w-12/12 z-50"} >
-                <div className={"inline-flex justify-between "} style={{height: "60vw"}}>
+                <div className={"inline-flex justify-between "} style={{height: "40vw"}}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft/>
                     </button>
-                    <div style={{width: "90vw", height: "60vw"}} className={"photo"}>
+                    <div className={"photo"}
+                         style={{width: "90vw", height: "40vw", borderRadius: "1vw 1vw 2vw 2vw"}} >
                         <Swiper
                             ref={swiperRef}
                             spaceBetween={"10vw"}
                             slidesPerView={swiperSlides}
                             pagination={false}
+                            style={{borderRadius: "4vw 4vw 2vw 2vw"}}
                         >
                             <SwiperSlide>
                                 <AutumnProject/>
@@ -133,11 +134,12 @@ export const Catalog = () => {
                         <ArrowIconRight/>
                     </button>
                 </div>
+
             </div>
 
             <div
                 style={{
-                    display: "inline-flex",
+                    display: "flex",
                     paddingTop: "4vw",
                     justifyContent: "space-evenly",
                     width: "83vw"
@@ -146,7 +148,7 @@ export const Catalog = () => {
                 {roundPhotos}
             </div>
             <button className='projectButton' onClick={openModal}>
-                <span className={'projectButtonText'}>Все проекты (240)</span>
+                <h2 className={'projectButtonText'}>Все проекты (240)</h2>
             </button>
             <ReactModal
                 isOpen={isOpen}

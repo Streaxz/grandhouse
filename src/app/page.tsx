@@ -3,6 +3,8 @@ import { MainHeader } from "@/app/components/MainHeader/MainHeader";
 import { PhotoCarousel } from "@/app/components/PhotoCarousel/PhotoCarousel";
 import { Navigation } from "@/app/components/Navigation/Navigation";
 import { Catalog } from "@/app/components/Catalog/Catalog";
+import {Works} from "@/app/components/Works/Works";
+import React from "react";
 
 export default function Home() {
     return (
@@ -13,10 +15,9 @@ export default function Home() {
                 <PhotoCarousel />
                 <Navigation />
                 <Catalog />
-
             </div>
             <div className="ellipse h-16 w-16"></div>
-
+            <Works/>
         </main>
     );
 }

@@ -1,3 +1,76 @@
+:root {
+    --color-white: white;
+    --color-blue: #00D1FF;
+    --color-dark-blue: #41BDE9;
+    --color-light-blue: #BFE0F8;
+    --color-purple: #CC00FF;
+    --color-black: #000000;
+    --box-border-radius: 4vw;
+
+    --font-size-desktop-h1: 72px;
+    --font-size-desktop-h2: 48px;
+    --font-size-desktop-h3: 36px;
+    --font-size-desktop-h4: 24px;
+    --font-size-desktop-h5: 18px;
+    --font-size-desktop-h6: 14px;
+
+    --font-size-desktop-h1-line-height: 80px;
+    --font-size-desktop-h2-line-height: 56px;
+    --font-size-desktop-h3-line-height: 42px;
+    --font-size-desktop-h4-line-height: 30px;
+    --font-size-desktop-h5-line-height: 24px;
+    --font-size-desktop-h6-line-height: 18px;
+
+    --font-size-desktop-h3-shortcuts: 36px;
+    --font-size-desktop-h3-shortcuts-line-height: 42px;
+
+    --font-size-desktop-p:  24px;
+    --font-size-desktop-p-line-height: 36px;
+
+
+    --font-size-tablet-h1: 42px;
+    --font-size-tablet-h2: 36px;
+    --font-size-tablet-h3: 24px;
+    --font-size-tablet-h4: 16px;
+    --font-size-tablet-h5: 14px;
+    --font-size-tablet-h6: 10px;
+
+    --font-size-tablet-h1-line-height:  48px;
+    --font-size-tablet-h2-line-height:  40px;
+    --font-size-tablet-h3-line-height:  30px;
+    --font-size-tablet-h4-line-height:  20px;
+    --font-size-tablet-h5-line-height:  18px;
+    --font-size-tablet-h6-line-height:  14px;
+
+    --font-size-tablet-h3-shortcuts: 16px;
+    --font-size-tablet-h3-shortcuts-line-height: 20px;
+
+    --font-size-tablet-p:  16px;
+    --font-size-tablet-p-line-height: 24px;
+
+
+    --font-size-mobile-h1: 26px;
+    --font-size-mobile-h2: 22px;
+    --font-size-mobile-h3: 18px;
+    --font-size-mobile-h4: 14px;
+    --font-size-mobile-h5: 12px;
+    --font-size-mobile-h6: 8px;
+
+    --font-size-mobile-h1-line-height: 28px;
+    --font-size-mobile-h2-line-height: 24px;
+    --font-size-mobile-h3-line-height: 20px;
+    --font-size-mobile-h4-line-height: 16px;
+    --font-size-mobile-h5-line-height: 14px;
+    --font-size-mobile-h6-line-height: 12px;
+
+    --font-size-mobile-h3-shortcuts: 14px;
+    --font-size-mobile-h3-shortcuts-line-height: 16px;
+
+    --font-size-mobile-p:  14px;
+    --font-size-mobile-p-line-height: 20px;
+
+}
+
 @font-face {
     font-family: PPOBjectSans;
     src: url("./fonts/PPObjectSans-Regular.otf") format("opentype");
@@ -16,21 +89,41 @@
 .App {
     display: inline-block;
     z-index: -3;
-    background: #00D1FF;
+    background: var(--color-blue);
     max-width: 100%;
 }
 
+.shortcut {
+    z-index:1;
+    display: flex;
+    width: 83%; /* wrapper-width */
+    justify-content: space-evenly;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.12) inset;
+    border-radius: 0 0 2vw 2vw;
+}
+
+.shortcutItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2vw 0 2vw 0;
+}
+
+.shortcutItem:hover {
+    scale: 0.98;
+}
+
 .mainLogoContainer {
+    position:relative;
     padding: 4vw 0 0 0;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
 
 }
 
 .mainHeader {
-    width: 83%;
+    width: 78%;
     color: white;
-    font-size: 6vw;
     font-weight: 400;
     z-index: 1
 
@@ -38,7 +131,6 @@
 
 .mainDescription {
     width: 80%;
-    font-size: 2vw;
     font-weight: 400;
     padding-top: 1.5vw;
     padding-bottom: 1.5vw;
@@ -50,14 +142,14 @@
     flex-direction: column;
     justify-content: center;
     justify-items: center;
-    background:
+    background-image:
     linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%);
 
 }
 
 .philosophyPhoto {
  position: absolute;
- top: -40px;
+ top: -28px;
  left: 33% ;
  z-index: 1;
 }
@@ -69,7 +161,7 @@
     width: 100vw;
     height: 170vw;
     border-radius: 50%;
-    background: conic-gradient(from 180deg at 50% 50%,
+    background-image: conic-gradient(from 180deg at 50% 50%,
     #79A7FF 0deg,
     #68D0FD 116.25deg,
     #46D3FF 211.88deg,
@@ -79,11 +171,23 @@
     opacity: 85%;
 }
 
+.workEllipse {
+    z-index: 0;
+    position: absolute;
+    top: 10vw;
+    width: 100vw;
+    height: 170vw;
+    border-radius: 50%;
+    background: rgba(126, 232, 255, 1);
+    filter: blur(40px); /* Adjust the blur radius as needed */
+
+}
 .header {
     height: 3px;
     padding: 2vw 9vw 2vw 9vw;
     justify-content: space-between;
-    background: #00e6ff;
+    background: rgb(0, 225, 255);
+
 }
 
 .rectangle {
@@ -98,7 +202,7 @@
 .photo {
     height: 50vw;
     z-index: 2;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
     width: 100%;
     background-size: cover;
@@ -115,7 +219,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(1, 5, 30, 0) 67.78%, #01051E 100%);
+    background-image: linear-gradient(180deg, rgba(1, 5, 30, 0) 67.78%, #01051E 100%);
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     border-radius: 4vw;
 }
@@ -124,7 +228,7 @@
     display: flex;
     text-align: center;
     border-radius: 4vw;
-    background: linear-gradient(95.14deg, #CC00FF 13.6%, #00D1FF 58.9%, #00A3FF 93.49%);
+    background-image: linear-gradient(95.14deg, #CC00FF 13.6%, #00D1FF 58.9%, #00A3FF 93.49%);
 
 }
 
@@ -132,27 +236,23 @@
     display: flex;
     text-align: center;
     border-radius: 48px;
-    background: linear-gradient(95.14deg, #CC00FF 13.6%, #00D1FF 58.9%, #00A3FF 93.49%);
+    background-image: linear-gradient(95.14deg, #CC00FF 13.6%, #00D1FF 58.9%, #00A3FF 93.49%);
 
 }
 
 .discountText {
-    font-size: 1vw;
     padding: 0 1vw 0 1vw;
 
 }
 
 .projectDiscountText {
-    font-size: 1vw;
-    padding: 1vw 2vw 1vw 2vw;
+    padding: 0.5vw 2vw 0.5vw 2vw;
 }
 
 .photoHeader {
-    font-size: 4vw;
-    margin: 0;
+    margin: 0 0 1vw 0;
 }
 .photoDescription {
-    font-size: 2vw;
     font-weight: lighter;
     margin: 0 0 4vw 0 ;
 }
@@ -166,7 +266,7 @@
 }
 
 .carouselButtons {
-    display: inline-flex;
+    display: flex;
     align-self: center;
     justify-self: center;
     justify-content: space-evenly;
@@ -198,22 +298,26 @@
 
 .navigationContainer {
     width: 83%;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     z-index: 5;
-    margin-top: 4vw;
-    border-radius: 8vw;
+    margin-top: 48px;
+    padding: 24px;
+    border-radius: 2vw;
     border: 1px solid white;
 }
 
 .navigationButton {
-    margin: 4vh 0 4vh 0;
-    border-radius: 2.5vw;
+    display:flex;
+    margin: 24px 0 24px 0;
+    border-radius: 1vw;
     background: rgba(39, 43, 64, 0.5);
-    font-size: 2.3vw;
     border: none
 }
-
+.navigationText {
+    padding: 24px;
+}
 .leftArrow {
     padding-left: 2vw;
     display: flex;
@@ -250,7 +354,6 @@
 .projectHeader {
     color: rgba(39, 43, 64, 1);
     padding-inline: 2vw;
-    font-size: 2vw;
 }
 
 .projectSeriesContainer {
@@ -261,8 +364,7 @@
 }
 
 .projectSeries {
-    font-size: 1vw;
-    padding: 1vw 2vw 1vw 2vw;
+    padding: 0.5vw 2vw 0.5vw 2vw;
 }
 
 .amountContainer {
@@ -276,20 +378,17 @@
 
 .amountNumber {
     padding: 0 2vw 0 2vw;
-    font-size: 2vw;
 }
 
 .amountMillions {
-    font-size: 1.3vw;
     padding: 0 0 1vw 0;
 }
 .amountFrom {
-    font-size: 1.3vw;
     padding-top: 0.5vw;
 }
 .catalogCarousel {
     width: 100%;
-    display: inline-flex;
+    display: flex;
 }
 
 .logoCatalog {
@@ -298,19 +397,19 @@
 
 .logoCatalogDescription {
     font-size: 2vw;
-    padding-top: 3vh;
+    padding-top: 3vw;
 }
 
 .catalogPhoto {
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     z-index: 1;
     height: 55vw;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 8vw 8vw 0 0;
+    border-radius: 4vw 4vw 0 0;
     position: relative; /* Ensure position relative for absolute positioning */
     width: 100%;
 }
@@ -322,9 +421,11 @@
 }
 
 .photoFooter {
-    display: inline-flex;
+    display: flex;
     justify-content: space-evenly;
     z-index: 6;
+    padding: 0 7vw 0 7vw;
+    border-radius: 0 0 2vw 2vw;
     height: 4vw;
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
@@ -339,7 +440,6 @@
 
 .lastFooterText {
     color: rgba(39, 43, 64, 1);
-    font-size: 1vw;
     padding-right: 0.5vw;
 }
 .roundPhoto {
@@ -360,7 +460,7 @@
     border-radius: 1000px;
     display: flex;
     text-align: center;
-    background: linear-gradient(180deg, #FFFFFF 0%, #D5DEED 100%),
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #D5DEED 100%),
     linear-gradient(0deg, #E3E8F1, #E3E8F1);
     border: 0.5vw solid rgba(227, 232, 241, 1);
 }
@@ -368,7 +468,6 @@
 .projectButtonText {
     padding: 0 4vw 0 4vw;
     color: rgba(39, 43, 64, 1);
-    font-size: 4vw;
 }
 
 .submitButton {
@@ -377,7 +476,7 @@
     display: flex;
     text-align: center;
     margin-left: -3vw;
-    background: linear-gradient(180deg, #FFFFFF 0%, #D5DEED 100%),
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #D5DEED 100%),
     linear-gradient(0deg, #E3E8F1, #E3E8F1);
     border: 0.3vw solid rgba(227, 232, 241, 1);
 
@@ -389,7 +488,7 @@
     font-size: 2vw;
 }
 .swiper {
-    border-radius: 8vw;
+    border-radius: 4vw;
     overflow:visible;
 }
 
@@ -409,7 +508,7 @@
     width: 45vw;
     height: 45vw;
     border-radius: 48px;
-    background: conic-gradient(
+    background-image: conic-gradient(
             from 180deg at 50% 50%,
             #8CE3FF 0deg,
             #00B3FF 116.25deg,
@@ -500,103 +599,176 @@ label {
     border: none;
     padding: 2vw;
 }
-@media (min-width: 770px) and (max-width: 1250px) {
-    .philosophyPhoto {
-        top: -30px;
-        width: 60px;
 
-    }
-
-    /*.navigationButton {*/
-    /*    font-size: 19px;*/
-    /*}*/
-
-    /*.footerText {*/
-    /*    font-size: 12px;*/
-    /*}*/
-
-    /*.lastFooterText {*/
-    /*    font-size: 12px;*/
-    /*}*/
+.works {
+    z-index: 0;
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(212, 242, 255, 1);
 
 }
-@media (min-width: 367px) and (max-width: 500px) {
-    /*.mainHeader {*/
-    /*    font-size: 48px;*/
-    /*}*/
-    /*.mainDescription {*/
-    /*    font-size: 16px;*/
-    /*}*/
-    /*.discountText {*/
-    /*    font-size: 14px;*/
-    /*}*/
-    /*.photoHeader {*/
-    /*    font-size: 36px;*/
-    /*}*/
-    /*.photoDescription {*/
-    /*    font-size: 16px;*/
-    /*}*/
-    .navigationContainer {
-        flex-wrap: wrap;
-        border-radius: 24px;
-        width: 90vw;
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: var(--font-size-desktop-h1);
+        line-height: var(--font-size-desktop-h1-line-height);
+    }
+
+    h2 {
+        font-size: var(--font-size-desktop-h2);
+        line-height: var(--font-size-desktop-h2-line-height);
+    }
+
+    h3 {
+        font-size: var(--font-size-desktop-h3);
+        line-height: var(--font-size-desktop-h3-line-height);
+    }
+
+    h4 {
+        font-size: var(--font-size-desktop-h4);
+        line-height: var(--font-size-desktop-h4-line-height);
+    }
+
+    h5 {
+        font-size: var(--font-size-desktop-h5);
+        line-height: var(--font-size-desktop-h5-line-height);
+    }
+
+    h6 {
+        font-size: var(--font-size-desktop-h6);
+        line-height: var(--font-size-desktop-h6-line-height);
+    }
+
+    p {
+        font-size: var(--font-size-desktop-p);
+        line-height: var(--font-size-desktop-p-line-height);
+    }
+
+    .h3Shortcut {
+        font-size: var(--font-size-desktop-h3-shortcuts);
+        line-height: var(--font-size-desktop-h3-shortcuts-line-height);
+    }
+
+    .philosophyPhoto {
+        top: -30px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 366px) {
+    h1 {
+        font-size: var(--font-size-tablet-h1);
+        line-height: var(--font-size-tablet-h1-line-height);
+    }
+
+    h2 {
+        font-size: var(--font-size-tablet-h2);
+        line-height: var(--font-size-tablet-h2-line-height);
+    }
+
+    h3 {
+        font-size: var(--font-size-tablet-h3);
+        line-height: var(--font-size-tablet-h3-line-height);
+    }
+
+    h4 {
+        font-size: var(--font-size-tablet-h4);
+        line-height: var(--font-size-tablet-h4-line-height);
+    }
+
+    h5 {
+        font-size: var(--font-size-tablet-h5);
+        line-height: var(--font-size-tablet-h5-line-height);
+    }
+
+    h6 {
+        font-size: var(--font-size-tablet-h6);
+        line-height: var(--font-size-tablet-h6-line-height);
+    }
+
+    p {
+        font-size: var(--font-size-tablet-p);
+        line-height: var(--font-size-tablet-p-line-height);
+    }
+
+    .h3Shortcut {
+        font-size: var(--font-size-tablet-h3-shortcuts);
+        line-height: var(--font-size-tablet-h3-shortcuts-line-height);
     }
 
     .navigationButton {
-        border-radius: 12px;
-        /*font-size: 16px;*/
+        margin: 12px;
+        border-radius: 2vw;
     }
 
     .philosophyPhoto {
-        width: 50px;
-        top: -25px;
+        top: -14px;
+        height: 70px;
     }
 
-    .logoCatalog {
-        width: 60vw;
+    .navigationText {
+        padding: 18px;
     }
 
-    .logoCatalogDescription {
-        /*font-size: 11px;*/
-    }
+    .navigationContainer {
+        padding: 24px;
 
-    .ellipse {
-        height: 230vw;
+        flex-wrap: wrap;
     }
-
-    /*.projectHeader {*/
-    /*    font-size: 16px;*/
-    /*}*/
-    /*.projectSeries {*/
-    /*    font-size: 10px;*/
-    /*}*/
-    /*.projectDiscountText {*/
-    /*    font-size: 10px;*/
-    /*}*/
-    /*.amountFrom {*/
-    /*    font-size: 14px;*/
-    /*}*/
-    /*.amountNumber {*/
-    /*    font-size: 16px;*/
-    /*}*/
-    /*.amountMillions {*/
-    /*    font-size: 14px;*/
-    /*}*/
-    /*.footerText {*/
-    /*    font-size: 8px;*/
-    /*}*/
-    /*.lastFooterText {*/
-    /*    font-size: 8px;*/
-    /*}*/
-    /*.projectButtonText {*/
-    /*    font-size: 36px;*/
-    /*}*/
 }
+@media (max-width: 366px) {
+    h1 {
+        font-size: var(--font-size-mobile-h1);
+        line-height: var(--font-size-mobile-h1-line-height);
+    }
 
-@media (min-width: 0px) and (max-width: 500px) {
+    h2 {
+        font-size: var(--font-size-mobile-h2);
+        line-height: var(--font-size-mobile-h2-line-height);
+    }
 
-    .photoHeader {
-        font-size: 6vw;
+    h3 {
+        font-size: var(--font-size-mobile-h3);
+        line-height: var(--font-size-mobile-h3-line-height);
+    }
+
+    h4 {
+        font-size: var(--font-size-mobile-h4);
+        line-height: var(--font-size-mobile-h4-line-height);
+    }
+
+    h5 {
+        font-size: var(--font-size-mobile-h5);
+        line-height: var(--font-size-mobile-h5-line-height);
+    }
+
+    h6 {
+        font-size: var(--font-size-mobile-h6);
+        line-height: var(--font-size-mobile-h6-line-height);
+    }
+
+    p {
+        font-size: var(--font-size-mobile-p);
+        line-height: var(--font-size-mobile-p-line-height);
+    }
+
+    .h3Shortcut {
+        font-size: var(--font-size-mobile-h3-shortcuts);
+        line-height: var(--font-size-mobile-h3-shortcuts-line-height);
+    }
+
+    .navigationText {
+        padding: 12px 27px 12px 27px;
+    }
+
+    .navigationButton {
+        margin: 12px 0 12px 0;
+        border-radius: 4vw;
     }
 
     .projectHeader {
@@ -615,17 +787,6 @@ label {
         font-size: 6vw;
     }
 
-    .amountFrom {
-        font-size: 3vw;
-    }
-
-    .amountNumber {
-        font-size: 4vw;
-    }
-
-    .amountMillions {
-        font-size: 3vw;
-    }
     .mainDescription {
         font-size: 3vw;
     }
@@ -634,15 +795,12 @@ label {
     }
 
     .navigationContainer {
+        padding: 12px;
         flex-wrap: wrap;
     }
 
-    .navigationButton {
-        margin: 3vw 0vw 3vw 0vw;
-        font-size: 6vw;
-    }
     .philosophyPhoto {
-        top: -26px;
+        top: -20px;
         height: 60px;
     }
 
@@ -653,24 +811,21 @@ label {
     .discount {
         border-radius: 2vw;
     }
-    .discountText {
-        font-size: 3vw;
-    }
 
     .projectSeries {
         font-size: 2vw;
     }
     .logoCatalog {
-        width: 70vw;
+        width: 80vw;
     }
 
     .footerText {
         font-size: 2vw;
     }
 
-    .lastFooterText {
-        font-size: 2vw;
-    }
+    /*.lastFooterText {*/
+    /*    font-size: 2vw;*/
+    /*}*/
 
     .ellipse {
         top: 30vw;
@@ -680,4 +835,34 @@ label {
         width: 20vw;
         height: 20vw;
     }
+
 }
+/*@media (min-width: 367px) and (max-width: 500px) {*/
+
+/*    .navigationContainer {*/
+/*        flex-wrap: wrap;*/
+/*        border-radius: 24px;*/
+/*        width: 90vw;*/
+/*    }*/
+
+/*    .navigationButton {*/
+/*        border-radius: 12px;*/
+/*    }*/
+
+/*    .philosophyPhoto {*/
+/*        width: 50px;*/
+/*        top: -25px;*/
+/*    }*/
+
+/*    .logoCatalog {*/
+/*        width: 60vw;*/
+/*    }*/
+
+/*    .logoCatalogDescription {*/
+/*        !*font-size: 11px;*!*/
+/*    }*/
+
+/*    .ellipse {*/
+/*        height: 230vw;*/
+/*    }*/
+/*}*/
