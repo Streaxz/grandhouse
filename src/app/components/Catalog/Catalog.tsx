@@ -7,7 +7,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {WinterProject} from "@/app/components/Catalog/WinterProject";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 import ReactModal from "react-modal";
-import {Works} from "@/app/components/Works/Works";
+import {Button} from "@/app/components/Button/Button";
 
 const customStyles = {
     content: {
@@ -68,8 +68,8 @@ export const Catalog = () => {
             if (width <= 768 && width > 500) {
                 setNumOfPhotos(6);
                 setSwiperSlides(2);
-            } else if (width <= 500) {
-                setNumOfPhotos(3);
+            } else if (width <= 366) {
+                setNumOfPhotos(4);
                 setSwiperSlides(1);
             } else {
                 setSwiperSlides(2);
@@ -102,12 +102,12 @@ export const Catalog = () => {
                 </div>
             </div>
             <div className={"flex flex-col justify-center w-12/12 z-50"} >
-                <div className={"inline-flex justify-between "} style={{height: "40vw"}}>
+                <div className={"inline-flex justify-between "} style={{height: "80vw"}}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft/>
                     </button>
                     <div className={"photo"}
-                         style={{width: "90vw", height: "40vw", borderRadius: "1vw 1vw 2vw 2vw"}} >
+                         style={{width: "90vw", height: "80vw", borderRadius: "1vw 1vw 2vw 2vw"}} >
                         <Swiper
                             ref={swiperRef}
                             spaceBetween={"10vw"}
@@ -147,9 +147,10 @@ export const Catalog = () => {
             >
                 {roundPhotos}
             </div>
-            <button className='projectButton' onClick={openModal}>
-                <h2 className={'projectButtonText'}>Все проекты (240)</h2>
-            </button>
+            <Button
+                onClick={openModal}
+                buttonText={"Все проекты"}
+            />
             <ReactModal
                 isOpen={isOpen}
                 onRequestClose={closeModal}

@@ -4,16 +4,17 @@ export interface IShortcutItemProps {
     title: string;
     description: string;
     color: string;
+    descriptionColor: string
 }
-export const ShortcutItem = ({src, title, description, color}:IShortcutItemProps) => {
+export const ShortcutItem = ({src, title, description, color, descriptionColor}:IShortcutItemProps) => {
 
     return (
         <div className={"shortcutItem"} style={{ textAlign: "center" }}>
             <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src={src} alt={"shortcut"} style={{ height: "6vw" }} />
+                <img src={src} alt={"shortcut"} className={"shortcutImage"}  />
             </div>
-            <p style={{ color, fontSize: "2vw" }}>{title}</p>
-            <p style={{ color, fontSize: "1vw" }}>{description}</p>
+            <h3 style={{ color }}>{title}</h3>
+            <p style={{ color: descriptionColor }}>{description}</p>
         </div>
 
     )

@@ -5,6 +5,7 @@ import { Navigation } from "@/app/components/Navigation/Navigation";
 import { Catalog } from "@/app/components/Catalog/Catalog";
 import {Works} from "@/app/components/Works/Works";
 import React from "react";
+import {Company} from "@/app/components/Company/Company";
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
             </div>
             <div className="ellipse h-16 w-16"></div>
             <Works/>
+            <Company/>
         </main>
     );
 }

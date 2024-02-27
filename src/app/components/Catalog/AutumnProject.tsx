@@ -5,7 +5,7 @@ export const AutumnProject = () => {
         <div className={'flex flex-col'}>
             <div
                 className='catalogPhoto'
-                style={{backgroundImage: `url(/autumn.png)`, height: '36vw'}}
+                style={{backgroundImage: `url(/autumn.png)`, height: '230px'}}
             >
                 <div className='catalogContentContainer'>
                     <div style={{display: "flex"}}>
@@ -36,29 +36,29 @@ export const AutumnProject = () => {
             </div>
             <div className='photoFooter' style={{borderRadius: "0px 0px 2vw 2vw"}}>
                 <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
-                            <span className={'footerText h3'}>
+                            <h6 className={'footerText h3'}>
                                 Общая 200 м²
-                            </span>
+                            </h6>
                 </div>
                 <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
-                            <span className={'footerText h3'}>
+                            <h6 className={'footerText h6'}>
                                 Жилая 145 м²
-                            </span>
+                            </h6>
                 </div>
                 <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
-                            <span className={'footerText h3'}>
+                            <h6 className={'footerText h6'}>
                                 14×19 м
-                            </span>
+                            </h6>
                 </div>
                 <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
-                            <span className={'footerText h3'}>
+                            <h6 className={'footerText h6'}>
                                 2 сп.
-                            </span>
+                            </h6>
                 </div>
                 <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
-                            <span className={'lastFooterText h3'}>
+                            <h6 className={'lastFooterText h6'}>
                                 2 c/у
-                            </span>
+                            </h6>
                 </div>
 
             </div>

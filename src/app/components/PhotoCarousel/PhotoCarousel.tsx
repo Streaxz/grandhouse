@@ -2,8 +2,8 @@
 import React, {useRef, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import {EffectFade, Navigation} from "swiper/modules";
-import {Photo} from "@/app/components/PhotoCarousel/Photo";
+import {EffectFade} from "swiper/modules";
+import {LabelBackground, Photo} from "@/app/components/PhotoCarousel/Photo";
 import {ArrowIconLeft} from "@/app/icons/ArrowIconLeft";
 import {ArrowIconRight} from "@/app/icons/ArrowIconRight";
 import {DifferentPhoto} from "@/app/components/PhotoCarousel/DifferentPhoto";
@@ -56,13 +56,25 @@ export const PhotoCarousel = () => {
                             }}
                         >
                             <SwiperSlide>
-                                <Photo />
+                                <Photo
+                                    labelBackground={LabelBackground.BLACK}
+                                    labelText={"Новый проект"}
+                                    headerText={"House for a family"}
+                                    descriptionText={"Нажмите для просмотра"}
+                                    isSwiper={true}
+                                />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <DifferentPhoto/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Photo />
+                                <Photo
+                                    labelBackground={LabelBackground.GRADIENT}
+                                    labelText={"Новый проект"}
+                                    headerText={"House for a family"}
+                                    descriptionText={"Нажмите для просмотра"}
+                                    isSwiper={true}
+                                />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <DifferentPhoto/>
