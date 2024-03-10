@@ -4,8 +4,28 @@
     --color-dark-blue: #41BDE9;
     --color-light-blue: #BFE0F8;
     --color-purple: #CC00FF;
-    --color-black: #000000;
+    --Basics-Black: #000000;
+    --Basics-White: #FFF;
+    --Main-DarkBlue: #272B40;
+    --Main-MediumBlue: #62698C;
+
+    --Gradient-Light: linear-gradient(180deg, #FFF 0%, #D5DEED 100%);
+    --Gradient-Electric: linear-gradient(95deg, #C0F 13.6%, #00D1FF 58.9%, #00A3FF 93.49%);
+    --columns-width-and-height-11-col-1: 312px;
+
+    --canvas: 1440px;
+
+    --Absolute-sizes-zero: 0px;
+    --Absolute-sizes-absolute-x0_5: 6px;
+    --Special-sizes-shortcutsIcons_width: 120px;
     --box-border-radius: 4vw;
+
+    --Variable-sizes-baseSize:    6px;
+    --Variable-sizes-baseSize-x2: 12px;
+    --Variable-sizes-baseSize-x4: 24px;
+    --Variable-sizes-baseSize-x8: 24px;
+    --Variable-sizes-baseSize-x16: 192px;
+    --Variable-sizes-baseSize-x3: 18px;
 
     --screen-width-tablet: 768px;
     --screen-width-mobile: 366px;
@@ -89,28 +109,71 @@
     font-family: PPOBjectSans, serif;
     color: white;
 }
+
+.body {
+    position: relative;
+    z-index: -10;
+}
 .App {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    height:auto;
+    margin:0px auto;
     z-index: -3;
     background: var(--color-blue);
     max-width: 100%;
 }
 
+.mainPageWrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.mainPage {
+    position: relative;
+    display: flex;
+    padding: var(--Variable-sizes-baseSize-x4, 36px) var(--Variable-sizes-baseSize-x8, 48px) var(--Variable-sizes-baseSize-x8, 48px) var(--Variable-sizes-baseSize-x8, 48px);
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: var(--Variable-sizes-baseSize-x4, 36px);
+    align-self: stretch;
+    width: 100%;
+    max-width: 1440px;
+}
 .shortcut {
     z-index:1;
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    width: 83%; /* wrapper-width */
+    width: 100%;
+    max-width: 1440px;
+    padding: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x8, 24px);
     justify-content: space-evenly;
-    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.12) inset;
-    border-radius: 0 0 2vw 2vw;
+    align-items: center;
+    align-content: center;
+    gap: 24px var(--Variable-sizes-baseSize-x4, 24px);
+    flex-wrap: wrap;
+
+    border-radius: 0px 0px var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x4, 24px);
+    background: #000;
+
+    /* shadow inner top */
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12) inset;
 }
 
 .shortcutItem {
     display: flex;
+    width: var(--Special-sizes-shortcutsIcons_width, 120px);
+    padding: 0;
     flex-direction: column;
     justify-content: center;
-    padding: 2vw 0 2vw 0;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x2, 12px);
+    flex-shrink: 0;
 }
 
 .shortcutItem:hover {
@@ -119,27 +182,154 @@
 
 .mainLogoContainer {
     position:relative;
+    z-index: 1;
     padding: 4vw 0 0 0;
     display: flex;
     justify-content: center;
 
 }
 
+.shortcutContainer {
+    display: flex;
+    padding:  0 var(--Variable-sizes-baseSize-x8, 48px);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x4, 36px);
+    align-self: stretch;
+}
+
+.pricesContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    background: #10E17D;
+}
+
+.reviewsWrapper {
+    position:relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px);
+
+    gap: var(--Variable-sizes-baseSize-x4, 24px);
+    background: linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%);
+}
+
+.pricesWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px);
+    max-width: 1440px;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x4, 24px);
+    align-self: stretch;
+    background: #10E17D;
+}
+.textContainer {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    padding: var(--Variable-sizes-baseSize-x2, 18px) var(--Variable-sizes-baseSize-x4, 36px);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x3, 28px);
+    align-self: stretch;
+}
+
 .mainHeader {
-    width: 78%;
-    color: white;
-    font-weight: 400;
-    z-index: 1
-
+    leading-trim: both;
+    flex: 1 0 0;
 }
 
-.mainDescription {
-    width: 80%;
-    font-weight: 400;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
+.projectCartContainer {
+    display: flex;
+    padding: var(--Variable-sizes-baseSize-x4, 24px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    flex: 1 0 0;
+    align-self: stretch;
+    background: var(--Basics-White, #FFF);
+}
+.emojiStarContainer {
+    display: flex;
+    width: 40%;
+    max-height: 40px;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize, 6px);
 }
 
+.emojiStar {
+    display: flex;
+    padding: var(--Absolute-sizes-zero, 0px);
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.projectCard {
+    display: flex;
+    padding: var(--Absolute-sizes-zero, 0px);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    border-radius: var(--Variable-sizes-baseSize-x4, 24px);
+
+    /* shadow standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
+.projectCartContent {
+    display: flex;
+    padding: var(--Variable-sizes-baseSize-x4, 24px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    flex: 1 0 0;
+    align-self: stretch;
+    background: var(--Basics-White, #FFF);
+}
+.test {
+    display: flex;
+    height: fit-content;
+    overflow: scroll;
+    padding: var(--Absolute-sizes-zero, 0px);
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: var(--Variable-sizes-baseSize-x4, 24px);
+
+    /* shadow standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+.frame {
+    display: flex;
+    padding: var(--Absolute-sizes-zero, 0px);
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x4, 24px);
+    border-radius: var(--Variable-sizes-baseSize-x4, 24px);
+
+    /* shadow standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
+.roundFeaturesItemContainer {
+    display: flex;
+    width: 120px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
 .gradient {
     z-index: -2;
     display: flex;
@@ -149,6 +339,23 @@
     background-image:
     linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%);
 
+}
+
+.infographics {
+    display: flex;
+    padding: var(--Absolute-sizes-zero, 0px);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x2, 12px);
+    flex-wrap: wrap;
+}
+
+.infographicsItem {
+    display: flex;
+    padding: var(--Absolute-sizes-zero, 0px);
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize, 6px);
 }
 
 .philosophyPhoto {
@@ -167,32 +374,41 @@
 
 .ellipse {
     z-index: 0;
-    top: 28vw;
+    top: 0;
     position: absolute;
-    width: 100vw;
-    height: 170vw;
+    width: 100%;
+    max-width: 1440px;
+    height: 2456px;
     border-radius: 50%;
-    background-image: conic-gradient(from 180deg at 50% 50%,
-    #79A7FF 0deg,
-    #68D0FD 116.25deg,
-    #46D3FF 211.88deg,
-    #6B7AFF 286.87deg,
-    #FA00FF 360deg);
-    filter: blur(60px); /* Adjust the blur radius as needed */
+    background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);
+    filter: blur(125px);
     opacity: 85%;
 }
 
 .workEllipse {
     z-index: 0;
     position: absolute;
-    top: 10vw;
-    width: 100vw;
-    height: 170vw;
+    top: -279px;
+    width: 100%;
+    height: 2224px;
     border-radius: 50%;
-    background: rgba(126, 232, 255, 1);
-    filter: blur(40px); /* Adjust the blur radius as needed */
+    background:  #7EE8FF;
+    filter: blur(150px);
 
 }
+
+.doubleItem {
+    display: flex;
+    width: 100%;
+    padding: var(--Absolute-sizes-zero, 0px);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 18px var(--Variable-sizes-baseSize-x3, 18px);
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
 .header {
     height: 3px;
     padding: 2vw 9vw 2vw 9vw;
@@ -206,25 +422,24 @@
     position: absolute;
     background-color: #CC00FF;
     margin-top: 4vw;
-    height: 1%; /* Используйте 100%, чтобы прямоугольник был по высоте контейнера */
-    width: 8%; /* Ширина прямоугольника */;
-    left: 0; /* Смещение прямоугольника влево на 5% относительно левого края родительского элемента */
+    width: 120px;
+    height: var(--Variable-sizes-baseSize, 9px);
+    top: 0;
+    left: -100px;
 }
 .photo {
-    height: 50vw;
     z-index: 2;
     display: flex;
-    justify-content: space-between;
+
+    height: 420px;
     width: 100%;
+    padding: var(--Variable-sizes-baseSize-x4, 48px);
+    gap: var(--Variable-sizes-baseSize-x2, 24px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 4vw;
     position: relative; /* Ensure position relative for absolute positioning */
-}
-
-.photoButton {
-
 }
 
 .photoGradient {
@@ -247,16 +462,59 @@
     width: 100%;
     height: 100%;
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
-    border-radius: 4vw;
-    background: linear-gradient(180deg, rgba(89, 184, 249, 0) 50.47%, rgba(0, 141, 255, 0.5) 94.7%);
+    border-radius: 48px;
+    background: linear-gradient(180deg, rgba(89, 184, 249, 0.00) 50.47%, rgba(0, 141, 255, 0.50) 94.7%);
 
 }
 .photoContainer {
-    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x2, 12px);
 }
 
 .photoButtonContainer {
-    height: 420px;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: var(--Variable-sizes-baseSize-x3, 28px);
+    border-radius: 48px;
+    box-shadow: 0px 4px 96px 0px rgba(34, 144, 255, 0.50);
+}
+
+.imageContainer {
+    display: flex;
+    position: relative;
+    top: -55px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoButtonContent {
+    display: flex;
+
+    z-index: 11;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    align-items: center;
+    padding: 0 24px 24px 24px;
+    gap: var(--Variable-sizes-baseSize-x3, 28px);
+}
+
+.photoButtonDescription {
+    text-align: center;
+}
+.photoButtonContainer:hover {
+    scale: 0.98;
 }
 
 .photoRow {
@@ -294,23 +552,21 @@
 .projectDiscountText {
     padding: 0.5vw 2vw 0.5vw 2vw;
 }
-
-.photoHeader {
-    margin: 0 0 1vw 0;
-}
-.photoDescription {
-    font-weight: lighter;
-    margin: 0 0 4vw 0 ;
-}
 .contentContainer {
+    position: relative;
+    z-index: 4;
     display: flex;
+    width: 100%;
     flex-direction: column;
-    justify-content: end;
-    height:100%;
-    padding-left: 5vw;
-    z-index: 3;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x2, 24px);
+
 }
 
+.doubleItemContainer {
+    width: 45%;
+}
 .projectButtonContentContainer {
     display: flex;
     flex-direction: column;
@@ -340,6 +596,9 @@
     border-radius: 100%;
     background-color: white;
     opacity: 50%;
+
+    max-width: 24px;
+    max-height: 24px;
 }
 
 .activeButton {
@@ -350,6 +609,8 @@
     border-radius: 100%;
     background-color: white;
     opacity: 100%;
+    max-width: 24px;
+    max-height: 24px;
 }
 
 .navigationContainer {
@@ -375,7 +636,6 @@
     padding: 24px;
 }
 .leftArrow {
-    padding-left: 2vw;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -508,20 +768,23 @@
 }
 
 .projectButton {
-    margin-top: 4vw;
-    margin-bottom: 9vw;
     z-index: 3;
-    border-radius: 1000px;
     display: flex;
+    padding: 8px 12px 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap:0px;
     text-align: center;
-    background-image: linear-gradient(180deg, #FFFFFF 0%, #D5DEED 100%),
-    linear-gradient(0deg, #E3E8F1, #E3E8F1);
-    border: 0.5vw solid rgba(227, 232, 241, 1);
+    border-radius: 1000px;
+
+    border: 4px solid #E3E8F1;
+    background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
 }
 
 .projectButtonText {
-    padding: 1vw 4vw 1vw 4vw;
-    color: rgba(39, 43, 64, 1);
+    color: var(--Main-DarkBlue, #272B40);
+    text-align: center;
+    leading-trim: both;
 }
 
 .submitButton {
@@ -654,32 +917,301 @@ label {
     padding: 2vw;
 }
 
+
 .works {
+    position: relative;
     z-index: 0;
     display: flex;
-    position: relative;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
     background: rgba(212, 242, 255, 1);
-
 }
 
-.pageContainer {
-    z-index: 0;
+.worksWrapper {
+    position:relative;
+    z-index: 1;
     display: flex;
-    position: relative;
     width: 100%;
+    max-width: 1440px;
+    padding: var(--Variable-sizes-baseSize-x4, 48px) var(--Variable-sizes-baseSize-x8, 96px) var(--Variable-sizes-baseSize-x8, 96px) var(--Variable-sizes-baseSize-x8, 96px);
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    justify-items: center;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x4, 48px);
+    align-self: stretch;
+
+}
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+.companyWrapper {
+    display: flex;
+
+    width: 100%;
+    max-width: 1440px;
+    padding: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x4, 24px);
+    align-self: stretch;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.reviewsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%);
+}
+.roundedFeaturesContainer {
+    display: flex;
+    width:  100%;
+    padding:  0;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.magazineWrapper {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    padding: var(--Variable-sizes-baseSize-x4, 36px) var(--Variable-sizes-baseSize-x8, 48px) var(--Variable-sizes-baseSize-x8, 48px) var(--Variable-sizes-baseSize-x8, 48px);
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: var(--Variable-sizes-baseSize-x4, 36px);
+    align-self: stretch;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.magazinePage {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: var(--Basics-Black, #000);
+}
+
+.magazineEllipse {
+    position: absolute;
+    z-index: -1;
+    bottom: 0px;
+    width: 100%;
+    height: 1522px;
+    border-radius: var(--Absolute-sizes-zero, 1522px);
+    background: #2622D7;
+    filter: blur(250px);
+}
+
+.magazineLogo {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+}
+
+.magazineLogoImage {
+    display: flex;
+    width: 40%;
+    padding: var(--Absolute-sizes-zero, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x2, 12px);
+}
+
+.socialItem {
+    display: flex;
+    width: 20%;
+    padding: var(--Absolute-sizes-zero, 0px);
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.magazineCardLarge {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: var(--Absolute-sizes-zero, 0px);
+    height: fit-content;
+    overflow: scroll;
+    align-items: flex-start;
+    border-radius: var(--Variable-sizes-baseSize-x4, 24px);
+
+    /* shadow standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
+.magazineCardLargeContent {
+    display: flex;
+    padding: var(--Variable-sizes-baseSize-x4, 24px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    align-self: stretch;
+    background: var(--Basics-White, #FFF);
+    justify-content: space-between;
+}
+
+.labelSmall {
+    display: flex;
+    position: relative;
+    padding: var(--Absolute-sizes-absolute-x0_5, 6px) var(--Variable-sizes-baseSize, 6px);
+    align-items: center;
+    align-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-radius: 48px;
+    background: var(--Gradient-Electric, linear-gradient(95deg, #C0F 13.6%, #00D1FF 58.9%, #00A3FF 93.49%));
+    backdrop-filter: blur(24px);
+}
+
+.labelDark {
+    display: flex;
+    padding: var(--Absolute-sizes-absolute-x0_5, 6px) var(--Variable-sizes-baseSize, 12px);
+    align-items: center;
+    align-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-radius: 48px;
+    background: rgba(0, 0, 0, 0.50);
+
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+}
+
+.magazineCardSmall {
+    display: flex;
+    padding: var(--Variable-sizes-baseSize-x4, 24px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    flex: 1 0 0;
+    align-self: stretch;
+    justify-content: space-evenly;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #400073 0%, #008DFF 100%);
+
+    /* shadow standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
+.doubleItem {
+    display: flex;
+    padding: var(--Absolute-sizes-zero, 0px);
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 18px var(--Variable-sizes-baseSize-x3, 18px);
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+
+.quote {
+    display: flex;
+    position: relative;
+    z-index: 4;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    gap: -24px;
+
+}
+
+.quoteContainer {
+    display: flex;
+    position: relative;
+    z-index: 4;
+    padding: 24px 24px 48px 24px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 48px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(36px);
+}
+
+.quoteAuthor {
+    position:relative;
+    z-index:2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    align-self: stretch;
+    margin-top:-28px;
+}
+
+.quoteText {
+    color: var(--Main-DarkBlue, #272B40);
+    text-align: center;
+    leading-trim: both;
+}
+.quoteAuthorText {
+    color: var(--Basics-White, #FFF);
+    text-align: center;
+    leading-trim: both;
+}
+
+.sberbank {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    padding: var(--Variable-sizes-baseSize-x4, 24px);
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    align-self: stretch;
+    border-radius: var(--Variable-sizes-baseSize-x4, 24px);
+    border: 1px solid var(--Basics-White, #FFF);
+}
+
+.sberImageContainer {
+
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    gap: 19.586px;
+}
+
+.magazineCardSmall {
+    display: flex;
+    width: 600px;
+    height: 420px;
+    align-items: flex-start;
+    padding: var(--Variable-sizes-baseSize-x4, 48px);
+    flex-direction: column;
+    gap: var(--Variable-sizes-baseSize-x3, 36px);
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: var(--Variable-sizes-baseSize-x4, 48px);
+    background: linear-gradient(180deg, #400073 0%, #008DFF 100%);
+
+    /* shadow standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
 @media (min-width: 768px) {
     h1 {
         font-size: var(--font-size-desktop-h1);
@@ -791,9 +1323,23 @@ label {
     .photoContainer {
         height: 280px;
     }
+    .roundedFeaturesContainer {
+        display: flex;
+        padding: 0px;
+        gap: 24px;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
 
-    .photoButtonContainer {
-        height: 280px;
+    .workEllipse {
+        top: -215px;
+    }
+
+    .quoteContainer {
+        border-radius: 36px;
+
     }
 }
 @media (max-width: 366px) {
@@ -854,14 +1400,6 @@ label {
         font-size: 2vw;
     }
 
-    .mainHeader {
-        padding: 4vw 0 0 4vw;
-        font-size: 6vw;
-    }
-
-    .mainDescription {
-        font-size: 3vw;
-    }
     .header {
         padding: 5vw 0 5vw 0;
     }
@@ -877,9 +1415,11 @@ label {
         top: -20px;
         height: 60px;
     }
-
     .rectangle {
-        height: 1vw;
+        left: -25px;
+        top: 15px;
+        width: 36px;
+        height: 6px;
     }
 
     .discount {
@@ -893,10 +1433,6 @@ label {
         width: 80vw;
     }
 
-    .ellipse {
-        top: 30vw;
-    }
-
     .roundPhoto {
         width: 20vw;
         height: 20vw;
@@ -906,18 +1442,7 @@ label {
         height: 36px
     }
 
-    .shortcutItem {
-        justify-content: center;
-        margin: 24px 10px 14px 10px;
-
-    }
-
     .photoContainer {
-        width: 100%;
-        height: unset;
-    }
-
-    .photoButtonContainer {
         width: 100%;
         height: unset;
     }
@@ -940,6 +1465,75 @@ label {
     }
 
     .buttonPhoto {
-        width: 160px;
+        /*position: absolute;*/
+        /*left: 421px;*/
+        /*top: -13px;*/
+    }
+
+    .roundedFeaturesContainer {
+        display: flex;
+        width: 312px;
+        padding: 0px;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .rectanglePercent {
+        z-index: 0;
+        top: 28vw;
+        position: absolute;
+        width: 1152px;
+        height: 871px;
+        left: -393px;
+        bottom: -298px;
+        border-radius: 50%;
+        background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);
+        filter: blur(125px);
+        opacity: 85%;
+        mix-blend-mode: multiply;
+    }
+
+    .shortcutContainer {
+        display: flex;
+        padding: 0 var(--Variable-sizes-baseSize-x8, 24px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--Variable-sizes-baseSize-x4, 24px);
+        align-self: stretch;
+    }
+
+    .workEllipse {
+        top: -215px;
+    }
+
+    .doubleItemContainer {
+        width: 100%;
+    }
+
+    .photo {
+        height: unset;
+    }
+
+    .quoteContainer {
+        border-radius: 24px;
+    }
+
+    .magazineCardSmall {
+        display: flex;
+        padding: var(--Variable-sizes-baseSize-x4, 24px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--Variable-sizes-baseSize-x3, 18px);
+        flex: 1 0 0;
+        align-self: stretch;
+
+        border-radius: var(--Variable-sizes-baseSize-x4, 24px);
+        background: linear-gradient(180deg, #400073 0%, #008DFF 100%);
+
+        /* shadow standard */
+        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
     }
 }

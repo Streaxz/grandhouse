@@ -6,22 +6,18 @@ export interface ITextBlock {
     textColor: string;
     mainText: string;
     descriptionText: string;
-    paddingTop: string;
 
 }
-export const TextBlock = ({rectangleColor, textColor, mainText, descriptionText, paddingTop}: ITextBlock) => {
+export const TextBlock = ({rectangleColor, textColor, mainText, descriptionText}: ITextBlock) => {
     return (
-        <div className={"flex justify-center"} style={{paddingTop, position:"relative", width: "100%"}}>
-            <div className={"mainHeader"} style={{textAlign: "left"}}>
+        <div className={'textContainer'}>
                 <div className="rectangle" style={{backgroundColor: rectangleColor}}/>
-                <span style={{padding: "0", margin: "0", color: textColor, }}>
+                <h1 style={{color: textColor }} className={'mainHeader'}>
                     {mainText}
-                </span>
-
-                <p className={'mainDescription'} style={{color: textColor}}>
+                </h1>
+                <p className={'mainDescription'} style={{color: textColor, alignSelf: 'stretch'}}>
                     {descriptionText}
                 </p>
-            </div>
         </div>
     )
 }

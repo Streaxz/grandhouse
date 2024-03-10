@@ -2,10 +2,10 @@ import React from "react";
 
 export const AutumnProject = () => {
     return (
-        <div className={'flex flex-col'}>
+        <div className={'flex flex-col'} style={{maxHeight: "468px"}} >
             <div
                 className='catalogPhoto'
-                style={{backgroundImage: `url(/autumn.png)`, height: '230px'}}
+                style={{backgroundImage: `url(/autumn.png)`,}}
             >
                 <div className='catalogContentContainer'>
                     <div style={{display: "flex"}}>

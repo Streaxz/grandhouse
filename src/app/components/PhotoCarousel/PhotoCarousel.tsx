@@ -3,7 +3,7 @@ import React, {useRef, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import {EffectFade} from "swiper/modules";
-import {LabelBackground, Photo} from "@/app/components/PhotoCarousel/Photo";
+import {Photo} from "@/app/components/PhotoCarousel/Photo";
 import {ArrowIconLeft} from "@/app/icons/ArrowIconLeft";
 import {ArrowIconRight} from "@/app/icons/ArrowIconRight";
 import {DifferentPhoto} from "@/app/components/PhotoCarousel/DifferentPhoto";
@@ -38,12 +38,12 @@ export const PhotoCarousel = () => {
     };
 
     return (
-        <div className={"flex flex-col justify-center w-12/12"}>
+        <div className={"flex flex-col justify-center"} style={{maxWidth: "1440px"}}>
                 <div className={"flex justify-between"}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft />
                     </button>
-                    <div style={{width: "90vw"}} className={"photo"}>
+                    <div className={"photo"}>
                         <Swiper
                             ref={swiperRef}
                             spaceBetween={50}
@@ -57,7 +57,6 @@ export const PhotoCarousel = () => {
                         >
                             <SwiperSlide>
                                 <Photo
-                                    labelBackground={LabelBackground.BLACK}
                                     labelText={"Новый проект"}
                                     headerText={"House for a family"}
                                     descriptionText={"Нажмите для просмотра"}
@@ -69,7 +68,6 @@ export const PhotoCarousel = () => {
                             </SwiperSlide>
                             <SwiperSlide>
                                 <Photo
-                                    labelBackground={LabelBackground.GRADIENT}
                                     labelText={"Новый проект"}
                                     headerText={"House for a family"}
                                     descriptionText={"Нажмите для просмотра"}

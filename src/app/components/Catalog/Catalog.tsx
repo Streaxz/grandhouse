@@ -4,7 +4,6 @@ import {ArrowIconLeft} from "../../icons/ArrowIconLeft";
 import React, {useEffect, useRef, useState} from "react";
 import {ArrowIconRight} from "../../icons/ArrowIconRight";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {WinterProject} from "@/app/components/Catalog/WinterProject";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 import ReactModal from "react-modal";
 import {Button} from "@/app/components/Button/Button";
@@ -101,13 +100,13 @@ export const Catalog = () => {
                     <p>Вводка о каталоге компании</p>
                 </div>
             </div>
-            <div className={"flex flex-col justify-center w-12/12 z-50"} >
-                <div className={"inline-flex justify-between "} style={{height: "80vw"}}>
+            <div className={"flex flex-col justify-center z-50"} style={{ maxWidth: "1440px", width: "100%"}} >
+                <div className={"inline-flex justify-between "}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft/>
                     </button>
                     <div className={"photo"}
-                         style={{width: "90vw", height: "80vw", borderRadius: "1vw 1vw 2vw 2vw"}} >
+                         style={{borderRadius: "1vw 1vw 2vw 2vw"}} >
                         <Swiper
                             ref={swiperRef}
                             spaceBetween={"10vw"}
@@ -119,13 +118,13 @@ export const Catalog = () => {
                                 <AutumnProject/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <WinterProject/>
+                                <AutumnProject/>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <AutumnProject/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <WinterProject/>
+                                <AutumnProject/>
                             </SwiperSlide>
                             {/* Add more slides here */}
                         </Swiper>
@@ -140,9 +139,8 @@ export const Catalog = () => {
             <div
                 style={{
                     display: "flex",
-                    paddingTop: "4vw",
                     justifyContent: "space-evenly",
-                    width: "83vw"
+                    width: "100%"
                 }}
             >
                 {roundPhotos}
