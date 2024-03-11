@@ -42,8 +42,8 @@ export const Carousel = ({children, isPagination}: ICarouselProps) => {
 		};
 
 		return (
-			<div className={"flex flex-col justify-center"} style={{maxWidth:" 1440px", width: "100%"}}>
-					<div className={"flex justify-between"}>
+			<div style={{maxWidth:" 1440px", width: "100%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
+					<div style={{display: "flex", justifyContent:"space-between"}}>
 							<button onClick={goPrev} className={'leftArrow'}>
 									<ArrowIconLeft />
 							</button>

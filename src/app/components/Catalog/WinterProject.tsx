@@ -2,7 +2,7 @@ import React from "react";
 
 export const WinterProject = () => {
     return (
-        <div className={'flex flex-col'}>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
             <div
                 className='catalogPhoto'
                 style={{backgroundImage: `url(/winter.png)`, height: '36vw'}}

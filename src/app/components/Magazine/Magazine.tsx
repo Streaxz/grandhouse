@@ -20,7 +20,7 @@ export const Magazine = () => {
 							</div>
 							<Button onClick={() => {
 							}} buttonText={"Все статьи"}/>
-							<div className="magazineEllipse h-16 w-16"></div>
+							<div className="magazineEllipse"></div>
 					</div>
 
 			</div>

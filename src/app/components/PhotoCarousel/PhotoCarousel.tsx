@@ -38,8 +38,8 @@ export const PhotoCarousel = () => {
     };
 
     return (
-        <div className={"flex flex-col justify-center"} style={{maxWidth: "1440px"}}>
-                <div className={"flex justify-between"}>
+        <div style={{maxWidth: "1440px", display: 'flex', justifyContent: 'center', flexDirection: "column"}}>
+                <div style={{ display: 'flex', justifyContent: "space-between"}}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft />
                     </button>

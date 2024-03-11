@@ -94,25 +94,23 @@ export const Catalog = () => {
     return (
         <>
             <div className='catalogContainer'>
-                <div className={'flex flex-col justify-center items-center'}>
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                     <img src={`/logo_catalog.svg`}
                          className={"logoCatalog"}></img>
                     <p>Вводка о каталоге компании</p>
                 </div>
             </div>
-            <div className={"flex flex-col justify-center z-50"} style={{ maxWidth: "1440px", width: "100%"}} >
-                <div className={"inline-flex justify-between "}>
+            <div style={{ maxWidth: "1440px", width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", position:'relative', zIndex:50}} >
+                <div  style={{display: "flex", justifyContent: "space-between"}}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft/>
                     </button>
-                    <div className={"photo"}
-                         style={{borderRadius: "1vw 1vw 2vw 2vw"}} >
                         <Swiper
                             ref={swiperRef}
                             spaceBetween={"10vw"}
                             slidesPerView={swiperSlides}
                             pagination={false}
-                            style={{borderRadius: "4vw 4vw 2vw 2vw"}}
+                            style={{borderRadius: "48px 48px 24px 24px"}}
                         >
                             <SwiperSlide>
                                 <AutumnProject/>
@@ -128,7 +126,6 @@ export const Catalog = () => {
                             </SwiperSlide>
                             {/* Add more slides here */}
                         </Swiper>
-                    </div>
                     <button onClick={goNext} className={'rightArrow'}>
                         <ArrowIconRight/>
                     </button>
@@ -140,7 +137,7 @@ export const Catalog = () => {
                 style={{
                     display: "flex",
                     justifyContent: "space-evenly",
-                    width: "100%"
+                    width: "86%"
                 }}
             >
                 {roundPhotos}

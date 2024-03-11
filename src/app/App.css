@@ -105,6 +105,10 @@
     src: url("./fonts/PPObjectSans-Heavy.otf") format("opentype");
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    font-weight: inherit;
+}
 * {
     font-family: PPOBjectSans, serif;
     color: white;
@@ -112,16 +116,19 @@
 
 .body {
     position: relative;
+    margin: 0;
+
     z-index: -10;
 }
 .App {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     position:relative;
     height:auto;
     margin:0px auto;
     z-index: -3;
-    background: var(--color-blue);
+    background: linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%), rgba(0, 0, 0, 0.25);
     max-width: 100%;
 }
 
@@ -129,8 +136,10 @@
     position: relative;
     z-index: 1;
     display: flex;
-    width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 0 0 var(--Variable-sizes-baseSize-x8, 96px);
 }
 .mainPage {
     position: relative;
@@ -140,16 +149,16 @@
     align-items: center;
     justify-items: center;
     justify-content: center;
-    gap: var(--Variable-sizes-baseSize-x4, 36px);
+    gap: var(--Variable-sizes-baseSize-x4, 48px);
     align-self: stretch;
-    width: 100%;
+    width: 95%;
     max-width: 1440px;
 }
 .shortcut {
     z-index:1;
     position: relative;
     display: flex;
-    width: 100%;
+    width: 86%;
     max-width: 1440px;
     padding: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x8, 24px);
     justify-content: space-evenly;
@@ -165,6 +174,14 @@
     box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12) inset;
 }
 
+.shortcutWrapper {
+    display: flex;
+    width: 86%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+}
 .shortcutItem {
     display: flex;
     width: var(--Special-sizes-shortcutsIcons_width, 120px);
@@ -183,7 +200,6 @@
 .mainLogoContainer {
     position:relative;
     z-index: 1;
-    padding: 4vw 0 0 0;
     display: flex;
     justify-content: center;
 
@@ -191,19 +207,23 @@
 
 .shortcutContainer {
     display: flex;
-    padding:  0 var(--Variable-sizes-baseSize-x8, 48px);
+    position: relative;
+    z-index: 5;
     flex-direction: column;
-    align-items: center;
-    gap: var(--Variable-sizes-baseSize-x4, 36px);
-    align-self: stretch;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: auto;
+    flex-wrap: wrap;
 }
 
 .pricesContainer {
     display: flex;
+
     justify-content: center;
     width: 100%;
     position: relative;
-    z-index: 3;
+    z-index: 5;
     background: #10E17D;
 }
 
@@ -227,7 +247,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 100%;
+    width: 86%;
     padding: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px);
     max-width: 1440px;
     justify-content: center;
@@ -238,6 +258,7 @@
 }
 .textContainer {
     display: flex;
+    justify-content: center;
     position: relative;
     z-index: 1;
     padding: var(--Variable-sizes-baseSize-x2, 18px) var(--Variable-sizes-baseSize-x4, 36px);
@@ -360,7 +381,7 @@
 
 .philosophyPhoto {
  position: absolute;
- top: -28px;
+ top: -20px;
  left: 33% ;
  z-index: 1;
 }
@@ -378,7 +399,7 @@
     position: absolute;
     width: 100%;
     max-width: 1440px;
-    height: 2456px;
+    height: 3500px;
     border-radius: 50%;
     background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);
     filter: blur(125px);
@@ -398,6 +419,8 @@
 }
 
 .doubleItem {
+    position: relative;
+    z-index: 3;
     display: flex;
     width: 100%;
     padding: var(--Absolute-sizes-zero, 0px);
@@ -442,6 +465,26 @@
     position: relative; /* Ensure position relative for absolute positioning */
 }
 
+.featureCardSmallDarkLabel {
+    display: flex;
+    position: relative;
+    width: 48%;
+    height:  420px;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    border-radius: var(--Variable-sizes-baseSize-x4, 48px);
+}
+
+.featureCardSmallDarkLabelGradient {
+    z-index: 1;
+    position: absolute; /* Position the gradient absolutely over the photo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(1, 5, 30, 0.00) 67.78%, #01051E 100%);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    border-radius: var(--Variable-sizes-baseSize-x4, 48px);
+}
 .photoGradient {
     z-index: 2;
     position: absolute; /* Position the gradient absolutely over the photo */
@@ -452,6 +495,18 @@
     background-image: linear-gradient(180deg, rgba(1, 5, 30, 0) 67.78%, #01051E 100%);
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     border-radius: 4vw;
+}
+
+.featureCardLarge {
+    display: flex;
+    width: 100%;
+    height: 624px;
+    padding: var(--Variable-sizes-baseSize-x4, 48px);
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x2, 24px);
+
 }
 
 .photoButtonGradient {
@@ -504,7 +559,7 @@
     z-index: 11;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
+    width: 60%;
     align-items: center;
     padding: 0 24px 24px 24px;
     gap: var(--Variable-sizes-baseSize-x3, 28px);
@@ -552,11 +607,11 @@
 .projectDiscountText {
     padding: 0.5vw 2vw 0.5vw 2vw;
 }
-.contentContainer {
-    position: relative;
-    z-index: 4;
+.featureCardLargeContainer {
     display: flex;
-    width: 100%;
+    position:relative;
+    z-index: 5;
+    padding: var(--Variable-sizes-baseSize-x4, 48px);
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
@@ -564,10 +619,24 @@
 
 }
 
+.featureCardSmallDarkLabelContent {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: var(--Variable-sizes-baseSize-x4, 48px);
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x2, 24px);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
 .doubleItemContainer {
     width: 45%;
 }
 .projectButtonContentContainer {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -614,7 +683,7 @@
 }
 
 .navigationContainer {
-    width: 83%;
+    width: 86%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -628,20 +697,24 @@
 .navigationButton {
     display:flex;
     margin: 24px 0 24px 0;
-    border-radius: 1vw;
+    border-radius: 20px;
     background: rgba(39, 43, 64, 0.5);
     border: none
 }
 .navigationText {
-    padding: 24px;
+    padding: 12px;
 }
 .leftArrow {
+    background: unset;
+    border: unset;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
 }
 .rightArrow {
+    background: unset;
+    border: unset;
     padding-right: 2vw;
     display: flex;
     justify-content: center;
@@ -725,7 +798,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 4vw 4vw 0 0;
+    border-radius: 48px 48px 0 0;
     position: relative; /* Ensure position relative for absolute positioning */
     width: 100%;
 }
@@ -748,8 +821,6 @@
 
 .footerText {
     color: rgba(39, 43, 64, 1);
-    border-right: 1px solid white;
-    padding-right: 4vw;
 }
 
 .lastFooterText {
@@ -758,8 +829,8 @@
 }
 .roundPhoto {
     z-index: 1;
-    width: 10vw;
-    height: 10vw;
+    width: 144px;
+    height: 144px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -770,7 +841,7 @@
 .projectButton {
     z-index: 3;
     display: flex;
-    padding: 8px 12px 8px 12px;
+    padding: 6px 24px 6px 24px;
     justify-content: center;
     align-items: center;
     gap:0px;
@@ -920,7 +991,7 @@ label {
 
 .works {
     position: relative;
-    z-index: 0;
+    z-index: 4;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -929,9 +1000,9 @@ label {
 
 .worksWrapper {
     position:relative;
-    z-index: 1;
+    z-index: 4;
     display: flex;
-    width: 100%;
+    width: 86%;
     max-width: 1440px;
     padding: var(--Variable-sizes-baseSize-x4, 48px) var(--Variable-sizes-baseSize-x8, 96px) var(--Variable-sizes-baseSize-x8, 96px) var(--Variable-sizes-baseSize-x8, 96px);
     flex-direction: column;
@@ -947,13 +1018,13 @@ label {
     justify-content: center;
     width: 100%;
     position: relative;
-    z-index: 3;
+    z-index: 6;
 }
 
 .companyWrapper {
     display: flex;
 
-    width: 100%;
+    width: 86%;
     max-width: 1440px;
     padding: var(--Variable-sizes-baseSize-x4, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px) var(--Variable-sizes-baseSize-x8, 24px);
     flex-direction: column;
@@ -991,7 +1062,7 @@ label {
     justify-content: center;
     gap: var(--Variable-sizes-baseSize-x4, 36px);
     align-self: stretch;
-    width: 100%;
+    width: 86%;
     max-width: 1440px;
 }
 
@@ -1048,6 +1119,7 @@ label {
 }
 
 .magazineCardLarge {
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
     padding: var(--Absolute-sizes-zero, 0px);
@@ -1060,15 +1132,17 @@ label {
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
 }
 
+
 .magazineCardLargeContent {
     display: flex;
-    padding: var(--Variable-sizes-baseSize-x4, 24px);
+    width: 50%;
+    padding: var(--Variable-sizes-baseSize-x4, 48px);
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    gap: var(--Variable-sizes-baseSize-x3, 36px);
+    flex: 1 0 0;
     align-self: stretch;
     background: var(--Basics-White, #FFF);
-    justify-content: space-between;
 }
 
 .labelSmall {
@@ -1100,18 +1174,43 @@ label {
 
 .magazineCardSmall {
     display: flex;
-    padding: var(--Variable-sizes-baseSize-x4, 24px);
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    border-radius: var(--Variable-sizes-baseSize-x4, 48px);
+
+    align-self: stretch;
+}
+
+.magazineCardSmallGradient {
+    z-index: 1;
+    position: absolute; /* Position the gradient absolutely over the photo */
+    top: 0;
+    left: -1px;
+    border-radius: var(--Variable-sizes-baseSize-x4, 48px);
+    width: 101%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(64, 0, 115, 0.90) 0%, rgba(0, 141, 255, 0.90) 100%),lightgray 50% / cover no-repeat;   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+    opacity: 95%
+}
+.magazineCardSmallContainer {
+    display: flex;
+    position: relative;
+    z-index: 2;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--Variable-sizes-baseSize-x3, 18px);
     flex: 1 0 0;
     align-self: stretch;
-    justify-content: space-evenly;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #400073 0%, #008DFF 100%);
-
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    width: 50%;
+}
+
+.magazineCardLargeImage {
+    height: 100%;
+    width: 50%;
+    display: flex;
 }
 
 .doubleItem {
@@ -1129,7 +1228,7 @@ label {
 .quote {
     display: flex;
     position: relative;
-    z-index: 4;
+    z-index: 5;
     width: 80%;
     flex-direction: column;
     align-items: center;
@@ -1153,7 +1252,7 @@ label {
 
 .quoteAuthor {
     position:relative;
-    z-index:2;
+    z-index:6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1205,7 +1304,6 @@ label {
     gap: var(--Variable-sizes-baseSize-x3, 36px);
     flex: 1 0 0;
     align-self: stretch;
-    border-radius: var(--Variable-sizes-baseSize-x4, 48px);
     background: linear-gradient(180deg, #400073 0%, #008DFF 100%);
 
     /* shadow standard */
@@ -1254,8 +1352,8 @@ label {
     }
 
     .philosophyPhoto {
-        top: -30px;
-        height: 120px;
+        top: -40px;
+        height: 110px;
     }
 }
 
@@ -1341,6 +1439,38 @@ label {
         border-radius: 36px;
 
     }
+
+
+    .magazineCardLarge {
+        display: flex;
+        flex-direction: column;
+        padding: var(--Absolute-sizes-zero, 0px);
+        height: fit-content;
+        overflow: scroll;
+        align-items: flex-start;
+        border-radius: 24px;
+        width: 100%;
+        /* shadow standard */
+        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .magazineCardLargeContent {
+        display: flex;
+        width: 100%;
+        padding: var(--Variable-sizes-baseSize-x4, 48px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--Variable-sizes-baseSize-x3, 36px);
+        flex: 1 0 0;
+        align-self: stretch;
+        background: var(--Basics-White, #FFF);
+    }
+
+    .magazineCardLargeImage {
+        width: 100%;
+        display: flex;
+    }
+
 }
 @media (max-width: 366px) {
     h1 {
@@ -1496,15 +1626,6 @@ label {
         mix-blend-mode: multiply;
     }
 
-    .shortcutContainer {
-        display: flex;
-        padding: 0 var(--Variable-sizes-baseSize-x8, 24px);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--Variable-sizes-baseSize-x4, 24px);
-        align-self: stretch;
-    }
-
     .workEllipse {
         top: -215px;
     }
@@ -1535,5 +1656,30 @@ label {
 
         /* shadow standard */
         box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .magazineCardLarge {
+        display: flex;
+        flex-direction: column;
+        padding: var(--Absolute-sizes-zero, 0px);
+        height: fit-content;
+        overflow: scroll;
+        align-items: flex-start;
+        border-radius: 24px;
+
+        /* shadow standard */
+        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .magazineCardLargeContent {
+        display: flex;
+        width: 100%;
+        padding: var(--Variable-sizes-baseSize-x4, 48px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--Variable-sizes-baseSize-x3, 36px);
+        flex: 1 0 0;
+        align-self: stretch;
+        background: var(--Basics-White, #FFF);
     }
 }

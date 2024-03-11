@@ -9,7 +9,7 @@ export const DifferentPhoto = () => {
             >
                 <div className='photoGradient'/>
                 <div className='contentContainer'>
-                    <div className={'flex'}>
+                    <div style={{display:'flex'}} >
                         <div className='discount' >
                             <span className={'discountText'}> Новый проект </span>
                         </div>

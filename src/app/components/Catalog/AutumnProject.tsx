@@ -2,7 +2,7 @@ import React from "react";
 
 export const AutumnProject = () => {
     return (
-        <div className={'flex flex-col'} style={{maxHeight: "468px"}} >
+        <div style={{maxHeight: "468px", display: "flex", flexDirection: "column"}} >
             <div
                 className='catalogPhoto'
                 style={{backgroundImage: `url(/autumn.png)`,}}
@@ -34,7 +34,7 @@ export const AutumnProject = () => {
                     </div>
                 </div>
             </div>
-            <div className='photoFooter' style={{borderRadius: "0px 0px 2vw 2vw"}}>
+            <div className='photoFooter' style={{borderRadius: "0px 0px 24px 24px"}}>
                 <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
                             <h6 className={'footerText h3'}>
                                 Общая 200 м²
