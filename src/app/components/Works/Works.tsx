@@ -1,11 +1,8 @@
 "use client";
 import React from "react";
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
-import {Photo} from "@/app/components/PhotoCarousel/Photo";
 import {Button} from "@/app/components/Button/Button";
-import {
-    FeatureCardSmallDarkLabel,
-} from "@/app/components/FeatureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
+import {FeatureCardSmallDarkLabel} from "@/app/components/featureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
 
 export const Works: React.FC = () => {
     return (
