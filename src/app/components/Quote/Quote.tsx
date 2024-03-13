@@ -21,7 +21,7 @@ export const Quote = ({quoteText, src, text}: IQuoteProps) => {
 									backgroundPosition: "center",
 									backgroundRepeat: "no-repeat",
 							}}></div>
-							<h5 className={'quoteAuthorText'}>{text}</h5>
+							<h5 className={'quoteAuthorText'} style={{width: "200px"}}>{text}</h5>
 					</div>
 			</div>
 		)

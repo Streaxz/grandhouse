@@ -9,18 +9,24 @@ export const RoundFeaturesItem = ({src, headerText, descriptionText}: IRoundFeat
 		return (
 			<div className={'roundFeaturesItemContainer'}>
 					<div style={{
-							width: "120px",
-							height: "120px",
-							borderRadius: "120px",
-							border: "4px solid #FFF",
-							background: `url(${src}), lightgray 50% / cover no-repeat`,
+							width: "280px",
+							height: "280px",
+							borderRadius: "50%",
+							border: "12px solid #FFF",
+							background: `url(${src})`,
 							backgroundPosition: "center",
+							backgroundSize: "cover",
 							backgroundRepeat: "no-repeat",
-							backgroundSize: "180px",
 					}}></div>
 
-					<h3>{headerText}</h3>
-					<h5>{descriptionText}</h5>
+					<h3 style={{
+							textAlign: "center",
+							fontWeight: 200
+					}}>{headerText}</h3>
+					<h5 style={{
+							textAlign: "center",
+							fontWeight: 200,
+					}}>{descriptionText}</h5>
 			</div>
 		)
 }

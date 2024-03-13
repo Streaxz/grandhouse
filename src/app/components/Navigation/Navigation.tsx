@@ -7,13 +7,13 @@ export const Navigation = () => {
                <span className={'h3Shortcut navigationText'} style={{ position: "relative", zIndex: 8 }}>Философия</span>
            </button>
            <button className='navigationButton'>
-               <span className={'h3Shortcut navigationText'}>Проекты</span>
+               <span className={'h3Shortcut navigationText'} style={{fontWeight: 300}}>Проекты</span>
            </button>
            <button className='navigationButton'>
-               <span className={'h3Shortcut navigationText'}>Каталог</span>
+               <span className={'h3Shortcut navigationText'} style={{fontWeight: 300}}>Компания</span>
            </button>
            <button className='navigationButton'>
-               <span className={'h3Shortcut navigationText'}>Загаловок</span>
+               <span className={'h3Shortcut navigationText'} style={{fontWeight: 300}}>Работы и отзывы</span>
            </button>
        </div>
     );

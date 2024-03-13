@@ -8,17 +8,28 @@ import {Button} from "@/app/components/Button/Button";
 
 export const Company = () => {
     return (
-      <div className={'pageContainer'} style={{backgroundImage: "url(https://s3-alpha-sig.figma.com/img/9f26/2b16/5e008d9f7a08e23f0f6617b865e362b4?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KJDvCSyLg9WbC00wwoDeHX6bXpxkIXu8OGRYACarpre1zxlbGiQ78SV4SVXc~UgKsTx0GDuEJx~JLujPoDA5n5R2JwwRTJrsqroas8IyGNXO~GJCmnEflwBucBZGr824oYaLckkhabou4cGWNYdK2WoxM09ToRqM81nYPwxSyV72XO4tKq8HxhMKbX7~Wl8Sy7TazS74Tl0-daGbTHy2DYVI-q7sx4JbFNwISf6L3yTUeWHWvDDL5eTwKYEc0L5Kz~9zGIR8MPHcuI6EZpnHVu05NeuymL6hsp9yICoGLrUXfjnT4c9JP5Jom~Z6luqSTTvLPCWHuAAx83p8Qo11TQ__)"}}>
+      <div className={'pageContainer'} style={{
+          backgroundImage: "url(https://s3-alpha-sig.figma.com/img/9f26/2b16/5e008d9f7a08e23f0f6617b865e362b4?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KJDvCSyLg9WbC00wwoDeHX6bXpxkIXu8OGRYACarpre1zxlbGiQ78SV4SVXc~UgKsTx0GDuEJx~JLujPoDA5n5R2JwwRTJrsqroas8IyGNXO~GJCmnEflwBucBZGr824oYaLckkhabou4cGWNYdK2WoxM09ToRqM81nYPwxSyV72XO4tKq8HxhMKbX7~Wl8Sy7TazS74Tl0-daGbTHy2DYVI-q7sx4JbFNwISf6L3yTUeWHWvDDL5eTwKYEc0L5Kz~9zGIR8MPHcuI6EZpnHVu05NeuymL6hsp9yICoGLrUXfjnT4c9JP5Jom~Z6luqSTTvLPCWHuAAx83p8Qo11TQ__)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "saturate(130%) brightness(110%)",
+      }}
+      >
+          <div className={'pageContainer'} style={{
+              background: "linear-gradient(180deg, rgba(0, 49, 20, 0.00) 38.6%, #00250F 120%)",
+          }}>
           <div className={'companyWrapper'}>
           <TextBlock
             rectangleColor={"white"}
+            width={"100%"}
             mainText={"Грандхауc — это люди, технологии и материалы"}
-            descriptionText={"testsetstest"}
+            descriptionText={"Небольшая вводка про то, кто работает в Грандхаусе, какие технологии и материалы используются"}
             textColor={"white"}
           />
               <RoundFeatures>
                   <RoundFeaturesItem
-                    headerText={"Заголовок Элемента"}
+                    headerText={"Заголовок элемента"}
                     descriptionText={"Подзаголовок элемента"}
                     src={"https://s3-alpha-sig.figma.com/img/a289/e84d/c0d59418db7d7633ab18d3f297d5db92?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E~v5KD34FybKu65JAP6p75E3A-pzc9zZXAHnXTBwspNELsJIPkBu~PgVFk1BUi798wiZ6MV4WooY45IL0juYkX4fadhGfu69xbkuLnIfLWrzYPOKxvdn2Co95bAwQJLzl72dNeFVDYP2N~KOLJ9LP7bTJi6SP4IBGobh9xA51o7qr1m~1N9GD29buTLJoC3PB7eeEi2NkhE9cnMLy6kjfaaDcqOA1z9Ur2deOhKIqbNHBy8~H7SyDBCNfl~tjejqAqSbl86xUez4AmBVf7Mh-s7UlmAONZ-oa5OkYYTLuUlb8YCD9kR2XZHyTeHQkcjgMbHyeoJF5YZIDjajAMOAAg__"}
                   />
@@ -39,6 +50,7 @@ export const Company = () => {
                 text={'Имя Фамилия, должность'}
               />
               <Button onClick={() => console.log()} buttonText={"Подробнее о компании"}/>
+          </div>
           </div>
       </div>
     )

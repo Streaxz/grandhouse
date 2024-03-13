@@ -16,7 +16,7 @@ export const Sberbank = () => {
 							<img
 								src={'Sber.png'}
 								style={{
-										width: "70%",
+										width: "80%",
 										flexShrink: 0,
 										marginLeft: "24px",
 								}}

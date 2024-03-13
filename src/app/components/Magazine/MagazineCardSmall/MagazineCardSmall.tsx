@@ -12,8 +12,8 @@ export const MagazineCardSmall = () => {
 			>
 					<div className={'magazineCardSmallGradient'}/>
 					<div className={'magazineCardSmallContainer'}>
-							<h2>Как строить фундамент?</h2>
-							<p style={{height: '-webkit-fill-available'}}> Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной
+							<h3>Как строить фундамент?</h3>
+							<p style={{height: '-webkit-fill-available', width: '80%'}}> Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной
 									России.</p>
 							<h6> дата</h6>
 

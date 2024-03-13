@@ -94,7 +94,7 @@ export const Catalog = () => {
     return (
         <>
             <div className='catalogContainer'>
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "36px"}}>
                     <img src={`/logo_catalog.svg`}
                          className={"logoCatalog"}></img>
                     <p>Вводка о каталоге компании</p>
@@ -107,7 +107,7 @@ export const Catalog = () => {
                     </button>
                         <Swiper
                             ref={swiperRef}
-                            spaceBetween={"10vw"}
+                            spaceBetween={"36px"}
                             slidesPerView={swiperSlides}
                             pagination={false}
                             style={{borderRadius: "48px 48px 24px 24px"}}
@@ -137,14 +137,14 @@ export const Catalog = () => {
                 style={{
                     display: "flex",
                     justifyContent: "space-evenly",
-                    width: "86%"
+                    width: "100%"
                 }}
             >
                 {roundPhotos}
             </div>
             <Button
                 onClick={openModal}
-                buttonText={"Все проекты"}
+                buttonText={"Все проекты (240)"}
             />
             <ReactModal
                 isOpen={isOpen}

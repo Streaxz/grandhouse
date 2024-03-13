@@ -16,7 +16,6 @@ export const PhotoButton = ({backgroundSrc, buttonSrc, buttonText, descriptionTe
       >
           <div className='photoButtonGradient'/>
           <div className='photoButtonContent'>
-              <div className={'photoButtonContent'}></div>
               <div className={'imageContainer'}>
                   <img src={buttonSrc} style={{maxWidth: "406px", width: '60%'}} alt={'backgroundImage'}/>
                   <Button
