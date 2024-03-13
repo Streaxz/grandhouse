@@ -26,14 +26,14 @@ export const Works: React.FC = () => {
                   <div
                        className={'whiteBoxContainer'}
                   >
-                      <div className={'whiteBox'}>
-                          <p style={{color: "#272B40", lineHeight:"20px"}}>завершенных</p>
+                      <div className={'whiteBox hiddenWhiteBox'}>
+                          <p style={{color: "#272B40"}} className={'whiteBoxText'}>завершенных</p>
                       </div>
                       <div className={'whiteBox'}>
-                          <p style={{color: "#272B40", lineHeight:"20px"}}>проектов</p>
+                          <p style={{color: "#272B40"}} className={'whiteBoxText'}>проектов</p>
                       </div>
                       <div className={'whiteBox'}>
-                          <p style={{color: "#272B40", lineHeight:"20px"}}>в портфолио</p>
+                          <p style={{color: "#272B40"}} className={'whiteBoxText'}>в портфолио</p>
                       </div>
                   </div>
               </div>

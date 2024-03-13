@@ -35,31 +35,31 @@ export const AutumnProject = () => {
               </div>
           </div>
           <div className='photoFooter'>
-              <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
+              <div style={{display: "flex", textAlign: "center"}}>
                   <h6 className={'footerText h3'}>
                       Общая 200 м²
                   </h6>
               </div>
-              <div style={{width: "1px", height: "24px", backgroundColor: "white", alignSelf:"center"}}/>
-              <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
+              <div className={'separateLine'}/>
+              <div style={{display: "flex", textAlign: "center"}}>
                   <h6 className={'footerText h6'}>
                       Жилая 145 м²
                   </h6>
               </div>
-              <div style={{width: "1px", height: "24px", backgroundColor: "white", alignSelf:"center"}}/>
-              <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
+              <div className={'separateLine'}/>
+              <div style={{display: "flex", textAlign: "center"}}>
                   <h6 className={'footerText h6'}>
                       14×19 м
                   </h6>
               </div>
-              <div style={{width: "1px", height: "24px", backgroundColor: "white", alignSelf:"center"}}/>
-              <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
+              <div className={'separateLine'}/>
+              <div style={{display: "flex", textAlign: "center"}}>
                   <h6 className={'footerText h6'}>
                       2 сп.
                   </h6>
               </div>
-              <div style={{width: "1px", height: "24px", backgroundColor: "white", alignSelf:"center"}}/>
-              <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
+              <div className={'separateLine'}/>
+              <div style={{display: "flex", textAlign: "center"}}>
                   <h6 className={'lastFooterText h6'}>
                       2 c/у
                   </h6>

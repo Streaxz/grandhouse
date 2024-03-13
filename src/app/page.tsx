@@ -41,7 +41,6 @@ export default function Home() {
                       />
                   </Carousel>
                   <Navigation/>
-
                   <Catalog/>
 
                   <PhotoButton

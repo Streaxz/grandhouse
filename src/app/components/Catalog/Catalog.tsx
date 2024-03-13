@@ -69,11 +69,12 @@ export const Catalog = () => {
                 setNumOfPhotos(6);
                 setSwiperSlides(2);
                 setSpaceBetween(28);
-            } else if (width <= 366) {
+            } else if (width <= 500) {
                 setNumOfPhotos(4);
                 setSwiperSlides(1);
-                setSpaceBetween(0)
+                setSpaceBetween(10)
             } else {
+                console.log(width)
                 setSwiperSlides(2);
                 setNumOfPhotos(7);
                 setSpaceBetween(36);
@@ -104,7 +105,7 @@ export const Catalog = () => {
                     <p>Вводка о каталоге компании</p>
                 </div>
             </div>
-            <div style={{maxWidth:" 1440px", width: "110%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
+            <div style={{maxWidth:" 1440px", width: "115%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
                 <div style={{display: "flex", justifyContent: "center"}}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft/>

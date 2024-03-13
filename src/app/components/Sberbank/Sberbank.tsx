@@ -9,7 +9,6 @@ export const Sberbank = () => {
 								style={{
 										width: "10%",
 										flexShrink: 0,
-										marginLeft: "24px",
 								}}
 								alt={'domrf'}
 							/>
@@ -18,7 +17,6 @@ export const Sberbank = () => {
 								style={{
 										width: "80%",
 										flexShrink: 0,
-										marginLeft: "24px",
 								}}
 								alt={'sber'}
 							/>

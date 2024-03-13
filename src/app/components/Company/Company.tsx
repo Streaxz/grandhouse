@@ -13,7 +13,7 @@ export const Company = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          filter: "saturate(130%) brightness(110%)",
+          filter: "saturate(100%) brightness(110%)",
       }}
       >
           <div className={'pageContainer'} style={{

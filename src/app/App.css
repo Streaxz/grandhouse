@@ -207,6 +207,7 @@ p {
 }
 
 .mainLogoContainer {
+    width: 100%;
     position:relative;
     z-index: 1;
     display: flex;
@@ -1097,7 +1098,6 @@ label {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: grayscale(50%);
 }
 
 .reviewsContainer {
@@ -1211,7 +1211,6 @@ label {
     padding: var(--Absolute-sizes-absolute-x0_5, 6px) var(--Variable-sizes-baseSize, 6px);
     align-items: center;
     align-content: center;
-    gap: 12px;
     flex-wrap: wrap;
     border-radius: 48px;
     background: var(--Gradient-Electric, linear-gradient(95deg, #C0F 13.6%, #00D1FF 58.9%, #00A3FF 93.49%));
@@ -1274,6 +1273,11 @@ label {
     display: flex;
 }
 
+.magazineCardP {
+    height: -webkit-fill-available;
+    width: 100%
+}
+
 .quote {
     display: flex;
     position: relative;
@@ -1282,7 +1286,6 @@ label {
     flex-direction: column;
     align-items: center;
     gap: -24px;
-    backdrop-filter: blur(36px);
 
 }
 
@@ -1304,6 +1307,7 @@ label {
     position: absolute;
     z-index: -1;
     top: 8px;
+    width: 105%;
     left: -10px;
 
 }
@@ -1327,6 +1331,7 @@ label {
 .quoteAuthorText {
     color: var(--Basics-White, #FFF);
     text-align: center;
+    width: 200px;
     leading-trim: both;
 }
 
@@ -1346,18 +1351,23 @@ label {
 .sberImageContainer {
     width: 50%;
     display: flex;
+    gap: 24px;
     justify-content: space-between;
     align-items: center;
 }
+
 .amountFrom {
     line-height: 12px;
 }
+
 .amountNumber {
     line-height: 29px;
 }
+
 .amountMln {
     line-height: 10px;
 }
+
 .swiperStyle {
     border-radius: 48px 48px 24px 24px;
 }
@@ -1365,6 +1375,19 @@ label {
 p {
     font-size: var(--font-size-desktop-p);
     line-height: var(--font-size-desktop-p-line-height);
+}
+
+.separateLine {
+    width: 1px;
+    height: 24px;
+    background-color: #FFF;
+    align-self: center;
+
+}
+
+.infographicsText {
+    font-weight: 200;
+    width: 90px;
 }
 
 @media (min-width: 768px) {
@@ -1526,7 +1549,7 @@ p {
     }
 
     .textContainer {
-        padding: 36px;
+        padding: 0px 36px 36px 36px;
     }
 
     .mainHeader {
@@ -1599,14 +1622,15 @@ p {
 
     .whiteBoxContainer {
         gap: 5px;
+        padding: 36px;
     }
 
     .whiteBox {
         padding: 2px 9px 0px 9px;
     }
     .vector {
-        top: -7px;
-        left: 7px;
+        top: 4px;
+        left: -2px;
     }
 
 
@@ -1628,7 +1652,7 @@ p {
     }
 
     .mainLogoContainer {
-        margin-bottom: -80px;
+        width: 100%;
     }
 
     .featureCardLarge {
@@ -1663,7 +1687,7 @@ p {
     }
 
     .photoFooter {
-        padding: 0;
+        padding: 9px 0 9px 0;
         border-radius: 0 0 12px 12px;
     }
 
@@ -1684,7 +1708,7 @@ p {
     }
     .projectHeaderContainer {
         border-radius: 18px;
-        padding: 4px 9px 2px 9px;
+        padding: 7px 9px 5px 9px;
     }
     .projectSeriesContainer {
         border-radius: 18px;
@@ -1701,7 +1725,11 @@ p {
     }
 
     .projectButton {
+        border: 4px solid #E3E8F1;
         padding: 8px 36px 4px 36px;
+    }
+    .magazineCardP {
+        width: 80%;
     }
 }
 @media (max-width: 366px) {
@@ -1745,25 +1773,15 @@ p {
         line-height: var(--font-size-mobile-h3-shortcuts-line-height);
     }
 
-    .navigationButton {
-        margin: 6px 6px 6px 6px;
-        border-radius: 4vw;
-    }
-
     .projectDiscountText {
         font-size: 2vw;
     }
 
     .philosophyPhoto {
         top: -20px;
-        height: 60px;
+        height: 50px;
     }
-    .rectangle {
-        left: -25px;
-        top: 15px;
-        width: 36px;
-        height: 6px;
-    }
+
 
     .discount {
         border-radius: 2vw;
@@ -1772,6 +1790,7 @@ p {
     .projectSeries {
         font-size: 2vw;
     }
+
     .logoCatalog {
         width: 80vw;
     }
@@ -1841,5 +1860,249 @@ p {
         border-radius: 24px;
     }
 
+    .mainLogoContainer {
+        height: fit-content;
+    }
 
+    .ellipse {
+        top: -1500px;
+    }
+
+    .rectangle {
+        left: -25px;
+        top: -3px;
+        width: 36px;
+        height: 6px;
+    }
+
+    .mainPage {
+        gap: 24px;
+    }
+
+    .textContainer {
+        padding: 6px 24px 24px 24px;
+    }
+
+    .featureCardLarge {
+        height: 200px;
+        border-radius: 24px;
+        /*padding: 36px;*/
+    }
+
+    .featureCardLargeContainer {
+        padding: 24px 24px 18px 24px;
+        gap: 12px;
+    }
+
+    .labelSmall {
+        padding: 2px 6px;
+    }
+
+    .navigationContainer {
+        padding: 24px;
+        gap: 18px 18px;
+        border-radius: 24px;
+    }
+
+    .navigationButton {
+        padding: 8px 12px 6px 12px;
+        border-radius: 12px;
+    }
+
+    .arrowSvg {
+        max-width: 10px;
+    }
+
+    .swiperStyle {
+        border-radius: 36px 36px 12px 12px;
+    }
+
+    .separateLine {
+        height: 12px;
+    }
+
+    .roundPhoto {
+        width: 72px;
+        height: 72px;
+    }
+
+    .footerText {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .projectButton {
+        border: 2px solid #E3E8F1;
+        padding: 8px 24px 4px 24px;
+        background: linear-gradient(180deg, #FFF 0%, #D5DEED 100%);
+        /* shadow standard */
+        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .imageContainer {
+        height: 170px;
+    }
+
+    .photoButtonContent {
+        width: 100%;
+        gap: 0px;
+    }
+
+    .photoButtonContainer {
+        border-radius: 24px;
+    }
+
+    .photoButtonGradient {
+        border-radius: 24px;
+    }
+
+    .shortcut {
+        padding: 24px;
+        border-radius: 0 0 24px 24px;
+    }
+
+    .shortcutItem {
+        width: 120px;
+    }
+
+    .shortcutImage {
+        width: 36px;
+        height: 36px;
+    }
+
+    .worksImageContainer {
+        height: 80px;
+    }
+
+    .whiteBoxText {
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .hiddenWhiteBox {
+        height: 0px;
+        visibility: hidden;
+    }
+
+    .whiteBoxContainer {
+        padding: 0;
+    }
+
+    .featureCardSmallDarkLabel {
+        width: 100%;
+        border-radius: 24px;
+    }
+
+    .featureCardSmallDarkLabelGradient {
+        border-radius: 24px;
+    }
+
+    .featureCardSmallDarkLabelContent {
+        padding: 24px;
+    }
+
+    .pageContainer {
+        background-size: auto;
+    }
+
+    .worksWrapper {
+        gap: 24px;
+        padding: 24px 0 24px 0;
+    }
+
+    .doubleItem {
+        gap: 24px;
+    }
+
+    .companyWrapper {
+        padding: 36px 0 24px 0;
+        gap: 24px;
+    }
+
+    .roundFeaturesItemContainer {
+        width: 120px;
+        gap: 12px;
+    }
+
+    .roundFeaturesImage {
+        width: 120px;
+        height: 120px;
+        border: 4px solid #FFF;
+    }
+
+    .quoteAuthorText {
+        width: 120px;
+    }
+
+    .infographicsText {
+        font-weight: 200;
+        width: 60px;
+    }
+
+    .sberbank {
+        border-radius: 24px;
+        padding: 12px 24px 12px 24px;
+        width: 86%;
+    }
+
+    .sberImageContainer {
+        width: 90%;
+        gap: 5px;
+    }
+
+    .magazineWrapper {
+        padding: 24px 0 24px 0;
+    }
+
+    .magazineLogoImage {
+        width: 86%;
+    }
+
+    .magazineLogo {
+        gap: 24px;
+    }
+
+    .magazineEllipse {
+        visibility: hidden;
+    }
+
+    .socials {
+        gap: 12px;
+        height: 36px;
+    }
+
+    .socialItem {
+        height: 36px;
+    }
+
+    .magazineCardLargeContent {
+        padding: 24px;
+    }
+
+    .magazineCardLarge {
+
+        border-radius: 24px;
+    }
+
+    .magazineCardSmall {
+        border-radius: 24px;
+    }
+
+    .magazineCardSmall {
+        height: 200px;
+    }
+
+    .magazineCardSmallContainer {
+        padding: 24px;
+        gap: 12px;
+
+    }
+
+    .magazineCardSmallGradient {
+        border-radius: 24px;
+    }
+
+    .magazineCardP {
+        width: 100%
+    }
 }

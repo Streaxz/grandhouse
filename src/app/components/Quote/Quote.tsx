@@ -19,9 +19,10 @@ export const Quote = ({quoteText, src, text}: IQuoteProps) => {
 									border: "4px solid #FFF",
 									background: `url(${src}), lightgray 50% / cover no-repeat`,
 									backgroundPosition: "center",
+									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat",
 							}}></div>
-							<h5 className={'quoteAuthorText'} style={{width: "200px"}}>{text}</h5>
+							<h5 className={'quoteAuthorText'}>{text}</h5>
 					</div>
 			</div>
 		)
