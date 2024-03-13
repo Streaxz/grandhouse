@@ -4,24 +4,16 @@ export const Socials = () => {
 		return (
 			<div className={'socials'}>
 					<a>
-							<img src={'/socialTelegram.png'} alt={"telegram"} style={{
-									height: '72px',
-							}}/>
+							<img src={'/socialTelegram.png'} alt={"telegram"} className={'socialItem'}/>
 					</a>
 					<a>
-							<img src={'/socialVk.png'} alt={'vk'} style={{
-									height: '72px',
-							}}/>
+							<img src={'/socialVk.png'} alt={'vk'} className={'socialItem'}/>
 					</a>
 					<a>
-							<img src={'/socialYoutube.png'} alt={'youtube'} style={{
-									height: '72px',
-							}}/>
+							<img src={'/socialYoutube.png'} alt={'youtube'} className={'socialItem'}/>
 					</a>
 					<a>
-							<img src={'/socialDzen.png'} alt={'dzen'} style={{
-									height: '72px',
-							}}/>
+							<img src={'/socialDzen.png'} alt={'dzen'} className={'socialItem'}/>
 					</a>
 			</div>
 		)

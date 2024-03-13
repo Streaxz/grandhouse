@@ -4,7 +4,13 @@ import {LabelSmall} from "@/app/components/Labels/LabelSmall/LabelSmall";
 export const MagazineCardLarge = () => {
 	return (
 		<div className={'magazineCardLarge'}>
-				<img className={'magazineCardLargeImage'} src={'/magazineImage.png'} alt={'magazine'} ></img>
+				<div className={"magazineCardLargeImage"}
+						 style={{backgroundImage: `url(/magazineImage.png)`,
+								 backgroundSize: "cover",
+
+						 }}
+				>
+				</div>
 				<div className={'magazineCardLargeContent'}>
 						<LabelSmall text={"Текст лейбла"}/>
 						<h2 style={{color: "#272B40", width: "50%"}}>Как строить фундамент?</h2>

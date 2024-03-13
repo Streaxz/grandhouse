@@ -24,17 +24,17 @@ export const AutumnProject = () => {
                       </div>
                   </div>
                       <div className={'amountContainer'}>
-                          <h6 style={{lineHeight:"12px"}}>От</h6>
-                          <p style={{lineHeight:"29px"}}>
+                          <h6 className={'amountFrom'} >От</h6>
+                          <p className={'amountNumber'}>
                               10,0
                           </p>
-                          <h6 style={{lineHeight:"10px"}}>
+                          <h6 className={'amountMln'}>
                               млн
                           </h6>
                       </div>
               </div>
           </div>
-          <div className='photoFooter' style={{borderRadius: "0px 0px 24px 24px"}}>
+          <div className='photoFooter'>
               <div style={{display: "flex", textAlign: "center", paddingTop: " 1vw", paddingBottom: " 1vw"}}>
                   <h6 className={'footerText h3'}>
                       Общая 200 м²

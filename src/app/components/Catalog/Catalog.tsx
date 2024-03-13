@@ -32,6 +32,7 @@ export const Catalog = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [numOfPhotos, setNumOfPhotos] = useState(6);
     const [swiperSlides, setSwiperSlides] = useState(2);
+    const [spaceBetween, setSpaceBetween] = useState(36);
     function openModal() {
         setIsOpen(true);
     }
@@ -67,12 +68,15 @@ export const Catalog = () => {
             if (width <= 768 && width > 500) {
                 setNumOfPhotos(6);
                 setSwiperSlides(2);
+                setSpaceBetween(28);
             } else if (width <= 366) {
                 setNumOfPhotos(4);
                 setSwiperSlides(1);
+                setSpaceBetween(0)
             } else {
                 setSwiperSlides(2);
                 setNumOfPhotos(7);
+                setSpaceBetween(36);
             }
         };
 
@@ -100,17 +104,17 @@ export const Catalog = () => {
                     <p>Вводка о каталоге компании</p>
                 </div>
             </div>
-            <div style={{ maxWidth: "1440px", width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", position:'relative', zIndex:50}} >
-                <div  style={{display: "flex", justifyContent: "space-between"}}>
+            <div style={{maxWidth:" 1440px", width: "110%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
+                <div style={{display: "flex", justifyContent: "center"}}>
                     <button onClick={goPrev} className={'leftArrow'}>
                         <ArrowIconLeft/>
                     </button>
                         <Swiper
                             ref={swiperRef}
-                            spaceBetween={"36px"}
+                            spaceBetween={spaceBetween}
                             slidesPerView={swiperSlides}
                             pagination={false}
-                            style={{borderRadius: "48px 48px 24px 24px"}}
+                            className={'swiperStyle'}
                         >
                             <SwiperSlide>
                                 <AutumnProject/>

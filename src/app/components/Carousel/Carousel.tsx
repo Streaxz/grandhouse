@@ -43,7 +43,7 @@ export const Carousel = ({children, isPagination}: ICarouselProps) => {
 
 		return (
 			<div style={{maxWidth:" 1440px", width: "100%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
-					<div style={{display: "flex", justifyContent:"space-between"}}>
+					<div style={{display: "flex", justifyContent: "center"}}>
 							<button onClick={goPrev} className={'leftArrow'}>
 									<ArrowIconLeft />
 							</button>

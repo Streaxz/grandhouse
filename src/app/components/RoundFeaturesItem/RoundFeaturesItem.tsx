@@ -8,15 +8,12 @@ export const RoundFeaturesItem = ({src, headerText, descriptionText}: IRoundFeat
 
 		return (
 			<div className={'roundFeaturesItemContainer'}>
-					<div style={{
-							width: "280px",
-							height: "280px",
-							borderRadius: "50%",
-							border: "12px solid #FFF",
+					<div className={'roundFeaturesImage'} style={{
 							background: `url(${src})`,
-							backgroundPosition: "center",
-							backgroundSize: "cover",
-							backgroundRepeat: "no-repeat",
+							backgroundPosition: 'center',
+							backgroundSize: 'cover',
+							backgroundRepeat: 'no-repeat',
+
 					}}></div>
 
 					<h3 style={{

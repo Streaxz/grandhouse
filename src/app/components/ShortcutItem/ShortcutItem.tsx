@@ -11,7 +11,7 @@ export const ShortcutItem = ({src, title, description, color, descriptionColor}:
     return (
         <div className={"shortcutItem"} style={{ textAlign: "center" }}>
             <div style={{ display: "flex", justifyContent: "center",  }}>
-                <img src={src} alt={"shortcut"} style={{width: "72px", height: "72px"}} />
+                <img src={src} alt={"shortcut"} className={'shortcutImage'}/>
             </div>
             <h3 style={{ color }}>{title}</h3>
             <h5 style={{ color: descriptionColor }}>{description}</h5>

@@ -134,20 +134,33 @@ p {
     justify-content: center;
     flex-wrap: wrap;
     align-content: center;
-    padding: 0 0 96px 0;
+    width: 100%;
+    padding: 48px 0 96px 0;
     background: linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%),  rgba(0, 0, 0, 0.8);
 }
 .mainPage {
     position: relative;
     display: flex;
-    padding: 48px 96px 0 96px;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     justify-content: center;
     gap: var(--Variable-sizes-baseSize-x4, 48px);
     align-self: stretch;
-    width: 100%;
+    width: 86%;
+    max-width: 1248px;
+}
+
+.mainPageCarousel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: var(--Variable-sizes-baseSize-x4, 48px);
+    align-self: stretch;
+    width: 76%;
     max-width: 1248px;
 }
 .shortcut {
@@ -267,14 +280,6 @@ p {
     gap: var(--Variable-sizes-baseSize-x3, 36px);
 }
 
-.mainHeader {
-    leading-trim: both;
-    flex: 1 0 0;
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 80px; /* 111.111% */
-}
 
 .projectCartContainer {
     display: flex;
@@ -353,6 +358,32 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 12px;
+}
+.roundFeaturesImage {
+
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 12px solid #FFF;
+
+}
+
+.worksImageContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 378px;
+}
+
+.whiteBoxContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    padding: 48px;
 }
 .gradient {
     z-index: -2;
@@ -496,7 +527,7 @@ p {
 .featureCardSmallDarkLabel {
     display: flex;
     position: relative;
-    width: 48%;
+    width: 45%;
     height:  420px;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
     border-radius: 48px;
@@ -529,7 +560,7 @@ p {
     display: flex;
     width: 100%;
     height: 624px;
-    padding: var(--Variable-sizes-baseSize-x4, 48px);
+    /*padding: var(--Variable-sizes-baseSize-x4, 48px);*/
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
@@ -636,7 +667,7 @@ p {
     display: flex;
     position:relative;
     z-index: 5;
-    padding: var(--Variable-sizes-baseSize-x4, 48px);
+    padding: 48px;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
@@ -715,7 +746,6 @@ p {
     flex-wrap: wrap;
     justify-content: space-evenly;
     z-index: 5;
-    margin-top: 48px;
     padding: 48px;
     border-radius: 48px;
     border: 1px solid white;
@@ -743,6 +773,10 @@ p {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+}
+
+.arrowSvg {
+    height: 5vw; max-width: 48px;
 }
 .rightArrow {
     background: unset;
@@ -815,7 +849,7 @@ p {
 .catalogPhoto {
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     z-index: 1;
-    height: 55vw;
+    height: 384px;
     display: flex;
     justify-content: space-between;
     background-size: cover;
@@ -839,8 +873,8 @@ p {
     justify-content: space-evenly;
     align-content: center;
     z-index: 6;
-    padding: 0 4vw 0 4vw;
-    border-radius: 0 0 2vw 2vw;
+    padding: 0 24px 0 24px;
+    border-radius: 0 0 24px 24px;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(36px);
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
@@ -1031,7 +1065,7 @@ label {
     display: flex;
     width: 86%;
     max-width: 1248px;
-    padding: 0px 0px 96px 0px;
+    padding: 48px 0px 96px 0px;
     flex-direction: column;
     justify-content: center;
     justify-items: center;
@@ -1078,6 +1112,7 @@ label {
     padding:  0;
     justify-content: space-evenly;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .magazineWrapper {
@@ -1140,20 +1175,16 @@ label {
 }
 
 .socialItem {
-    display: flex;
-    width: 20%;
-    padding: var(--Absolute-sizes-zero, 0px);
-    align-items: flex-start;
-    gap: 36px;
+    height : 72px;
 }
 
 .magazineCardLarge {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
+    overflow: hidden;
     padding: var(--Absolute-sizes-zero, 0px);
     height: fit-content;
-    overflow: scroll;
     align-items: flex-start;
     border-radius: 48px;
 
@@ -1215,11 +1246,11 @@ label {
 .magazineCardSmallGradient {
     z-index: 1;
     position: absolute; /* Position the gradient absolutely over the photo */
-    top: 0;
+    top: -1px;
     left: -1px;
     border-radius: 48px;
     width: 101%;
-    height: 100%;
+    height: 101%;
     background: linear-gradient(180deg, rgba(64, 0, 115, 0.90) 0%, rgba(0, 141, 255, 0.90) 100%),lightgray 50% / cover no-repeat;   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     opacity: 95%
 }
@@ -1227,6 +1258,7 @@ label {
     display: flex;
     position: relative;
     z-index: 2;
+    text-wrap: normal;
     flex-direction: column;
     align-items: flex-start;
     padding: 48px;
@@ -1234,7 +1266,6 @@ label {
     gap: 36px;
     align-self: stretch;
     /* shadow standard */
-    width: 100%;
 }
 
 .magazineCardLargeImage {
@@ -1242,18 +1273,6 @@ label {
     width: 50%;
     display: flex;
 }
-
-.doubleItem {
-    display: flex;
-    padding: var(--Absolute-sizes-zero, 0px);
-    justify-content: center;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 36px 36px;
-    align-self: stretch;
-    flex-wrap: wrap;
-}
-
 
 .quote {
     display: flex;
@@ -1279,6 +1298,14 @@ label {
     background: rgba(240, 240, 240, 0.9);
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(36px);
+}
+
+.vector {
+    position: absolute;
+    z-index: -1;
+    top: 8px;
+    left: -10px;
+
 }
 
 .quoteAuthor {
@@ -1322,21 +1349,19 @@ label {
     justify-content: space-between;
     align-items: center;
 }
-
-.magazineCardSmall {
-    display: flex;
-    width: 600px;
-    height: 420px;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: var(--Variable-sizes-baseSize-x3, 36px);
-    flex: 1 0 0;
-    align-self: stretch;
-    background: linear-gradient(180deg, #400073 0%, #008DFF 100%);
-
-    /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+.amountFrom {
+    line-height: 12px;
 }
+.amountNumber {
+    line-height: 29px;
+}
+.amountMln {
+    line-height: 10px;
+}
+.swiperStyle {
+    border-radius: 48px 48px 24px 24px;
+}
+
 p {
     font-size: var(--font-size-desktop-p);
     line-height: var(--font-size-desktop-p-line-height);
@@ -1427,23 +1452,20 @@ p {
     }
 
     .navigationButton {
-        margin: 12px;
-        border-radius: 2vw;
+        padding: 14px 18px 12px 18px;
+        border-radius: 18px;
     }
 
     .philosophyPhoto {
-        top: -14px;
+        top: -24px;
         height: 70px;
     }
 
-    .navigationText {
-        padding: 18px;
-    }
-
     .navigationContainer {
-        padding: 24px;
-
+        padding: 36px;
         flex-wrap: wrap;
+        gap: 28px;
+        border-radius: 36px;
     }
 
     .photoContainer {
@@ -1469,36 +1491,218 @@ p {
     }
 
 
-    .magazineCardLarge {
-        display: flex;
-        flex-direction: column;
-        padding: var(--Absolute-sizes-zero, 0px);
-        height: fit-content;
-        overflow: scroll;
-        align-items: flex-start;
-        border-radius: 24px;
+    .magazineCardLargeImage {
+        height: 318px;
         width: 100%;
-        /* shadow standard */
-        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+        display: flex;
+    }
+    .magazineCardSmallContainer {
+        padding: 36px;
+    }
+
+    .magazineCardLarge {
+        flex-direction: column;
     }
 
     .magazineCardLargeContent {
-        display: flex;
         width: 100%;
-        padding: var(--Variable-sizes-baseSize-x4, 48px);
+    }
+
+    .socialItem {
+        height : 54px;
+    }
+
+    .magazineWrapper {
+        padding: 36px 0px 48px 0px;
+    }
+
+    .sberbank {
         flex-direction: column;
-        align-items: flex-start;
-        gap: var(--Variable-sizes-baseSize-x3, 36px);
-        flex: 1 0 0;
-        align-self: stretch;
-        background: var(--Basics-White, #FFF);
+        border-radius: 36px;
     }
 
-    .magazineCardLargeImage {
+    .sberImageContainer {
+        width: 80%;
+    }
+
+    .textContainer {
+        padding: 36px;
+    }
+
+    .mainHeader {
         width: 100%;
-        display: flex;
     }
 
+    .rectangle {
+        top: 20px;
+        height: 9px;
+    }
+
+    .imageContainer {
+        height: 300px;
+    }
+
+    .buttonImage {
+        width: 20%;
+    }
+
+    .photoButtonContent {
+        width: 90%;
+    }
+
+    .pricesWrapper {
+        padding: 36px 0px 48px 0px;
+    }
+
+    .shortcut {
+        padding: 36px 48px;
+    }
+
+    .shortcutImage {
+        width: 54px;
+        height: 54px;
+    }
+
+    .shortcutItem {
+        width: 180px;
+    }
+
+    .shortcutWrapper {
+        width: 90%;
+    }
+
+    .textDescription {
+        width: 100%;
+    }
+
+    .worksWrapper {
+        padding: 36px 0 48px 0;
+    }
+
+    .companyWrapper {
+        padding: 36px 0 48px 0;
+    }
+
+    .roundFeaturesImage {
+        width: 160px;
+        height: 160px;
+        border: 8px solid #FFF;
+    }
+
+    .roundFeaturesItemContainer {
+        width: 180px;
+    }
+
+    .featureCardSmallDarkLabel {
+        height: 280px;
+    }
+
+    .whiteBoxContainer {
+        gap: 5px;
+    }
+
+    .whiteBox {
+        padding: 2px 9px 0px 9px;
+    }
+    .vector {
+        top: -7px;
+        left: 7px;
+    }
+
+
+    .shortcutImage {
+        width: 72px;
+        height: 72px;
+    }
+
+    .worksImageContainer {
+        height: 197px;
+    }
+
+    .mainPageWrapper {
+        padding: 36px 0 48px 0;
+    }
+
+    .mainPage {
+        gap: 36px;
+    }
+
+    .mainLogoContainer {
+        margin-bottom: -80px;
+    }
+
+    .featureCardLarge {
+        height: 312px;
+        border-radius: 36px;
+        /*padding: 36px;*/
+    }
+
+    .ellipse {
+        top: -1000px;
+    }
+
+    .swiperStyle {
+        border-radius: 36px 36px 18px 18px;
+    }
+    .catalogPhoto {
+        max-height: 244px;
+        border-radius: 36px 36px 0 0;
+    }
+
+    .catalogContentContainer {
+        padding: 18px;
+    }
+
+
+    .featureCardLargeContainer {
+        padding: 36px;
+    }
+
+    .arrowSvg {
+        max-width: 20px;
+    }
+
+    .photoFooter {
+        padding: 0;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .amountContainer {
+        padding: 6px 0 6px 0;
+        width: 54px;
+        height: fit-content;
+        border-radius: 18px;
+    }
+    .amountFrom {
+        line-height: 9px;
+    }
+    .amountNumber {
+        line-height: 25px;
+    }
+    .amountMln {
+        line-height: 8px;
+    }
+    .projectHeaderContainer {
+        border-radius: 18px;
+        padding: 4px 9px 2px 9px;
+    }
+    .projectSeriesContainer {
+        border-radius: 18px;
+        padding: 3px 9px 2px 9px;
+    }
+    .projectDiscount {
+        border-radius: 18px;
+        padding: 3px 9px 2px 9px;
+    }
+
+    .roundPhoto {
+        width: 96px;
+        height: 96px;
+    }
+
+    .projectButton {
+        padding: 8px 36px 4px 36px;
+    }
 }
 @media (max-width: 366px) {
     h1 {
@@ -1541,28 +1745,13 @@ p {
         line-height: var(--font-size-mobile-h3-shortcuts-line-height);
     }
 
-    .navigationText {
-        padding: 12px 27px 12px 27px;
-    }
-
     .navigationButton {
         margin: 6px 6px 6px 6px;
         border-radius: 4vw;
     }
 
-    .projectHeader {
-        font-size: 4vw;
-    }
-
     .projectDiscountText {
         font-size: 2vw;
-    }
-
-    .navigationContainer {
-        padding: 12px;
-        border-radius: 8vw;
-        justify-content: space-between;
-        flex-wrap: wrap;
     }
 
     .philosophyPhoto {
@@ -1587,11 +1776,6 @@ p {
         width: 80vw;
     }
 
-    .roundPhoto {
-        width: 20vw;
-        height: 20vw;
-    }
-
     .photoContainer {
         width: 100%;
         height: unset;
@@ -1607,11 +1791,6 @@ p {
 
     .swiper {
         border-radius: 6vw;
-    }
-
-    .catalogPhoto {
-        height: 244px;
-        border-radius: 6vw 6vw 0 0;
     }
 
     .buttonPhoto {
@@ -1662,44 +1841,5 @@ p {
         border-radius: 24px;
     }
 
-    .magazineCardSmall {
-        display: flex;
-        padding: var(--Variable-sizes-baseSize-x4, 24px);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--Variable-sizes-baseSize-x3, 18px);
-        flex: 1 0 0;
-        align-self: stretch;
 
-        border-radius: var(--Variable-sizes-baseSize-x4, 24px);
-        background: linear-gradient(180deg, #400073 0%, #008DFF 100%);
-
-        /* shadow standard */
-        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
-    }
-
-    .magazineCardLarge {
-        display: flex;
-        flex-direction: column;
-        padding: var(--Absolute-sizes-zero, 0px);
-        height: fit-content;
-        overflow: scroll;
-        align-items: flex-start;
-        border-radius: 24px;
-
-        /* shadow standard */
-        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
-    }
-
-    .magazineCardLargeContent {
-        display: flex;
-        width: 100%;
-        padding: var(--Variable-sizes-baseSize-x4, 48px);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--Variable-sizes-baseSize-x3, 36px);
-        flex: 1 0 0;
-        align-self: stretch;
-        background: var(--Basics-White, #FFF);
-    }
 }

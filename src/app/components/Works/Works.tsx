@@ -16,28 +16,16 @@ export const Works: React.FC = () => {
                 textColor={"rgba(39, 43, 64, 1)"}
               />
               <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    position: "relative",
-                    alignItems: "flex-end",
-                    justifyContent: "center",
-                    width: "100%",
-                    height: "378px",
-                }}
+                className={'worksImageContainer'}
               >
                   <img
                     src={'/map.png'}
                     alt={"500"}
                     style={{width: "100%", position: "absolute", zIndex: 1}}
                   />
-                  <div style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "start",
-                      gap: "10px",
-                      padding: "48px",
-                  }}>
+                  <div
+                       className={'whiteBoxContainer'}
+                  >
                       <div className={'whiteBox'}>
                           <p style={{color: "#272B40", lineHeight:"20px"}}>завершенных</p>
                       </div>

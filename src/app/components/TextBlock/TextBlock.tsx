@@ -13,7 +13,7 @@ export const TextBlock = ({rectangleColor, textColor, mainText, descriptionText,
     return (
         <div className={'textContainer'}>
                 <div className="rectangle" style={{backgroundColor: rectangleColor}}/>
-                <h1 style={{color: textColor, textAlign: 'left', width: width || "70%", alignSelf: 'baseline' }} className={'mainHeader'}>
+                <h1 style={{color: textColor, textAlign: 'left', width, alignSelf: 'baseline' }} className={'mainHeader'}>
                     {mainText}
                 </h1>
                 <p className={'textDescription'} style={{color: textColor}}>

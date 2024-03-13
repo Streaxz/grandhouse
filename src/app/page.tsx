@@ -23,22 +23,10 @@ export default function Home() {
                   <MainLogo/>
                   <MainHeader/>
                   {/*<PhotoCarousel />*/}
-              <div
-                style={{
-                    maxWidth: "1400px",
-                    position: "relative",
-                    zIndex: 5,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "48px"
-              }}
-              >
                   <Carousel
                     isPagination={true}
                     swiperEffect={'slide'}
                   >
-
                       <FeatureCardLarge
                         labelText={"Новый проект"}
                         headerText={"House for a family"}
@@ -52,7 +40,6 @@ export default function Home() {
                         isSwiper={true}
                       />
                   </Carousel>
-
                   <Navigation/>
 
                   <Catalog/>
@@ -63,7 +50,6 @@ export default function Home() {
                     buttonText={"Обсудим ваши идеи?"}
                     descriptionText={"Наши менеджеры всегда на связи - свяжитесь с нами и мы предложим решения конкретно под ваши задачи"}
                   />
-              </div>
                   <div className="ellipse"></div>
               </div>
           </div>
