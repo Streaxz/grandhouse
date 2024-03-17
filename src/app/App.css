@@ -95,6 +95,11 @@
 
 }
 
+button {
+    border: none;
+    background-color: transparent;
+
+}
 
 h1, h2, h3, h4, h5, h6{
     margin: 0;
@@ -110,6 +115,109 @@ p {
     color: white;
 }
 
+.footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: var(--Basics-Black, #000);
+
+}
+.footerGradient {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(180deg, #1B0053 0%, #000 100%);
+}
+
+.footerWrapper {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    padding: 48px 0px 96px 0px;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 48px;
+    align-self: stretch;
+    width: 86%;
+    max-width: 1248px;
+}
+
+.footerSocials {
+    display: flex;
+    padding: 48px;
+    flex-direction: column;
+    align-items: center;
+    gap:  36px;
+    align-self: stretch;
+}
+
+.footerInfo {
+    display: flex;
+    width: 100%;
+    padding: 72px 48px;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    border-radius:  48px;
+    background: var(--Basics-Black, #000);
+}
+
+.footerTextGap {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footerSeparateLine {
+    width: 100%;
+    height: 1px;
+    background: #272B40;
+    align-self: center;
+}
+.footerPhone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x2, 24px);
+    align-self: stretch;
+}
+.footerContacts {
+    display: flex;
+    padding: var(--Absolute-sizes-zero, 0px);
+    justify-content: center;
+    align-items: flex-start;
+    gap:  48px;
+    align-self: stretch;
+}
+.footerCities {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--Variable-sizes-baseSize-x2, 24px);
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+.footerCity {
+    display: flex;
+    width:  240px;
+    padding: var(--Absolute-sizes-zero, 0px);
+    flex-direction: column;
+    align-items: center;
+    gap:  18px;
+}
+.footerCityImage {
+    display: flex;
+    width: 72px;
+    height: 72px;
+    justify-content: center;
+    align-items: center;
+}
 .body {
     position: relative;
     margin: 0;
@@ -183,6 +291,17 @@ p {
     box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12) inset;
 }
 
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    height: 24px;
+    flex-grow: 1;
+}
+
+.headerLogo {
+    position: relative;
+    top: 6px;
+}
 .shortcutWrapper {
     display: flex;
     width: 86%;
@@ -487,12 +606,10 @@ p {
 
 .header {
     display: flex;
-    padding: var(--Variable-sizes-baseSize-x2, 24px) 96px;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 
     background: rgba(255, 255, 255, 0.01);
-    filter: saturate(100);
+    filter: saturate(120%);
 
     /* shadow and bgBlur standard */
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
@@ -1731,6 +1848,14 @@ p {
     .magazineCardP {
         width: 80%;
     }
+
+    .footerCityImage {
+        width: 54px;
+        height: 54px;
+    }
+    .footerCity {
+        width: 180px;
+    }
 }
 @media (max-width: 366px) {
     h1 {
@@ -2104,5 +2229,12 @@ p {
 
     .magazineCardP {
         width: 100%
+    }
+    .footerCityImage {
+        width: 36px;
+        height: 36px;
+    }
+    .footerCity {
+        width: 120px;
     }
 }

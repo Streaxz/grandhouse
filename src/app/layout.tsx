@@ -3,6 +3,7 @@ import "./globals.css";
 import {Header} from "@/app/components/Header/Header";
 import "./App.css";
 import localFont from '@next/font/local'
+import {Footer} from "@/app/components/Footer/Footer";
 
 const objectSans = localFont({
     src: [
@@ -65,8 +66,8 @@ export default function RootLayout({
         <body className={`body`}>
         <Header/>
         {children}
+        <Footer/>
         </body>
-
         </html>
     );
 }
