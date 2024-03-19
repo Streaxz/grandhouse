@@ -159,7 +159,7 @@ p {
 
 .footerInfo {
     display: flex;
-    width: 100%;
+    width: 90%;
     padding: 72px 48px;
     flex-direction: column;
     align-items: center;
@@ -1856,6 +1856,11 @@ p {
     .footerCity {
         width: 180px;
     }
+    .footerInfo {
+        border-radius: 36px;
+        padding: 54px 36px;
+        gap: 36px;
+    }
 }
 @media (max-width: 366px) {
     h1 {
@@ -2230,11 +2235,22 @@ p {
     .magazineCardP {
         width: 100%
     }
+
     .footerCityImage {
         width: 36px;
         height: 36px;
     }
+
     .footerCity {
         width: 120px;
+    }
+
+    .footerInfo {
+        border-radius: 24px;
+        padding: 36px 24px;
+        gap: 36px;
+    }
+    .footerNavigation {
+        display: none;
     }
 }

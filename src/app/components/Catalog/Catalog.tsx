@@ -74,7 +74,6 @@ export const Catalog = () => {
                 setSwiperSlides(1);
                 setSpaceBetween(10)
             } else {
-                console.log(width)
                 setSwiperSlides(2);
                 setNumOfPhotos(7);
                 setSpaceBetween(36);

@@ -4,7 +4,7 @@ export const FooterContacts = () => {
 
 		return (
 			<div className={'footerContacts'}>
-					<p style={{color: "#62698C"}}>
+					<p style={{color: "#62698C"}} className={'footerNavigation'}>
 							Философия
 							<br/>
 							Каталог проектов
