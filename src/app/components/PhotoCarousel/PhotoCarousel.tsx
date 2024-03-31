@@ -6,7 +6,6 @@ import {EffectFade} from "swiper/modules";
 import {Photo} from "@/app/components/PhotoCarousel/Photo";
 import {ArrowIconLeft} from "@/app/icons/ArrowIconLeft";
 import {ArrowIconRight} from "@/app/icons/ArrowIconRight";
-import {DifferentPhoto} from "@/app/components/PhotoCarousel/DifferentPhoto";
 
 export const PhotoCarousel = () => {
     const swiperRef = useRef(null);
@@ -64,7 +63,12 @@ export const PhotoCarousel = () => {
                                 />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <DifferentPhoto/>
+                                <Photo
+                                  labelText={"Новый проект"}
+                                  headerText={"House for a family"}
+                                  descriptionText={"Нажмите для просмотра"}
+                                  isSwiper={true}
+                                />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <Photo
@@ -75,7 +79,12 @@ export const PhotoCarousel = () => {
                                 />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <DifferentPhoto/>
+                                <Photo
+                                  labelText={"Новый проект"}
+                                  headerText={"House for a family"}
+                                  descriptionText={"Нажмите для просмотра"}
+                                  isSwiper={true}
+                                />
                             </SwiperSlide>
                             {/* Add more slides here */}
                         </Swiper>

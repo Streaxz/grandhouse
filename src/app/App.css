@@ -397,7 +397,7 @@ p {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
-    gap: var(--Variable-sizes-baseSize-x3, 36px);
+    gap: 36px;
 }
 
 
@@ -413,25 +413,24 @@ p {
 }
 .emojiStarContainer {
     display: flex;
-    width: 40%;
-    max-height: 40px;
     align-items: flex-start;
-    gap: var(--Variable-sizes-baseSize, 6px);
+    gap: var(--Variable-sizes-baseSize, 12px);
 }
 
 .emojiStar {
     display: flex;
+    width: 18px;
+    height: 18px;
     padding: var(--Absolute-sizes-zero, 0px);
     align-items: flex-start;
-    gap: 10px;
 }
 
 .projectCard {
     display: flex;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: 0;
     flex-direction: column;
     align-items: center;
-    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    gap: 10px;
     border-radius: var(--Variable-sizes-baseSize-x4, 24px);
 
     /* shadow standard */
@@ -470,7 +469,34 @@ p {
     /* shadow standard */
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
 }
+.reviewCard {
+    display: flex;
+    width: 100%;
+    height: 869px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.reviewCardPhoto {
+    display: flex;
+    width: 100%;
+
+}
+
+.reviewCardContent {
+    display: flex;
+    padding: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    flex: 1 0 0;
+    align-self: stretch;
+
+    background: var(--Basics-White, #FFF);
+}
 .roundFeaturesItemContainer {
     display: flex;
     width: 300px;
@@ -485,6 +511,22 @@ p {
     height: 280px;
     border-radius: 50%;
     border: 12px solid #FFF;
+
+}
+
+.rectangleItemContainer {
+    display: flex;
+    width: 276px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.rectangleItemImage {
+    height: 144px;
+    width: 100%;
+    border-radius: 48px;
 
 }
 
@@ -622,11 +664,35 @@ p {
     z-index: 5;
     position: absolute;
     background-color: #CC00FF;
-    margin-top: 4vw;
     width: 120px;
     height: 12px;
-    top: -6px;
-    left: -120px;
+    top: 75px;
+    left: -100px;
+}
+
+.roundBlock {
+    display: flex;
+    padding: 24px 0 24px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+}
+
+.activeSlide {
+    border-radius: 24px !important;
+    background: rgba(255, 255, 255, 0.50) !important;
+}
+
+.activeSlide > div > h5 {
+    color: #272B40;
+}
+
+.roundBlockImage {
+    display: flex;
+    width: 144px;
+    height: 144px;
+    border-radius: 100%;
 }
 .photo {
     z-index: 2;
@@ -634,12 +700,10 @@ p {
 
     height: 420px;
     width: 100%;
-    padding: var(--Variable-sizes-baseSize-x4, 48px);
-    gap: var(--Variable-sizes-baseSize-x2, 24px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 4vw;
+    border-radius: 48px;
     position: relative; /* Ensure position relative for absolute positioning */
 }
 
@@ -672,7 +736,7 @@ p {
     height: 100%;
     background-image: linear-gradient(180deg, rgba(1, 5, 30, 0) 67.78%, #01051E 100%);
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
-    border-radius: 4vw;
+    border-radius: 48px;
 }
 
 .featureCardLarge {
@@ -683,7 +747,8 @@ p {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: var(--Variable-sizes-baseSize-x2, 24px);
+    gap: 24px;
+    border-radius: 48px;
 
 }
 
@@ -792,6 +857,19 @@ p {
     align-items: flex-start;
     gap: var(--Variable-sizes-baseSize-x2, 24px);
 
+}
+
+.text {
+    display: flex;
+    padding:  48px;
+
+    gap: 36px;
+    align-self: stretch;
+    columns: 2;
+}
+
+.textColumn {
+    width: 50%;
 }
 
 .featureCardSmallDarkLabelContent {
@@ -1032,6 +1110,47 @@ p {
     background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
 }
 
+.buttonSmall {
+    z-index: 3;
+    display: flex;
+    padding: 8px 24px 6px 24px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 1000px;
+    width: 100%;
+    gap: 12px;
+
+    border: 4px solid #E3E8F1;
+    background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
+}
+
+.contactsItem {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.contactsContainer {
+    display: flex;
+    gap: 36px
+}
+.pdfButton {
+    z-index: 3;
+    display: flex;
+    padding: 24px 48px 16px 48px;
+    justify-content: center;
+    align-items: center;
+    gap:0px;
+    text-align: center;
+    border-radius: 1000px;
+
+    border: 4px solid #E3E8F1;
+    background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
+}
+
 .projectButtonText {
     color: var(--Main-DarkBlue, #272B40);
     text-align: center;
@@ -1056,10 +1175,12 @@ p {
     font-size: 2vw;
 }
 .swiper {
-    border-radius: 4vw;
     overflow:visible;
 }
 
+.swiperSlide {
+    border-radius: 48px;
+}
 .modalSocial {
     color: rgba(39, 43, 64, 1);
     font-size: 1.5vw;
@@ -1310,6 +1431,20 @@ label {
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
 }
 
+.employeeCardLarge {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    height: 624px;
+    padding: 0;
+    align-items: flex-start;
+    border-radius: 48px;
+
+    /* shadow standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+}
+
 
 .magazineCardLargeContent {
     display: flex;
@@ -1317,7 +1452,7 @@ label {
     padding: 48px;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--Variable-sizes-baseSize-x3, 36px);
+    gap: 36px;
     flex: 1 0 0;
     align-self: stretch;
     background: var(--Basics-White, #FFF);
@@ -1466,6 +1601,18 @@ label {
     border: 1px solid var(--Basics-White, #FFF);
 }
 
+.pdfContainer {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    padding: 48px;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize-x3, 18px);
+    align-self: stretch;
+    border-radius: 48px;
+    border: 1px solid var(--Basics-White, #FFF);
+}
 .sberImageContainer {
     width: 50%;
     display: flex;
@@ -1646,6 +1793,61 @@ p {
     opacity: 85%;
 }
 
+.emojiPdf {
+    width:48px;
+    height: 48px;
+    margin-bottom: 6px;
+}
+
+
+.ideasContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 48px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.75);
+
+    /* shadow and bgBlur standard */
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(36px);
+
+}
+
+.ideasContent {
+    display: flex;
+    z-index: 2;
+    position: relative;
+    flex-direction: column;
+    padding: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    align-self: stretch;
+
+}
+
+.shortcutImage {
+    height: 72px;
+    width: 72px;
+    font-size: 72px;
+}
+
+.ideasImage {
+    position: absolute;
+    height: 620px;
+    max-width: 1340px;
+    width: 90vw;
+    z-index: 1;
+    bottom: -104.5px;
+}
+
+.ideasHeader {
+    display: flex;
+}
 @media (min-width: 768px) {
     h1 {
         font-size: var(--font-size-desktop-h1);
@@ -1689,7 +1891,7 @@ p {
 
 }
 
-@media (max-width: 768px) and (min-width: 366px) {
+@media (max-width: 768px) and (min-width: 500px) {
     h1 {
         font-size: var(--font-size-tablet-h1);
         line-height: var(--font-size-tablet-h1-line-height);
@@ -1783,10 +1985,6 @@ p {
         flex-direction: column;
     }
 
-    .magazineCardLargeContent {
-        width: 100%;
-    }
-
     .socialItem {
         height : 54px;
     }
@@ -1800,12 +1998,17 @@ p {
         border-radius: 36px;
     }
 
+    .pdfContainer {
+        border-radius: 36px;
+    }
+
     .sberImageContainer {
         width: 80%;
     }
 
     .textContainer {
-        padding: 0px 36px 36px 36px;
+        padding: 36px;
+        gap: 24px;
     }
 
     .mainHeader {
@@ -1813,8 +2016,10 @@ p {
     }
 
     .rectangle {
-        top: 20px;
+        top: 50px;
+        width: 120px;
         height: 9px;
+        left: -100px;
     }
 
     .imageContainer {
@@ -1834,12 +2039,14 @@ p {
     }
 
     .shortcut {
-        padding: 36px 48px;
+        max-width: 86%;
+        padding: 36px 24px;
     }
 
     .shortcutImage {
         width: 54px;
         height: 54px;
+        font-size: 54px;
     }
 
     .shortcutItem {
@@ -1887,12 +2094,6 @@ p {
     .vector {
         top: 4px;
         left: -2px;
-    }
-
-
-    .shortcutImage {
-        width: 72px;
-        height: 72px;
     }
 
     .worksImageContainer {
@@ -1984,6 +2185,11 @@ p {
         border: 4px solid #E3E8F1;
         padding: 8px 36px 4px 36px;
     }
+
+    .pdfButton {
+        border: 4px solid #E3E8F1;
+        padding: 13px 36px 11px 36px;
+    }
     .magazineCardP {
         width: 80%;
     }
@@ -2063,8 +2269,90 @@ p {
         gap:  24px;
     }
 
+    .emojiPdf {
+        width:36px;
+        height: 36px;
+        margin-bottom: 4px;
+    }
+
+    .rectangleItemContainer {
+        width: 141px;
+        gap: 18px;
+    }
+
+    .rectangleItemImage {
+        height: 96px;
+        border-radius: 36px;
+    }
+
+    .text {
+        padding:  36px;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .textColumn {
+        width: 100%;
+    }
+
+    .ideasContainer {
+        border-radius: 36px;
+    }
+
+    .ideasContent {
+        padding: 36px;
+        gap: 28px;
+    }
+
+    .contactsContainer {
+        gap: 28px;
+    }
+
+    .buttonSmall {
+        border-radius: 36px;
+        border: 3px solid  rgba(255, 255, 255, 0.75);
+        padding: 8px 12px 6px 12px;
+    }
+
+    .ideasImage {
+        position: absolute;
+        height: 400px;
+        width: 90vw;
+        z-index: 1;
+        bottom: -68.5px;
+    }
+
+    .photo {
+        height: unset;
+        border-radius: 36px;
+    }
+
+    .photoGradient {
+        border-radius: 36px;
+    }
+
+    .activeSlide {
+        border-radius: 18px;
+    }
+    .roundBlock {
+        padding: 18px 0 18px 0 ;
+        gap: 18px;
+    }
+    .roundBlockImage {
+        width: 96px;
+        height: 96px
+    }
+    .employeeCardLarge {
+        flex-direction: column;
+        border-radius: 36px;
+    }
+    .magazineCardLargeContent {
+        gap: 24px;
+        width: 100%;
+        padding: 36px;
+    }
 }
-@media (max-width: 366px) {
+@media (max-width: 500px) {
     h1 {
         font-size: var(--font-size-mobile-h1);
         line-height: var(--font-size-mobile-h1-line-height);
@@ -2186,6 +2474,7 @@ p {
 
     .photo {
         height: unset;
+        border-radius: 24px;
     }
 
     .quoteContainer {
@@ -2201,9 +2490,9 @@ p {
     }
 
     .rectangle {
-        left: -25px;
-        top: -3px;
-        width: 36px;
+        left: -70px;
+        top: 33px;
+        width: 80px;
         height: 6px;
     }
 
@@ -2212,7 +2501,8 @@ p {
     }
 
     .textContainer {
-        padding: 6px 24px 24px 24px;
+        padding: 24px;
+        gap: 18px;
     }
 
     .featureCardLarge {
@@ -2300,6 +2590,7 @@ p {
     .shortcutImage {
         width: 36px;
         height: 36px;
+        font-size: 36px;
     }
 
     .worksImageContainer {
@@ -2377,6 +2668,13 @@ p {
         width: 86%;
     }
 
+    .pdfContainer {
+        border-radius: 24px;
+        padding: 24px;
+        gap: 18px;
+        width: 86%;
+    }
+
     .sberImageContainer {
         width: 90%;
         gap: 5px;
@@ -2408,7 +2706,9 @@ p {
     }
 
     .magazineCardLargeContent {
+        width: 100%;
         padding: 24px;
+        gap: 18px;
     }
 
     .magazineCardLarge {
@@ -2522,5 +2822,101 @@ p {
     .footerSocials {
         padding: 24px;
         gap:  18px;
+    }
+
+    .emojiPdf {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 4px;
+    }
+
+    .pdfButton {
+        border: 2px solid #E3E8F1;
+        background: linear-gradient(180deg, #FFF 0%, #D5DEED 100%);
+        /* shadow standard */
+        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.2);
+        padding: 10px 24px 8px 24px;
+    }
+
+    .rectangleItemContainer {
+        width: 110px;
+        gap: 12px;
+    }
+
+    .rectangleItemImage {
+        height: 72px;
+        border-radius: 24px;
+    }
+
+    .text {
+        padding:  24px;
+        columns: unset;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .textColumn {
+        width: 100%;
+    }
+
+    .ideasContainer {
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .ideasContent {
+        padding: 24px;
+        gap: 18px;
+    }
+
+    .contactsContainer {
+        gap: 18px;
+        flex-direction: column;
+    }
+
+    .ideasImage {
+        position: absolute;
+        height: 400px;
+        width: 600px;
+        z-index: 1;
+        bottom: -68.5px;
+    }
+    .upperText {
+        display: none;
+    }
+
+    .buttonSmall {
+        border-radius: 24px;
+        border: 2px solid  rgba(255, 255, 255, 0.75);
+        padding: 4px 9px 0px 9px;
+    }
+    .ideasHeader {
+        text-wrap: nowrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .activeSlide {
+        border-radius: 12px;
+    }
+
+    .roundBlock {
+        padding: 12px 0 12px 0 ;
+        gap: 12px;
+    }
+    .roundBlockImage {
+        width: 96px;
+        height: 96px
+    }
+    .employeeCardLarge {
+        border-radius: 24px;
+        flex-direction: column;
+    }
+    .magazineCardLargeImage {
+        height: 312px;
+        width: 100%;
+        display: flex;
     }
 }

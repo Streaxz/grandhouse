@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import {Header} from "@/app/components/Header/Header";
 import "./App.css";
 import localFont from '@next/font/local'
 import {Footer} from "@/app/components/Footer/Footer";
+import React from "react";
 
 const objectSans = localFont({
     src: [
@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${objectSans.variable} ${petersburg.variable}`} style={{fontWeight:"300"}}>
-        <body className={`body`}>
+        <body className={`body`} id={"body"}>
         <Header/>
         {children}
         <Footer/>

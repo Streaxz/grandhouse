@@ -1,7 +1,7 @@
 "use client"
 import * as React from 'react';
 import '../../App.css';
-import {AppBar, Box, Button, IconButton, Toolbar, Typography, useMediaQuery} from "@mui/material";
+import {Typography, useMediaQuery} from "@mui/material";
 import {HeaderLogo} from "@/app/icons/HeaderLogo";
 import {MagnifierIcon} from "@/app/icons/MagnifierIcon";
 import {DialogBubbleIcon} from "@/app/icons/DialogBubbleIcon";
@@ -10,9 +10,9 @@ import {useEffect} from "react";
 
 const pages = ['Компания', 'Проекты', 'Услуги', 'Лес', 'Поселки', 'Работы и отзывы', 'Контакты', 'Журнал'];
 export const Header = () => {
-    const isMobile = useMediaQuery('(max-width:366px)');
-    const isTablet = useMediaQuery('(min-width:366px) and (max-width:768px)');
-    const isDesktop = useMediaQuery('(min-width:768px)');
+    const isMobile = useMediaQuery('(max-width:500px)');
+    const isTablet = useMediaQuery('(min-width:500px) and (max-width:1100px)');
+    const isDesktop = useMediaQuery('(min-width:1100px)');
 
     const [padding, setPadding] = React.useState(12);
 
@@ -48,6 +48,7 @@ export const Header = () => {
     );
 
     return (
+      <div style={{          background: "rgba(255, 255, 255, 0.25)"}}>
       <div style={{
           display: "flex",
           justifyContent: "space-between",
@@ -55,7 +56,7 @@ export const Header = () => {
           maxWidth: "1350px",
           margin: "0 auto",
           padding: `${padding}px`,
-          paddingBottom: `${padding}px`
+          paddingBottom: `${padding}px`,
       }}>
           {(isMobile || isTablet) &&
             <div className = {"iconContainer"}>
@@ -78,6 +79,7 @@ export const Header = () => {
           <div className={'iconContainer'}>
               <DialogBubbleIcon/>
           </div>
+      </div>
       </div>
     );
 }

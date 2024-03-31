@@ -1,7 +1,7 @@
 'use client';
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import React from "react";
-import {RoundFeatures} from "@/app/components/RoundFeatures/RoundFeatures";
+import {Features} from "@/app/components/Features/Features";
 import {RoundFeaturesItem} from "@/app/components/RoundFeaturesItem/RoundFeaturesItem";
 import {Quote} from "@/app/components/Quote/Quote";
 import {Button} from "@/app/components/Button/Button";
@@ -27,23 +27,23 @@ export const Company = () => {
             descriptionText={"Небольшая вводка про то, кто работает в Грандхаусе, какие технологии и материалы используются"}
             textColor={"white"}
           />
-              <RoundFeatures>
+              <Features>
                   <RoundFeaturesItem
                     headerText={"Заголовок элемента"}
                     descriptionText={"Подзаголовок элемента"}
-                    src={"https://s3-alpha-sig.figma.com/img/a289/e84d/c0d59418db7d7633ab18d3f297d5db92?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E~v5KD34FybKu65JAP6p75E3A-pzc9zZXAHnXTBwspNELsJIPkBu~PgVFk1BUi798wiZ6MV4WooY45IL0juYkX4fadhGfu69xbkuLnIfLWrzYPOKxvdn2Co95bAwQJLzl72dNeFVDYP2N~KOLJ9LP7bTJi6SP4IBGobh9xA51o7qr1m~1N9GD29buTLJoC3PB7eeEi2NkhE9cnMLy6kjfaaDcqOA1z9Ur2deOhKIqbNHBy8~H7SyDBCNfl~tjejqAqSbl86xUez4AmBVf7Mh-s7UlmAONZ-oa5OkYYTLuUlb8YCD9kR2XZHyTeHQkcjgMbHyeoJF5YZIDjajAMOAAg__"}
+                    src={"/company.jpeg"}
                   />
                   <RoundFeaturesItem
                     headerText={"Заголовок Элемента"}
                     descriptionText={"Подзаголовок элемента"}
-                    src={"https://s3-alpha-sig.figma.com/img/a289/e84d/c0d59418db7d7633ab18d3f297d5db92?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E~v5KD34FybKu65JAP6p75E3A-pzc9zZXAHnXTBwspNELsJIPkBu~PgVFk1BUi798wiZ6MV4WooY45IL0juYkX4fadhGfu69xbkuLnIfLWrzYPOKxvdn2Co95bAwQJLzl72dNeFVDYP2N~KOLJ9LP7bTJi6SP4IBGobh9xA51o7qr1m~1N9GD29buTLJoC3PB7eeEi2NkhE9cnMLy6kjfaaDcqOA1z9Ur2deOhKIqbNHBy8~H7SyDBCNfl~tjejqAqSbl86xUez4AmBVf7Mh-s7UlmAONZ-oa5OkYYTLuUlb8YCD9kR2XZHyTeHQkcjgMbHyeoJF5YZIDjajAMOAAg__"}
+                    src={"/wood.jpeg"}
                   />
                   <RoundFeaturesItem
                     headerText={"Заголовок Элемента"}
                     descriptionText={"Подзаголовок элемента"}
-                    src={"https://s3-alpha-sig.figma.com/img/a289/e84d/c0d59418db7d7633ab18d3f297d5db92?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E~v5KD34FybKu65JAP6p75E3A-pzc9zZXAHnXTBwspNELsJIPkBu~PgVFk1BUi798wiZ6MV4WooY45IL0juYkX4fadhGfu69xbkuLnIfLWrzYPOKxvdn2Co95bAwQJLzl72dNeFVDYP2N~KOLJ9LP7bTJi6SP4IBGobh9xA51o7qr1m~1N9GD29buTLJoC3PB7eeEi2NkhE9cnMLy6kjfaaDcqOA1z9Ur2deOhKIqbNHBy8~H7SyDBCNfl~tjejqAqSbl86xUez4AmBVf7Mh-s7UlmAONZ-oa5OkYYTLuUlb8YCD9kR2XZHyTeHQkcjgMbHyeoJF5YZIDjajAMOAAg__"}
-                  />
-              </RoundFeatures>
+                    src={"/autumn.jpeg"}
+                    />
+              </Features>
               <Quote
                 quoteText={'Каждый из нас понимает очевидную вещь: внедрение современных методик обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.'}
                 src={'image.png'}

@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     align-content: center;
     width: 100%;
-    padding: 48px 0 96px 0;
+    padding: 0 0 96px 0;
     background: linear-gradient(0deg, rgba(104, 194, 255, 0.90) 0%, rgba(104, 194, 255, 0.90) 100%);
 }
 
@@ -31,7 +31,7 @@
 
 @media (max-width: 768px) and (min-width: 366px) {
     .pageWrapper{
-        padding: 36px 0 48px 0;
+        padding: 0 0 48px 0;
     }
     .pageContainer {
         gap: 36px;
@@ -40,7 +40,7 @@
 
 @media (max-width: 366px) {
     .pageWrapper{
-        padding: 24px 0 36px 0;
+        padding: 0 0 36px 0;
     }
     .pageContainer {
         gap: 24px;
