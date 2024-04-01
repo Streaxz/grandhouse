@@ -9,8 +9,6 @@ export const MagazineCardLarge = () => {
 								 backgroundSize: "cover",
 								 backgroundPosition: "top",
 								 backgroundRepeat: "no-repeat",
-
-
 						 }}
 				>
 				</div>

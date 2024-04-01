@@ -2,10 +2,9 @@ import React from "react";
 
 interface IPhotoProps {
 		src: string;
-		descriptionText: string;
-		isSwiper?: boolean;
+		descriptionText?: string;
 }
-export const FeatureCardPicture = ({ src, descriptionText, isSwiper}: IPhotoProps) => {
+export const FeatureCardPicture = ({ src, descriptionText}: IPhotoProps) => {
 		return (
 			<div
 				className={'featureCardLarge'}
@@ -17,7 +16,7 @@ export const FeatureCardPicture = ({ src, descriptionText, isSwiper}: IPhotoProp
 				}}
 			>
 					<div className='featureCardLargeContainer'>
-							<h6>{descriptionText}</h6>
+							{descriptionText && <h6>{descriptionText}</h6>}
 					</div>
 			</div>
 		)

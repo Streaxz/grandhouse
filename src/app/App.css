@@ -684,6 +684,28 @@ p {
     background: rgba(255, 255, 255, 0.50) !important;
 }
 
+.activeSlideAnimated {
+    width: 675px;
+    min-height: 1200px;
+    position: relative;
+    z-index: 5;
+}
+
+ .activeSlideAnimated > div {
+     height: 1200px
+ }
+
+.unActiveSlideAnimated {
+    top: 94px;
+    max-width: 501px;
+    max-height: 1100px;
+    position: relative;
+    z-index: 4;
+}
+
+.unActiveSlideAnimated > div {
+    height: 1100px;
+}
 .activeSlide > div > h5 {
     color: #272B40;
 }
@@ -750,6 +772,31 @@ p {
     gap: 24px;
     border-radius: 48px;
 
+}
+
+.featureCardPicture {
+    display: flex;
+    width: 100%;
+    height: 1200px;
+    /*padding: var(--Variable-sizes-baseSize-x4, 48px);*/
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 48px;
+
+}
+.featureCardYouTube {
+    display: flex;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 624px;
+    /*padding: var(--Variable-sizes-baseSize-x4, 48px);*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 48px;
 }
 
 .photoButtonGradient {
@@ -855,8 +902,29 @@ p {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: var(--Variable-sizes-baseSize-x2, 24px);
+    gap: 24px;
 
+}
+
+.featureCardPictureContainer {
+    display: flex;
+    position:relative;
+    height: 100%;
+    z-index: 5;
+    padding: 48px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 24px;
+
+}
+
+.featureCardYouTubeContainer {
+    display: flex;
+    position:relative;
+    z-index: 5;
+    width: 192px;
+    height: 192px;
 }
 
 .text {
@@ -1184,6 +1252,15 @@ p {
     overflow:visible;
 }
 
+.swiperAnimated {
+    overflow:visible;
+    border-radius: 48px;
+}
+
+.hidden {
+    display: none;
+}
+
 .swiperSlide {
     border-radius: 48px;
 }
@@ -1426,6 +1503,8 @@ label {
 .magazineCardLarge {
     width: 100%;
     display: flex;
+    position: relative;
+    z-index: 2;
     flex-direction: row-reverse;
     overflow: hidden;
     padding: var(--Absolute-sizes-zero, 0px);
@@ -2373,12 +2452,31 @@ p {
         width: 100%;
         padding: 36px;
     }
+
     .magazineCardSmall {
         border-radius: 36px;
     }
+
     .magazineCardSmallGradient {
         border-radius: 36px;
     }
+
+    .featureCardYouTubeContainer {
+        width: 107px;
+        height: 107px;
+    }
+
+    .featureCardYouTube {
+        height: 370px;
+        border-radius: 36px;
+    }
+
+    .featureCardPicture {
+        height: 872px;
+        border-radius: 36px;
+
+    }
+
 }
 @media (max-width: 500px) {
     h1 {
@@ -2931,17 +3029,35 @@ p {
         padding: 12px 0 12px 0 ;
         gap: 12px;
     }
+
     .roundBlockImage {
         width: 96px;
         height: 96px
     }
+
     .employeeCardLarge {
         border-radius: 24px;
         flex-direction: column;
     }
+
     .magazineCardLargeImage {
         height: 312px;
         width: 100%;
         display: flex;
+    }
+
+    .featureCardYouTubeContainer {
+        width: 48px;
+        height: 48px;
+    }
+
+    .featureCardYouTube {
+        height: 180px;
+        border-radius: 24px;
+    }
+    .featureCardPicture {
+        height: 492px;
+        border-radius: 24px;
+
     }
 }

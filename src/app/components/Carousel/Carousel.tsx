@@ -11,14 +11,13 @@ export interface ICarouselProps {
 		children: ReactNode;
 		isPagination?: boolean;
 		swiperEffect: string;
-		isFolded?: boolean;
 		tabletSlides?: number;
 		desktopSlides?: number;
 		mobileSlides?: number;
 		spaceBetween? : number;
 		isActive? : boolean
 }
-export const Carousel = ({children, isPagination, isFolded, desktopSlides, tabletSlides, mobileSlides, isActive}: ICarouselProps) => {
+export const Carousel = ({children, isPagination, desktopSlides, tabletSlides, mobileSlides, isActive}: ICarouselProps) => {
 		const swiperRef = useRef(null);
 		const [activeIndex, setActiveIndex] = useState(0);
 		const [swiperSlides, setSwiperSlides] = useState(desktopSlides || 1);
@@ -56,7 +55,7 @@ export const Carousel = ({children, isPagination, isFolded, desktopSlides, table
 								setSwiperSlides(desktopSlides || 1);
 								setSpaceBetween(desktopSlides ? 36 / (desktopSlides - 1) : 36)
 						} else if (width <= 768 && width > 500) {
-								setSwiperSlides(tabletSlides || 2);
+								setSwiperSlides(tabletSlides || 1);
 								setSpaceBetween(tabletSlides ? 28 / (tabletSlides - 1): 28)
 						} else if (width <= 500) {
 								setSwiperSlides(mobileSlides || 1);
@@ -93,7 +92,7 @@ export const Carousel = ({children, isPagination, isFolded, desktopSlides, table
 													Children.map(children, (child, index) =>
 													<SwiperSlide
 														className={activeIndex === index && isActive ? 'activeSlide' : ''}
-														onClick={() => {setActiveIndex(index)}}
+														onClick={() => {isActive && setActiveIndex(index)}}
 													>
 															{child}
 													</SwiperSlide>)

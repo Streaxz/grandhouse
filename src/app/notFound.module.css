@@ -18,7 +18,8 @@
     flex-wrap: wrap;
     align-content: center;
     width: 100%;
-    max-width: 100%;}
+    max-width: 100%;
+}
 
 .lightGradient {
     background: linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%), linear-gradient(0deg, #BFE0F8 0%, #BFE0F8 100%), var(--Basics-Black, #000);
