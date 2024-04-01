@@ -7,14 +7,9 @@
     z-index: -3;
     max-width: 100%;
     border: none;
-    background-color: #000;
+    background-color: #62698C;
     margin-bottom: -80px;
 }
-.body {
-    background-color: #000 !important;
-
-}
-
 .pageWrapper {
     position: relative;
     z-index: 1;

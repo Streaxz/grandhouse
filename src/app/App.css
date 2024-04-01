@@ -945,9 +945,15 @@ p {
     z-index: 5;
     padding: 48px;
     border-radius: 48px;
-    border: 1px solid white;
+    gap: 36px;
 }
 
+.navigationBorderWhite {
+    border: 1px solid white;
+}
+.navigationBorderBlue {
+    border: 1px solid #00A3FF;
+}
 .navigationButton {
     display:flex;
     padding: 18px 24px 14px 24px;
@@ -1381,8 +1387,8 @@ label {
 .magazineEllipse {
     position: absolute;
     z-index: -1;
-    bottom: 0px;
-    width: 100%;
+    bottom: 0;
+    width: 50%;
     height: 1522px;
     border-radius: var(--Absolute-sizes-zero, 1522px);
     background: #2622D7;
@@ -1423,9 +1429,9 @@ label {
     flex-direction: row-reverse;
     overflow: hidden;
     padding: var(--Absolute-sizes-zero, 0px);
-    height: fit-content;
     align-items: flex-start;
     border-radius: 48px;
+    height: 624px;
 
     /* shadow standard */
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
@@ -1452,12 +1458,26 @@ label {
     padding: 48px;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 36px;
     flex: 1 0 0;
     align-self: stretch;
     background: var(--Basics-White, #FFF);
 }
 
+.magazineCardLargeUpper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    align-self: stretch;
+}
+
+.magazineCardLargeDescription {
+    color: #272B40;
+    width: 80%;
+
+}
 .labelSmall {
     display: flex;
     position: relative;
@@ -1491,7 +1511,6 @@ label {
     align-items: flex-start;
     flex: 1 0 0;
     border-radius: 48px;
-
     align-self: stretch;
 }
 
@@ -1513,6 +1532,7 @@ label {
     text-wrap: normal;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 48px;
     flex: 1 0 0;
     gap: 36px;
@@ -1527,8 +1547,7 @@ label {
 }
 
 .magazineCardP {
-    height: -webkit-fill-available;
-    width: 100%
+    width: 80%
 }
 
 .quote {
@@ -1935,6 +1954,7 @@ p {
     .navigationButton {
         padding: 14px 18px 12px 18px;
         border-radius: 18px;
+
     }
 
     .philosophyPhoto {
@@ -1982,7 +2002,9 @@ p {
     }
 
     .magazineCardLarge {
+        height: 560px;
         flex-direction: column;
+        border-radius: 36px;
     }
 
     .socialItem {
@@ -2351,6 +2373,12 @@ p {
         width: 100%;
         padding: 36px;
     }
+    .magazineCardSmall {
+        border-radius: 36px;
+    }
+    .magazineCardSmallGradient {
+        border-radius: 36px;
+    }
 }
 @media (max-width: 500px) {
     h1 {
@@ -2391,6 +2419,7 @@ p {
     .h3Shortcut {
         font-size: var(--font-size-mobile-h3-shortcuts);
         line-height: var(--font-size-mobile-h3-shortcuts-line-height);
+        width: 120px;
     }
 
     .projectDiscountText {
@@ -2527,7 +2556,8 @@ p {
     }
 
     .navigationButton {
-        padding: 8px 12px 6px 12px;
+        padding: 8px 0px 6px 0px;
+        width: 136px;
         border-radius: 12px;
     }
 
@@ -2634,6 +2664,7 @@ p {
     }
 
     .doubleItem {
+        flex-direction: column;
         gap: 24px;
     }
 
@@ -2692,9 +2723,6 @@ p {
         gap: 24px;
     }
 
-    .magazineEllipse {
-        visibility: hidden;
-    }
 
     .socials {
         gap: 12px;
@@ -2712,16 +2740,13 @@ p {
     }
 
     .magazineCardLarge {
-
+        flex-direction: column;
         border-radius: 24px;
+        height: 548px;
     }
 
     .magazineCardSmall {
         border-radius: 24px;
-    }
-
-    .magazineCardSmall {
-        height: 200px;
     }
 
     .magazineCardSmallContainer {
@@ -2735,7 +2760,7 @@ p {
     }
 
     .magazineCardP {
-        width: 100%
+        width: 80%
     }
 
     .footerCityImage {

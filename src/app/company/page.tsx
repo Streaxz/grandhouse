@@ -116,6 +116,8 @@ const CompanyPage = () => {
 										tabletSlides={4}
 										mobileSlides={2}
 										spaceBetween={12}
+										isActive={true
+										}
 									>
 											<RoundBlock
 												src={'/image.png'}

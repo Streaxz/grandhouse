@@ -16,8 +16,9 @@ export interface ICarouselProps {
 		desktopSlides?: number;
 		mobileSlides?: number;
 		spaceBetween? : number;
+		isActive? : boolean
 }
-export const Carousel = ({children, isPagination, isFolded, desktopSlides, tabletSlides, mobileSlides,}: ICarouselProps) => {
+export const Carousel = ({children, isPagination, isFolded, desktopSlides, tabletSlides, mobileSlides, isActive}: ICarouselProps) => {
 		const swiperRef = useRef(null);
 		const [activeIndex, setActiveIndex] = useState(0);
 		const [swiperSlides, setSwiperSlides] = useState(desktopSlides || 1);
@@ -91,7 +92,7 @@ export const Carousel = ({children, isPagination, isFolded, desktopSlides, table
 											{
 													Children.map(children, (child, index) =>
 													<SwiperSlide
-														className={activeIndex === index && desktopSlides ? 'activeSlide' : ''}
+														className={activeIndex === index && isActive ? 'activeSlide' : ''}
 														onClick={() => {setActiveIndex(index)}}
 													>
 															{child}
