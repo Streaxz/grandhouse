@@ -105,7 +105,6 @@ const OffersPage = () => {
 												descriptionText={'Принимая во внимание показатели успешности, выбранный нами инновационный путь требует определения и уточнения экономической целесообразности принимаемых решений.'}
 											/>
 											<CarouselAnimated
-												swiperEffect={'slider'}
 												isPagination={true}
 												>
 													<FeatureCardPictureAnimated
