@@ -7,6 +7,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 import ReactModal from "react-modal";
 import {Button} from "@/app/components/Button/Button";
+import Image from "next/image";
 
 const customStyles = {
     content: {
@@ -99,8 +100,8 @@ export const Catalog = () => {
         <>
             <div className='catalogContainer'>
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "36px"}}>
-                    <img src={`/logo_catalog.svg`}
-                         className={"logoCatalog"}></img>
+                    <Image src={`/logo_catalog.svg`} alt={'logo'}
+                         className={"logoCatalog"}></Image>
                     <p>Вводка о каталоге компании</p>
                 </div>
             </div>
@@ -158,7 +159,7 @@ export const Catalog = () => {
             >
                 <div className={'modalCloseButton'}>
                     <button onClick={closeModal}>
-                        <img src={'/closeIcon.svg'}/>
+                        <Image src={'/closeIcon.svg'} alt={'close'}/>
                     </button>
                 </div>
                 <div className={'flex flex-col justify-center text-center'}>
@@ -197,13 +198,25 @@ export const Catalog = () => {
                             <div className={'modalSocial'}>
                                 <p style={{color: "rgba(39, 43, 64, 1)", paddingRight: "2vw"}}>Чаты: </p>
                                 <button>
-                                    <img src={"/emojiWhatsApp.png"} style={{width: "4vw", paddingRight: "1vw"}}></img>
+                                    <Image
+                                      src={"/emojiWhatsApp.png"}
+                                      style={{width: "4vw", paddingRight: "1vw"}}
+                                      alt={'WhatsApp'}
+                                    />
                                 </button>
                                 <button>
-                                    <img src={"/emojiVk.png"} style={{width: "4vw", paddingRight: "1vw"}}></img>
+                                    <Image
+                                      src={"/emojiVk.png"}
+                                      style={{width: "4vw", paddingRight: "1vw"}}
+                                      alt={'VK'}
+                                    />
                                 </button>
                                 <button>
-                                    <img src={'/emojiTelegram.png'} style={{width: "4vw", paddingRight: "1vw"}}></img>
+                                    <Image
+                                      src={'/emojiTelegram.png'}
+                                      style={{width: "4vw", paddingRight: "1vw"}}
+                                      alt={'Telegram'}
+                                    />
                                 </button>
                             </div>
                         </div>

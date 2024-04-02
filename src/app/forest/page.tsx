@@ -131,12 +131,10 @@ const PhilosophyPage = () => {
 									>
 											<FeatureCardPicture
 												descriptionText={"Подпись"}
-												isSwiper={true}
 												src={'/forest.jpeg'}
 											/>
 											<FeatureCardPicture
 												descriptionText={"Нажмите для просмотра"}
-												isSwiper={true}
 												src={'/forest.jpeg'}
 											/>
 									</Carousel>
@@ -165,7 +163,9 @@ const PhilosophyPage = () => {
 										/>
 									<Carousel
 										swiperEffect={'slide'}
-										isFolded={true}
+										desktopSlides={2}
+										tabletSlides={2}
+										mobileSlides={1}
 									>
 											<ReviewCardSmall/>
 											<ReviewCardSmall/>
