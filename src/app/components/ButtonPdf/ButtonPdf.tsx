@@ -8,7 +8,7 @@ export const ButtonPdf = ({source}: IButtonPdfProps) => {
 
 	return (
 		<a target={'_blank'} className={`pdfButton`}  href={source} style={{textDecoration: "none"}}>
-				<Image src={'/emojiPDF.png'} className={'emojiPdf'} alt={'pdfFile'}/>
+				<img src={'/emojiPDF.png'} className={'emojiPdf'} alt={'pdfFile'}/>
 				<h3 className={'projectButtonText'}> Скачать PDF</h3>
 		</a>
 	)

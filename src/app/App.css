@@ -19,7 +19,7 @@
     --Absolute-sizes-zero: 0px;
     --Absolute-sizes-absolute-x0_5: 6px;
     --Special-sizes-shortcutsIcons_width: 120px;
-    --box-border-radius: 4vw;
+    --box-border-radius: 48px;
 
     --Variable-sizes-baseSize:    6px;
     --Variable-sizes-baseSize-x2: 12px;
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 400;
 }
 
-p {
+p, label {
     margin: 0;
     font-weight: 300;
 }
@@ -866,13 +866,6 @@ p {
     width: 48%;
 }
 
-
-.labelContainer {
-    display: flex;
-    text-align: center;
-    border-radius: 4vw;
-}
-
 .gradientBackground {
     background-image: linear-gradient(95.14deg, #CC00FF 13.6%, #00D1FF 58.9%, #00A3FF 93.49%);
 }
@@ -1264,39 +1257,72 @@ p {
 .swiperSlide {
     border-radius: 48px;
 }
-.modalSocial {
-    color: rgba(39, 43, 64, 1);
-    font-size: 1.5vw;
-    padding-bottom: 1.5vw;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
+
+.inputP {
+    color: #272B40;
+    text-align: right;
+    text-wrap: none;
+    width: 250px;
 }
+
+.inputButton {
+    color: #272B40;
+    text-align: right;
+    text-wrap: none;
+    width: 150px;
+}
+.modalButton {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 48px;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 1152px;
+    width: 100%;
+    row-gap: 36px;
+}
+.modalSocialIcon {
+    width: 72px;
+    height: 72px;
+}
+
+.modalSocialIconContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 264px;
+    gap: 24px;
+}
+.modalSocial {
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    gap: 24px;
+}
+
 .modalEllipse {
     z-index: -1000;
     position: absolute; /* Position the gradient absolutely over the photo */
-    top: 55%;
-    left: 10%;
-    width: 45vw;
-    height: 45vw;
-    border-radius: 48px;
-    background-image: conic-gradient(
-            from 180deg at 50% 50%,
-            #8CE3FF 0deg,
-            #00B3FF 116.25deg,
-            #7EE0FF 211.88deg,
-            #FFFFFF 286.87deg,
-            #49B4E1 360deg
-    );
-    filter: blur(40px); /* Adjust the blur radius as needed */
+    left: 61px;
+    bottom: -723px;
+    width: 1086px;
+    height: 1086px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg at 50% 50%, #8CE3FF 0deg, #00B2FF 116.24999642372131deg, #7EE0FF 211.87500715255737deg, #FFF 286.875deg, #49B4E1 360deg);
+    filter: blur(125px);
 }
 
 .modalCloseButton {
-    z-index: 10002;
+    z-index: 1;
     position: absolute;
-    top: 4%;
-    left: 94%;
-    width: 2vw;
+    top: 25px;
+    right: 34px;
+
+}
+
+.closeIcon {
+    width: 48px;
+    height: 48px;
 }
 
 .modalLogo {
@@ -1312,8 +1338,9 @@ p {
 
 .modalInputs {
     display: flex;
+    width: 100%;
     flex-direction: column;
-    color: rgba(39, 43, 64, 1);
+    gap: 36px;
 }
 
 .modalDescription {
@@ -1325,28 +1352,31 @@ p {
 }
 
 .modalFooter {
-    padding-top: 0.5vw;
-
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 input {
-    font-size: 2vw;
     width: 100%;
-    z-index:20000;
-    border-radius: 1vw;
+    padding: 20px 24px 16px 24px;
     background-color: white;
-    border: 0.3vw solid rgba(227, 232, 241, 1);
+    border-radius: 12px;
+    font-size: 48px;
+    box-sizing: border-box;
+    border: 4px solid #E3E8F1;
+
 }
 
 input::placeholder {
-
-    padding-left: 2vw;
+    color: #62698C;
 }
 
 .inputGroup {
-    padding-bottom: 1.5vw;
-    white-space: nowrap;
     display: flex;
+    padding: 0;
     align-items: center;
+    gap: 24px;
+    align-self: stretch;
 }
 
 label {
@@ -1430,6 +1460,8 @@ label {
 }
 .roundedFeaturesContainer {
     display: flex;
+    position: relative;
+    z-index: 1;
     width:  100%;
     padding:  0;
     justify-content: space-evenly;
@@ -1946,6 +1978,23 @@ p {
 .ideasHeader {
     display: flex;
 }
+
+.modalContainer {
+    z-index: 5;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    padding: 48px;
+    background: #FFF;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 48px;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
+
+}
 @media (min-width: 768px) {
     h1 {
         font-size: var(--font-size-desktop-h1);
@@ -2021,6 +2070,11 @@ p {
     }
 
     p {
+        font-size: var(--font-size-tablet-p);
+        line-height: var(--font-size-tablet-p-line-height);
+    }
+
+    label {
         font-size: var(--font-size-tablet-p);
         line-height: var(--font-size-tablet-p-line-height);
     }
@@ -2255,23 +2309,29 @@ p {
         height: fit-content;
         border-radius: 18px;
     }
+
     .amountFrom {
         line-height: 9px;
     }
+
     .amountNumber {
         line-height: 25px;
     }
+
     .amountMln {
         line-height: 8px;
     }
+
     .projectHeaderContainer {
         border-radius: 18px;
         padding: 7px 9px 5px 9px;
     }
+
     .projectSeriesContainer {
         border-radius: 18px;
         padding: 3px 9px 2px 9px;
     }
+
     .projectDiscount {
         border-radius: 18px;
         padding: 3px 9px 2px 9px;
@@ -2291,6 +2351,7 @@ p {
         border: 4px solid #E3E8F1;
         padding: 13px 36px 11px 36px;
     }
+
     .magazineCardP {
         width: 80%;
     }
@@ -2477,6 +2538,66 @@ p {
 
     }
 
+    .modalEllipse {
+        left: -227px;
+        bottom: -723px;
+    }
+
+    .modalContainer {
+        padding: 36px;
+        border-radius: 36px;
+        gap: 28px;
+    }
+
+    .inputGroup {
+        gap: 18px;
+    }
+
+    .modalButton {
+        row-gap: 28px;
+        padding-left: 0;
+    }
+
+    input {
+        padding: 12px 16px 10px 16px;
+        border-radius: 9px;
+    }
+
+    input::placeholder {
+        font-size: 36px;
+    }
+    .inputP {
+        width: 120px;
+    }
+
+    .inputButton {
+        width: 100px;
+    }
+
+    .modalSocialIcon {
+        width: 54px;
+        height: 54px;
+    }
+
+    .modalSocialIconContainer {
+        width: 198px;
+    }
+
+    .modalFooter {
+        flex-direction: column;
+        gap: 36px;
+        justify-content: center;
+    }
+
+    .modalCloseButton {
+        top: 27px;
+        right: 27px;
+    }
+
+    .closeIcon {
+        width: 18px;
+        height: 18px;
+    }
 }
 @media (max-width: 500px) {
     h1 {
@@ -2510,6 +2631,11 @@ p {
     }
 
     p {
+        font-size: var(--font-size-mobile-p);
+        line-height: var(--font-size-mobile-p-line-height);
+    }
+
+    label {
         font-size: var(--font-size-mobile-p);
         line-height: var(--font-size-mobile-p-line-height);
     }
@@ -3055,9 +3181,89 @@ p {
         height: 180px;
         border-radius: 24px;
     }
+
     .featureCardPicture {
         height: 492px;
         border-radius: 24px;
 
+    }
+
+    .modalEllipse {
+        left: -407px;
+        bottom: -723px;
+    }
+
+    .modalContainer {
+        padding: 24px;
+        border-radius: 24px;
+        gap: 18px;
+    }
+
+    .inputGroup {
+        gap: 12px;
+    }
+
+    .modalButton {
+        row-gap: 18px;
+        padding-left: 0;
+    }
+
+    input {
+        padding: 0 16px 10px 16px;
+        border-radius: 9px;
+    }
+
+    input::placeholder {
+        font-size: 22px;
+    }
+    .inputP {
+        width: auto;
+    }
+
+    .inputButton {
+        width: 100px;
+    }
+
+    .modalSocialIcon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .modalSocialIconContainer {
+        width: 126px;
+        gap: 12px;
+    }
+
+    .inputGroup {
+        display: flex;
+        align-items: baseline;
+        flex-direction: column;
+    }
+
+    .modalFooter {
+        flex-direction: column;
+        gap: 24px;
+        justify-content: center;
+    }
+
+    .inputButton {
+        width: auto;
+    }
+
+    .modalSocial {
+        flex-direction: column;
+        gap: 12px;
+        align-items: baseline;
+    }
+
+    .modalCloseButton {
+        top: 18px;
+        right: 18px;
+
+    }
+
+    .closeIcon {
+        width: 12px;
+        height: 12px;
     }
 }

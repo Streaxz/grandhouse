@@ -8,6 +8,7 @@ import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 import ReactModal from "react-modal";
 import {Button} from "@/app/components/Button/Button";
 import Image from "next/image";
+import {Modal} from "@/app/components/Modal/Modal";
 
 const customStyles = {
     content: {
@@ -25,7 +26,9 @@ const customStyles = {
         padding: "2vw"
 
     },
-    overlay: {zIndex: 1000}
+    overlay: {
+        position: 'absolute',
+        zIndex: 1000}
 };
 
 export const Catalog = () => {
@@ -100,8 +103,8 @@ export const Catalog = () => {
         <>
             <div className='catalogContainer'>
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "36px"}}>
-                    <Image src={`/logo_catalog.svg`} alt={'logo'}
-                         className={"logoCatalog"}></Image>
+                    <img src={`/logo_catalog.svg`} alt={'logo'}
+                         className={"logoCatalog"}></img>
                     <p>Вводка о каталоге компании</p>
                 </div>
             </div>
@@ -154,85 +157,30 @@ export const Catalog = () => {
             <ReactModal
                 isOpen={isOpen}
                 onRequestClose={closeModal}
-                style={customStyles}
+                style={{
+                    content: {
+                        position: 'fixed',
+                        top: '50%',
+                        left: '50%',
+                        right: 'auto',
+                        bottom: 'auto',
+                        width: "60vw",
+                        height: "36vw",
+                        borderRadius: "2vw",
+                        marginRight: '-50%',
+                        transform: 'translate(-50%, -50%)',
+                        overflow: 'hidden',
+                        border: "none",
+                        padding: "2vw"
+                }}}
                 contentLabel="Обратная связь"
             >
                 <div className={'modalCloseButton'}>
                     <button onClick={closeModal}>
-                        <Image src={'/closeIcon.svg'} alt={'close'}/>
+                        <img src={'/closeIcon.svg'} alt={'close'}/>
                     </button>
                 </div>
-                <div className={'flex flex-col justify-center text-center'}>
-                    <div className={'modalLogo'}/>
-                    <p className='modalLogoText '>
-                        👋 Мы на связи!
-                    </p>
-                    <form className={'modalInputs'} onSubmit={handleSubmit}>
-                        <div className={'inputGroup'}>
-                            <label htmlFor="nameInput">Ваше имя:</label>
-                            <input
-                                id="nameInput"
-                                type="text"
-                                placeholder="Иванов Иван"
-                            />
-                        </div>
-                        <div className={'inputGroup'}>
-                            <label htmlFor="phoneInput">Телефон:</label>
-                            <input
-                                id="phoneInput"
-                                type="tel"
-                                placeholder="+7(999)999-99-99"
-                            />
-                        </div>
-                        <div className={'inputGroup justify-between'}>
-                            <div className={'inputGroup'}>
-                                <label htmlFor="submitButton">Перезвоним:</label>
-                                <button
-                                    id={'submitButton'}
-                                    className={'submitButton'} type="submit">
-                                    <p className={'submitButtonText'}>
-                                        Заказать звонок
-                                    </p>
-                                </button>
-                            </div>
-                            <div className={'modalSocial'}>
-                                <p style={{color: "rgba(39, 43, 64, 1)", paddingRight: "2vw"}}>Чаты: </p>
-                                <button>
-                                    <Image
-                                      src={"/emojiWhatsApp.png"}
-                                      style={{width: "4vw", paddingRight: "1vw"}}
-                                      alt={'WhatsApp'}
-                                    />
-                                </button>
-                                <button>
-                                    <Image
-                                      src={"/emojiVk.png"}
-                                      style={{width: "4vw", paddingRight: "1vw"}}
-                                      alt={'VK'}
-                                    />
-                                </button>
-                                <button>
-                                    <Image
-                                      src={'/emojiTelegram.png'}
-                                      style={{width: "4vw", paddingRight: "1vw"}}
-                                      alt={'Telegram'}
-                                    />
-                                </button>
-                            </div>
-                        </div>
-
-                    </form>
-                    <p className={'modalDescription'}>
-                        Нажимая кнопку «Заказать звонок», вы подтверждаете свое согласие на обработку персональных
-                        данных
-                    </p>
-                    <div className={'modalFooter'}>
-                        <span style={{fontSize: "2vw", color: "rgba(39, 43, 64, 1)"}}>8 800 500-35-05</span>
-                        <span style={{fontSize: "2vw", color: "rgba(39, 43, 64, 1)", paddingLeft: "3vw"}}>dom@spk-gh.ru</span>
-                        <p style={{fontSize: "0.8vw", color: "rgba(39, 43, 64, 1)", paddingTop: "1vw"}}>Будем рады увидиться с вами вживую! Наши офисы в Москве, Нижнем Новгороде и Кирове работают с понедельника по пятницу с 9 утра до 19 вечера. Адреса</p>
-                    </div>
-                    <div className={'modalEllipse'}/>
-                </div>
+                <Modal/>
             </ReactModal>
         </>
     )

@@ -4,7 +4,7 @@ export const Navigation = () => {
     return (
        <div className='navigationContainer navigationBorderWhite'>
            <button className='navigationButton' style={{ position: "relative" }}>
-               <Image
+               <img
                  src={`/PhilosophyHead.png`}
                  className={'philosophyPhoto'}
                  alt={'philosophyPhoto'}
