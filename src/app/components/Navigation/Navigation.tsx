@@ -1,5 +1,4 @@
 import "../../App.css"
-import Image from "next/image";
 export const Navigation = () => {
     return (
        <div className='navigationContainer navigationBorderWhite'>

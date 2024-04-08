@@ -2,17 +2,8 @@
 import styles from './company.module.css'
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import React from "react";
-import {AccentCard} from "@/app/components/AccentCard/AccentCard";
-import {Quote} from "@/app/components/Quote/Quote";
 import {Features} from "@/app/components/Features/Features";
-import {RectangleFeature} from "@/app/components/RectangleFeature/RectangleFeature";
-import {Carousel} from "@/app/components/Carousel/Carousel";
-import {FeatureCardPicture} from "@/app/components/FeatureCardPicture/FeatureCardPicture";
-import {TextContent} from "@/app/components/TextContent/TextContent";
-import {OfferPdf} from "@/app/components/OfferPdf/OfferPdf";
-import {Ideas} from "@/app/components/Ideas/Ideas";
 import {Button} from "@/app/components/Button/Button";
-import {ReviewCardSmall} from "@/app/components/ReviewCardSmall/ReviewCardSmall";
 import {Modal} from "@/app/components/Modal/Modal";
 import {RoundFeaturesItem} from "@/app/components/RoundFeaturesItem/RoundFeaturesItem";
 

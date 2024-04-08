@@ -7,29 +7,8 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 import ReactModal from "react-modal";
 import {Button} from "@/app/components/Button/Button";
-import Image from "next/image";
 import {Modal} from "@/app/components/Modal/Modal";
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        width: "60vw",
-        height: "36vw",
-        borderRadius: "2vw",
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        overflow: 'hidden',
-        border: "none",
-        padding: "2vw"
-
-    },
-    overlay: {
-        position: 'absolute',
-        zIndex: 1000}
-};
 
 export const Catalog = () => {
     const swiperRef = useRef(null);
