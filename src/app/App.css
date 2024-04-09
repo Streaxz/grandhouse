@@ -393,7 +393,7 @@ p, label {
     justify-content: center;
     position: relative;
     z-index: 1;
-    padding: 48px;
+    padding: 24px 48px;
     flex-direction: column;
     align-items: center;
     align-self: stretch;
@@ -642,7 +642,7 @@ p, label {
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap: 36px 36px;
+    gap: 36px;
     align-self: stretch;
     flex-wrap: wrap;
 }
@@ -1221,7 +1221,6 @@ p, label {
 .projectButtonText {
     color: var(--Main-DarkBlue, #272B40);
     text-align: center;
-    leading-trim: both;
 }
 
 .submitButton {
@@ -1709,13 +1708,11 @@ label {
 .quoteText {
     color: var(--Main-DarkBlue, #272B40);
     text-align: center;
-    leading-trim: both;
 }
 .quoteAuthorText {
     color: var(--Basics-White, #FFF);
     text-align: center;
     width: 200px;
-    leading-trim: both;
 }
 
 .sberbank {
@@ -1995,6 +1992,7 @@ p {
     background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
 
 }
+
 @media (min-width: 768px) {
     h1 {
         font-size: var(--font-size-desktop-h1);
@@ -2597,6 +2595,10 @@ p {
     .closeIcon {
         width: 18px;
         height: 18px;
+    }
+
+    .reviewCard {
+        border-radius: 36px;
     }
 }
 @media (max-width: 500px) {
@@ -3265,5 +3267,9 @@ p {
     .closeIcon {
         width: 12px;
         height: 12px;
+    }
+
+    .reviewCard {
+        border-radius: 24px;
     }
 }
