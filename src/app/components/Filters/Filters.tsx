@@ -51,7 +51,6 @@ export const Filters = () => {
 				setAge(event.target.value as string);
 		};
 
-
 		return (
 			<div className={'filters'}>
 					<div className={'buttonsContainer'}>
