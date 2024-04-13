@@ -1,0 +1,181 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    height:auto;
+    z-index: -3;
+    max-width: 100%;
+    border: none;
+}
+
+.pageWrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 48px 0 96px 0;
+    background: linear-gradient(180deg, #41BDE9 0%, #BFE0F8 100%), linear-gradient(0deg, #BFE0F8 0%, #BFE0F8 100%), var(--Basics-Black, #000);
+}
+
+.pageContainer {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    width: 86%;
+    max-width: 1248px;
+}
+
+.backgroundContainer {
+    position: relative;
+    display: flex;
+    padding: 48px 0 96px ;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 48px;
+    width: 86%;
+    max-width: 1248px;
+
+}
+
+.mortgageBackgroundContainer {
+    position: relative;
+    display: flex;
+    padding: 48px 0 96px;
+    flex-direction: column;
+    gap: 48px;
+
+
+}
+
+.infographicsContainer {
+    padding-left: 48px;
+}
+
+.imageGradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 85.37%, rgba(0, 0, 0, 0.50) 100%);
+    height: 960px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+
+.darkBackground {
+    background: linear-gradient(180deg, #1B0053 0%, #000 100%);
+}
+
+.yellowBackground {
+    background: linear-gradient(0deg, #FFDAAE 0%, #FFDAAE 100%), rgba(0, 0, 0, 0.25);
+}
+
+.diagonalDivide {
+    width: 100%;
+    background: linear-gradient(to bottom right, #FFF 50%, #E3E8F1 50%);
+}
+
+.lighGrayBackground {
+    background: #E3E8F1;
+}
+.greyBackground {
+    background: linear-gradient(180deg, #E3E8F1 0%, #BAE6FF 100%), rgba(0, 0, 0, 0.25);
+}
+
+.lightBackground {
+    background: #D4F2FF;
+}
+.background {
+    width: 100%;
+    height: 960px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.backgroundMortgage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.darkEllipse {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: 2573px;
+
+    border-radius: 50%;
+    background: linear-gradient(180deg, #1B0053 0%, #000 100%);
+    filter: blur(150px);
+}
+
+.packagesEllipse {
+    position: absolute;
+    width: 100%;
+    height: 1580.421px;
+    top: 50%;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg at 50% 50%, #BEEFFF 0deg, #00B2FF 116.24999642372131deg, #00C2FF 211.87500715255737deg, #001AFF 286.875deg, #A300A7 360deg);
+    filter: blur(250px);
+}
+
+@media (max-width: 768px) and (min-width: 500px) {
+    .pageWrapper{
+        padding: 36px 0 48px 0;
+    }
+    .backgroundContainer {
+        padding: 36px 0 48px 0;
+    }
+    .pageContainer {
+        gap: 36px;
+    }
+    .background {
+        height: 640px;
+    }
+    .imageGradient {
+        height: 640px;
+    }
+
+    .infographicsContainer {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .pageWrapper{
+        padding: 24px 0 36px 0;
+    }
+
+    .backgroundContainer {
+        padding: 24px 0 36px 0;
+    }
+
+    .pageContainer {
+        gap: 24px;
+    }
+
+    .background {
+        height: 320px;
+    }
+
+    .imageGradient {
+        height: 320px;
+    }
+
+    .infographicsContainer {
+        padding-left: 0;
+    }
+}

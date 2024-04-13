@@ -1,5 +1,5 @@
 "use client";
-import styles from './project.module.css'
+import styles from './archiveProject.module.css'
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import React from "react";
 import {Quote} from "@/app/components/Quote/Quote";
@@ -25,7 +25,7 @@ import {MortgageCalculator} from "@/app/components/MortgageCalculator/MortgageCa
 import {PriceOffer} from "@/app/components/PriceOffer/PriceOffer";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 
-const ProjectPage = () => {
+const ArchiveProjectPage = () => {
 
 		return (
 			<main className={styles.page}>
@@ -125,35 +125,6 @@ const ProjectPage = () => {
 									/>
 							</div>
 					</div>
-					<div className={`${styles.pageWrapper} ${styles.yellowBackground}`}
-							 style={{zIndex: 10, position: "relative"}}>
-							<div className={styles.pageContainer}>
-									<TextBlock
-										rectangleColor={"#CC00FF"}
-										mainText={"Интерьер"}
-										descriptionText={'Подзаголовок'}
-										textColor={"#272B40"}
-									/>
-									<Carousel
-										isPagination={true}
-										swiperEffect={'slide'}
-									>
-											<FeatureCardPicture
-												src={'/interior.jpeg'}
-											/>
-											<FeatureCardPicture
-												src={'/interior.jpeg'}
-											/>
-									</Carousel>
-									<TextColumn
-										color={"#272B40"}
-										firstText={"«Грандхаус Лето» — первый проект нашей новой линейки, объединивший в себе, пожалуй, все ингредиенты идеального дома, от просторной террасы и второго света до свободной планировки и практичного конструктива."}
-									/>
-									<Ideas
-										text={'Заинтересовал проект?'}
-									/>
-							</div>
-					</div>
 					<div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
 							<div className={styles.pageContainer}>
 									<TextBlock
@@ -186,98 +157,6 @@ const ProjectPage = () => {
 									}
 									/>
 									<div className={styles.darkEllipse}></div>
-							</div>
-					</div>
-					<div className={`${styles.pageWrapper} ${styles.diagonalDivide}`}>
-							<div className={styles.pageContainer}>
-									<TextBlock
-										rectangleColor={"#CC00FF"}
-										mainText={"Наружняя отделка"}
-										descriptionText={'Подзаголовок'}
-										textColor={"#272B40"}
-									/>
-									<Features>
-											<RectangleFeature
-												textColor={'#272B40'}
-												src={'/image.png'}
-												headerText={"Специальный"}
-												descriptionText={'Основной текст'}
-											/>
-											<RectangleFeature
-												textColor={'#272B40'}
-												src={'/image.png'}
-												headerText={"Специальный"}
-												descriptionText={'Основной текст'}
-											/>
-											<RectangleFeature
-												textColor={'#272B40'}
-												src={'/image.png'}
-												headerText={"Специальный"}
-												descriptionText={'Основной текст'}
-											/>
-											<RectangleFeature
-												textColor={'#272B40'}
-												src={'/image.png'}
-												headerText={"Специальный"}
-												descriptionText={'Основной текст'}
-											/>
-									</Features>
-							</div>
-					</div>
-					<div className={`${styles.pageWrapper} ${styles.greyBackground}`}>
-							<div className={styles.pageContainer}>
-									<TextBlock
-										rectangleColor={"#CC00FF"}
-										textColor={"#272B40"}
-										mainText={"Конструктивные решения"}
-										descriptionText={"подзаголовок"}
-									/>
-									<Carousel
-										isPagination={true}
-										swiperEffect={'slide'}
-									>
-											<FeatureCardPicture
-												src={'/sideHouse.png'}
-												contain
-											/>
-											<FeatureCardPicture
-												src={'/sideHouse.png'}
-												contain
-											/>
-									</Carousel>
-									<div className={'doubleItem'}>
-											<div className={'accentText'}>
-													<h3>Индивидуальное проектирование</h3>
-													<p>Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей
-															Западной России.Портфолио Грандхауса включает дома и объекты различной сложности,
-															построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной
-															сложности, построенные по всей Западной</p>
-											</div>
-											<div className={'accentText'}>
-													<h3>Индивидуальное проектирование</h3>
-													<p>Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей
-															Западной России.Портфолио Грандхауса включает дома и объекты различной сложности,
-															построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной
-															сложности, построенные по всей Западной</p>
-											</div>
-									</div>
-									<div className={'doubleItem'}>
-											<div className={'accentText'}>
-													<h3>Индивидуальное проектирование</h3>
-													<p>Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей
-															Западной России.Портфолио Грандхауса включает дома и объекты различной сложности,
-															построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной
-															сложности, построенные по всей Западной</p>
-											</div>
-											<div className={'accentText'}>
-													<h3>Индивидуальное проектирование</h3>
-													<p>Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей
-															Западной России.Портфолио Грандхауса включает дома и объекты различной сложности,
-															построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной
-															сложности, построенные по всей Западной</p>
-											</div>
-									</div>
-									<InfoTable/>
 							</div>
 					</div>
 					<div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
@@ -425,4 +304,4 @@ const ProjectPage = () => {
 		)
 }
 
-export default ProjectPage;
+export default ArchiveProjectPage;

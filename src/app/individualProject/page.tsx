@@ -1,5 +1,5 @@
 "use client";
-import styles from './project.module.css'
+import styles from './individualProject.module.css'
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import React from "react";
 import {Quote} from "@/app/components/Quote/Quote";
@@ -25,7 +25,7 @@ import {MortgageCalculator} from "@/app/components/MortgageCalculator/MortgageCa
 import {PriceOffer} from "@/app/components/PriceOffer/PriceOffer";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 
-const ProjectPage = () => {
+const IndividualProjectPage = () => {
 
 		return (
 			<main className={styles.page}>
@@ -122,35 +122,6 @@ const ProjectPage = () => {
 										buttonSrc={"/photoButton.png"}
 										buttonText={"Обсудим ваши идеи?"}
 										descriptionText={"Наши менеджеры всегда на связи - свяжитесь с нами и мы предложим решения конкретно под ваши задачи"}
-									/>
-							</div>
-					</div>
-					<div className={`${styles.pageWrapper} ${styles.yellowBackground}`}
-							 style={{zIndex: 10, position: "relative"}}>
-							<div className={styles.pageContainer}>
-									<TextBlock
-										rectangleColor={"#CC00FF"}
-										mainText={"Интерьер"}
-										descriptionText={'Подзаголовок'}
-										textColor={"#272B40"}
-									/>
-									<Carousel
-										isPagination={true}
-										swiperEffect={'slide'}
-									>
-											<FeatureCardPicture
-												src={'/interior.jpeg'}
-											/>
-											<FeatureCardPicture
-												src={'/interior.jpeg'}
-											/>
-									</Carousel>
-									<TextColumn
-										color={"#272B40"}
-										firstText={"«Грандхаус Лето» — первый проект нашей новой линейки, объединивший в себе, пожалуй, все ингредиенты идеального дома, от просторной террасы и второго света до свободной планировки и практичного конструктива."}
-									/>
-									<Ideas
-										text={'Заинтересовал проект?'}
 									/>
 							</div>
 					</div>
@@ -425,4 +396,4 @@ const ProjectPage = () => {
 		)
 }
 
-export default ProjectPage;
+export default IndividualProjectPage;
