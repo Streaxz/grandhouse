@@ -76,10 +76,10 @@ const CatalogPage = () => {
 										text={'У нас и другие проекты'}
 									/>
 							</div>
-							<div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
-									<div className={styles.pageContainer}>
-											<MagazineCardLarge/>
-									</div>
+					</div>
+					<div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
+							<div className={styles.pageContainer}>
+									<MagazineCardLarge/>
 							</div>
 					</div>
 					<div className={`${styles.pageWrapper}`}>
@@ -106,11 +106,11 @@ const CatalogPage = () => {
 														descriptionText={"Нажмите для просмотра"}
 													/>
 									</div>
+									<Button
+										onClick={() => {}}
+										buttonText={"Читать все отзывы"}/>
+									<div className={styles.ellipse}></div>
 							</div>
-							<Button
-								onClick={() => {}}
-								buttonText={"Читать все отзывы"}/>
-							<div className={styles.ellipse}></div>
 					</div>
 			</main>
 		)
