@@ -1,8 +1,8 @@
 
 export interface IRoundFeaturesItemProps {
 		src: string;
-		headerText: string;
-		descriptionText: string;
+		headerText?: string;
+		descriptionText?: string;
 }
 export const RoundFeaturesItem = ({src, headerText, descriptionText}: IRoundFeaturesItemProps) => {
 
@@ -16,14 +16,15 @@ export const RoundFeaturesItem = ({src, headerText, descriptionText}: IRoundFeat
 
 					}}></div>
 
-					<h3 style={{
+					{headerText && (<h3 style={{
 							textAlign: "center",
 							fontWeight: 200
-					}}>{headerText}</h3>
-					<h5 style={{
+					}}>{headerText}</h3>)
+					}
+					{descriptionText && (<h5 style={{
 							textAlign: "center",
 							fontWeight: 200,
-					}}>{descriptionText}</h5>
+					}}>{descriptionText}</h5>)}
 			</div>
 		)
 }

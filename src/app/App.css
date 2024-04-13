@@ -16,7 +16,7 @@
 
     --canvas: 1440px;
 
-    --Absolute-sizes-zero: 0px;
+    --Absolute-sizes-zero: 0;
     --Absolute-sizes-absolute-x0_5: 6px;
     --Special-sizes-shortcutsIcons_width: 120px;
     --box-border-radius: 48px;
@@ -137,7 +137,7 @@ p, label {
     position: relative;
     display: flex;
     z-index: 2;
-    padding: 48px 0px 96px 0px;
+    padding: 48px 0 96px 0;
     flex-direction: column;
     align-items: center;
     justify-items: center;
@@ -189,7 +189,7 @@ p, label {
 }
 .footerContacts {
     display: flex;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     justify-content: center;
     align-items: flex-start;
     gap:  48px;
@@ -206,7 +206,7 @@ p, label {
 .footerCity {
     display: flex;
     width:  240px;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     flex-direction: column;
     align-items: center;
     gap:  18px;
@@ -284,11 +284,11 @@ p, label {
     gap: 24px var(--Variable-sizes-baseSize-x4, 24px);
     flex-wrap: wrap;
 
-    border-radius: 0px 0px 48px 48px;
+    border-radius: 0 0 48px 48px;
     background: #000;
 
     /* shadow inner top */
-    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12) inset;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.12) inset;
 }
 
 .iconContainer {
@@ -341,7 +341,6 @@ p, label {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    position: relative;
     height: auto;
     flex-wrap: wrap;
     filter: saturate(120%) grayscale(0.3);
@@ -383,11 +382,12 @@ p, label {
     max-width: 1248px;
     justify-content: center;
     align-items: center;
-    padding: 48px 0 48px 0px;
+    padding: 48px 0 48px 0;
     gap: 48px;
     align-self: stretch;
     filter: grayscale(0.2);
 }
+
 .textContainer {
     display: flex;
     justify-content: center;
@@ -400,6 +400,17 @@ p, label {
     gap: 36px;
 }
 
+.projectMainHeader {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding: 24px 48px;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    gap: 24px;
+}
 
 .projectCartContainer {
     display: flex;
@@ -421,7 +432,7 @@ p, label {
     display: flex;
     width: 18px;
     height: 18px;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     align-items: flex-start;
 }
 
@@ -434,7 +445,7 @@ p, label {
     border-radius: var(--Variable-sizes-baseSize-x4, 24px);
 
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
 
 .projectCartContent {
@@ -451,23 +462,23 @@ p, label {
     display: flex;
     height: fit-content;
     overflow: scroll;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     flex-direction: column;
     align-items: flex-start;
     border-radius: var(--Variable-sizes-baseSize-x4, 24px);
 
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
 .frame {
     display: flex;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     align-items: center;
     gap: var(--Variable-sizes-baseSize-x4, 24px);
     border-radius: var(--Variable-sizes-baseSize-x4, 24px);
 
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
 .reviewCard {
     display: flex;
@@ -560,7 +571,7 @@ p, label {
 
 .infographics {
     display: flex;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -570,7 +581,7 @@ p, label {
 
 .infographicsItem {
     display: flex;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     align-items: center;
     gap: var(--Variable-sizes-baseSize, 6px);
 }
@@ -631,22 +642,186 @@ p, label {
     width: fit-content;
     background: var(--Basics-White, #FFF);
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
+
 .doubleItem {
     position: relative;
     z-index: 3;
     display: flex;
-    width: 100%;
-    padding: var(--Absolute-sizes-zero, 0px);
+    width: calc(100% + 5%);
+    padding: var(--Absolute-sizes-zero, 0);
     justify-content: center;
-    align-items: center;
-    align-content: center;
     gap: 36px;
-    align-self: stretch;
-    flex-wrap: wrap;
+
 }
 
+.dropdown {
+    display: flex;
+    position: relative;
+    z-index: 4;
+    flex-direction: column;
+    height: 36px;
+    padding: 16px 18px 3px 18px;
+    justify-content: space-between;
+
+    align-items: baseline;
+
+    width: 293px;
+    flex-shrink: 0;
+}
+
+.dropdownPlaceholder {
+    color: #62698C;
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    flex-direction: column;
+    width: 293px;
+    padding: 12px 18px 10px 18px;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    border-radius: 12px;
+    border: 1px solid var(--Main-MediumBlue, #62698C);
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.dropdownMortgage {
+    display: flex;
+    position: relative;
+    box-sizing: content-box;
+    z-index: 4;
+    flex-direction: column;
+    padding: 12px 18px 10px 18px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+    border: 1px solid var(--Main-MediumBlue, #62698C);
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.mortgageLabel {
+    display: flex;
+    position: absolute;
+    z-index: 4;
+    top: -15px;
+    left: 30px;
+    padding: 6px 12px;
+    align-items: center;
+    align-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-radius: 48px;
+    background: #FFF;
+
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+}
+.dropdownMortgagePlaceholder {
+    color: #62698C;
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    flex-direction: column;
+    width: 100%;
+    padding: 12px 18px 10px 18px;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    border-radius: 12px;
+    border: 1px solid var(--Main-MediumBlue, #62698C);
+    background: rgba(255, 255, 255, 0.50);
+}
+
+
+.dropdownPlaceholder:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+
+.dropdownMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2; /* Lower z-index value to be behind dropdownPlaceholder */
+    top: 37px;
+    left: 0;
+    gap: 12px;
+    border-radius: 0 0 12px 12px;
+    padding: 10px 18px 12px 18px;
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.75);
+
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+}
+
+
+.dropdownArrow {
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    top: 10px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    justify-content: end;
+    background-image: url('data:image/svg+xml,<svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="item_inputDropdown-arrow"><path id="Vector" d="M0 0H18L9 8L0 0Z" fill="%23272B40"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px;
+}
+
+.mortgageArrow {
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    top: 20px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    justify-content: end;
+    background-image: url('data:image/svg+xml,<svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="item_inputDropdown-arrow"><path id="Vector" d="M0 0H18L9 8L0 0Z" fill="%23272B40"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px;
+
+}
+
+.mortgageMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2; /* Lower z-index value to be behind dropdownPlaceholder */
+    top: 100%;
+    left: 0;
+    gap: 12px;
+    border-radius: 0 0 12px 12px;
+    padding: 10px 18px 12px 18px;
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.75);
+
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+
+}
 .header {
     display: flex;
     justify-content: center;
@@ -655,7 +830,7 @@ p, label {
     filter: saturate(120%);
 
     /* shadow and bgBlur standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(36px);
 
 }
@@ -734,7 +909,7 @@ p, label {
     position: relative;
     width: 45%;
     height:  420px;
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     border-radius: 48px;
 }
 
@@ -746,7 +921,7 @@ p, label {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(1, 5, 30, 0.00) 67.78%, #01051E 100%);
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     border-radius: 48px;
 }
 .photoGradient {
@@ -831,7 +1006,7 @@ p, label {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 48px;
-    box-shadow: 0px 4px 96px 0px rgba(34, 144, 255, 0.50);
+    box-shadow: 0 4px 96px 0 rgba(34, 144, 255, 0.50);
 }
 
 .imageContainer {
@@ -923,7 +1098,8 @@ p, label {
 .text {
     display: flex;
     padding:  48px;
-
+    position: relative;
+    z-index: 2;
     gap: 36px;
     align-self: stretch;
     columns: 2;
@@ -943,7 +1119,7 @@ p, label {
     justify-content: flex-end;
     align-items: flex-start;
     gap: var(--Variable-sizes-baseSize-x2, 24px);
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     border-radius: 48px;
 }
 
@@ -1012,9 +1188,11 @@ p, label {
 .navigationBorderWhite {
     border: 1px solid white;
 }
+
 .navigationBorderBlue {
     border: 1px solid #00A3FF;
 }
+
 .navigationButton {
     display:flex;
     padding: 18px 24px 14px 24px;
@@ -1028,6 +1206,21 @@ p, label {
     backdrop-filter: blur(36px);
     gap: 12px;
     border: none
+}
+
+.filtersButton {
+    display: flex;
+    padding: 18px 24px 14px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    border-radius: 24px;
+    background: rgba(39, 43, 64, 0.50);
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+    gap: 12px;
+    border: none;
+
 }
 
 .leftArrow {
@@ -1050,6 +1243,7 @@ p, label {
     align-content: center;
     flex-wrap: wrap;
 }
+
 .catalogContainer {
     display: flex;
     flex-direction: column;
@@ -1060,6 +1254,12 @@ p, label {
     padding-bottom: 24px;
     gap: 48px;
     z-index: 3;
+}
+
+
+.flexItem {
+
+    flex: 0 0 calc(50% - 18px); /* 50% width for 2 items per row with gap adjustment */
 }
 
 .projectHeaderContainer {
@@ -1137,7 +1337,7 @@ p, label {
     justify-content: space-evenly;
     align-content: center;
     z-index: 6;
-    padding: 0 24px 0 24px;
+    padding: 12px 24px 6px 24px;
     border-radius: 0 0 24px 24px;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(36px);
@@ -1169,7 +1369,7 @@ p, label {
     padding: 12px 48px 6px 48px;
     justify-content: center;
     align-items: center;
-    gap:0px;
+    gap:0;
     text-align: center;
     border-radius: 1000px;
 
@@ -1210,7 +1410,7 @@ p, label {
     padding: 24px 48px 16px 48px;
     justify-content: center;
     align-items: center;
-    gap:0px;
+    gap:0;
     text-align: center;
     border-radius: 1000px;
 
@@ -1294,7 +1494,7 @@ p, label {
 }
 .modalSocial {
     display: flex;
-    padding: 0px;
+    padding: 0;
     align-items: center;
     gap: 24px;
 }
@@ -1417,7 +1617,7 @@ label {
     display: flex;
     width: 86%;
     max-width: 1248px;
-    padding: 48px 0px 96px 0px;
+    padding: 48px 0 96px 0;
     flex-direction: column;
     justify-content: center;
     justify-items: center;
@@ -1472,7 +1672,7 @@ label {
     position: relative;
     display: flex;
     z-index: 2;
-    padding: 48px 0px 96px 0px;
+    padding: 48px 0 96px 0;
     flex-direction: column;
     align-items: center;
     justify-items: center;
@@ -1514,7 +1714,7 @@ label {
 .magazineLogoImage {
     display: flex;
     width: 40%;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1538,13 +1738,13 @@ label {
     z-index: 2;
     flex-direction: row-reverse;
     overflow: hidden;
-    padding: var(--Absolute-sizes-zero, 0px);
+    padding: var(--Absolute-sizes-zero, 0);
     align-items: flex-start;
     border-radius: 48px;
     height: 624px;
 
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
 
 .employeeCardLarge {
@@ -1558,7 +1758,7 @@ label {
     border-radius: 48px;
 
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
 
 
@@ -1586,6 +1786,14 @@ label {
 .magazineCardLargeDescription {
     color: #272B40;
     width: 80%;
+
+}
+
+.labelsContainer {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    align-items: baseline;
 
 }
 .labelSmall {
@@ -1681,7 +1889,7 @@ label {
     align-self: stretch;
     border-radius: 48px;
     background: rgba(240, 240, 240, 0.9);
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(36px);
 }
 
@@ -1739,6 +1947,14 @@ label {
     align-self: stretch;
     border-radius: 48px;
     border: 1px solid var(--Basics-White, #FFF);
+}
+
+.switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
 }
 .sberImageContainer {
     width: 50%;
@@ -1825,7 +2041,22 @@ p {
     background: linear-gradient(0deg, #00A3FF 0%, #0078BB 100%);
 
     /* shadow standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+}
+
+.accentText {
+    display: flex;
+    padding: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 48px;
+    background: linear-gradient(0deg, #00A3FF 0%, #0078BB 100%);
+
+    /* shadow standard */
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
 
 .accentCardImage {
@@ -1849,7 +2080,7 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 48px;
-    box-shadow: 0px 4px 96px 0px rgba(34, 144, 255, 0.50);
+    box-shadow: 0 4px 96px 0 rgba(34, 144, 255, 0.50);
 
 }
 
@@ -1862,7 +2093,7 @@ p {
     height: 100%;
     border-radius: 48px;
     background: linear-gradient(180deg, #8F00FF 0%, #FF007A 100%);
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     opacity: 0.8;
 }
 
@@ -1920,6 +2151,17 @@ p {
     opacity: 85%;
 }
 
+.projectEllipse {
+    z-index: 0;
+    bottom:-1000px;
+    position: absolute;
+    width: 100%;
+    height: 2450px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);
+    filter: blur(150px);
+}
+
 .emojiPdf {
     width:48px;
     height: 48px;
@@ -1939,7 +2181,7 @@ p {
     background: rgba(255, 255, 255, 0.75);
 
     /* shadow and bgBlur standard */
-    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(36px);
 
 }
@@ -1990,9 +2232,295 @@ p {
     align-items: center;
     gap: 36px;
     background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
+}
+
+.filters {
+    display: flex;
+    padding: 48px 0;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 36px;
+    align-self: stretch;
+    border-radius: 48px;
+    border: 1px solid #FFF;
+}
+
+.filtersLine {
+    width: 100%;
+    height: 1px;
+    background: #FFF;
+}
+
+.buttonsContainer {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 24px 24px;
+    flex-wrap: wrap;
+}
+
+.selector {
+    display: flex;
+    width: 100%;
+    padding: 24px 48px 0 48px;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.selectorPrice {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    flex-direction: column;
+}
+.inputTiny {
+    display: flex;
+    height: 42px;
+    padding: 18px;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Absolute-sizes-zero, 0);
+    flex: 1 0 0;
+    font-size: 18px;
+    border-radius: var(--Variable-sizes-baseSize, 12px);
+    border: 1px solid var(--Main-MediumBlue, #62698C);
+    background: var(--Basics-White, #FFF);
 
 }
 
+.inputTiny::placeholder {
+    text-align: center;
+    font-size: 18px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.selectorContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+    align-self: stretch;
+}
+
+.floor {
+    display: flex;
+    height: 42px;
+    padding: 12px 12px 8px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Variable-sizes-baseSize, 12px);
+    flex: 1 0 0;
+    border-radius: var(--Variable-sizes-baseSize, 12px);
+    border: 1px solid var(--Main-MediumBlue, #62698C);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.specials {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    align-self: stretch;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.checkboxContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+span.MuiButtonBase-root > svg > path {
+    color: #62698C;
+}
+
+.sort {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 24px 24px;
+    flex-wrap: wrap;
+
+}
+
+.sortIcon {
+    width: 14px;
+}
+
+.sortContainer {
+    display: flex;
+    gap: 24px 24px;
+}
+
+.infoTable {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid #62698C;
+    backdrop-filter: blur(36px);
+}
+
+.infoTableItem {
+    display: flex;
+    padding: 24px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    gap: 24px 48px;
+    align-self: stretch;
+}
+.infoTableHeader {
+    border-radius: 24px 24px 0 0;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.infoTableBorder {
+    border-bottom: 1px solid var(--Main-MediumBlue, #62698C);
+}
+
+.packages {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    padding: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    gap: 36px;
+    border-radius: var(--Variable-sizes-baseSize-x4, 48px);
+    background: rgba(255, 255, 255, 0.75);
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+}
+
+.packagesHeader {
+    display: flex;
+    padding: 0 24px;
+    gap: 24px 24px;
+}
+
+.mortgageHeader {
+    position: relative;
+    box-sizing: content-box;
+    display: flex;
+    width: 90%;
+    gap: 24px 24px;
+}
+.packagesItem {
+    display: flex;
+    padding: 0;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px 18px;
+    align-self: stretch;
+}
+
+.confirmIcon {
+    width: 16px;
+    padding-top: 8px;
+    height: 16px;
+}
+
+.packagesFooter {
+    display: flex;
+    width: 100%;
+    padding: 24px 0 0 0;
+    align-items: flex-start;
+    box-sizing: content-box;
+    gap: 24px 18px;
+    border-top: 1px solid #62698C;
+}
+
+.packagesPrice {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 24px;
+}
+
+.announcement {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    padding: 48px 96px;
+    align-items: center;
+    gap: 36px;
+    align-self: stretch;
+    border-radius: 24px;
+    background: #FFEC8B;
+}
+
+.announcementIcon {
+    font-size: 72px;
+}
+
+.mortgageCalculator {
+    display: flex;
+    gap: 24px 24px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.mortgageResult {
+    display: flex;
+    box-sizing: border-box;
+    padding: 36px 24px 24px 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 36px;
+    flex: 1 0 0;
+    border-radius: 24px;
+    border: 1px solid #FFF;
+}
+
+.mortgageResultText {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+.mortgageSelectors {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+}
+
+.mortgagePackage {
+    display: flex;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 36px 24px 24px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    flex: 1 0 0;
+    border-radius: 18px;
+    border: 1px solid #FFF;
+}
 @media (min-width: 768px) {
     h1 {
         font-size: var(--font-size-desktop-h1);
@@ -2030,6 +2558,11 @@ p {
     }
 
     .h3Shortcut {
+        font-size: var(--font-size-desktop-h3-shortcuts);
+        line-height: var(--font-size-desktop-h3-shortcuts-line-height);
+    }
+
+    .filtersButtonText {
         font-size: var(--font-size-desktop-h3-shortcuts);
         line-height: var(--font-size-desktop-h3-shortcuts-line-height);
     }
@@ -2082,7 +2615,18 @@ p {
         line-height: var(--font-size-tablet-h3-shortcuts-line-height);
     }
 
+    .filtersButtonText {
+        font-size: var(--font-size-tablet-h3-shortcuts);
+        line-height: var(--font-size-tablet-h3-shortcuts-line-height);
+    }
+
     .navigationButton {
+        padding: 14px 18px 12px 18px;
+        border-radius: 18px;
+
+    }
+
+    .filtersButton {
         padding: 14px 18px 12px 18px;
         border-radius: 18px;
 
@@ -2105,7 +2649,7 @@ p {
     }
     .roundedFeaturesContainer {
         display: flex;
-        padding: 0px;
+        padding: 0;
         gap: 24px;
         justify-content: center;
         align-items: flex-start;
@@ -2143,7 +2687,7 @@ p {
     }
 
     .magazineWrapper {
-        padding: 36px 0px 48px 0px;
+        padding: 36px 0 48px 0;
     }
 
     .sberbank {
@@ -2160,9 +2704,15 @@ p {
     }
 
     .textContainer {
-        padding: 36px;
+        padding: 18px 36px;
         gap: 24px;
     }
+
+    .projectMainHeader {
+        padding: 18px 36px;
+        gap: 18px;
+    }
+
 
     .mainHeader {
         width: 100%;
@@ -2188,7 +2738,7 @@ p {
     }
 
     .pricesWrapper {
-        padding: 36px 0px 48px 0px;
+        padding: 36px 0 48px 0;
     }
 
     .shortcut {
@@ -2242,7 +2792,7 @@ p {
     }
 
     .whiteBox {
-        padding: 2px 9px 0px 9px;
+        padding: 2px 9px 0 9px;
     }
     .vector {
         top: 4px;
@@ -2297,7 +2847,7 @@ p {
     }
 
     .photoFooter {
-        padding: 9px 0 9px 0;
+        padding: 9px 0 3px 0;
         border-radius: 0 0 12px 12px;
     }
 
@@ -2600,6 +3150,124 @@ p {
     .reviewCard {
         border-radius: 36px;
     }
+
+    .filters {
+        padding: 36px 0;
+        gap: 28px;
+        border-radius: 36px;
+    }
+
+
+    .inputTiny::placeholder {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .checkboxContainer {
+        justify-content: start;
+    }
+
+    .selector {
+        padding: 12px 36px 0 36px;
+        gap: 28px;
+    }
+
+    .selectorContainer {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .dropdownPlaceholder {
+        width: 206px;
+        padding: 9px 18px 7px 18px;
+        border-radius: 9px;
+    }
+
+    .dropdownArrow {
+        top: 12px;
+        right: 12px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .dropdownMenu {
+        top: 40px;
+        gap: 9px;
+    }
+
+    .dropdown {
+        width: 206px;
+    }
+
+    .specials {
+        padding: 18px;
+        gap: 28px;
+        border-radius: 18px;
+    }
+
+
+    .sortIcon {
+        width: 12px;
+    }
+
+    .infographics {
+        gap: 18px 9px;
+    }
+    .infoTableItem {
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .packages {
+        padding: 36px;
+        gap: 28px;
+    }
+
+    .packagesHeader {
+        padding: 0 18px;
+        gap: 18px 18px;
+    }
+
+    .packagesItem {
+        gap: 18px 12px;
+    }
+
+    .confirmIcon {
+        width: 12px;
+        padding-top: 4px;
+        height: 12px;
+    }
+
+    .packagesFooter {
+        padding: 18px 0 0 0;
+        gap: 18px 12px;
+    }
+
+    .packagesPrice {
+        gap: 18px;
+    }
+    .mortgageArrow {
+        top: 15px;
+    }
+
+    .mortgageResult {
+        display: flex;
+        box-sizing: border-box;
+        padding: 36px 24px 24px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 36px;
+        border-radius: 24px;
+        border: 1px solid #FFF;
+    }
+    .announcementIcon {
+        font-size: 54px;
+    }
+
+    .announcement {
+        padding: 36px 48px;
+        gap: 28px;
+    }
 }
 @media (max-width: 500px) {
     h1 {
@@ -2646,6 +3314,13 @@ p {
         font-size: var(--font-size-mobile-h3-shortcuts);
         line-height: var(--font-size-mobile-h3-shortcuts-line-height);
         width: 120px;
+    }
+
+    .filtersButtonText {
+        font-size: var(--font-size-mobile-h3-shortcuts);
+        line-height: var(--font-size-mobile-h3-shortcuts-line-height);
+        width: 102px;
+        text-align: left;
     }
 
     .projectDiscountText {
@@ -2696,7 +3371,7 @@ p {
     .roundedFeaturesContainer {
         display: flex;
         width: 312px;
-        padding: 0px;
+        padding: 0;
         justify-content: center;
         align-items: flex-start;
         align-content: flex-start;
@@ -2756,7 +3431,12 @@ p {
     }
 
     .textContainer {
-        padding: 24px;
+        padding: 12px 24px;
+        gap: 18px;
+    }
+
+    .projectMainHeader {
+        padding: 12px 24px;
         gap: 18px;
     }
 
@@ -2782,9 +3462,16 @@ p {
     }
 
     .navigationButton {
-        padding: 8px 0px 6px 0px;
+        padding: 8px 0 6px 0;
         width: 136px;
         border-radius: 12px;
+    }
+
+    .filtersButton {
+        padding: 8px 12px 6px 12px;
+        width: 126px;
+        border-radius: 12px;
+
     }
 
     .arrowSvg {
@@ -2814,7 +3501,7 @@ p {
         padding: 8px 24px 4px 24px;
         background: linear-gradient(180deg, #FFF 0%, #D5DEED 100%);
         /* shadow standard */
-        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
     }
 
     .imageContainer {
@@ -2823,7 +3510,7 @@ p {
 
     .photoButtonContent {
         width: 100%;
-        gap: 0px;
+        gap: 0;
     }
 
     .photoButtonContainer {
@@ -2859,7 +3546,7 @@ p {
     }
 
     .hiddenWhiteBox {
-        height: 0px;
+        height: 0;
         visibility: hidden;
     }
 
@@ -3085,7 +3772,7 @@ p {
         border: 2px solid #E3E8F1;
         background: linear-gradient(180deg, #FFF 0%, #D5DEED 100%);
         /* shadow standard */
-        box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
         padding: 10px 24px 8px 24px;
     }
 
@@ -3139,8 +3826,9 @@ p {
     .buttonSmall {
         border-radius: 24px;
         border: 2px solid  rgba(255, 255, 255, 0.75);
-        padding: 4px 9px 0px 9px;
+        padding: 4px 9px 0 9px;
     }
+
     .ideasHeader {
         text-wrap: nowrap;
         display: flex;
@@ -3271,5 +3959,114 @@ p {
 
     .reviewCard {
         border-radius: 24px;
+    }
+
+    .filters {
+        padding: 24px 0;
+        gap: 18px;
+        border-radius: 24px;
+    }
+
+    .selector {
+        padding: 0 24px 0 24px;
+        gap: 18px;
+    }
+
+    .inputTiny::placeholder {
+        font-size: 12px;
+    }
+
+    .selectorContainer {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .dropdownPlaceholder {
+        width: 165px;
+        padding: 6px 12px 4px 12px;
+        border-radius: 6px;
+    }
+
+    .dropdownArrow {
+        top: 10px;
+        right: 20px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .dropdownMenu {
+        top: 30px;
+        padding: 10px 18px 12px 12px;
+        gap: 9px;
+    }
+
+    .dropdown {
+        width: 154px;
+    }
+
+    .specials {
+        padding: 12px;
+        gap: 28px;
+        border-radius: 12px;
+    }
+
+
+    .sortIcon {
+        width: 8px;
+    }
+
+    .infographics {
+        gap: 0;
+        flex-wrap: wrap;
+    }
+
+    .infoTableItem {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .packages {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .packagesHeader {
+        padding: 0 12px;
+        gap: 12px 12px;
+    }
+
+    .packagesItem {
+        gap: 12px 10px;
+    }
+
+    .confirmIcon {
+        width: 10px;
+        padding-top: 4px;
+        height: 10px;
+    }
+
+    .packagesFooter {
+        padding: 12px 0 0 0;
+        gap: 12px 10px;
+    }
+
+    .packagesPrice {
+        gap: 12px;
+    }
+
+    .mortgageArrow {
+        top: 10px;
+    }
+
+    .announcementText {
+        text-align: center;
+    }
+    .announcementIcon {
+        font-size: 36px;
+    }
+    .announcement {
+        flex-direction: column;
+        padding: 24px 24px;
+        gap: 18px;
     }
 }

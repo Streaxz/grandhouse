@@ -14,7 +14,7 @@ import {Ideas} from "@/app/components/Ideas/Ideas";
 import {Button} from "@/app/components/Button/Button";
 import {ReviewCardSmall} from "@/app/components/ReviewCardSmall/ReviewCardSmall";
 
-const PhilosophyPage = () => {
+const ProjectPage = () => {
 
 		return (
 			<main className={styles.page}>
@@ -113,7 +113,6 @@ const PhilosophyPage = () => {
 												headerText={"Специальный"}
 												descriptionText={'Основной текст'}
 											/>
-
 									</Features>
 							</div>
 					</div>
@@ -180,4 +179,4 @@ const PhilosophyPage = () => {
 		)
 }
 
-export default PhilosophyPage;
+export default ProjectPage;

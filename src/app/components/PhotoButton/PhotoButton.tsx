@@ -12,7 +12,7 @@ export const PhotoButton = ({backgroundSrc, buttonSrc, buttonText, descriptionTe
     return (
       <div
         className={'photoButtonContainer'}
-        style={{backgroundImage: `url(/clouds.jpeg)`}}
+        style={{backgroundImage: `url(${backgroundSrc})`}}
       >
           <div className='photoButtonGradient'/>
           <div className='photoButtonContent'>

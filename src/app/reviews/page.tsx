@@ -6,12 +6,12 @@ import {Carousel} from "@/app/components/Carousel/Carousel";
 import {Ideas} from "@/app/components/Ideas/Ideas";
 import {Button} from "@/app/components/Button/Button";
 import {ReviewCardSmall} from "@/app/components/ReviewCardSmall/ReviewCardSmall";
-import {FeatureCardSmallDarkLabel} from "@/app/components/featureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
+import {FeatureCardSmallDarkLabel} from "@/app/components/FeatureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
 import {ReviewCardLarge} from "@/app/components/ReviewCardLarge/ReviewCardLarge";
 import {MagazineCardLarge} from "@/app/components/Magazine/MagazineCardLarge/MagazineCardLarge";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 
-const PhilosophyPage = () => {
+const ReviewsPage = () => {
 		const [isOpen, setIsOpen] = useState<boolean>(false);
 
 		const handleClick = () => {
@@ -131,4 +131,4 @@ const PhilosophyPage = () => {
 		)
 }
 
-export default PhilosophyPage;
+export default ReviewsPage;

@@ -1,6 +1,9 @@
 import React from "react";
 
-export const AutumnProject = () => {
+export interface IAutumnProject {
+    isArchive?: boolean;
+}
+export const AutumnProject = ({isArchive}: IAutumnProject) => {
     return (
       <div style={{maxHeight: "468px", display: "flex", flexDirection: "column"}}>
           <div
@@ -23,15 +26,18 @@ export const AutumnProject = () => {
                           </div>
                       </div>
                   </div>
-                      <div className={'amountContainer'}>
-                          <h6 className={'amountFrom'} >От</h6>
-                          <p className={'amountNumber'}>
-                              10,0
-                          </p>
-                          <h6 className={'amountMln'}>
-                              млн
-                          </h6>
-                      </div>
+                  {
+                    !isArchive &&
+                    (<div className={'amountContainer'}>
+                        <h6 className={'amountFrom'}>От</h6>
+                        <p className={'amountNumber'}>
+                            10,0
+                        </p>
+                        <h6 className={'amountMln'}>
+                            млн
+                        </h6>
+                    </div>)
+                  }
               </div>
           </div>
           <div className='photoFooter'>

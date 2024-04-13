@@ -6,7 +6,7 @@ export const LabelSmall = ({text}: ILabelSmallProps) => {
 
 		return (
 			<div className={'labelSmall'}>
-					<h5>{text}</h5>
+					<h6>{text}</h6>
 			</div>
 		)
 }
