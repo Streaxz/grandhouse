@@ -24,16 +24,10 @@ export const Catalog = () => {
             const width = window.innerWidth;
             if (width <= 768 && width > 500) {
                 setNumOfPhotos(6);
-                setSwiperSlides(2);
-                setSpaceBetween(28);
             } else if (width <= 500) {
                 setNumOfPhotos(4);
-                setSwiperSlides(1);
-                setSpaceBetween(10)
             } else {
-                setSwiperSlides(2);
                 setNumOfPhotos(7);
-                setSpaceBetween(36);
             }
         };
 
