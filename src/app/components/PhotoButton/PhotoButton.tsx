@@ -7,6 +7,7 @@ export interface IPhotoButton {
     buttonText: string;
     descriptionText: string;
 }
+
 export const PhotoButton = ({backgroundSrc, buttonSrc, buttonText, descriptionText}: IPhotoButton) => {
 
     return (
