@@ -16,7 +16,7 @@ export const FeatureCardYouTube = ({ src}: IPhotoProps) => {
 				}}
 			>
 					<div className='featureCardYouTubeContainer'>
-							<img src={'socialYouTube.png'} style={{width: "100%"}}/>
+							<img src={'youtube.png'} style={{width: "100%"}} alt={'youtube'}/>
 					</div>
 			</div>
 		)

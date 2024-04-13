@@ -1174,10 +1174,11 @@ p, label {
 }
 
 .navigationContainer {
-    width: 82%;
+    width: 100%;
     max-width: 1260px;
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
     justify-content: space-evenly;
     z-index: 5;
     padding: 48px;

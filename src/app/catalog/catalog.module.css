@@ -1,5 +1,7 @@
 .page {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     position:relative;
     height:auto;
@@ -13,7 +15,6 @@
     z-index: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     align-content: center;
     width: 100%;
     max-width: 100%;
@@ -96,7 +97,6 @@
 .ellipse {
     position: absolute;
     bottom: 0;
-    width: 1440px;
     height: 1110px;
     border-radius:  1440px;
     background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);
@@ -133,6 +133,7 @@
     }
     .pageContainer {
         gap: 36px;
+
     }
     .background {
         height: 640px;
@@ -154,6 +155,7 @@
     }
     .pageContainer {
         gap: 24px;
+        justify-content: center;
     }
     .background {
         height: 320px;

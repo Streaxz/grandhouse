@@ -1,21 +1,16 @@
 "use client";
 import "../../App.css"
-import {ArrowIconLeft} from "../../icons/ArrowIconLeft";
-import React, {useEffect, useRef, useState} from "react";
-import {ArrowIconRight} from "../../icons/ArrowIconRight";
-import {Swiper, SwiperSlide} from "swiper/react";
+import React, {useEffect, useState} from "react";
 import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
 import ReactModal from "react-modal";
 import {Button} from "@/app/components/Button/Button";
 import {Modal} from "@/app/components/Modal/Modal";
+import {Carousel} from "@/app/components/Carousel/Carousel";
 
 
 export const Catalog = () => {
-    const swiperRef = useRef(null);
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [numOfPhotos, setNumOfPhotos] = useState(6);
-    const [swiperSlides, setSwiperSlides] = useState(2);
-    const [spaceBetween, setSpaceBetween] = useState(36);
     function openModal() {
         setIsOpen(true);
     }
@@ -23,27 +18,6 @@ export const Catalog = () => {
     function closeModal() {
         setIsOpen(false);
     }
-
-    const handleSubmit = (event: any) => {
-        event.preventDefault();
-        // Здесь вы можете добавить логику для отправки данных формы
-    };
-
-    const goNext = () => {
-        //@ts-ignore
-        if (swiperRef.current && swiperRef.current.swiper) {
-            //@ts-ignore
-            swiperRef.current.swiper.slideNext();
-        }
-    };
-
-    const goPrev = () => {
-        //@ts-ignore
-        if (swiperRef.current && swiperRef.current.swiper) {
-            //@ts-ignore
-            swiperRef.current.swiper.slidePrev();
-        }
-    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -87,38 +61,16 @@ export const Catalog = () => {
                     <p>Вводка о каталоге компании</p>
                 </div>
             </div>
-            <div style={{maxWidth:" 1440px", width: "115%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
-                <div style={{display: "flex", justifyContent: "center"}}>
-                    <button onClick={goPrev} className={'leftArrow'}>
-                        <ArrowIconLeft/>
-                    </button>
-                        <Swiper
-                            ref={swiperRef}
-                            spaceBetween={spaceBetween}
-                            slidesPerView={swiperSlides}
-                            pagination={false}
-                            className={'swiperStyle'}
-                        >
-                            <SwiperSlide>
-                                <AutumnProject/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <AutumnProject/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <AutumnProject/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <AutumnProject/>
-                            </SwiperSlide>
-                            {/* Add more slides here */}
-                        </Swiper>
-                    <button onClick={goNext} className={'rightArrow'}>
-                        <ArrowIconRight/>
-                    </button>
-                </div>
-
-            </div>
+            <Carousel
+              swiperEffect={'slider'}
+              desktopSlides={2}
+              tabletSlides={2}
+              mobileSlides={1}
+              spaceBetween={36}
+            >
+                <AutumnProject/>
+                <AutumnProject/>
+            </Carousel>
 
             <div
                 style={{

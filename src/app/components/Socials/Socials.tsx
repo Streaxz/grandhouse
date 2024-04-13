@@ -10,7 +10,7 @@ export const Socials = () => {
 							<img src={'/socialVk.png'} alt={'vk'} className={'socialItem'}/>
 					</a>
 					<a>
-							<img src={'/socialYoutube.png'} alt={'youtube'} className={'socialItem'}/>
+							<img src={'/youtube.png'} alt={'youtube'} className={'socialItem'}/>
 					</a>
 					<a>
 							<img src={'/socialDzen.png'} alt={'dzen'} className={'socialItem'}/>
