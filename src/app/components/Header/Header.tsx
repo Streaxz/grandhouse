@@ -1,7 +1,7 @@
 "use client"
 import * as React from 'react';
 import '../../App.css';
-import {Typography, useMediaQuery} from "@mui/material";
+import {Drawer, useMediaQuery} from "@mui/material";
 import {HeaderLogo} from "@/app/icons/HeaderLogo";
 import {MagnifierIcon} from "@/app/icons/MagnifierIcon";
 import {DialogBubbleIcon} from "@/app/icons/DialogBubbleIcon";
@@ -16,7 +16,7 @@ const pages = [
     { name: 'Лес', link: '/forest' },
     { name: 'Поселки', link: '/settlements' },
     { name: 'Работы и отзывы', link: '/reviews' },
-    { name: 'Контакты', link: '/contacts' },
+    { name: 'Контакты', link: '/contact' },
     { name: 'Журнал', link: '/magazine' }
 ];
 
@@ -24,6 +24,11 @@ export const Header = () => {
     const isMobile = useMediaQuery('(max-width:500px)');
     const isTablet = useMediaQuery('(min-width:500px) and (max-width:1100px)');
     const isDesktop = useMediaQuery('(min-width:1100px)');
+    const [open, setOpen] = React.useState(false);
+
+    const toggleDrawer = (newOpen: boolean) => () => {
+        setOpen(newOpen);
+    };
 
     const [padding, setPadding] = React.useState(12);
 
@@ -42,11 +47,11 @@ export const Header = () => {
     }, [isMobile, isTablet, isDesktop])
     const renderMenuItems = (items: { name: string; link: string }[]) => {
         return items.map((item, index) => (
-          <Typography key={index} variant="h6" component="div" sx={{flexGrow: 1}}>
+          <h6 style={{flexGrow: 1}}>
               <Link key={index} href={item.link} style={{textDecoration: 'none'}}>
                   {item.name}
               </Link>
-          </Typography>
+          </h6>
         ));
     };
 
@@ -71,9 +76,12 @@ export const Header = () => {
               paddingBottom: `${padding}px`,
           }}>
               {(isMobile || isTablet) &&
-                <div className={"iconContainer"}>
+                <button
+                  onClick={toggleDrawer(true)}
+                  className={"iconContainer"}
+                >
                     <MenuIcon/>
-                </div>
+                </button>
               }
               <div
                 style={{
@@ -86,14 +94,38 @@ export const Header = () => {
                       <HeaderLogo/>
                   </Link>
               </div>
-
               {isDesktop && renderMenuItems(pages)}
-
               {isDesktop && renderIcon()}
               <div className={'iconContainer'}>
                   <DialogBubbleIcon/>
               </div>
           </div>
+          <Drawer
+            open={open}
+            onClose={toggleDrawer(false)}
+            style={{width: "60%"}}
+          >
+              <div className={'menu'}>
+                  {
+                      pages.map((item, index) => (
+                        <Link
+                          key={index}
+                          href={item.link}
+                          onClick={toggleDrawer(false)}
+                          style={{width: "100%"}}
+                        >
+                            <div className={'menuItem'}>
+                                <h4 key={index}
+                                    style={{color: "#272B40", textDecoration: 'none'}}
+                                >
+                                    {item.name}
+                                </h4>
+                            </div>
+                        </Link>
+                      ))
+                  }
+              </div>
+          </Drawer>
       </div>
     );
 }

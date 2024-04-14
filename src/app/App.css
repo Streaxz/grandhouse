@@ -203,6 +203,7 @@ p, label {
     align-self: stretch;
     flex-wrap: wrap;
 }
+
 .footerCity {
     display: flex;
     width:  240px;
@@ -211,6 +212,7 @@ p, label {
     align-items: center;
     gap:  18px;
 }
+
 .footerCityImage {
     display: flex;
     width: 72px;
@@ -218,6 +220,7 @@ p, label {
     justify-content: center;
     align-items: center;
 }
+
 .body {
     position: relative;
     margin: 0;
@@ -225,6 +228,7 @@ p, label {
     filter: saturate(125%);
     z-index: -10;
 }
+
 .App {
     display: flex;
     flex-direction: column;
@@ -234,6 +238,34 @@ p, label {
     max-width: 100%;
     border: none;
 }
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    height: 100%;
+    align-items: flex-start;
+    gap: 9px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #f2f4f8 0%, #D5DEED 100%);
+
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+}
+
+.menuItem {
+    display: flex;
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
+
 
 .mainPageWrapper {
     position: relative;
@@ -3269,6 +3301,11 @@ span.MuiButtonBase-root > svg > path {
         padding: 36px 48px;
         gap: 28px;
     }
+
+    .menu {
+        width: 300px;
+    }
+
 }
 @media (max-width: 500px) {
     h1 {
@@ -4069,5 +4106,15 @@ span.MuiButtonBase-root > svg > path {
         flex-direction: column;
         padding: 24px 24px;
         gap: 18px;
+    }
+
+    .menu {
+        width: 300px;
+    }
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .menuItem:hover {
+        background: #FFF;
     }
 }
