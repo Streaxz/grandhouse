@@ -1,7 +1,7 @@
 "use client"
 import * as React from 'react';
 import '../../App.css';
-import {Drawer, useMediaQuery} from "@mui/material";
+import { Drawer, useMediaQuery} from "@mui/material";
 import {HeaderLogo} from "@/app/icons/HeaderLogo";
 import {MagnifierIcon} from "@/app/icons/MagnifierIcon";
 import {DialogBubbleIcon} from "@/app/icons/DialogBubbleIcon";
@@ -47,11 +47,13 @@ export const Header = () => {
     }, [isMobile, isTablet, isDesktop])
     const renderMenuItems = (items: { name: string; link: string }[]) => {
         return items.map((item, index) => (
-          <h6 style={{flexGrow: 1}}>
-              <Link key={index} href={item.link} style={{textDecoration: 'none'}}>
-                  {item.name}
+
+              <Link key={index} href={item.link} style={{textDecoration: 'none', flexGrow: 1}} >
+                      <h6>
+                              {item.name}
+                      </h6>
               </Link>
-          </h6>
+
         ));
     };
 

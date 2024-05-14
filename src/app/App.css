@@ -110,9 +110,16 @@ p, label {
     margin: 0;
     font-weight: 300;
 }
+
 * {
     font-family: var(--font-object-sans);
     color: white;
+}
+
+.ant-card-head-title {
+    color: #272B40;
+    font-family: var(--font-object-sans);
+
 }
 
 .footer {
@@ -1501,8 +1508,14 @@ p, label {
     color: #272B40;
     text-align: right;
     text-wrap: none;
-    width: 150px;
+    width: 156px;
 }
+
+.ant-drawer-content {
+    height: 100%;
+    overflow-y: scroll;
+}
+
 .modalButton {
     display: flex;
     flex-direction: row;
@@ -2267,6 +2280,15 @@ p {
     background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
 }
 
+#body > div:nth-child(22) > div > div.ant-modal-wrap > div > div:nth-child(2) > div {
+    background: transparent;
+    box-shadow: none;
+
+}
+
+#body > div:nth-child(22) > div > div.ant-modal-wrap > div > div:nth-child(2) > div > button {
+    display: none;
+}
 .filters {
     display: flex;
     padding: 48px 0;

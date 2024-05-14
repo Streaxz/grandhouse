@@ -75,6 +75,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${objectSans.variable} ${petersburg.variable}`} style={{fontWeight:"300"}}>
         <body className={`body`} id={"body"}>
+        <div id={"modal"}/>
         <Header/>
         {children}
         <Footer/>

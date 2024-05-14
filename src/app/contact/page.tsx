@@ -4,7 +4,7 @@ import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import React from "react";
 import {Features} from "@/app/components/Features/Features";
 import {Button} from "@/app/components/Button/Button";
-import {Modal} from "@/app/components/Modal/Modal";
+import {AmoCrmModal} from "@/app/components/Modal/AmoCrmModal";
 import {RoundFeaturesItem} from "@/app/components/RoundFeaturesItem/RoundFeaturesItem";
 
 const ContactPage = () => {
@@ -19,7 +19,9 @@ const ContactPage = () => {
 										descriptionText={"Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса."}
 										textColor={"#FFF"}
 									/>
-									<Modal></Modal>
+									<AmoCrmModal
+										isModal={false}
+									/>
 									<TextBlock
 										rectangleColor={"#CC00FF"}
 										mainText={"О компании кратко"}

@@ -9,9 +9,9 @@ export interface  IButtonProps {
 export const Button = ({onClick, buttonText, style}: IButtonProps) => {
 
     return (
-        <button className={`projectButton`} style={style} onClick={onClick}>
+        <a className={`projectButton`} style={style} onClick={onClick}>
             <h2 className={'projectButtonText'}>{buttonText}</h2>
-        </button>
+        </a>
     );
 
 }
