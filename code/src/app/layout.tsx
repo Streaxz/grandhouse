@@ -8,43 +8,43 @@ import React from "react";
 const objectSans = localFont({
     src: [
         {
-            path: '/app/public/fonts/ObjectSans-Thin.otf',
+            path: '../../public/fonts/ObjectSans-Thin.otf',
             weight: '100'
         },
         {
-            path: '/app/public/fonts/ObjectSans-ThinSlanted.otf',
+            path: '../../public/fonts/ObjectSans-ThinSlanted.otf',
             weight: '100',
             style: 'italic'
         },
         {
-            path: '/app/public/fonts/ObjectSans-Light.otf',
+            path: '../../public/fonts/ObjectSans-Light.otf',
             weight: '300'
         },
         {
-            path: '/app/public/fonts/ObjectSans-LightSlanted.otf',
+            path: '../../public/fonts/ObjectSans-LightSlanted.otf',
             weight: '300',
             style: 'italic'
         },
         {
-            path: '/app/public/fonts/ObjectSans-Regular.otf',
+            path: '../../public/fonts/ObjectSans-Regular.otf',
             weight: '400'
         },
         {
-            path: '/app/public/fonts/ObjectSans-Slanted.otf',
+            path: '../../public/fonts/ObjectSans-Slanted.otf',
             weight: '400',
             style: 'italic'
         },
         {
-            path: '/app/public/fonts/ObjectSans-Heavy.otf',
+            path: '../../public/fonts/ObjectSans-Heavy.otf',
             weight: '700'
         },
         {
-            path: '/app/public/fonts/ObjectSans-HeavySlanted.otf',
+            path: '../../public/fonts/ObjectSans-HeavySlanted.otf',
             weight: '700',
             style: 'italic'
         },
         {
-            path: '/app/public/fonts/ObjectSans-Black.otf',
+            path: '../../public/fonts/ObjectSans-Black.otf',
             weight: '900'
         }
     ],
@@ -54,7 +54,7 @@ const objectSans = localFont({
 const petersburg = localFont({
     src: [
         {
-            path: '/app/public/fonts/Petersburg-italic.ttf',
+            path: '../../public/fonts/Petersburg-Italic.ttf',
             weight: '900'
         }
     ],
