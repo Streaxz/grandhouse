@@ -1,0 +1,53 @@
+name: grandhouse
+
+volumes:
+  nginx-pm:
+    name: nginx-pm
+    external: true
+  letsencrypt:
+    name: letsencrypt
+    external: true
+  grandhouse_public:
+    name: grandhouse_public
+    external: true
+
+networks:
+  grandhouse:
+    name: grandhouse
+    external: true
+
+x-networks: &networks
+  networks:
+    - grandhouse
+
+services:
+  grandhouse-frontend:
+    image: ${IMAGE_NAME}
+    container_name: grandhouse-frontend
+    hostname: grandhouse-frontend
+    pull_policy: always
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+    restart: always
+    env_file: .env
+    volumes:
+      - grandhouse_public:/app/public/backend
+    depends_on:
+      - nginx-pm
+    <<: *networks
+
+  nginx-pm:
+    image: 'jc21/nginx-proxy-manager:2.11.2@sha256:67655389770f5f16aef10cf3dc822f95e34bb0bc1b7717c617f8adaffcce2f68'
+    container_name: nginx-pm
+    hostname: nginx-pm
+    restart: always
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - nginx-pm:/data
+      - letsencrypt:/etc/letsencrypt
+    <<: *networks

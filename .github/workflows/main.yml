@@ -1,0 +1,60 @@
+name: Build and Deploy Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  SERVICE_NAME: grandhouse-frontend
+  IMAGE_PATH: "${{ secrets.REGISTRY_HOST }}/${SERVICE_NAME}"
+
+jobs:
+  build-and-deploy:
+    runs-on: grandhouse
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set VERSION and IMAGE_NAME variables
+        id: set_version_image_name
+        run: |
+          COMMIT_SHORT_SHA=$(git rev-parse --short "$GITHUB_SHA")
+          VERSION=$(TZ='Europe/Moscow' date +%d.%m.%Y)-${COMMIT_SHORT_SHA}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          IMAGE_NAME=${{ env.IMAGE_PATH }}:$VERSION
+          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+
+      - name: Add variables to the .env file
+        run: |
+          echo "IMAGE_NAME=${{ env.IMAGE_NAME }}" >> .env
+
+      - name: Log in to YC Container Registry
+        run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login -u ${{ secrets.REGISTRY_USER }} --password-stdin ${{ secrets.REGISTRY_HOST }}
+
+      - name: Build Docker image
+        run: |
+          docker compose build --no-cache ${{ env.SERVICE_NAME }}
+          docker tag ${{ env.IMAGE_NAME }} ${{ env.IMAGE_PATH }}:latest
+
+      - name: Push Docker image
+        run: |
+          docker push -q ${{ env.IMAGE_NAME }}
+          docker push -q ${{ env.IMAGE_PATH }}:latest
+
+      - name: Create Docker networks and volumes
+        run: |
+          docker network ls | grep grandhouse || docker network create grandhouse
+          docker volume ls | grep grandhouse_public || docker volume create grandhouse_public
+          docker volume ls | grep letsencrypt || docker volume create letsencrypt
+          docker volume ls | grep nginx-pm || docker volume create nginx-pm
+
+      - name: Run Docker container
+        run: |
+          docker compose up -d --quiet-pull --no-build --wait
+
+      - name: Clean unnecessary Docker resources
+        run: |
+          docker image prune -f
+          docker builder prune -af
