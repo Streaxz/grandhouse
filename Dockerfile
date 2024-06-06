@@ -3,14 +3,14 @@ FROM node:20-alpine AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
-COPY ./sources/package.json ./sources/package-lock.json ./
+COPY ./code/package*.json ./
 RUN npm cache clean --force
 RUN test -e package-lock.json && npm i --legacy-peer-deps || npm i
 
 # Build an image
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY ./sources .
+COPY ./code .
 COPY --from=deps /app/node_modules ./node_modules
 ARG NEXT_PUBLIC_API_URL
 RUN npm run build
