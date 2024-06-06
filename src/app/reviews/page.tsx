@@ -9,7 +9,7 @@ import {ReviewCardSmall} from "@/app/components/ReviewCardSmall/ReviewCardSmall"
 import {FeatureCardSmallDarkLabel} from "@/app/components/FeatureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
 import {ReviewCardLarge} from "@/app/components/ReviewCardLarge/ReviewCardLarge";
 import {MagazineCardLarge} from "@/app/components/Magazine/MagazineCardLarge/MagazineCardLarge";
-import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
+import {CatalogItem} from "@/app/components/Catalog/CatalogItem";
 
 const ReviewsPage = () => {
 		const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -121,8 +121,8 @@ const ReviewsPage = () => {
 										mobileSlides={1}
 										spaceBetween={36}
 									>
-											<AutumnProject/>
-											<AutumnProject/>
+											<CatalogItem/>
+											<CatalogItem/>
 									</Carousel>
 									<div className={styles.ellipse}/>
 							</div>

@@ -1,7 +1,7 @@
 "use client";
 import "../../App.css"
 import React, {useEffect, useState} from "react";
-import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
+import {CatalogItem} from "@/app/components/Catalog/CatalogItem";
 import {Button} from "@/app/components/Button/Button";
 import {AmoCrmModal} from "@/app/components/Modal/AmoCrmModal";
 import {Carousel} from "@/app/components/Carousel/Carousel";
@@ -68,8 +68,8 @@ export const Catalog = () => {
         mobileSlides={1}
         spaceBetween={36}
       >
-        <AutumnProject/>
-        <AutumnProject/>
+        <CatalogItem/>
+        <CatalogItem/>
       </Carousel>
 
       <div

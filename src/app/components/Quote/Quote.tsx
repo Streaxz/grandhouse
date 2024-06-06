@@ -1,10 +1,11 @@
+import {IEmployee} from "@/app/types/IEmployee";
 
 export interface IQuoteProps {
 		quoteText: string;
-		src: string;
-		text: string;
+		author?: IEmployee;
+
 }
-export const Quote = ({quoteText, src, text}: IQuoteProps) => {
+export const Quote = ({quoteText, author}: IQuoteProps) => {
 
 		return (
 			<div className={'quote'}>
@@ -17,12 +18,12 @@ export const Quote = ({quoteText, src, text}: IQuoteProps) => {
 									height: "72px",
 									borderRadius: "120px",
 									border: "4px solid #FFF",
-									background: `url(${src}), lightgray 50% / cover no-repeat`,
+									background: `url(${author?.imageUrl}), lightgray 50% / cover no-repeat`,
 									backgroundPosition: "center",
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat",
 							}}></div>
-							<h5 className={'quoteAuthorText'}>{text}</h5>
+							<h5 className={'quoteAuthorText'}>{`${author?.name} ${author?.surname} ${author?.position ? `,${author.position}` : ``}`}</h5>
 					</div>
 			</div>
 		)

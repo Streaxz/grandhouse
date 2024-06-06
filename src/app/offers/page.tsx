@@ -6,7 +6,7 @@ import {OfferPdf} from "@/app/components/OfferPdf/OfferPdf";
 import {FeatureCardYouTube} from "@/app/components/FeatureCardYouTube/FeatureCardYouTube";
 import {MagazineCardLarge} from "@/app/components/Magazine/MagazineCardLarge/MagazineCardLarge";
 import {Carousel} from "@/app/components/Carousel/Carousel";
-import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
+import {CatalogItem} from "@/app/components/Catalog/CatalogItem";
 import {FeatureCardPicture} from "@/app/components/FeatureCardPicture/FeatureCardPicture";
 import {CarouselAnimated} from "@/app/components/CarouselAnimated/CarouselAnimated";
 import {FeatureCardPictureAnimated} from "@/app/components/FeatureCardPictureAnimated/FeatureCardPictureAnimated";
@@ -65,10 +65,10 @@ const OffersPage = () => {
 										spaceBetween={36}
 										isActive={false}
 									>
-											<AutumnProject/>
-											<AutumnProject/>
-											<AutumnProject/>
-											<AutumnProject/>
+											<CatalogItem/>
+											<CatalogItem/>
+											<CatalogItem/>
+											<CatalogItem/>
 									</Carousel>
 							</div>
 							<div className={styles.ellipse}></div>
@@ -149,11 +149,8 @@ const OffersPage = () => {
 													/>
 											</Carousel>
 											<TextContent
-												firstText={
-														"Принимая во внимание показатели успешности, выбранный нами инновационный путь требует определения и уточнения экономической целесообразности принимаемых решений. Не следует, однако, забывать, что высокотехнологичная концепция общественного уклада способствует повышению качества первоочередных требований. Таким образом, сплочённость команды профессионалов представляет собой интересный эксперимент проверки вывода текущих активов."
-												}
-												secondText={
-														"Прежде всего, существующая теория требует от нас анализа переосмысления внешнеэкономических политик. Принимая во внимание показатели успешности, убеждённость некоторых оппонентов играет определяющее значение для системы массового участия."
+												text={
+													"Принимая во внимание показатели успешности, выбранный нами инновационный путь требует определения и уточнения экономической целесообразности принимаемых решений. Не следует, однако, забывать, что высокотехнологичная концепция общественного уклада способствует повышению качества первоочередных требований. Таким образом, сплочённость команды профессионалов представляет собой интересный эксперимент проверки вывода текущих активов. Прежде всего, существующая теория требует от нас анализа переосмысления внешнеэкономических политик. Принимая во внимание показатели успешности, убеждённость некоторых оппонентов играет определяющее значение для системы массового участия."
 												}/>
 											<OfferPdf
 												text={'Полный прайс-лист'}

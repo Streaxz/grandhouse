@@ -3,7 +3,7 @@ import styles from './notFound.module.css'
 import React from "react";
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import {Carousel} from "@/app/components/Carousel/Carousel";
-import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
+import {CatalogItem} from "@/app/components/Catalog/CatalogItem";
 import {Ideas} from "@/app/components/Ideas/Ideas";
 
 const MagazinePage = () => {
@@ -25,8 +25,8 @@ const MagazinePage = () => {
 										mobileSlides={1}
 										spaceBetween={36}
 									>
-											<AutumnProject/>
-											<AutumnProject/>
+											<CatalogItem/>
+											<CatalogItem/>
 									</Carousel>
 									<Ideas/>
 							</div>

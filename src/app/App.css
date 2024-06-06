@@ -671,6 +671,9 @@ p, label {
     width: 80%;
 }
 
+.Dropdown-option {
+    color: #62698C;
+}
 .whiteBox {
     display: flex;
     position: relative;
@@ -687,6 +690,7 @@ p, label {
 .doubleItem {
     position: relative;
     z-index: 3;
+    flex-wrap: wrap;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -1135,13 +1139,15 @@ p, label {
 }
 
 .text {
-    display: flex;
+    display: block;
     padding:  48px;
     position: relative;
     z-index: 2;
     gap: 36px;
     align-self: stretch;
     columns: 2;
+    column-count: 2;
+    column-gap: 36px;
 }
 
 .textColumn {
@@ -3054,6 +3060,7 @@ span.MuiButtonBase-root > svg > path {
         padding:  36px;
         flex-direction: column;
         gap: 28px;
+        column-gap: 28px;
     }
 
     .textColumn {
@@ -3851,6 +3858,7 @@ span.MuiButtonBase-root > svg > path {
         columns: unset;
         flex-direction: column;
         gap: 18px;
+        column-gap: 18px;
     }
 
     .textColumn {

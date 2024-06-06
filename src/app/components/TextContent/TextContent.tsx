@@ -1,15 +1,15 @@
 interface ITextProps {
-		firstText: string;
-		secondText: string;
-		color?: string;
+	text: string;
+	color?: string;
 }
 
-export const TextContent = ({firstText, secondText, color}: ITextProps) => {
+export const TextContent = ({text, color}: ITextProps) => {
 
 		return (
 			<div className={'text'}>
-					<p className={'textColumn'} style={{color}}>{firstText}</p>
-					<p className={'textColumn'} style={{color}}>{secondText}</p>
+					<p style={{color}}>
+						{text}
+					</p>
 			</div>
 		)
 }

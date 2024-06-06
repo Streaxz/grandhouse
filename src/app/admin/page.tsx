@@ -16,7 +16,10 @@ import {
 	Drawer,
 	Switch,
 	Upload,
-	GetProp, UploadProps, message, InputNumber
+	GetProp,
+	UploadProps,
+	message,
+	InputNumber
 } from "antd";
 import {useProject} from "@/app/hooks/useProject";
 import {IProject} from "@/app/types/IProject";
@@ -31,6 +34,7 @@ import {MaterialTable} from "@/app/components/MaterialTable/MaterialTable";
 import {DescriptionTable} from "@/app/components/DescriptionTable/DescriptionTable";
 import {InformationTable} from "@/app/components/InformationTable/InformationTable";
 import {usePrices} from "@/app/hooks/usePrices";
+import dynamic from "next/dynamic";
 type FieldType = {
 	title?: string;
 };
@@ -43,6 +47,8 @@ export interface Item extends IProject{
 export interface ItemPhoto extends IPhoto{
 	key: number;
 }
+
+const Editor = dynamic(() => import("../components/Editor"), { ssr: false });
 
 const AdminPage = () => {
 	const {auth, me, jwt, setJwt} = useUser();
@@ -240,7 +246,7 @@ const AdminPage = () => {
 			render: (_: any, record: Item) => {
 				return (
 					<Typography.Text>
-						{record.serial}
+						{record.series?.comment}
 					</Typography.Text>
 				);
 			}
@@ -331,6 +337,7 @@ const AdminPage = () => {
 						<div className={styles.table}>
 							<div style={{display: "flex", flexDirection: "column", gap: "24px", width: "100%"}}>
 								<Card title="Таблица проектов" size='default' style={{width: "100%"}}>
+									<Editor/>
 									<Card title={'Создать'} size='small'>
 										<Form
 											name="basic"
@@ -382,6 +389,7 @@ const AdminPage = () => {
 								createMaterial={createMaterial}
 								deleteMaterial={deleteMaterial}
 								/>
+
 							<Button
 								type={"primary"}
 								onClick={() => {
@@ -428,13 +436,13 @@ const AdminPage = () => {
 							<Switch defaultChecked={updatedProject?.isIndividual}/>
 						</Form.Item>
 						<Form.Item name="area" label="Площадь">
-							<Input/>
+							<InputNumber/>
 						</Form.Item>
 						<Form.Item name="price" label="Стоимость">
-							<Input/>
+							<InputNumber/>
 						</Form.Item>
 						<Form.Item name="size" label="Size">
-							<Input/>
+							<InputNumber/>
 						</Form.Item>
 						<Form.Item name="bedroomsCount" label="Количество спален">
 							<Input/>

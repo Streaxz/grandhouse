@@ -3,7 +3,7 @@ import styles from './archive.module.css'
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import React from "react";
 import {Button} from "@/app/components/Button/Button";
-import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
+import {CatalogItem} from "@/app/components/Catalog/CatalogItem";
 import {Filters} from "@/app/components/Filters/Filters";
 import {Sort} from "@/app/components/Sort/Sort";
 
@@ -25,47 +25,47 @@ const ArchivePage = () => {
 									</Sort>
 									<div className={styles.catalogContainer}>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>
 											<div className={styles.flexItem}>
-													<AutumnProject
+													<CatalogItem
 														isArchive
 													/>
 											</div>

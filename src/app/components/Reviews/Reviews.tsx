@@ -1,9 +1,9 @@
 'use client';
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
 import React from "react";
-import {ProjectCard} from "@/app/components/ProjectCart/ProjectCard";
 import {Carousel} from "@/app/components/Carousel/Carousel";
 import {Button} from "@/app/components/Button/Button";
+import {ProjectCard} from "@/app/components/ProjectCard/ProjectCard";
 
 export const Reviews = () => {
 		return (

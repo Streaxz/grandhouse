@@ -106,6 +106,7 @@
 .catalogContainer {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     gap: 48px 36px;
 }
 
@@ -119,7 +120,7 @@
     padding: 30px;
     width: calc(100% + 60px); /* 30px padding on each side */
 
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 .flexItem {
@@ -127,6 +128,10 @@
     flex: 0 0 calc(50% - 18px); /* 50% width for 2 items per row with gap adjustment */
 }
 
+.flexItem:hover {
+    transform: scale(1.05); /* Example hover effect */
+    cursor: pointer;
+}
 @media (max-width: 768px) and (min-width: 500px) {
     .pageWrapper{
         padding: 36px 0 48px 0;

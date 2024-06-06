@@ -35,7 +35,7 @@ export const Ideas = ({text}: IIdeasProps) => {
 							</div>
 
 					</div>
-					<img src={'ideas.png'} className={'ideasImage'} alt={'idea'}/>
+					<img src={'/ideas.png'} className={'ideasImage'}/>
 			</div>
 		)
 

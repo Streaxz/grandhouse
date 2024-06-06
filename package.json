@@ -5,13 +5,14 @@
   "scripts": {
     "start:dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start:prod": "next start",
     "start:server": "node .next/standalone/server.js",
     "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@mdxeditor/editor": "^3.0.7",
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@next/font": "^14.1.3",

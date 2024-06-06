@@ -10,12 +10,19 @@ export enum FLOORS_COUNT {
   ONE = 1,
   TWO = 2,
 }
+
+export interface ISeries {
+  id: number;
+  value: string;
+  comment?: string;
+}
 export interface IProject {
   //Основное
   id: number;
   isArchive: boolean;
   isIndividual: boolean;
-  serial?: string;
+  series?: ISeries;
+  seriesId: number;
   title?: string;
   photos?: IPhoto[];
   area?: number;

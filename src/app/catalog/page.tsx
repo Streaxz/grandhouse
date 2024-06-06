@@ -1,18 +1,34 @@
 "use client";
 import styles from './catalog.module.css'
 import {TextBlock} from "@/app/components/TextBlock/TextBlock";
-import React from "react";
+import React, {useEffect} from "react";
 import {Ideas} from "@/app/components/Ideas/Ideas";
 import {Button} from "@/app/components/Button/Button";
 import {FeatureCardSmallDarkLabel} from "@/app/components/FeatureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
 import {MagazineCardLarge} from "@/app/components/Magazine/MagazineCardLarge/MagazineCardLarge";
-import {AutumnProject} from "@/app/components/Catalog/AutumnProject";
+import {CatalogItem} from "@/app/components/Catalog/CatalogItem";
 import {Filters} from "@/app/components/Filters/Filters";
 import {Sberbank} from "@/app/components/Sberbank/Sberbank";
 import {PhotoButton} from "@/app/components/PhotoButton/PhotoButton";
+import {useProject} from "@/app/hooks/useProject";
+import {useRouter} from "next/navigation";
 
 const CatalogPage = () => {
+	const {getProjects, projects} = useProject();
+	const router = useRouter()
 
+	useEffect(() => {
+		const fetchData = async () => {
+			await getProjects();
+		}
+
+		if (!projects) {
+			fetchData();
+		}
+
+	}, [projects])
+
+	console.log(projects);
 		return (
 			<main className={styles.page}>
 					<div className={styles.pageWrapper}>
@@ -25,48 +41,22 @@ const CatalogPage = () => {
 									/>
 									<Filters/>
 									<div className={styles.seriesContainer}>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
+										{projects?.slice(0,4).map((project, index) => (
+											<a
+												onClick={() => {router.push(`/project/${project.id}`)}}
+												key={index}
+												className={styles.flexItem}>
+												<CatalogItem project={project} />
+											</a>
+										))}
 									</div>
 									<Sberbank/>
 									<div className={styles.catalogContainer}>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
+										{projects?.slice(4).map((project, index) => (
+											<div key={index} className={styles.flexItem}>
+												<CatalogItem project={project} />
 											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
-											<div className={styles.flexItem}>
-													<AutumnProject/>
-											</div>
+										))}
 									</div>
 									<Button
 										onClick={() => {}}

@@ -7,10 +7,11 @@ export interface ITextBlock {
 		rectangleColor: string;
 		textColor: string;
 		mainText: string;
-		width?: string
+		width?: string;
+		series?: string;
 
 }
-export const ProjectHeader = ({rectangleColor, textColor, mainText, width}: ITextBlock) => {
+export const ProjectHeader = ({rectangleColor, textColor, mainText, width, series}: ITextBlock) => {
 		return (
 			<div className={'projectMainHeader'}>
 					<div className="rectangle" style={{backgroundColor: rectangleColor}}/>
@@ -18,7 +19,9 @@ export const ProjectHeader = ({rectangleColor, textColor, mainText, width}: ITex
 							{mainText}
 					</h1>
 					<div className={'labelsContainer'}>
-							<LabelStandardDark text={"Серия «Времена года»"}/>
+						{ series &&
+							<LabelStandardDark text={series}/>
+						}
 							<LabelStandard text={'Новое'}/>
 
 					</div>
