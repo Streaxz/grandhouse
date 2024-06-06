@@ -12,6 +12,7 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY ./code .
 COPY --from=deps /app/node_modules ./node_modules
+ARG NODE_ENV
 ARG NEXT_PUBLIC_API_URL
 RUN npm run build
 
