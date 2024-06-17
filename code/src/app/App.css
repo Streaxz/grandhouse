@@ -337,6 +337,10 @@ p, label {
     flex-grow: 1;
 }
 
+.iconContainer:hover {
+    scale: 1.05;
+    cursor: pointer;
+}
 .headerLogo {
     position: relative;
     top: 6px;
@@ -693,12 +697,15 @@ p, label {
     flex-wrap: wrap;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+
     padding: var(--Absolute-sizes-zero, 0);
     gap: 36px;
 
 }
 
+.doubleItemTest {
+    justify-content: center;
+}
 .dropdown {
     display: flex;
     position: relative;
@@ -865,6 +872,13 @@ p, label {
     backdrop-filter: blur(36px);
 
 }
+
+.clickable:hover {
+    cursor: pointer;
+}
+.clickable:active {
+    scale: 0.95;
+}
 .header {
     display: flex;
     justify-content: center;
@@ -951,6 +965,7 @@ p, label {
     display: flex;
     position: relative;
     width: 100%;
+    flex: 1 0 0;
     height:  420px;
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
     border-radius: 48px;
@@ -989,7 +1004,9 @@ p, label {
     align-items: flex-start;
     gap: 24px;
     border-radius: 48px;
-
+}
+.featureCardLarge:active {
+    scale: 0.98;
 }
 
 .featureCardPicture {
@@ -1050,6 +1067,10 @@ p, label {
     background-repeat: no-repeat;
     border-radius: 48px;
     box-shadow: 0 4px 96px 0 rgba(34, 144, 255, 0.50);
+}
+
+.photoButtonContainer:hover {
+    cursor: pointer;
 }
 
 .imageContainer {
@@ -1253,7 +1274,14 @@ p, label {
     gap: 12px;
     border: none
 }
+.navigationButton:hover {
+    background: rgba(39, 43, 64, 0.75);
 
+    cursor: pointer;
+}
+.navigationButton:active {
+    scale: 0.95;
+}
 .filtersButton {
     display: flex;
     padding: 18px 24px 14px 24px;
@@ -1408,6 +1436,13 @@ p, label {
     border-radius: 100%;
     position: relative;
 }
+.roundPhoto:hover {
+    cursor: pointer;
+}
+
+.roundPhoto:active {
+    scale: 0.95;
+}
 
 .projectButton {
     z-index: 3;
@@ -1421,6 +1456,14 @@ p, label {
 
     border: 4px solid #E3E8F1;
     background: var(--Gradient-Light, linear-gradient(180deg, #FFF 0%, #D5DEED 100%));
+}
+
+.projectButton:hover {
+    cursor: pointer;
+}
+
+.projectButton:active {
+    scale: 0.95;
 }
 
 .buttonSmall {
@@ -1782,7 +1825,9 @@ label {
 .socialItem {
     height : 72px;
 }
-
+.socialItem:hover {
+    cursor: pointer;
+}
 .magazineCardLarge {
     width: 100%;
     display: flex;
@@ -1798,6 +1843,7 @@ label {
     /* shadow standard */
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
+
 
 .employeeCardLarge {
     width: 100%;

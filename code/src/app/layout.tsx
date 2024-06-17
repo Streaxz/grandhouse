@@ -1,66 +1,69 @@
 import type { Metadata } from "next";
-import {Header} from "@/app/components/Header/Header";
+import { Header } from "@/app/components/Header/Header";
 import "./App.css";
-import localFont from '@next/font/local'
-import {Footer} from "@/app/components/Footer/Footer";
+import localFont from "@next/font/local";
+import { Footer } from "@/app/components/Footer/Footer";
 import React from "react";
+import {
+  ModalContainer,
+  ModalProvider,
+} from "@/app/components/Modal/ModalContainer";
 
 const objectSans = localFont({
-    src: [
-        {
-            path: '../../public/fonts/ObjectSans-Thin.otf',
-            weight: '100'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-ThinSlanted.otf',
-            weight: '100',
-            style: 'italic'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-Light.otf',
-            weight: '300'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-LightSlanted.otf',
-            weight: '300',
-            style: 'italic'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-Regular.otf',
-            weight: '400'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-Slanted.otf',
-            weight: '400',
-            style: 'italic'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-Heavy.otf',
-            weight: '700'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-HeavySlanted.otf',
-            weight: '700',
-            style: 'italic'
-        },
-        {
-            path: '../../public/fonts/ObjectSans-Black.otf',
-            weight: '900'
-        }
-    ],
-    variable: '--font-object-sans'
-})
+  src: [
+    {
+      path: "../../public/fonts/ObjectSans-Thin.otf",
+      weight: "100",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-ThinSlanted.otf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-Light.otf",
+      weight: "300",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-LightSlanted.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-Regular.otf",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-Slanted.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-Heavy.otf",
+      weight: "700",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-HeavySlanted.otf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/ObjectSans-Black.otf",
+      weight: "900",
+    },
+  ],
+  variable: "--font-object-sans",
+});
 
 const petersburg = localFont({
-    src: [
-        {
-            path: '../../public/fonts/Petersburg-italic.ttf',
-            weight: '900'
-        }
-    ],
-    variable: '--font-petersburg'
-  }
-)
+  src: [
+    {
+      path: "../../public/fonts/Petersburg-italic.ttf",
+      weight: "900",
+    },
+  ],
+  variable: "--font-petersburg",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -72,14 +75,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en" className={`${objectSans.variable} ${petersburg.variable}`} style={{fontWeight:"300"}}>
-        <body className={`body`} id={"body"}>
-        <div id={"modal"}/>
-        <Header/>
-        {children}
-        <Footer/>
-        </body>
-        </html>
-    );
+  return (
+    <html
+      lang="en"
+      className={`${objectSans.variable} ${petersburg.variable}`}
+      style={{ fontWeight: "300" }}
+    >
+      <body className={`body`} id={"body"}>
+        <div id={"modal"} />
+        <ModalProvider>
+          <Header />
+          {children}
+          <Footer />
+          <ModalContainer />
+        </ModalProvider>
+      </body>
+    </html>
+  );
 }

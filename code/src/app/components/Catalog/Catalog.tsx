@@ -1,23 +1,19 @@
 "use client";
-import "../../App.css"
-import React, {useEffect, useState} from "react";
-import {CatalogItem} from "@/app/components/Catalog/CatalogItem";
-import {Button} from "@/app/components/Button/Button";
-import {AmoCrmModal} from "@/app/components/Modal/AmoCrmModal";
-import {Carousel} from "@/app/components/Carousel/Carousel";
-import {Modal} from "antd";
+import "../../App.css";
+import React, { useEffect, useState } from "react";
+import { CatalogItem } from "@/app/components/Catalog/CatalogItem";
+import { Button } from "@/app/components/Button/Button";
+import { Carousel } from "@/app/components/Carousel/Carousel";
+import { useRouter } from "next/navigation";
+import { IProject } from "@/app/types/IProject";
+import { random } from "@ctrl/tinycolor";
 
-export const Catalog = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+export interface ICatalogProps {
+  projects: IProject[];
+}
+export const Catalog = ({ projects }: ICatalogProps) => {
+  const router = useRouter();
   const [numOfPhotos, setNumOfPhotos] = useState(6);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,77 +34,70 @@ export const Catalog = () => {
     };
   }, []);
 
-  const roundPhotos = Array.from({length: numOfPhotos}, (_, index) => (
+  const roundPhotos = projects.slice(0, numOfPhotos).map((project, index) => (
     <div
-      key={index}
+      onClick={() => {
+        router.push(`/project/${project.id}`);
+      }}
+      key={`round-photo-${index}`}
       className="roundPhoto"
-      style={{backgroundImage: `url(/autumn.png)`}}
+      style={{ backgroundImage: `url(/autumn.png)` }}
     ></div>
   ));
 
   return (
     <>
-      <div className='catalogContainer'>
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "36px"
-        }}>
-          <img src={`/logo_catalog.svg`} alt={'logo'}
-               className={"logoCatalog"}></img>
-          <p>Вводка о каталоге компании</p>
+      <div className="catalogContainer">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "36px",
+          }}
+        >
+          <img
+            src={`/logo_catalog.svg`}
+            alt={"logo"}
+            className={"logoCatalog"}
+          ></img>
+          <p>Мы предлагаем готовые проекты: </p>
+          <p style={{ textAlign: "left" }}>
+            - серийные, с выбором исполнения и планировки; <br />
+            - готовые фирменные проекты; <br />
+          </p>
         </div>
       </div>
-      <Carousel
-        swiperEffect={'slider'}
-        desktopSlides={2}
-        tabletSlides={2}
-        mobileSlides={1}
-        spaceBetween={36}
-      >
-        <CatalogItem/>
-        <CatalogItem/>
-      </Carousel>
-
+      {projects.length > 0 && (
+        <Carousel
+          swiperEffect={"slider"}
+          desktopSlides={2}
+          tabletSlides={2}
+          mobileSlides={1}
+          spaceBetween={36}
+          projectsLength={projects.length}
+        >
+          {projects.map((project) => (
+            <CatalogItem project={project} key={`catalog-${random()}`} />
+          ))}
+        </Carousel>
+      )}
       <div
         style={{
           display: "flex",
           justifyContent: "space-evenly",
-          width: "100%"
+          width: "100%",
         }}
       >
         {roundPhotos}
       </div>
       <Button
-        onClick={openModal}
-        buttonText={"Все проекты (240)"}
-      />
-      <Modal
-        open={isOpen}
-        onCancel={closeModal}
-        width={"80%"}
-        style={{
-          top: `${typeof window !== 'undefined' && window.scrollY + 50}px`,
+        onClick={() => {
+          router.push("/catalog");
         }}
-
-        footer={null}
-      >
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            flexDirection: "column",
-          }}
-        >
-          <AmoCrmModal
-            isModal={true}
-            closeModal={closeModal}/>
-        </div>
-      </Modal>
+        buttonText={"Все проекты"}
+      />
     </>
-  )
-}
+  );
+};

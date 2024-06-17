@@ -1,10 +1,10 @@
-import {IPhoto} from "@/app/types/IPhoto";
-import {IEmployee} from "@/app/types/IEmployee";
-import {IInformation} from "@/app/types/IInformation";
-import {IInformationCard} from "@/app/types/IInformationCard";
-import {IMaterial} from "@/app/types/IMaterial";
-import {IArticle} from "@/app/types/IArticle";
-import {IPrice} from "@/app/types/IPrice";
+import { IPhoto } from "@/app/types/IPhoto";
+import { IEmployee } from "@/app/types/IEmployee";
+import { IInformation } from "@/app/types/IInformation";
+import { IInformationCard } from "@/app/types/IInformationCard";
+import { IMaterial } from "@/app/types/IMaterial";
+import { IArticle } from "@/app/types/IArticle";
+import { IPrice } from "@/app/types/IPrice";
 
 export enum FLOORS_COUNT {
   ONE = 1,
