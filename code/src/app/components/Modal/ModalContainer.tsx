@@ -51,7 +51,7 @@ export const ModalContainer: React.FC = () => {
       width={"80%"}
       style={{
         top: `${typeof window !== "undefined" && window.scrollY}px`,
-        padding: 0,
+        padding: "0 0 0 0",
       }}
       footer={null}
     >

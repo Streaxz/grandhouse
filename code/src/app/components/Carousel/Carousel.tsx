@@ -25,6 +25,7 @@ export const Carousel = ({
   mobileSlides,
   isActive,
   projectsLength,
+  swiperEffect,
 }: ICarouselProps) => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -39,7 +40,7 @@ export const Carousel = ({
     if (swiperRef.current && swiperRef.current.swiper) {
       // eslint-disable-next-line
       //@ts-expect-error
-      swiperRef.current.swiper.slideNext();
+      swiperRef.current.swiper.slideNext(300);
     }
   };
   const goPrev = () => {
@@ -48,7 +49,7 @@ export const Carousel = ({
     if (swiperRef.current && swiperRef.current.swiper) {
       // eslint-disable-next-line
         //@ts-ignore
-      swiperRef.current.swiper.slidePrev();
+      swiperRef.current.swiper.slidePrev(300);
     }
   };
 
@@ -58,7 +59,7 @@ export const Carousel = ({
     if (swiperRef.current && swiperRef.current.swiper) {
       // eslint-disable-next-line
         //@ts-ignore
-      swiperRef.current.swiper.slideTo(index);
+      swiperRef.current.swiper.slideTo(index, 300);
       setActiveIndex(index);
     }
   };
@@ -104,7 +105,7 @@ export const Carousel = ({
             spaceBetween={spaceBetween}
             slidesPerView={swiperSlides}
             pagination={false}
-            effect={"slide"}
+            effect={swiperEffect}
             className={"swiper"}
             modules={[EffectFade]}
             onSlideChange={(swiper) => {

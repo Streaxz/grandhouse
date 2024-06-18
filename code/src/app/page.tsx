@@ -32,7 +32,7 @@ export default function Home() {
           {projects && projects?.length > 0 && (
             <Carousel
               isPagination={true}
-              swiperEffect={"slide"}
+              swiperEffect={"fade"}
               projectsLength={projects.length}
             >
               {projects?.map((project) => (
@@ -47,9 +47,9 @@ export default function Home() {
             </Carousel>
           )}
           <Navigation />
-          {/*{projects && projects?.length > 0 &&*/}
-          <Catalog projects={projects || []} />
-          {/*}*/}
+          {projects && projects?.length > 0 && (
+            <Catalog projects={projects || []} />
+          )}
           <PhotoButton
             backgroundSrc={"/clouds.jpeg"}
             buttonSrc={"/photoButton.png"}

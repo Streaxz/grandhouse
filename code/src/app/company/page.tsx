@@ -50,16 +50,19 @@ const CompanyPage = () => {
               headerText={"10 инженеров"}
               descriptionText={"Подзаголовок элемента"}
               src={"/company.jpeg"}
+              link={"/company"}
             />
             <RoundFeaturesItem
               headerText={"Свое производство"}
               descriptionText={"Подзаголовок элемента"}
               src={"/wood.jpeg"}
+              link={"/offers"}
             />
             <RoundFeaturesItem
               headerText={"Проектный отдел"}
               descriptionText={"Подзаголовок элемента"}
               src={"/autumn.jpeg"}
+              link={"/forest"}
             />
           </Features>
           <TextContent
@@ -89,14 +92,14 @@ const CompanyPage = () => {
         <div className={styles.shortcutContainer}>
           <Shortcuts backgroundColor={"#000"}>
             <ShortcutItem
-              emoji={"❤️‍🔥"}
+              emoji={"/burningHeart.png"}
               title={"Юридическая информация"}
               description={"Поздаголовок ярлыка"}
               color={"#FFF"}
               descriptionColor={"#62698C"}
             />
             <ShortcutItem
-              emoji={"📐"}
+              emoji={"/triangleLinear.png"}
               title={"Вакансии"}
               description={"Поздаголовок ярлыка"}
               color={"#FFF"}

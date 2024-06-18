@@ -5,8 +5,10 @@ import { Features } from "@/app/components/Features/Features";
 import { RoundFeaturesItem } from "@/app/components/RoundFeaturesItem/RoundFeaturesItem";
 import { Quote } from "@/app/components/Quote/Quote";
 import { Button } from "@/app/components/Button/Button";
+import { useRouter } from "next/navigation";
 
 export const Company = () => {
+  const router = useRouter();
   return (
     <div
       className={"pageContainer"}
@@ -40,16 +42,19 @@ export const Company = () => {
               headerText={"Заголовок элемента"}
               descriptionText={"Подзаголовок элемента"}
               src={"/company.jpeg"}
+              link={"/company"}
             />
             <RoundFeaturesItem
               headerText={"Заголовок Элемента"}
               descriptionText={"Подзаголовок элемента"}
               src={"/wood.jpeg"}
+              link={"/offers"}
             />
             <RoundFeaturesItem
               headerText={"Заголовок Элемента"}
               descriptionText={"Подзаголовок элемента"}
               src={"/autumn.jpeg"}
+              link={"/forest"}
             />
           </Features>
           {/*TODO Добавить автора*/}
@@ -66,7 +71,7 @@ export const Company = () => {
             }}
           />
           <Button
-            onClick={() => console.log()}
+            onClick={() => router.push("/company")}
             buttonText={"Подробнее о компании"}
           />
         </div>

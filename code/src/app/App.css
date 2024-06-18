@@ -898,7 +898,7 @@ p, label {
     background-color: #CC00FF;
     width: 120px;
     height: 12px;
-    top: 75px;
+    top: 50px;
     left: -100px;
 }
 
@@ -1222,12 +1222,14 @@ p, label {
     border-radius: 100%;
     background-color: white;
     opacity: 50%;
-
+    transition: opacity 0.3s ease;
     max-width: 24px;
     max-height: 24px;
 }
 
-.activeButton {
+
+
+.carouselButton.activeButton {
     margin: 1vw 0 0 1vw;
     z-index: 4;
     width: 2vw;
