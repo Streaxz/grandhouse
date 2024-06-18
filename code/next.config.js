@@ -1,6 +1,6 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const IgnoreWarningsPlugin = require("./ignore-warnings-plugin");
+// const path = require("path");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// // const IgnoreWarningsPlugin = require("./ignore-warnings-plugin");
 
 /**
  * @type {import('next').NextConfig}
@@ -32,24 +32,24 @@ const nextConfig = {
     //   new IgnoreWarningsPlugin([/non-serializable cache item/]),
     // );
 
-    // Использование MiniCssExtractPlugin для извлечения CSS в продакшн
-    if (!isServer) {
-      config.plugins.push(
-        new MiniCssExtractPlugin({
-          filename: "static/css/[name].[contenthash].css",
-          chunkFilename: "static/css/[id].[contenthash].css",
-        }),
-      );
-    }
-    // Настройка файлового кэширования
-    config.cache = {
-      type: "filesystem",
-      cacheDirectory: path.resolve(__dirname, ".cache"),
-      buildDependencies: {
-        config: [__filename],
-      },
-      name: "next-pack-file-cache",
-    };
+    // // Использование MiniCssExtractPlugin для извлечения CSS в продакшн
+    // if (!isServer) {
+    //   config.plugins.push(
+    //     new MiniCssExtractPlugin({
+    //       filename: "static/css/[name].[contenthash].css",
+    //       chunkFilename: "static/css/[id].[contenthash].css",
+    //     }),
+    //   );
+    // }
+    // // Настройка файлового кэширования
+    // config.cache = {
+    //   type: "filesystem",
+    //   cacheDirectory: path.resolve(__dirname, ".cache"),
+    //   buildDependencies: {
+    //     config: [__filename],
+    //   },
+    //   name: "next-pack-file-cache",
+    // };
 
     return config;
   },

@@ -1,13 +1,15 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { Modal } from "antd";
 import { AmoCrmModal } from "@/app/components/Modal/AmoCrmModal";
-
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
 interface ModalContextType {
   isOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
 }
+
+Modal.setAppElement("#modal");
 
 export const useModalFunctions = () => {
   const { openModal, closeModal } = useModal();
@@ -46,14 +48,14 @@ export const ModalContainer: React.FC = () => {
 
   return (
     <Modal
-      open={isOpen}
-      onCancel={closeModal}
-      width={"80%"}
+      isOpen={isOpen}
+      onRequestClose={closeModal}
       style={{
-        top: `${typeof window !== "undefined" && window.scrollY}px`,
-        padding: "0 0 0 0",
+        content: {
+          top: `${typeof window !== "undefined" && window.scrollY}px`,
+          padding: "0 0 0 0",
+        },
       }}
-      footer={null}
     >
       <div
         style={{
