@@ -56,14 +56,14 @@ export const ModalContainer: React.FC = () => {
           transition: "all 0.3s ease",
         },
         content: {
-          top: `${typeof window !== "undefined" && window.scrollY}px`,
+          top: `${typeof window !== "undefined" && window.scrollY + window.innerHeight / 2}px`,
           left: "50%",
           border: "unset",
           background: "transparent",
           padding: "0 0 0 0",
           height: "fit-content",
           width: "80%",
-          translate: "-50% 2%",
+          translate: "-50% -50%",
           transition: "all 0.3s ease",
         },
       }}
