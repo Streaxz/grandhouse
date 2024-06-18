@@ -1,11 +1,13 @@
 export interface IInfographicsProps {
   area?: number;
+  size?: number;
   bedroomsCount?: number;
   bathroomCount?: number;
   price?: number;
 }
 export const Infographics = ({
   bathroomCount,
+  size,
   area,
   bedroomsCount,
   price,
