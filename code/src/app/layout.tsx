@@ -58,7 +58,7 @@ const objectSans = localFont({
 const petersburg = localFont({
   src: [
     {
-      path: "../../public/fonts/Petersburg-italic.ttf",
+      path: "../../public/fonts/Petersburg-Italic.ttf",
       weight: "900",
     },
   ],
