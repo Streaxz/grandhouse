@@ -35,6 +35,7 @@ import { DescriptionTable } from "@/app/components/DescriptionTable/DescriptionT
 import { InformationTable } from "@/app/components/InformationTable/InformationTable";
 import { usePrices } from "@/app/hooks/usePrices";
 import dynamic from "next/dynamic";
+import { useSeries } from "@/app/hooks/useSeries";
 type FieldType = {
   title?: string;
 };
@@ -71,12 +72,25 @@ const AdminPage = () => {
 
   const { prices, getPrices } = usePrices();
 
+  const { series, getSeries } = useSeries();
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string>();
   const [image, setImage] = useState<string>();
   const [imageType, setImageType] = useState<PHOTO_TYPE>();
   const [order, setOrder] = useState<number>();
   const [open, setOpen] = useState<boolean>(false);
+
+  //add css style to header id display: none
+  const header = document.getElementById("header");
+  if (header) {
+    header.style.display = "none";
+  }
+
+  const body = document.getElementById("body");
+  if (body) {
+    body.style.color = "black";
+  }
+
   const getFile = (e: any) => {
     console.log("Upload event:", e);
 
@@ -114,6 +128,7 @@ const AdminPage = () => {
       await getEmployees();
       await getMaterials();
       await getPrices();
+      await getSeries();
     };
     if (auth) {
       fetchData();
@@ -420,7 +435,13 @@ const AdminPage = () => {
               <Input />
             </Form.Item>
             <Form.Item name="serial" label="Серия">
-              <Input />
+              <Select
+                defaultValue={updatedProject?.series?.id}
+                options={series?.map(({ id, comment }) => ({
+                  value: id,
+                  label: comment,
+                }))}
+              />
             </Form.Item>
             <Form.Item name="estimateLink" label="ссылка на смету">
               <Input />

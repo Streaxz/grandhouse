@@ -8,8 +8,9 @@ interface ModalContextType {
   closeModal: () => void;
 }
 
-Modal.setAppElement("#modal");
-
+if (document.getElementById("modal")) {
+  Modal.setAppElement("#modal");
+}
 export const useModalFunctions = () => {
   const { openModal, closeModal } = useModal();
   return { openModal, closeModal };

@@ -93,7 +93,7 @@ export const Header = () => {
   );
 
   return (
-    <div style={{ background: "rgba(255, 255, 255, 0.25)" }}>
+    <div id={"header"} style={{ background: "rgba(255, 255, 255, 0.25)" }}>
       <div
         style={{
           display: "flex",

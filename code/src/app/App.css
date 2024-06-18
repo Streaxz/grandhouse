@@ -231,6 +231,7 @@ p, label {
 .body {
     position: relative;
     margin: 0;
+    color: white;
     background: var(--Accents-LightBlue, #00D1FF);
     filter: saturate(125%);
     z-index: -10;
