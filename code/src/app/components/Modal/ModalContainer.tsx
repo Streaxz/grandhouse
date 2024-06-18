@@ -53,7 +53,6 @@ export const ModalContainer: React.FC = () => {
         overlay: {
           display: "flex",
           justifyContent: "center",
-          transition: "all 0.3s ease",
         },
         content: {
           top: `${typeof window !== "undefined" && window.scrollY + window.innerHeight / 2}px`,
@@ -64,7 +63,6 @@ export const ModalContainer: React.FC = () => {
           height: "fit-content",
           width: "80%",
           translate: "-50% -50%",
-          transition: "all 0.3s ease",
         },
       }}
     >

@@ -9,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect } from "react";
 import Link from "next/link";
 import { useModalFunctions } from "@/app/components/Modal/ModalContainer";
+import { useRouter } from "next/navigation";
 
 const pages = [
   { name: "Компания", link: "/company" },
@@ -22,6 +23,7 @@ const pages = [
 ];
 
 export const Header = () => {
+  const router = useRouter();
   const isMobile = useMediaQuery("(max-width:500px)");
   const isTablet = useMediaQuery("(min-width:500px) and (max-width:1100px)");
   const isDesktop = useMediaQuery("(min-width:1100px)");
@@ -46,19 +48,45 @@ export const Header = () => {
   }, [isMobile, isTablet, isDesktop]);
   const renderMenuItems = (items: { name: string; link: string }[]) => {
     return items.map((item, index) => (
-      <Link
+      <div
+        onClick={() => {
+          router.push(item.link);
+        }}
         key={index}
-        href={item.link}
-        style={{ textDecoration: "none", flexGrow: 1 }}
+        style={{
+          position: "relative",
+          display: "flex",
+          textDecoration: "none",
+          height: "200%",
+        }}
       >
-        <h6>{item.name}</h6>
-      </Link>
+        <h5 className={"clickable"}>{item.name}</h5>
+        <div
+          className={"navigationHover"}
+          onClick={() => {
+            router.push(item.link);
+          }}
+          style={{
+            position: "absolute",
+            width: "110%",
+            height: "180%",
+            translate: "-5% -20%",
+
+            borderRadius: "12px",
+          }}
+        />
+      </div>
     ));
   };
 
   const renderIcon = () => (
     <>
-      <div className={"iconContainer clickable"}>
+      <div
+        style={{
+          marginRight: "24px",
+        }}
+        className={"iconContainer clickable"}
+      >
         <MagnifierIcon />
       </div>
     </>
@@ -87,7 +115,6 @@ export const Header = () => {
         )}
         <div
           style={{
-            flexGrow: 2,
             display: "flex",
             justifyContent: "center",
           }}
@@ -96,7 +123,15 @@ export const Header = () => {
             <HeaderLogo />
           </Link>
         </div>
-        {isDesktop && renderMenuItems(pages)}
+        <div
+          style={{
+            width: "100%",
+            display: `${padding > 12 ? "flex" : "none"}`,
+            justifyContent: "space-evenly",
+          }}
+        >
+          {isDesktop && renderMenuItems(pages)}
+        </div>
         {isDesktop && renderIcon()}
         <div onClick={openModal} className={"iconContainer"}>
           <DialogBubbleIcon />
