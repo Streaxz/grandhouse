@@ -1,14 +1,18 @@
 import React from "react";
 
 interface IButtonPdfProps {
-	source: string;
+  source: string;
 }
-export const ButtonPdf = ({source}: IButtonPdfProps) => {
-
-	return (
-		<a target={'_blank'} className={`pdfButton`}  href={source} style={{textDecoration: "none"}}>
-				<img src={'/emojiPDF.png'} className={'emojiPdf'} alt={'pdfFile'}/>
-				<h3 className={'projectButtonText'}> Скачать PDF</h3>
-		</a>
-	)
-}
+export const ButtonPdf = ({ source }: IButtonPdfProps) => {
+  return (
+    <a
+      target={"_blank"}
+      className={`pdfButton`}
+      href={source}
+      style={{ textDecoration: "none" }}
+    >
+      <img src={"/emojiPDF.png"} className={"emojiPdf"} alt={"pdfFile"} />
+      <h3 className={"projectButtonText"}> Скачать PDF</h3>
+    </a>
+  );
+};

@@ -33,6 +33,12 @@ jobs:
       - name: Log in to YC Container Registry
         run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login -u ${{ secrets.REGISTRY_USER }} --password-stdin ${{ secrets.REGISTRY_HOST }}
 
+
+      - name: Clean unnecessary Docker resources before Build
+        run: |
+          docker image prune -f
+          docker builder prune -af
+
       - name: Build Docker image
         run: |
           docker compose build --no-cache ${{ env.SERVICE_NAME }}
@@ -54,7 +60,7 @@ jobs:
         run: |
           docker compose up -d --quiet-pull --no-build --wait
 
-      - name: Clean unnecessary Docker resources
+      - name: Clean unnecessary Docker resources after Build
         run: |
           docker image prune -f
           docker builder prune -af

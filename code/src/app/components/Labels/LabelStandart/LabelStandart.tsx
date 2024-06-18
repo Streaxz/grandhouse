@@ -1,12 +1,10 @@
-
 export interface ILabelSmallProps {
-		text: string
+  text: string;
 }
-export const LabelStandard = ({text}: ILabelSmallProps) => {
-
-		return (
-			<div className={'labelSmall'}>
-					<h5>{text}</h5>
-			</div>
-		)
-}
+export const LabelStandard = ({ text }: ILabelSmallProps) => {
+  return (
+    <div className={"labelSmall"}>
+      <h5>{text}</h5>
+    </div>
+  );
+};
