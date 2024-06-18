@@ -1,7 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { AmoCrmModal } from "@/app/components/Modal/AmoCrmModal";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 interface ModalContextType {
   isOpen: boolean;
@@ -51,9 +50,21 @@ export const ModalContainer: React.FC = () => {
       isOpen={isOpen}
       onRequestClose={closeModal}
       style={{
+        overlay: {
+          display: "flex",
+          justifyContent: "center",
+          transition: "all 0.3s ease",
+        },
         content: {
           top: `${typeof window !== "undefined" && window.scrollY}px`,
+          left: "50%",
+          border: "unset",
+          background: "transparent",
           padding: "0 0 0 0",
+          height: "fit-content",
+          width: "80%",
+          translate: "-50% 2%",
+          transition: "all 0.3s ease",
         },
       }}
     >
