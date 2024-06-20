@@ -1,25 +1,118 @@
+"use client";
+import React from "react";
+import { useRouter } from "next/navigation";
+
 export const FooterContacts = () => {
+  const router = useRouter();
   return (
     <div className={"footerContacts"}>
       <p style={{ color: "#62698C" }} className={"footerNavigation"}>
-        Философия
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+          onClick={() => {
+            router.push("/philosophy");
+          }}
+        >
+          Философия
+        </a>
         <br />
-        Каталог проектов
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+          onClick={() => {
+            router.push("/catalog");
+          }}
+        >
+          Каталог проектов
+        </a>
         <br />
-        Услуги
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+          onClick={() => {
+            router.push("/offers");
+          }}
+        >
+          Услуги
+        </a>
         <br />
-        Лес
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+          onClick={() => {
+            router.push("/forest");
+          }}
+        >
+          Лес
+        </a>
         <br />
-        Работы и отзывы
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+          onClick={() => {
+            router.push("/reviews");
+          }}
+        >
+          Работы и отзывы
+        </a>
         <br />
-        Компания
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+          onClick={() => {
+            router.push("/company");
+          }}
+        >
+          Компания
+        </a>
         <br />
-        Вакансии
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+        >
+          Вакансии
+        </a>
         <br />
-        Журнал
+        <a
+          style={{
+            cursor: "pointer",
+            color: "#62698C",
+          }}
+          onClick={() => {
+            router.push("/magazine");
+          }}
+        >
+          Журнал
+        </a>
       </p>
       <div className={"footerPhone"}>
-        <h1 style={{ color: "#62698C" }}>8 800 500-35-05</h1>
+        <h1 style={{ color: "#62698C" }}>
+          <a
+            style={{
+              cursor: "pointer",
+              color: "#62698C",
+              textDecoration: "none",
+            }}
+            href="tel:+7 800 500-35-05"
+          >
+            8 800 500-35-05
+          </a>
+        </h1>
         <h5 style={{ color: "#62698C" }}>
           Звонок бесплатный
           <br />
@@ -27,11 +120,42 @@ export const FooterContacts = () => {
         </h5>
         <div className={"footerTextGap"}>
           <h5 style={{ color: "#62698C" }}>
-            Менеджер в Телеграме: @grandhouse_robot
+            Менеджер в Телеграме:{" "}
+            <a
+              style={{
+                cursor: "pointer",
+                color: "#62698C",
+                textDecoration: "none",
+              }}
+              href="https://t.me/grandhouse_robot"
+            >
+              @grandhouse_robot
+            </a>
           </h5>
-          <h5 style={{ color: "#62698C" }}>WhatsApp: +7 926 500-35-05</h5>
           <h5 style={{ color: "#62698C" }}>
-            Почта по всем вопросам: dom@spk-gh.ru
+            <a
+              style={{
+                cursor: "pointer",
+                color: "#62698C",
+                textDecoration: "none",
+              }}
+              href={process.env.NEXT_PUBLIC_WHATSAPP}
+            >
+              WhatsApp: +7 926 500-35-05
+            </a>
+          </h5>
+          <h5 style={{ color: "#62698C" }}>
+            Почта по всем вопросам:{" "}
+            <a
+              style={{
+                cursor: "pointer",
+                color: "#62698C",
+                textDecoration: "none",
+              }}
+              href="mailto:dom@spk-gh.ru"
+            >
+              dom@spk-gh.ru
+            </a>
           </h5>
         </div>
       </div>
