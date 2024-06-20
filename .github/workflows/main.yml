@@ -36,8 +36,7 @@ jobs:
 
       - name: Clean unnecessary Docker resources before Build
         run: |
-          docker image prune -f
-          docker builder prune -af
+          docker system prune -af
 
       - name: Build Docker image
         run: |
@@ -62,5 +61,4 @@ jobs:
 
       - name: Clean unnecessary Docker resources after Build
         run: |
-          docker image prune -f
-          docker builder prune -af
+          docker system prune -af
