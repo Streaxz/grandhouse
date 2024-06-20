@@ -51,6 +51,7 @@ export interface ItemPhoto extends IPhoto {
 const Editor = dynamic(() => import("../components/Editor"), { ssr: false });
 
 const AdminPage = () => {
+  const [form] = Form.useForm<IProject>();
   const { auth, jwt, setJwt } = useUser();
   const {
     projects,
@@ -79,18 +80,22 @@ const AdminPage = () => {
   const [imageType, setImageType] = useState<PHOTO_TYPE>();
   const [order, setOrder] = useState<number>();
   const [open, setOpen] = useState<boolean>(false);
+  const [updatedStyles, setUpdatedStyles] = useState<boolean>(false);
+  useEffect(() => {
+    if (document && !updatedStyles) {
+      //add css style to header id display: none
+      const header = document.getElementById("header");
+      if (header) {
+        header.style.display = "none";
+      }
 
-  //add css style to header id display: none
-  const header = document.getElementById("header");
-  if (header) {
-    header.style.display = "none";
-  }
-
-  const body = document.getElementById("body");
-  if (body) {
-    body.style.color = "black";
-  }
-
+      const body = document.getElementById("body");
+      if (body) {
+        body.style.color = "black";
+      }
+      setUpdatedStyles(true);
+    }
+  }, [document, updatedStyles]);
   const getFile = (e: any) => {
     console.log("Upload event:", e);
 
@@ -135,6 +140,7 @@ const AdminPage = () => {
     }
   }, [jwt, auth]);
 
+  console.log(updatedProject);
   useEffect(() => {
     setUpdatedProject(
       projects?.find((project) => project.id == updatedProject?.id),
@@ -143,10 +149,10 @@ const AdminPage = () => {
 
   const handleUpdateProject = (record: Item) => {
     window.scrollTo(0, 0);
+    form.setFieldsValue(record);
     setUpdatedProject(record);
     setOpen(true);
   };
-  console.log(updatedProject);
 
   const handleChange: UploadProps["onChange"] = (info) => {
     if (info.file.status === "uploading") {
@@ -277,7 +283,6 @@ const AdminPage = () => {
   ];
 
   const onFinish = async (values: any) => {
-    console.log(values);
     await updateProject({
       id: updatedProject?.id,
       ...values,
@@ -331,7 +336,7 @@ const AdminPage = () => {
                   size="default"
                   style={{ width: "100%" }}
                 >
-                  <Editor />
+                  {/*<Editor />*/}
                   <Card title={"Создать"} size="small">
                     <Form
                       name="basic"
@@ -415,6 +420,7 @@ const AdminPage = () => {
           setUpdatedProject(undefined);
           setOpen(false);
         }}
+        destroyOnClose={true}
       >
         <div
           style={{
@@ -426,7 +432,7 @@ const AdminPage = () => {
           }}
         >
           <Form
-            initialValues={updatedProject}
+            form={form}
             name={"updateProject"}
             onFinish={onFinish}
             style={{ overflow: "scroll" }}
@@ -434,9 +440,8 @@ const AdminPage = () => {
             <Form.Item name="title" label="Название">
               <Input />
             </Form.Item>
-            <Form.Item name="serial" label="Серия">
+            <Form.Item name="seriesId" label="Серия">
               <Select
-                defaultValue={updatedProject?.series?.id}
                 options={series?.map(({ id, comment }) => ({
                   value: id,
                   label: comment,
@@ -447,10 +452,10 @@ const AdminPage = () => {
               <Input />
             </Form.Item>
             <Form.Item name="isArchive" label="В архиве">
-              <Switch defaultChecked={updatedProject?.isArchive} />
+              <Switch />
             </Form.Item>
             <Form.Item name="isIndividual" label="Индивидуальный">
-              <Switch defaultChecked={updatedProject?.isIndividual} />
+              <Switch />
             </Form.Item>
             <Form.Item name="area" label="Площадь">
               <InputNumber />

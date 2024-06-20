@@ -765,6 +765,10 @@ p, label {
     background: rgba(255, 255, 255, 0.50);
 }
 
+.dropdownMortgage:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
 .mortgageLabel {
     display: flex;
     position: absolute;
@@ -813,7 +817,8 @@ p, label {
     position: absolute;
     overflow: hidden;
     z-index: 2; /* Lower z-index value to be behind dropdownPlaceholder */
-    top: 37px;
+    bottom: 0;
+    translate: 0 100%;
     left: 0;
     gap: 12px;
     border-radius: 0 0 12px 12px;
@@ -826,13 +831,16 @@ p, label {
     /* bgBlur */
     backdrop-filter: blur(36px);
 }
-
-
+.Dropdown-option:hover {
+    background: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+}
 .dropdownArrow {
     display: flex;
     position: absolute;
     z-index: 5;
-    top: 10px;
+    top: 50%;
+    translate: 0 -50%;
     right: 18px;
     width: 24px;
     height: 24px;
@@ -865,7 +873,8 @@ p, label {
     position: absolute;
     overflow: hidden;
     z-index: 2; /* Lower z-index value to be behind dropdownPlaceholder */
-    top: 100%;
+    bottom: 0;
+    translate: 0 100%;
     left: 0;
     gap: 12px;
     border-radius: 0 0 12px 12px;
@@ -2538,6 +2547,7 @@ span.MuiButtonBase-root > svg > path {
 .mortgageHeader {
     position: relative;
     box-sizing: content-box;
+    align-items: center;
     display: flex;
     width: 90%;
     gap: 24px 24px;

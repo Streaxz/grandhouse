@@ -148,11 +148,11 @@ const ProjectPage = () => {
           <Carousel isPagination={true} swiperEffect={"slide"}>
             <FeatureCardPicture
               descriptionText={"Подпись"}
-              src={"/forest.jpeg"}
+              src={"forest.jpeg"}
             />
             <FeatureCardPicture
               descriptionText={"Нажмите для просмотра"}
-              src={"/forest.jpeg"}
+              src={"forest.jpeg"}
             />
           </Carousel>
           <TextContent

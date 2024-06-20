@@ -13,7 +13,6 @@ interface IPhotoProps {
 }
 export const FeatureCardLarge = ({ descriptionText, project }: IPhotoProps) => {
   const router = useRouter();
-  console.log(project?.photos);
   return (
     <div
       onClick={() => {

@@ -94,11 +94,11 @@ const OffersPage = () => {
               isActive={false}
             >
               <FeatureCardPicture
-                src={"/company.jpeg"}
+                src={"company.jpeg"}
                 descriptionText={"Подпись"}
               />
               <FeatureCardPicture
-                src={"/forest.jpeg"}
+                src={"forest.jpeg"}
                 descriptionText={"Подпись"}
               />
             </Carousel>
@@ -138,15 +138,15 @@ const OffersPage = () => {
               isActive={false}
             >
               <FeatureCardPicture
-                src={"/forest.jpeg"}
+                src={"forest.jpeg"}
                 descriptionText={"Подпись"}
               />
               <FeatureCardPicture
-                src={"/company.jpeg"}
+                src={"company.jpeg"}
                 descriptionText={"Подпись"}
               />
               <FeatureCardPicture
-                src={"/forest.jpeg"}
+                src={"forest.jpeg"}
                 descriptionText={"Подпись"}
               />
             </Carousel>

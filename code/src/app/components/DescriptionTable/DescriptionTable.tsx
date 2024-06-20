@@ -199,7 +199,7 @@ export const DescriptionTable = ({
     });
     setEditingKey("");
   };
-  console.log(updatedTitle, updatedDescription);
+
   return (
     <Card title={"Таблица описаний"}>
       <Card title={"Добавить описание"}>

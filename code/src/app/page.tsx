@@ -17,9 +17,11 @@ import { useProject } from "@/app/hooks/useProject";
 
 export default function Home() {
   const { projects, getProjects } = useProject();
-  console.log(projects);
   useEffect(() => {
-    getProjects();
+    async function getData() {
+      await getProjects();
+    }
+    getData();
   }, []);
 
   return (

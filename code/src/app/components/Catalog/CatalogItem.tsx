@@ -3,6 +3,7 @@ import React from "react";
 import { IProject } from "@/app/types/IProject";
 import { PHOTO_TYPE } from "@/app/types/IPhoto";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export interface ICatalogItem {
   project?: IProject;
@@ -21,6 +22,14 @@ export const CatalogItem = ({ project }: ICatalogItem) => {
           backgroundImage: `url(${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""})`,
         }}
       >
+        <Image
+          objectFit={"cover"}
+          fill
+          className={"catalogPhoto"}
+          style={{ zIndex: -5 }}
+          alt={"project"}
+          src={`/${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""}`}
+        />
         <div className="catalogContentContainer">
           <div>
             <div style={{ display: "flex" }}>
@@ -58,7 +67,7 @@ export const CatalogItem = ({ project }: ICatalogItem) => {
         <div style={{ display: "flex", textAlign: "center" }}>
           <h6 className={"footerText h6"}>Жилая {project?.size} м²</h6>
         </div>
-        <div className={"separateLine"} />
+        {/*<div className={"separateLine"} />*/}
         {/*<div style={{display: "flex", textAlign: "center"}}>*/}
         {/*    <h6 className={'footerText h6'}>*/}
         {/*        14×19 м*/}

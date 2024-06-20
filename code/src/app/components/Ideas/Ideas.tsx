@@ -1,9 +1,13 @@
+"use client";
 import { ContactsItem } from "@/app/components/ContactsItem/ContactsItem";
+import { useModalFunctions } from "@/app/components/Modal/ModalContainer";
 
 export interface IIdeasProps {
   text?: string;
 }
 export const Ideas = ({ text }: IIdeasProps) => {
+  const { openModal } = useModalFunctions();
+
   return (
     <div className={"ideasContainer"}>
       <div className={"ideasContent"}>
@@ -19,16 +23,14 @@ export const Ideas = ({ text }: IIdeasProps) => {
             upperText={"8 800 500 35-05"}
             lowerText={"Перезвоним сразу"}
             buttonText={"Закажите Звонок"}
-            onClick={() => {
-              console.log("click");
-            }}
+            onClick={openModal}
           />
           <ContactsItem
             upperText={"@grandhouse_robot"}
             lowerText={"Менеджер онлайн"}
             buttonText={"Чат в телеграме"}
             onClick={() => {
-              console.log("click");
+              window.open(process.env.NEXT_PUBLIC_TELEGRAM, "_blank");
             }}
           />
           <ContactsItem
@@ -36,7 +38,7 @@ export const Ideas = ({ text }: IIdeasProps) => {
             lowerText={"И здесь тоже"}
             buttonText={"Чат в WhatsApp"}
             onClick={() => {
-              console.log("click");
+              window.open(process.env.NEXT_PUBLIC_WHATSAPP, "_blank");
             }}
           />
         </div>

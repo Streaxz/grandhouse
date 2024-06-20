@@ -26,33 +26,47 @@ import { PriceOffer } from "@/app/components/PriceOffer/PriceOffer";
 import { CatalogItem } from "@/app/components/Catalog/CatalogItem";
 import { useProject } from "@/app/hooks/useProject";
 import { PHOTO_TYPE } from "@/app/types/IPhoto";
-
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useModalFunctions } from "@/app/components/Modal/ModalContainer";
 const ProjectPage = ({ params }: { params: { id: string } }) => {
-  const { project, getProject } = useProject(params.id);
+  const router = useRouter();
+  const { openModal } = useModalFunctions();
+  const { project, projects, getProject, getProjects } = useProject(params.id);
 
   useEffect(() => {
     const fetchData = async () => {
       await getProject();
+      await getProjects();
     };
 
     if (params && !project) {
       fetchData();
     }
   }, [getProject, params, project]);
-
-  console.log(project);
-
+  console.log(
+    project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]
+      .imageUrl,
+  );
   return (
     <main className={styles.page}>
       <div
         className={styles.background}
         style={{
-          background: `url(${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0].imageUrl}`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
+        <Image
+          fill
+          src={`/${
+            project?.photos?.filter(
+              (photo) => photo.type === PHOTO_TYPE.GENERAL,
+            )[0].imageUrl || ""
+          }`}
+          alt="background"
+        ></Image>
         <div
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.2)",
@@ -83,42 +97,45 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
       </div>
-      <div className={styles.pageWrapper}>
-        <div className={styles.pageContainer}>
-          {project?.mainQuoteText && project.mainQuoteAuthor && (
-            <Quote
-              quoteText={project.mainQuoteText}
-              author={project.mainQuoteAuthor}
-            />
-          )}
-          {project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)
-            .length !== 0 && (
-            <Carousel
-              swiperEffect={"slider"}
-              desktopSlides={1}
-              isPagination={true}
-            >
-              {project?.photos
-                ?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)
-                .map((photo) => (
-                  <FeatureCardPicture
-                    key={photo.id}
-                    descriptionText={"Подпись"}
-                    src={photo.imageUrl}
-                  />
-                ))}
-            </Carousel>
-          )}
-          <TextColumn firstText={project?.mainText || ""} />
-          {project?.estimateLink && (
-            <OfferPdf
-              text={"Смета и все подробности"}
-              source={project.estimateLink}
-            />
-          )}
-          <div className="projectEllipse"></div>
+      {project?.series && !project.isArchive && !project.isIndividual && (
+        <div className={styles.pageWrapper}>
+          <div className={styles.pageContainer}>
+            {project?.mainQuoteText && project.mainQuoteAuthor && (
+              <Quote
+                quoteText={project.mainQuoteText}
+                author={project.mainQuoteAuthor}
+              />
+            )}
+            {project?.photos?.filter(
+              (photo) => photo.type === PHOTO_TYPE.GENERAL,
+            ).length !== 0 && (
+              <Carousel
+                swiperEffect={"slider"}
+                desktopSlides={1}
+                isPagination={true}
+              >
+                {project?.photos
+                  ?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)
+                  .map((photo) => (
+                    <FeatureCardPicture
+                      key={photo.id}
+                      descriptionText={"Подпись"}
+                      src={photo.imageUrl}
+                    />
+                  ))}
+              </Carousel>
+            )}
+            <TextColumn firstText={project?.mainText || ""} />
+            {project?.estimateLink && (
+              <OfferPdf
+                text={"Смета и все подробности"}
+                source={project.estimateLink}
+              />
+            )}
+            <div className="projectEllipse"></div>
+          </div>
         </div>
-      </div>
+      )}
       <div
         className={`${styles.pageWrapper} ${styles.lightBackground}`}
         style={{ zIndex: 10 }}
@@ -132,8 +149,8 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
           />
           <SwitchContainer />
           <Carousel swiperEffect={"slider"} isPagination={true}>
-            <FeatureCardPicture src={"/2d.png"} contain />
-            <FeatureCardPicture src={"/2d.png"} contain />
+            <FeatureCardPicture src={"2d.png"} contain />
+            <FeatureCardPicture src={"2d.png"} contain />
           </Carousel>
           {project?.layoutText && (
             <TextContent color={"#272B40"} text={project.layoutText} />
@@ -148,34 +165,36 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
           />
         </div>
       </div>
-      <div
-        className={`${styles.pageWrapper} ${styles.yellowBackground}`}
-        style={{ zIndex: 10, position: "relative" }}
-      >
-        <div className={styles.pageContainer}>
-          <TextBlock
-            rectangleColor={"#CC00FF"}
-            mainText={"Интерьер"}
-            descriptionText={"Подзаголовок"}
-            textColor={"#272B40"}
-          />
-          {project?.photos?.filter(
-            (photo) => photo.type === PHOTO_TYPE.INTERIOR,
-          ).length !== 0 && (
-            <Carousel isPagination={true} swiperEffect={"slide"}>
-              {project?.photos
-                ?.filter((photo) => photo.type === PHOTO_TYPE.INTERIOR)
-                .map((photo) => (
-                  <FeatureCardPicture key={photo.id} src={photo.imageUrl} />
-                ))}
-            </Carousel>
-          )}
-          {project?.interiorText && (
-            <TextColumn color={"#272B40"} firstText={project.interiorText} />
-          )}
-          <Ideas text={"Заинтересовал проект?"} />
+      {project?.series && !project.isArchive && !project.isIndividual && (
+        <div
+          className={`${styles.pageWrapper} ${styles.yellowBackground}`}
+          style={{ zIndex: 10, position: "relative" }}
+        >
+          <div className={styles.pageContainer}>
+            <TextBlock
+              rectangleColor={"#CC00FF"}
+              mainText={"Интерьер"}
+              descriptionText={"Подзаголовок"}
+              textColor={"#272B40"}
+            />
+            {project?.photos?.filter(
+              (photo) => photo.type === PHOTO_TYPE.INTERIOR,
+            ).length !== 0 && (
+              <Carousel isPagination={true} swiperEffect={"slide"}>
+                {project?.photos
+                  ?.filter((photo) => photo.type === PHOTO_TYPE.INTERIOR)
+                  .map((photo) => (
+                    <FeatureCardPicture key={photo.id} src={photo.imageUrl} />
+                  ))}
+              </Carousel>
+            )}
+            {project?.interiorText && (
+              <TextColumn color={"#272B40"} firstText={project.interiorText} />
+            )}
+            <Ideas text={"Заинтересовал проект?"} />
+          </div>
         </div>
-      </div>
+      )}
       <div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
         <div className={styles.pageContainer}>
           <TextBlock
@@ -199,91 +218,96 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
           <div className={styles.darkEllipse}></div>
         </div>
       </div>
-      <div className={`${styles.pageWrapper} ${styles.diagonalDivide}`}>
-        <div className={styles.pageContainer}>
-          <TextBlock
-            rectangleColor={"#CC00FF"}
-            mainText={"Наружняя отделка"}
-            descriptionText={"Подзаголовок"}
-            textColor={"#272B40"}
-          />
-          {project?.materials && project?.materials?.length > 0 && (
-            <Features>
-              {project.materials.map((material) => (
-                <RectangleFeature
-                  key={`material-${material.id}`}
-                  textColor={"#272B40"}
-                  src={material.imageUrl}
-                  headerText={material.title}
-                  descriptionText={material.description}
-                />
-              ))}
-            </Features>
-          )}
-        </div>
-      </div>
-      <div className={`${styles.pageWrapper} ${styles.greyBackground}`}>
-        <div className={styles.pageContainer}>
-          <TextBlock
-            rectangleColor={"#CC00FF"}
-            textColor={"#272B40"}
-            mainText={"Конструктивные решения"}
-            descriptionText={"подзаголовок"}
-          />
-          {project?.photos?.filter(
-            (photo) => photo.type === PHOTO_TYPE.EXTERIOR,
-          ).length !== 0 && (
-            <Carousel isPagination={true} swiperEffect={"slide"}>
-              {project?.photos
-                ?.filter((photo) => photo.type === PHOTO_TYPE.EXTERIOR)
-                .map((photo) => (
-                  <FeatureCardPicture key={photo.id} src={photo.imageUrl} />
-                ))}
-            </Carousel>
-          )}
-          {project?.exteriorDescriptions &&
-            project?.exteriorDescriptions?.length > 0 && (
-              <div className={"doubleItem"}>
-                {project.exteriorDescriptions.map((description) => (
-                  <div
-                    key={`description-${description.id}`}
-                    className={"accentText"}
-                  >
-                    <h3>{description.title}</h3>
-                    <p>{description.description}</p>
+      {!project?.isArchive && (
+        <>
+          <div className={`${styles.pageWrapper} ${styles.diagonalDivide}`}>
+            <div className={styles.pageContainer}>
+              <TextBlock
+                rectangleColor={"#CC00FF"}
+                mainText={"Наружняя отделка"}
+                descriptionText={"Подзаголовок"}
+                textColor={"#272B40"}
+              />
+              {project?.materials && project?.materials?.length > 0 && (
+                <Features>
+                  {project.materials.map((material) => (
+                    <RectangleFeature
+                      key={`material-${material.id}`}
+                      textColor={"#272B40"}
+                      src={material.imageUrl}
+                      headerText={material.title}
+                      descriptionText={material.description}
+                    />
+                  ))}
+                </Features>
+              )}
+            </div>
+          </div>
+          <div className={`${styles.pageWrapper} ${styles.greyBackground}`}>
+            <div className={styles.pageContainer}>
+              <TextBlock
+                rectangleColor={"#CC00FF"}
+                textColor={"#272B40"}
+                mainText={"Конструктивные решения"}
+                descriptionText={"подзаголовок"}
+              />
+              {project?.photos?.filter(
+                (photo) => photo.type === PHOTO_TYPE.EXTERIOR,
+              ).length !== 0 && (
+                <Carousel isPagination={true} swiperEffect={"slide"}>
+                  {project?.photos
+                    ?.filter((photo) => photo.type === PHOTO_TYPE.EXTERIOR)
+                    .map((photo) => (
+                      <FeatureCardPicture key={photo.id} src={photo.imageUrl} />
+                    ))}
+                </Carousel>
+              )}
+              {project?.exteriorDescriptions &&
+                project?.exteriorDescriptions?.length > 0 && (
+                  <div className={"doubleItem"}>
+                    {project.exteriorDescriptions.map((description) => (
+                      <div
+                        key={`description-${description.id}`}
+                        className={"accentText"}
+                      >
+                        <h3>{description.title}</h3>
+                        <p>{description.description}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            )}
-          {project?.information && project?.information?.length > 0 && (
-            <InfoTable information={project.information} />
-          )}
-        </div>
-      </div>
-      <div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
-        <div className={styles.pageContainer}>
-          <MagazineCardLarge />
-        </div>
-      </div>
-      <div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
-        <div className={styles.pageContainer}>
-          <MagazineCardLarge />
-        </div>
-      </div>
-      <div
-        className={`${styles.pageWrapper} ${styles.darkBackground}`}
-        style={{ zIndex: 5 }}
-      >
-        <div className={styles.pageContainer}>
-          <TextBlock
-            rectangleColor={"#CC00FF"}
-            textColor={"#2"}
-            mainText={"Фотографии построенного проекта"}
-            descriptionText={"Вводка про отзывы и довольных клиентов"}
-          />
-          {project?.photos?.filter(
-            (photo) => photo.type === PHOTO_TYPE.COMPLETE,
-          ).length !== 0 && (
+                )}
+              {project?.information && project?.information?.length > 0 && (
+                <InfoTable information={project.information} />
+              )}
+            </div>
+          </div>
+        </>
+      )}
+      {project?.articles &&
+        project.articles.map((article) => (
+          <div
+            key={`article-${article.id}`}
+            className={`${styles.pageWrapper} ${styles.darkBackground}`}
+          >
+            <div className={styles.pageContainer}>
+              <MagazineCardLarge />
+            </div>
+          </div>
+        ))}
+      {project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.COMPLETE)
+        .length !== 0 && (
+        <div
+          className={`${styles.pageWrapper} ${styles.darkBackground}`}
+          style={{ zIndex: 5 }}
+        >
+          <div className={styles.pageContainer}>
+            <TextBlock
+              rectangleColor={"#CC00FF"}
+              textColor={"#2"}
+              mainText={"Фотографии построенного проекта"}
+              descriptionText={"Вводка про отзывы и довольных клиентов"}
+            />
+
             <Carousel isPagination={true} swiperEffect={"slide"}>
               {project?.photos
                 ?.filter((photo) => photo.type === PHOTO_TYPE.COMPLETE)
@@ -291,12 +315,13 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                   <FeatureCardPicture key={photo.id} src={photo.imageUrl} />
                 ))}
             </Carousel>
-          )}
-          {project?.completeText && (
-            <TextColumn firstText={project.completeText} />
-          )}
+
+            {project?.completeText && (
+              <TextColumn firstText={project.completeText} />
+            )}
+          </div>
         </div>
-      </div>
+      )}
       {project?.pricePackages &&
         project.pricePackages.length > 0 &&
         !project.isArchive && (
@@ -342,22 +367,26 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
             left: 0,
           }}
         />
-        <div className={styles.pageContainer}>
-          <div className={styles.mortgageBackgroundContainer}>
-            <TextBlock
-              rectangleColor={"#FFF"}
-              mainText={"Калькулятор ипотеки"}
-              descriptionText={"Поздаголовок"}
-              textColor={"#FFF"}
-            />
-            <MortgageCalculator />
-            <PriceOffer />
+        {project?.pricePackages && (
+          <div className={styles.pageContainer}>
+            <div className={styles.mortgageBackgroundContainer}>
+              <TextBlock
+                rectangleColor={"#FFF"}
+                mainText={"Калькулятор ипотеки"}
+                descriptionText={"Поздаголовок"}
+                textColor={"#FFF"}
+              />
+              <MortgageCalculator prices={project?.pricePackages} />
+              <PriceOffer />
+            </div>
           </div>
-        </div>
+        )}
       </div>
-      {project?.photos?.filter(
-        (photo) => photo.type === PHOTO_TYPE.POST_SCRIPTUM,
-      ).length &&
+      {project &&
+        project.photos &&
+        project?.photos?.filter(
+          (photo) => photo.type === PHOTO_TYPE.POST_SCRIPTUM,
+        ).length > 0 &&
         project.postScriptumText && (
           <div
             className={`${styles.backgroundMortgage} ${styles.pageWrapper}`}
@@ -424,29 +453,37 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                 <br />
               </div>
             </div>
-            <Button onClick={() => {}} buttonText={"Закажите звонок"} />
+            <Button onClick={openModal} buttonText={"Закажите звонок"} />
           </div>
         )}
-      <div className={`${styles.pageWrapper}`}>
-        <div className={styles.pageContainer}>
-          <TextBlock
-            rectangleColor={"#CC00FF"}
-            textColor={"#272B40"}
-            mainText={`Другии проекты серии «${project?.series?.comment}» или другие проекты компании`}
-          />
-          <Carousel
-            swiperEffect={"slider"}
-            desktopSlides={2}
-            tabletSlides={2}
-            mobileSlides={1}
-            spaceBetween={36}
-          >
-            <CatalogItem />
-            <CatalogItem />
-          </Carousel>
-          <Button onClick={() => {}} buttonText={"Все проекты (240)"} />
+      {projects && projects.length > 0 && (
+        <div className={`${styles.pageWrapper}`}>
+          <div className={styles.pageContainer}>
+            <TextBlock
+              rectangleColor={"#CC00FF"}
+              textColor={"#272B40"}
+              mainText={`Другии проекты серии «${project?.series?.comment}» или другие проекты компании`}
+            />
+            <Carousel
+              swiperEffect={"slider"}
+              desktopSlides={2}
+              tabletSlides={2}
+              mobileSlides={1}
+              spaceBetween={36}
+            >
+              {projects.map((project) => (
+                <CatalogItem key={project.id} project={project} />
+              ))}
+            </Carousel>
+            <Button
+              onClick={() => {
+                router.push("/catalog");
+              }}
+              buttonText={`Все проекты (${projects?.length})`}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 };

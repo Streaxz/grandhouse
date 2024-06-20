@@ -12,7 +12,6 @@ export const FeatureCardSmallDarkLabel = ({
   descriptionText,
   project,
 }: ICardProps) => {
-  console.log(project);
   const router = useRouter();
   return (
     <div

@@ -10,7 +10,6 @@ export interface ILoginProps {
 export const Login = ({ setJwt }: ILoginProps) => {
   const onFinish = async (values: any) => {
     try {
-      console.log(process.env.NEXT_PUBLIC_API_URL);
       const { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
         {

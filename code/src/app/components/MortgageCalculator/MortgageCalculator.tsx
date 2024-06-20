@@ -1,41 +1,7 @@
 import Dropdown, { Option } from "react-dropdown";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
-
-const options: Option[] = [
-  {
-    value: "one",
-    label: (
-      <p style={{ color: "#272B40" }} className={"dropdownOption"}>
-        {"one"}
-      </p>
-    ),
-  },
-  {
-    value: "one",
-    label: (
-      <p style={{ color: "#272B40" }} className={"dropdownOption"}>
-        {"one"}
-      </p>
-    ),
-  },
-  {
-    value: "one",
-    label: (
-      <p style={{ color: "#272B40" }} className={"dropdownOption"}>
-        {"one"}
-      </p>
-    ),
-  },
-  {
-    value: "one",
-    label: (
-      <p style={{ color: "#272B40" }} className={"dropdownOption"}>
-        {"one"}
-      </p>
-    ),
-  },
-];
+import { IPrice } from "@/app/types/IPrice";
 
 function valuetext(value: number) {
   return `${value}°C`;
@@ -52,9 +18,23 @@ const marks = [
   },
 ];
 
+const marksEstimate = [
+  {
+    value: 10,
+    label: "10 лет",
+  },
+  {
+    value: 30,
+    label: "30 лет",
+  },
+];
+
 const specialOptions: Option[] = [
   {
     value: "one",
+    data: {
+      percent: 8,
+    },
     label: (
       <div
         style={{
@@ -73,6 +53,9 @@ const specialOptions: Option[] = [
   },
   {
     value: "two",
+    data: {
+      percent: 8,
+    },
     label: (
       <div
         style={{
@@ -91,6 +74,9 @@ const specialOptions: Option[] = [
   },
   {
     value: "three",
+    data: {
+      percent: 8,
+    },
     label: (
       <div
         style={{
@@ -109,6 +95,9 @@ const specialOptions: Option[] = [
   },
   {
     value: "four",
+    data: {
+      percent: 8,
+    },
     label: (
       <div
         style={{
@@ -127,7 +116,47 @@ const specialOptions: Option[] = [
   },
 ];
 
-export const MortgageCalculator = () => {
+const calculateMonthlyPayment = (
+  loanAmount: number,
+  monthlyRate: number,
+  loanTermMonths: number,
+) => {
+  const annuityCoefficient =
+    (monthlyRate * Math.pow(1 + monthlyRate, loanTermMonths)) /
+    (Math.pow(1 + monthlyRate, loanTermMonths) - 1);
+  return loanAmount * annuityCoefficient;
+};
+
+export interface IMortgageCalculatorProps {
+  prices: IPrice[];
+}
+export const MortgageCalculator = ({ prices }: IMortgageCalculatorProps) => {
+  const options: Option[] = prices.map((item) => {
+    return {
+      value: item.id!.toString(),
+      data: {
+        price: item.amount!,
+      },
+      label: (
+        <p style={{ color: "#272B40" }} className={"dropdownOption"}>
+          {item.title}
+        </p>
+      ),
+    };
+  });
+  const [estimate, setEstimate] = useState<number>(20);
+  const [price, setPrice] = useState<Option>(options[0]);
+  const [amount, setAmount] = useState<number>(7);
+  const [percent, setPercent] = useState<Option>(specialOptions[0]);
+
+  const loanAmount = (price.data?.price! as number) - amount * 1000000;
+  const monthlyRate = (percent.data?.percent! as number) / 100 / 12; // Переводим процент в доли и месячную ставку
+  const loanTermMonths = estimate * 12; // Срок кредита в месяцах
+
+  const monthlyPayment = Math.round(
+    calculateMonthlyPayment(loanAmount, monthlyRate, loanTermMonths),
+  );
+
   return (
     <div className={"mortgageCalculator"}>
       <div className={"mortgageSelectors"}>
@@ -137,15 +166,20 @@ export const MortgageCalculator = () => {
             <Dropdown
               className={"dropdown"}
               options={options}
-              onChange={() => {}}
+              value={price}
+              onChange={(arg) => {
+                setPrice(options.find((item) => item.value === arg.value)!);
+              }}
               arrowClassName={"dropdownArrow"}
               controlClassName={"dropdownControl"}
               placeholderClassName={"dropdownPlaceholder"}
               menuClassName={"dropdownMenu"}
-              placeholder="Теплый контур"
             />
           </div>
-          <h3 style={{ color: "#272B40" }}>3 000 000 рублей</h3>
+          <h3 style={{ color: "#272B40" }}>
+            {price.data?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+            рублей
+          </h3>
           <p style={{ color: "#272B40" }}>
             со скидкой 7% при подписании договора до конца 2023 года
           </p>
@@ -158,10 +192,14 @@ export const MortgageCalculator = () => {
             <Dropdown
               className={"dropdownMortgage"}
               options={specialOptions}
-              onChange={() => {}}
+              onChange={(arg) => {
+                setPercent(
+                  specialOptions.find((item) => item.value === arg.value)!,
+                );
+              }}
               controlClassName={"dropdownControl"}
               arrowClassName={"mortgageArrow"}
-              menuClassName={"mortgageMenu"}
+              menuClassName={"dropdownMenu"}
               value={"one"}
             />
           </div>
@@ -186,14 +224,17 @@ export const MortgageCalculator = () => {
                 },
               }}
               getAriaValueText={valuetext}
-              min={5}
-              max={15}
-              step={0.1}
-              defaultValue={[6.5, 12.0]}
+              min={10}
+              max={30}
+              step={1}
+              value={estimate}
+              onChange={(event, value) => {
+                setEstimate(typeof value === "number" ? value : 0);
+              }}
               valueLabelDisplay="auto"
-              marks={marks}
+              marks={marksEstimate}
             />
-            <h3 style={{ color: "#272B40", width: "100%" }}>10 лет</h3>
+            <h3 style={{ color: "#272B40", width: "100%" }}>{estimate} лет</h3>
           </div>
           <div className={"selectorPrice"}>
             <h5 style={{ color: "#272B40", width: "100%" }}>
@@ -217,14 +258,22 @@ export const MortgageCalculator = () => {
                 },
               }}
               getAriaValueText={valuetext}
+              onChange={(event, value) => {
+                setAmount(typeof value === "number" ? value : 0);
+              }}
               min={5}
               max={15}
               step={0.1}
-              defaultValue={[6.5, 12.0]}
+              value={amount}
               valueLabelDisplay="auto"
               marks={marks}
             />
-            <h3 style={{ color: "#272B40", width: "100%" }}>700 000 рублей</h3>
+            <h3 style={{ color: "#272B40", width: "100%" }}>
+              {Math.round(amount * 1000000)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+              рублей
+            </h3>
           </div>
           <div className={"mortgageLabel"}>
             <h6 style={{ color: "#272B40" }}>Условия</h6>
@@ -232,9 +281,27 @@ export const MortgageCalculator = () => {
         </div>
       </div>
       <div className={"mortgageResult"}>
+        {/*
+        Формула расчета аннуитетного платежа
+
+Х = С * К
+
+где X — аннуитетный платеж,
+
+С — сумма кредита,
+
+К — коэффициент аннуитета.
+
+Коэффициент аннуитета считается так:
+
+К = (М * (1 + М) ^ S) / ((1 + М) ^ S — 1)
+
+где М — месячная процентная ставка по кредиту,
+
+S — срок кредита в месяцах.*/}
         <div className={"mortgageResultText"}>
           <p style={{ color: "#272B40" }}>Ежемесячный платеж не более</p>
-          <h1 style={{ color: "#272B40" }}>34000 рублей</h1>
+          <h1 style={{ color: "#272B40" }}>{monthlyPayment} рублей</h1>
           <p style={{ color: "#272B40" }}>
             аннуитетные платежи с неизменяемым размером платежа. Добавить текст
             про материнский капитал, если считалось с ним

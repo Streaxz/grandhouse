@@ -96,7 +96,6 @@ export const CarouselAnimated = ({
             modules={[EffectFade, EffectCoverflow]}
             onSlideChange={(swiper) => {
               setActiveIndex(swiper.realIndex);
-              console.log(swiper.activeIndex);
             }}
           >
             {Children.map(children, (child) => (
