@@ -82,7 +82,7 @@ const AdminPage = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [updatedStyles, setUpdatedStyles] = useState<boolean>(false);
   useEffect(() => {
-    if (document && !updatedStyles) {
+    if (typeof window !== "undefined" && !updatedStyles) {
       //add css style to header id display: none
       const header = document.getElementById("header");
       if (header) {
@@ -95,7 +95,7 @@ const AdminPage = () => {
       }
       setUpdatedStyles(true);
     }
-  }, [document, updatedStyles]);
+  }, [updatedStyles]);
   const getFile = (e: any) => {
     console.log("Upload event:", e);
 
