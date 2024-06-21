@@ -9,10 +9,9 @@ export interface IPackagesProps {
 }
 export const Packages = ({ prices }: IPackagesProps) => {
   const [price, setPrice] = useState<IPrice>(prices[0]);
-  const [priceId, setPriceId] = useState<string>(prices[0].id.toString());
+  // const [priceId, setPriceId] = useState<string>(prices[0].id.toString());
   const handleChange = (value: string) => {
     setPrice(prices.find((price) => price.id.toString() === value)!);
-    setPriceId(value);
   };
 
   const options = prices.map((item) => {

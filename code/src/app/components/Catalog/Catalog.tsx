@@ -7,6 +7,7 @@ import { Carousel } from "@/app/components/Carousel/Carousel";
 import { useRouter } from "next/navigation";
 import { IProject } from "@/app/types/IProject";
 import { random } from "@ctrl/tinycolor";
+import Image from "next/image";
 
 export interface ICatalogProps {
   projects: IProject[];
@@ -41,8 +42,15 @@ export const Catalog = ({ projects }: ICatalogProps) => {
       }}
       key={`round-photo-${index}`}
       className="roundPhoto"
-      style={{ backgroundImage: `url(/autumn.png)` }}
-    ></div>
+    >
+      <Image
+        objectFit={"cover"}
+        fill
+        className={"roundPhoto"}
+        alt={"project"}
+        src={`/autumn.png`}
+      />
+    </div>
   ));
 
   return (

@@ -66,7 +66,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
             )[0].imageUrl || ""
           }`}
           alt="background"
-        ></Image>
+        />
         <div
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.2)",
@@ -397,6 +397,15 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
               backgroundRepeat: "no-repeat",
             }}
           >
+            <Image
+              fill
+              src={`/${
+                project?.photos?.filter(
+                  (photo) => photo.type === PHOTO_TYPE.POST_SCRIPTUM_BACKGROUND,
+                )[0].imageUrl || ""
+              }`}
+              alt="background"
+            ></Image>
             <div
               style={{
                 background:

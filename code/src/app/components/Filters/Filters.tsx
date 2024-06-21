@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "@mui/material/Slider";
-import { Checkbox, FormControlLabel, SelectChangeEvent } from "@mui/material";
+import { Checkbox, FormControlLabel } from "@mui/material";
 import { ButtonSmall } from "@/app/components/ButtonSmall/ButtonSmall";
 import Dropdown, { Option } from "react-dropdown";
 
@@ -54,17 +54,17 @@ const marks = [
   },
 ];
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+// const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const floors = [1, 2];
 
 export const Filters = () => {
-  const [isChecked, setIsChecked] = useState(false);
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
+  // const [isChecked, setIsChecked] = useState(false);
+  // const [age, setAge] = React.useState("");
+  // console.log(isChecked, age);
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setAge(event.target.value as string);
+  // };
 
   return (
     <div className={"filters"}>

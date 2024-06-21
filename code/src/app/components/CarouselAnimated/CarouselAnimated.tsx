@@ -14,31 +14,25 @@ export const CarouselAnimated = ({
   children,
   isPagination,
 }: ICarouselProps) => {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef(null) as any;
   const [activeIndex, setActiveIndex] = useState(0);
   const [swiperSlides, setSwiperSlides] = useState(3);
   const [spaceBetween, setSpaceBetween] = useState(-322.5);
 
   const goNext = () => {
-    //@ts-ignore
     if (swiperRef.current && swiperRef.current.swiper) {
-      //@ts-ignore
       swiperRef.current.swiper.slideNext();
     }
   };
 
   const goPrev = () => {
-    //@ts-ignore
     if (swiperRef.current && swiperRef.current.swiper) {
-      //@ts-ignore
       swiperRef.current.swiper.slidePrev();
     }
   };
 
   const handlePaginationClick = (index: number) => {
-    //@ts-ignore
     if (swiperRef.current && swiperRef.current.swiper) {
-      //@ts-ignore
       swiperRef.current.swiper.slideTo(index);
       setActiveIndex(index);
     }

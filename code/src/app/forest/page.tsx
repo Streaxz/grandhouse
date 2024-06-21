@@ -3,7 +3,6 @@ import styles from "./forestPage.module.css";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
 import React from "react";
 import { AccentCard } from "@/app/components/AccentCard/AccentCard";
-import { Quote } from "@/app/components/Quote/Quote";
 import { Features } from "@/app/components/Features/Features";
 import { RectangleFeature } from "@/app/components/RectangleFeature/RectangleFeature";
 import { Carousel } from "@/app/components/Carousel/Carousel";

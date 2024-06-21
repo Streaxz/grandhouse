@@ -82,7 +82,6 @@ export default function RootLayout({
       style={{ fontWeight: "300" }}
     >
       <body className={`body`} id={"body"}>
-        <div id={"modal"} />
         <ModalProvider>
           <Header />
           {children}

@@ -57,6 +57,9 @@ export const useInformation = (getProjects: () => void) => {
   };
 
   return {
+    informations,
+    error,
+    getItems,
     updateItem,
     createItem,
     deleteItem,

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/app/components/Button/Button";
 import { useModalFunctions } from "@/app/components/Modal/ModalContainer";
+import Image from "next/image";
 
 export interface IPhotoButton {
   backgroundSrc: string;
@@ -21,6 +22,13 @@ export const PhotoButton = ({
       className={"photoButtonContainer"}
       style={{ backgroundImage: `url(${backgroundSrc})` }}
     >
+      <Image
+        fill
+        objectFit="cover"
+        src={backgroundSrc}
+        className={"photoButtonContainer"}
+        alt={"backgroundImage"}
+      />
       <div className="photoButtonGradient" />
       <div className="photoButtonContent">
         <div className={"imageContainer"}>

@@ -71,5 +71,5 @@ export const useUser = () => {
     }
   }, [error]);
 
-  return { auth, me, jwt, setJwt };
+  return { auth, me, jwt, loading, setJwt };
 };

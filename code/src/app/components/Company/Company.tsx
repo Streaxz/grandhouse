@@ -6,6 +6,7 @@ import { RoundFeaturesItem } from "@/app/components/RoundFeaturesItem/RoundFeatu
 import { Quote } from "@/app/components/Quote/Quote";
 import { Button } from "@/app/components/Button/Button";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export const Company = () => {
   const router = useRouter();
@@ -13,13 +14,22 @@ export const Company = () => {
     <div
       className={"pageContainer"}
       style={{
-        backgroundImage: "url(/forestUpperView.jpeg)",
+        // backgroundImage: "url(/forestUpperView.jpeg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         filter: "saturate(100%) brightness(110%)",
       }}
     >
+      <Image
+        objectFit={"cover"}
+        style={{
+          filter: "saturate(100%) brightness(110%)",
+        }}
+        fill
+        src={`/forestUpperView.jpeg`}
+        alt="background"
+      />
       <div
         className={"pageContainer"}
         style={{

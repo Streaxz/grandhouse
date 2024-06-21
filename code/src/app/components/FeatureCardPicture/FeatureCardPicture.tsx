@@ -26,7 +26,7 @@ export const FeatureCardPicture = ({
         src={`/${src}`}
         objectFit={"cover"}
         alt="background"
-      ></Image>
+      />
       <div className="featureCardLargeContainer">
         {descriptionText && <h6>{descriptionText}</h6>}
       </div>

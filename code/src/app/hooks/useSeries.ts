@@ -22,7 +22,8 @@ export const useSeries = () => {
   };
 
   return {
-    getSeries,
+    error,
     series,
+    getSeries,
   };
 };

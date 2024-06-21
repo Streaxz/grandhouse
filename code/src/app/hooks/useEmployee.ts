@@ -40,6 +40,7 @@ export const useEmployee = () => {
   };
 
   return {
+    error,
     employees,
     getEmployees,
     createEmployee,

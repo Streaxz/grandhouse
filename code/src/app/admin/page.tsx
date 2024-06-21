@@ -34,7 +34,6 @@ import { MaterialTable } from "@/app/components/MaterialTable/MaterialTable";
 import { DescriptionTable } from "@/app/components/DescriptionTable/DescriptionTable";
 import { InformationTable } from "@/app/components/InformationTable/InformationTable";
 import { usePrices } from "@/app/hooks/usePrices";
-import dynamic from "next/dynamic";
 import { useSeries } from "@/app/hooks/useSeries";
 type FieldType = {
   title?: string;
@@ -48,7 +47,7 @@ export interface ItemPhoto extends IPhoto {
   key: number;
 }
 
-const Editor = dynamic(() => import("../components/Editor"), { ssr: false });
+// const Editor = dynamic(() => import("../components/Editor"), { ssr: false });
 
 const AdminPage = () => {
   const [form] = Form.useForm<IProject>();
@@ -297,11 +296,11 @@ const AdminPage = () => {
   );
 
   const savePhoto = async () => {
-    if (imageType && image) {
+    if (imageType && image && updatedProject) {
       await createPhoto({
         type: imageType,
         imageUrl: image,
-        projectId: updatedProject?.id!,
+        projectId: updatedProject.id,
         order,
       });
       setImageType(undefined);
@@ -541,10 +540,8 @@ const AdminPage = () => {
                     <InputNumber
                       style={{ width: "300px" }}
                       placeholder={"Порядок выведения"}
-                      //@ts-ignore
                       onChange={(value) => {
-                        //@ts-ignore
-                        setOrder(value);
+                        setOrder(value as number);
                       }}
                     />
                   </Form.Item>

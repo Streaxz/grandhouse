@@ -57,6 +57,9 @@ export const useDescription = (getProjects: () => void) => {
   };
 
   return {
+    error,
+    descriptions,
+    getDescriptions,
     updateDescription,
     createDescription,
     deleteDescription,

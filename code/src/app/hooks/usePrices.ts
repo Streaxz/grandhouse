@@ -22,6 +22,7 @@ export const usePrices = () => {
   };
 
   return {
+    error,
     getPrices,
     prices,
   };

@@ -149,8 +149,8 @@ export const MortgageCalculator = ({ prices }: IMortgageCalculatorProps) => {
   const [amount, setAmount] = useState<number>(7);
   const [percent, setPercent] = useState<Option>(specialOptions[0]);
 
-  const loanAmount = (price.data?.price! as number) - amount * 1000000;
-  const monthlyRate = (percent.data?.percent! as number) / 100 / 12; // Переводим процент в доли и месячную ставку
+  const loanAmount = ((price.data?.price as number) || 0) - amount * 1000000;
+  const monthlyRate = ((percent.data?.percent as number) || 0) / 100 / 12; // Переводим процент в доли и месячную ставку
   const loanTermMonths = estimate * 12; // Срок кредита в месяцах
 
   const monthlyPayment = Math.round(

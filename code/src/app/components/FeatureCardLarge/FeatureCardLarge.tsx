@@ -4,6 +4,7 @@ import { LabelSmall } from "@/app/components/Labels/LabelSmall/LabelSmall";
 import { IProject } from "@/app/types/IProject";
 import { PHOTO_TYPE } from "@/app/types/IPhoto";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface IPhotoProps {
   labelText: string;
@@ -20,12 +21,19 @@ export const FeatureCardLarge = ({ descriptionText, project }: IPhotoProps) => {
       }}
       className={"featureCardLarge"}
       style={{
-        backgroundImage: `url(/${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Image
+        objectFit={"cover"}
+        fill
+        className={"featureCardLarge"}
+        style={{ zIndex: -5 }}
+        alt={"project"}
+        src={`/${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""}`}
+      />
       <div className="photoGradient" />
       <div className="featureCardLargeContainer">
         {project?.series && <LabelSmall text={project?.series.comment || ""} />}

@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 import { AmoCrmModal } from "@/app/components/Modal/AmoCrmModal";
 import Modal from "react-modal";
 interface ModalContextType {
@@ -7,8 +13,6 @@ interface ModalContextType {
   openModal: () => void;
   closeModal: () => void;
 }
-
-Modal.setAppElement("#modal");
 
 export const useModalFunctions = () => {
   const { openModal, closeModal } = useModal();
@@ -44,11 +48,21 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
 
 export const ModalContainer: React.FC = () => {
   const { isOpen, closeModal } = useModal();
+  const [el, setEl] = useState<HTMLDivElement | null>(null);
+  useEffect(() => {
+    setEl(document.getElementById("modal"));
+  }, []);
 
   return (
     <Modal
+      appElement={el}
       isOpen={isOpen}
+      ariaHideApp={false}
       onRequestClose={closeModal}
+      aria={{
+        labelledby: "heading",
+        describedby: "full_description",
+      }}
       style={{
         overlay: {
           display: "flex",
@@ -75,7 +89,13 @@ export const ModalContainer: React.FC = () => {
           flexDirection: "column",
         }}
       >
-        <AmoCrmModal isModal={true} closeModal={closeModal} />
+        <div
+          style={{
+            scale: 0.9,
+          }}
+        >
+          <AmoCrmModal isModal={true} closeModal={closeModal} />
+        </div>
       </div>
     </Modal>
   );

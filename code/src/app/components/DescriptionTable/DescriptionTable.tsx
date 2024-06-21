@@ -59,11 +59,11 @@ export const DescriptionTable = ({
   const isEditing = (record: Item) => record.key === editingKey;
   const EditableCell: React.FC<EditableCellProps> = ({
     editing,
-    dataIndex,
-    title,
+    // dataIndex,
+    // title,
     inputType,
     record,
-    index,
+    // index,
     children,
     ...restProps
   }) => {

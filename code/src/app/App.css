@@ -2438,6 +2438,10 @@ p {
     align-self: stretch;
 }
 
+.ReactModal__Content {
+    display: contents;
+    -webkit-overflow-scrolling: auto !important;
+}
 .floor {
     display: flex;
     height: 42px;

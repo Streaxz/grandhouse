@@ -19,11 +19,11 @@ const nextConfig = {
 
   // Конфигурация ESLint для игнорирования ошибок во время сборки
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 
   // Кастомизация Webpack
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     // Включение top-level await
     config.experiments = { ...config.experiments, topLevelAwait: true };
 

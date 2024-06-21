@@ -7,7 +7,7 @@ export interface IInfographicsProps {
 }
 export const Infographics = ({
   bathroomCount,
-  size,
+  // size,
   area,
   bedroomsCount,
   price,

@@ -16,6 +16,7 @@
     "@mdxeditor/editor": "^3.0.7",
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
+    "@types/react-animated-modal": "^1.1.4",
     "@types/react-modal-image": "^2.6.3",
     "antd": "^5.16.5",
     "axios": "^1.6.8",
@@ -28,6 +29,7 @@
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.5.14",
     "react": "^18",
+    "react-animated-modal": "^1.1.1",
     "react-dom": "^18",
     "react-dropdown": "^1.11.0",
     "react-modal": "^3.16.1",
@@ -39,6 +41,7 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^14.2.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

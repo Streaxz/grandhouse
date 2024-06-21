@@ -40,6 +40,7 @@ export const useMaterial = () => {
   };
 
   return {
+    error,
     materials,
     getMaterials,
     createMaterial,
