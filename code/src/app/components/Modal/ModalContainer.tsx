@@ -48,14 +48,12 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
 
 export const ModalContainer: React.FC = () => {
   const { isOpen, closeModal } = useModal();
-  const [el, setEl] = useState<HTMLDivElement | null>(null);
   useEffect(() => {
-    setEl(document.getElementById("modal"));
+    Modal.setAppElement(document.getElementById("modal")!);
   }, []);
 
   return (
     <Modal
-      appElement={el}
       isOpen={isOpen}
       ariaHideApp={false}
       onRequestClose={closeModal}
