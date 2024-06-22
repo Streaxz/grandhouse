@@ -6,7 +6,7 @@ export const FooterContacts = () => {
   const router = useRouter();
   return (
     <div className={"footerContacts"}>
-      <p style={{ color: "#62698C" }} className={"footerNavigation"}>
+      <div style={{ color: "#62698C" }} className={"footerNavigation"}>
         <a
           style={{
             cursor: "pointer",
@@ -99,7 +99,7 @@ export const FooterContacts = () => {
         >
           Журнал
         </a>
-      </p>
+      </div>
       <div className={"footerPhone"}>
         <h1 style={{ color: "#62698C" }}>
           <a

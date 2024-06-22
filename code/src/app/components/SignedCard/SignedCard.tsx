@@ -1,11 +1,15 @@
 import React from "react";
-
+import Image from "next/image";
 export const SignedCard = () => {
   return (
-    <div
-      className="signedCardContainer"
-      style={{ backgroundImage: `url(/sunset.jpeg)` }}
-    >
+    <div className="signedCardContainer">
+      <Image
+        src={"/sunset.jpeg"}
+        fill
+        alt={"cover"}
+        objectFit={"cover"}
+        className={"borderRadius"}
+      />
       <div className="signedCardGradient" />
       <div className="signedCardContent">
         <h3>Взгляд за горизонт</h3>
@@ -23,11 +27,11 @@ export const SignedCard = () => {
           <img src={"/sign.png"} className={"signedCardSign"} alt={"Подпись"} />
         </div>
       </div>
-      <img
-        src={"/kuznetsov.png"}
-        className={"signedCardImage"}
-        alt={"Портрет"}
-      />
+      <div className={"signedCardImage"}>
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          <Image src={"/kuznetsov.png"} alt={"Портрет"} fill />
+        </div>
+      </div>
     </div>
   );
 };

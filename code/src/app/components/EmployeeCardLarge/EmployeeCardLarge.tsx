@@ -1,3 +1,4 @@
+import Image from "next/image";
 export interface IEmployeeCardLargeProps {
   headerText: string;
   descriptionText: string;
@@ -15,12 +16,13 @@ export const EmployeeCardLarge = ({
       <div
         className={"magazineCardLargeImage"}
         style={{
-          backgroundImage: `url(${src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-      />
+      >
+        <Image src={src} alt={"photo"} fill objectFit={"cover"} />
+      </div>
       <div className={"magazineCardLargeContent"}>
         <h5 style={{ color: "#272B40", width: "90%" }}>{headerText}</h5>
         <p

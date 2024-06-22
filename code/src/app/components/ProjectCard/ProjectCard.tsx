@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const ProjectCard = () => {
   return (
     <div className={"projectCard"}>
@@ -11,19 +13,19 @@ export const ProjectCard = () => {
             </h5>
             <div className={"emojiStarContainer"}>
               <div className={"emojiStar"}>
-                <img src={"/star.png"} alt={"star"} />
+                <Image src={"/star.png"} alt="star" fill />
               </div>
               <div className={"emojiStar"}>
-                <img src={"/star.png"} alt={"star"} />
+                <Image src={"/star.png"} alt="star" fill />
               </div>
               <div className={"emojiStar"}>
-                <img src={"/star.png"} alt={"star"} />
+                <Image src={"/star.png"} alt="star" fill />
               </div>
               <div className={"emojiStar"}>
-                <img src={"/star.png"} alt={"star"} />
+                <Image src={"/star.png"} alt="star" fill />
               </div>
               <div className={"emojiStar"}>
-                <img src={"/star.png"} alt={"star"} />
+                <Image src={"/star.png"} alt="star" fill />
               </div>
             </div>
             <p style={{ color: "#272B40" }}>

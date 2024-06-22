@@ -1,15 +1,18 @@
+import Image from "next/image";
+
 export const ReviewCardLarge = () => {
   return (
     <div className={"magazineCardLarge"}>
       <div
         className={"magazineCardLargeImage"}
         style={{
-          backgroundImage: `url(/reviewPhoto.jpeg)`,
           backgroundSize: "cover",
           backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
         }}
-      ></div>
+      >
+        <Image src={"/reviewPhoto.jpeg"} alt="photo" fill objectFit={"cover"} />
+      </div>
       <div className={"magazineCardLargeContent"}>
         <div className={"magazineCardLargeUpper"}>
           <h6 style={{ color: "#272B40", width: "82%" }}>
@@ -19,19 +22,19 @@ export const ReviewCardLarge = () => {
           </h6>
           <div className={"emojiStarContainer"}>
             <div className={"emojiStar"}>
-              <img className={"emojiStar"} src={"/star.png"} alt={"star"} />
+              <Image src={"/star.png"} alt="star" fill />
             </div>
             <div className={"emojiStar"}>
-              <img className={"emojiStar"} src={"/star.png"} alt={"star"} />
+              <Image src={"/star.png"} alt="star" fill />
             </div>
             <div className={"emojiStar"}>
-              <img className={"emojiStar"} src={"/star.png"} alt={"star"} />
+              <Image src={"/star.png"} alt="star" fill />
             </div>
             <div className={"emojiStar"}>
-              <img className={"emojiStar"} src={"/star.png"} alt={"star"} />
+              <Image src={"/star.png"} alt="star" fill />
             </div>
             <div className={"emojiStar"}>
-              <img className={"emojiStar"} src={"/star.png"} alt={"star"} />
+              <Image src={"/star.png"} alt="star" fill />
             </div>
           </div>
           <p className={"magazineCardLargeDescription"}>

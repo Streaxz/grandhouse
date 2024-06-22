@@ -98,7 +98,7 @@ const ProjectPage = () => {
             alternative
           />
         </div>
-        <div className="philosophyEllipse"></div>
+        {/*<div className="philosophyEllipse"></div>*/}
       </div>
       <div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
         <div className={styles.pageContainer}>

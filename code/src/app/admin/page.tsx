@@ -163,7 +163,7 @@ const AdminPage = () => {
       getBase64(info.file.originFileObj as FileType, (url) => {
         setLoading(false);
         setImageUrl(url);
-        setImage(info.file.response.filePath);
+        setImage(info.file.response);
       });
     }
   };
@@ -296,6 +296,7 @@ const AdminPage = () => {
   );
 
   const savePhoto = async () => {
+    console.log(imageType, image, updatedProject);
     if (imageType && image && updatedProject) {
       await createPhoto({
         type: imageType,

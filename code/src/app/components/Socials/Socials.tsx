@@ -1,23 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const Socials = () => {
   return (
     <div className={"socials"}>
       <Link href={"https://t.me/grandhouse_spk"} target={"_blank"}>
-        <img
-          src={"/socialTelegram.png"}
-          alt={"telegram"}
-          className={"socialItem"}
-        />
+        <div className={"socialItem"}>
+          <Image src={"/socialTelegram.png"} alt={"telegram"} fill />
+        </div>
       </Link>
       <Link href={"https://vk.com/grandhouse_spk"} target={"_blank"}>
-        <img src={"/socialVk.png"} alt={"vk"} className={"socialItem"} />
+        <div className={"socialItem"}>
+          <Image src={"/socialVk.png"} alt={"vk"} fill />
+        </div>
       </Link>
       <Link target={"_blank"} href={"https://youtube.com/@grandhouse_spk"}>
-        <img src={"/youtube.png"} alt={"youtube"} className={"socialItem"} />
+        <div className={"socialItem"}>
+          <Image src={"/youtube.png"} alt={"youtube"} fill />
+        </div>
       </Link>
       <Link target={"_blank"} href={"https://dzen.ru/grandhouse_spk"}>
-        <img src={"/socialDzen.png"} alt={"dzen"} className={"socialItem"} />
+        <div className={"socialItem"}>
+          <Image src={"/socialDzen.png"} alt={"dzen"} fill />
+        </div>
       </Link>
     </div>
   );

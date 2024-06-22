@@ -51,7 +51,7 @@ const ContactPage = () => {
           </Features>
           <Button onClick={() => {}} buttonText={"Подробнее о компании"} />
         </div>
-        <div className="philosophyEllipse"></div>
+        {/*<div className="philosophyEllipse"></div>*/}
       </div>
     </main>
   );

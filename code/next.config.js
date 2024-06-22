@@ -8,6 +8,15 @@
 const nextConfig = {
   // Включение строгого режима React для выявления потенциальных проблем
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.storage.yandexcloud.net",
+        port: "",
+      },
+    ],
+  },
 
   // Переменные окружения, доступные на клиенте и сервере
   env: {

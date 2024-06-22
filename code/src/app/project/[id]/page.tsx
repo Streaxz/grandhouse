@@ -132,7 +132,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                 source={project.estimateLink}
               />
             )}
-            <div className="projectEllipse"></div>
+            {/*<div className="projectEllipse"></div>*/}
           </div>
         </div>
       )}
@@ -215,7 +215,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
               author={project.historyQuoteAuthor}
             />
           )}
-          <div className={styles.darkEllipse}></div>
+          {/*<div className={styles.darkEllipse}></div>*/}
         </div>
       </div>
       {!project?.isArchive && (
@@ -343,7 +343,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                   source={project.estimateLink}
                 />
               )}
-              <div className={styles.packagesEllipse} />
+              {/*<div className={styles.packagesEllipse} />*/}
             </div>
           </div>
         )}
@@ -391,7 +391,6 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
           <div
             className={`${styles.backgroundMortgage} ${styles.pageWrapper}`}
             style={{
-              background: `url(${project.photos?.filter((photo) => photo.type === PHOTO_TYPE.POST_SCRIPTUM)[0].imageUrl})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -405,7 +404,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                 )[0].imageUrl || ""
               }`}
               alt="background"
-            ></Image>
+            />
             <div
               style={{
                 background:

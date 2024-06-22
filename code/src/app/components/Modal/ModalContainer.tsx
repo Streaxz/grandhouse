@@ -67,6 +67,7 @@ export const ModalContainer: React.FC = () => {
           justifyContent: "center",
         },
         content: {
+          display: "table",
           top: `${typeof window !== "undefined" && window.scrollY + window.innerHeight / 2}px`,
           left: "50%",
           border: "unset",
@@ -82,16 +83,13 @@ export const ModalContainer: React.FC = () => {
         style={{
           display: "flex",
           width: "100%",
+          alignItems: "center",
           height: "90%",
           top: 0,
           flexDirection: "column",
         }}
       >
-        <div
-          style={{
-            scale: 0.9,
-          }}
-        >
+        <div className={"modalScale"}>
           <AmoCrmModal isModal={true} closeModal={closeModal} />
         </div>
       </div>

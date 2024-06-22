@@ -77,7 +77,7 @@ const OffersPage = () => {
             <CatalogItem />
           </Carousel>
         </div>
-        <div className={styles.ellipse}></div>
+        {/*<div className={styles.ellipse}></div>*/}
         <div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
           <div className={styles.pageContainer}>
             <TextBlock

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface IButtonPdfProps {
   source: string;
@@ -11,7 +12,9 @@ export const ButtonPdf = ({ source }: IButtonPdfProps) => {
       href={source}
       style={{ textDecoration: "none" }}
     >
-      <img src={"/emojiPDF.png"} className={"emojiPdf"} alt={"pdfFile"} />
+      <div className={"emojiPdf"}>
+        <Image src={"/emojiPDF.png"} fill alt={"pdfFile"} />
+      </div>
       <h3 className={"projectButtonText"}> Скачать PDF</h3>
     </a>
   );

@@ -221,6 +221,7 @@ p, label {
 }
 
 .footerCityImage {
+    position: relative;
     display: flex;
     width: 72px;
     height: 72px;
@@ -341,6 +342,7 @@ p, label {
 .iconContainer {
     display: flex;
     justify-content: center;
+    width: 24px;
     height: 24px;
 }
 
@@ -480,6 +482,7 @@ p, label {
 
 .emojiStar {
     display: flex;
+    position: relative;
     width: 18px;
     height: 18px;
     padding: var(--Absolute-sizes-zero, 0);
@@ -535,6 +538,7 @@ p, label {
     width: 100%;
     height: 869px;
     padding: 0;
+    flex: 1 0 0;
     overflow: hidden;
     border-radius: 48px;
     flex-direction: column;
@@ -567,12 +571,16 @@ p, label {
     gap: 12px;
 }
 .roundFeaturesImage {
-
+    position: relative;
     width: 280px;
     height: 280px;
     border-radius: 50%;
     border: 12px solid #FFF;
 
+}
+
+.roundFeaturesImageInside {
+    border-radius: 50%;
 }
 
 .rectangleItemContainer {
@@ -650,17 +658,24 @@ p, label {
     z-index: 1;
 }
 
+.desktopNavigation {
+    width: 100%;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .ellipse {
     z-index: 0;
     top: 300px;
     position: absolute;
-    width: 100%;
+    width: 200%;
     max-width: 1440px;
     height: 3500px;
-    border-radius: 50%;
-    background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);
-    filter: blur(125px) saturate(110%);
-    opacity: 85%;
+    /*border-radius: 50%;*/
+    /*!*background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);*!*/
+    /*filter: blur(125px) saturate(110%);*/
+    /*opacity: 85%;*/
 
 }
 
@@ -960,6 +975,7 @@ p, label {
 
 .roundBlockImage {
     display: flex;
+    position: relative;
     width: 144px;
     height: 144px;
     border-radius: 100%;
@@ -1206,6 +1222,8 @@ p, label {
 }
 
 .doubleItemContainer {
+    display: flex;
+    flex: 1 0 0;
     width: fit-content;
 }
 .projectButtonContentContainer {
@@ -1316,6 +1334,8 @@ p, label {
 }
 
 .leftArrow {
+    position: relative;
+    z-index: 100;
     background: unset;
     border: unset;
     display: flex;
@@ -1328,6 +1348,8 @@ p, label {
     height: 5vw; max-width: 48px;
 }
 .rightArrow {
+    position: relative;
+    z-index: 100;
     background: unset;
     border: unset;
     display: flex;
@@ -1394,7 +1416,9 @@ p, label {
 }
 
 .logoCatalog {
-    width: 45vw;
+    position:relative;
+    width: 524px;
+    height: 35px;
 }
 
 .logoCatalogDescription {
@@ -1548,11 +1572,11 @@ p, label {
     font-size: 2vw;
 }
 .swiper {
-    overflow:visible;
+    overflow:hidden;
 }
 
 .swiperAnimated {
-    overflow:visible;
+    overflow:visible !important;
     border-radius: 48px;
 }
 
@@ -1595,6 +1619,7 @@ p, label {
     row-gap: 36px;
 }
 .modalSocialIcon {
+    position: relative;
     width: 72px;
     height: 72px;
 }
@@ -1670,7 +1695,7 @@ p, label {
 }
 input {
     width: 100%;
-    padding: 20px 24px 16px 24px;
+    padding: 22px 24px 12px 24px;
     background-color: white;
     border-radius: 12px;
     font-size: 48px;
@@ -1826,6 +1851,7 @@ label {
 
 .magazineLogoImage {
     display: flex;
+    position: relative;
     width: 40%;
     padding: var(--Absolute-sizes-zero, 0);
     flex-direction: column;
@@ -1841,6 +1867,8 @@ label {
 }
 
 .socialItem {
+    position: relative;
+    width: 72px;
     height : 72px;
 }
 .socialItem:hover {
@@ -1880,6 +1908,7 @@ label {
 
 .magazineCardLargeContent {
     display: flex;
+    position: relative;
     width: 50%;
     padding: 48px;
     flex-direction: column;
@@ -1975,6 +2004,7 @@ label {
 }
 
 .magazineCardLargeImage {
+    position: relative;
     height: 100%;
     width: 50%;
     display: flex;
@@ -2177,6 +2207,7 @@ p {
 
 .accentCardImage {
     display: flex;
+    position: relative;
     height: 600px;
     width: 600px;
     border-radius: 48px;
@@ -2198,6 +2229,10 @@ p {
     border-radius: 48px;
     box-shadow: 0 4px 96px 0 rgba(34, 144, 255, 0.50);
 
+}
+
+.borderRadius {
+    border-radius: 48px;
 }
 
 .signedCardGradient {
@@ -2229,6 +2264,8 @@ p {
 .signedCardImage {
     position: absolute;
     z-index: 3;
+    width: 548px;
+    height: 574px;
     bottom: 0;
     right: 10%;
 }
@@ -2279,6 +2316,7 @@ p {
 }
 
 .emojiPdf {
+    position: relative;;
     width:48px;
     height: 48px;
     margin-bottom: 6px;
@@ -2316,6 +2354,7 @@ p {
 }
 
 .shortcutImage {
+    position: relative;
     height: 72px;
     width: 72px;
     font-size: 72px;
@@ -2332,6 +2371,10 @@ p {
 
 .ideasHeader {
     display: flex;
+}
+
+.burger {
+    display: none;
 }
 
 .modalContainer {
@@ -2651,6 +2694,11 @@ span.MuiButtonBase-root > svg > path {
     border-radius: 18px;
     border: 1px solid #FFF;
 }
+
+.modalScale {
+    scale: 0.9;
+}
+
 @media (min-width: 768px) {
     h1 {
         font-size: var(--font-size-desktop-h1);
@@ -2756,6 +2804,9 @@ span.MuiButtonBase-root > svg > path {
 
     }
 
+    .desktopNavigation {
+        display: none;
+    }
     .filtersButton {
         padding: 14px 18px 12px 18px;
         border-radius: 18px;
@@ -2814,6 +2865,7 @@ span.MuiButtonBase-root > svg > path {
 
     .socialItem {
         height : 54px;
+        width: 54px;
     }
 
     .magazineWrapper {
@@ -2880,6 +2932,11 @@ span.MuiButtonBase-root > svg > path {
         width: 54px;
         height: 54px;
         font-size: 54px;
+    }
+
+    .modalScale {
+        scale: 0.9;
+        width: 120%;
     }
 
     .shortcutItem {
@@ -3075,6 +3132,11 @@ span.MuiButtonBase-root > svg > path {
         height: 318px;
     }
 
+
+    .borderRadius {
+        border-radius: 36px;
+    }
+
     .signedCardContent {
         padding: 36px;
         gap: 28px;
@@ -3243,7 +3305,7 @@ span.MuiButtonBase-root > svg > path {
     }
 
     input::placeholder {
-        font-size: 36px;
+        font-size: 32px;
     }
     .inputP {
         width: 120px;
@@ -3403,7 +3465,10 @@ span.MuiButtonBase-root > svg > path {
     .menu {
         width: 300px;
     }
-
+    .logoCatalog {
+        width: 393px;
+        height: 26px;
+    }
 }
 @media (max-width: 500px) {
     h1 {
@@ -3468,6 +3533,9 @@ span.MuiButtonBase-root > svg > path {
         height: 50px;
     }
 
+    .burger {
+        display: contents;
+    }
 
     .discount {
         border-radius: 2vw;
@@ -3478,7 +3546,8 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .logoCatalog {
-        width: 80vw;
+        width: 262px;
+        height: 17px;
     }
 
     .photoContainer {
@@ -3599,7 +3668,7 @@ span.MuiButtonBase-root > svg > path {
 
     .navigationButton {
         padding: 8px 0 6px 0;
-        width: 136px;
+        width: 130px;
         border-radius: 12px;
     }
 
@@ -3644,6 +3713,11 @@ span.MuiButtonBase-root > svg > path {
         height: 170px;
     }
 
+    .vector {
+        top: 4px;
+        left: -2px;
+    }
+
     .photoButtonContent {
         width: 100%;
         gap: 0;
@@ -3660,6 +3734,10 @@ span.MuiButtonBase-root > svg > path {
     .shortcut {
         padding: 24px;
         border-radius: 0 0 24px 24px;
+    }
+
+    .desktopNavigation {
+        display: none;
     }
 
     .shortcutItem {
@@ -3780,6 +3858,7 @@ span.MuiButtonBase-root > svg > path {
 
     .socialItem {
         height: 36px;
+        width: 36px;
     }
 
     .magazineCardLargeContent {
@@ -3862,6 +3941,12 @@ span.MuiButtonBase-root > svg > path {
         border-radius: 24px;
         height: 312px;
         overflow: hidden;
+    }
+
+
+
+    .borderRadius {
+        border-radius: 24px;
     }
 
     .signedCardContent {
@@ -3984,6 +4069,7 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .roundBlockImage {
+        position: relative;
         width: 96px;
         height: 96px
     }
@@ -4033,6 +4119,7 @@ span.MuiButtonBase-root > svg > path {
     .modalButton {
         row-gap: 18px;
         padding-left: 0;
+        width: 80%;
     }
 
     input {
@@ -4080,7 +4167,9 @@ span.MuiButtonBase-root > svg > path {
     .modalSocial {
         flex-direction: column;
         gap: 12px;
+        justify-content: start;
         align-items: baseline;
+        align-self: baseline;
     }
 
     .modalCloseButton {
@@ -4210,10 +4299,29 @@ span.MuiButtonBase-root > svg > path {
     .menu {
         width: 300px;
     }
+
+    .modalScale {
+        scale: 0.7;
+        width: 150%;
+    }
+
 }
 
 @media(hover: hover) and (pointer: fine) {
     .menuItem:hover {
         background: #FFF;
     }
+}
+
+
+@media(min-width:500px) and (max-width:1100px) {
+
+    .burger {
+        display: contents;
+    }
+
+    .desktopNavigation {
+        display: none;
+    }
+
 }

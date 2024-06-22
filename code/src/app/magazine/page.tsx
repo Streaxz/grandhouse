@@ -27,7 +27,7 @@ const MagazinePage = () => {
             <MagazineCardSmall />
           </div>
           <Button onClick={() => {}} buttonText={"Загрузить ещё"}></Button>
-          <div className="magazineEllipse"></div>
+          {/*<div className="magazineEllipse"></div>*/}
         </div>
       </div>
     </main>

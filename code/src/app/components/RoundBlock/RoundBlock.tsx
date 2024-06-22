@@ -1,3 +1,4 @@
+import Image from "next/image";
 export interface IRoundBlock {
   src: string;
   text: string;
@@ -5,7 +6,16 @@ export interface IRoundBlock {
 export const RoundBlock = ({ src, text }: IRoundBlock) => {
   return (
     <div className={"roundBlock"}>
-      <img className="roundBlockImage" src={src} alt={"сотрудник"} />
+      <div className="roundBlockImage">
+        <Image
+          src={src}
+          alt={"сотрудник"}
+          fill
+          objectFit={"cover"}
+          className={"borderRadius"}
+        />
+      </div>
+
       <h5 style={{ textAlign: "center" }}>{text}</h5>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface IPhotoProps {
   src: string;
@@ -12,12 +13,12 @@ export const FeatureCardPictureAnimated = ({
     <div
       className={"featureCardPicture"}
       style={{
-        backgroundImage: `url(${src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Image src={src} alt={"photo"} fill className={"borderRadius"} />
       <div className="featureCardLargeContainer">
         {descriptionText && <h6>{descriptionText}</h6>}
       </div>

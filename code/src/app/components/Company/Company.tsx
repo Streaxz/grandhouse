@@ -14,7 +14,6 @@ export const Company = () => {
     <div
       className={"pageContainer"}
       style={{
-        // backgroundImage: "url(/forestUpperView.jpeg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

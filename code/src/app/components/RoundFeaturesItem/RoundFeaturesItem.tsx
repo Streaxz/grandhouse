@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 export interface IRoundFeaturesItemProps {
   src: string;
   headerText?: string;
@@ -18,15 +18,15 @@ export const RoundFeaturesItem = ({
       onClick={link ? () => router.push(link) : undefined}
       className={`roundFeaturesItemContainer ${link ? "clickable" : ""}`}
     >
-      <div
-        className={"roundFeaturesImage"}
-        style={{
-          background: `url(${src})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      ></div>
+      <div className={"roundFeaturesImage"}>
+        <Image
+          className={"roundFeaturesImageInside"}
+          src={src}
+          alt={"сотрудник"}
+          fill
+          objectFit={"cover"}
+        ></Image>
+      </div>
 
       {headerText && (
         <h3

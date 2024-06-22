@@ -1,3 +1,4 @@
+"use client";
 import { FooterContacts } from "@/app/components/Footer/FooterContacts/FooterContacts";
 import React from "react";
 import { FooterCities } from "@/app/components/Footer/FooterCities/FooterCities";
@@ -16,8 +17,8 @@ export const FooterInfo = () => {
       </h5>
       <FooterCities />
       <h6 style={{ color: "#272B40", textAlign: "center" }}>
-        © 2015-2023, ООО «СПК ГрандХаус». ИНН/КПП: 5260409997/526201001.
-        Визуализации и материалы, представленные на данном сайте, являются
+        {`© 2015-2023, ООО «СПК ГрандХаус». ИНН/КПП: 5260409997/526201001.
+          Визуализации и материалы, представленные на данном сайте, являются`}
         <br />
         собственностью компании ООО «СПК ГрандХаус». Копирование без указания
         источника запрещено

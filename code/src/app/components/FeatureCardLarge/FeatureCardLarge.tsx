@@ -14,6 +14,7 @@ interface IPhotoProps {
 }
 export const FeatureCardLarge = ({ descriptionText, project }: IPhotoProps) => {
   const router = useRouter();
+  const src = `${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""}`;
   return (
     <div
       onClick={() => {
@@ -28,11 +29,12 @@ export const FeatureCardLarge = ({ descriptionText, project }: IPhotoProps) => {
     >
       <Image
         objectFit={"cover"}
+        loader={() => src}
         fill
         className={"featureCardLarge"}
         style={{ zIndex: -5 }}
         alt={"project"}
-        src={`/${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""}`}
+        src={src}
       />
       <div className="photoGradient" />
       <div className="featureCardLargeContainer">

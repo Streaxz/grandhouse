@@ -33,17 +33,17 @@ export const Header = () => {
     setOpen(newOpen);
   };
 
-  const [padding, setPadding] = React.useState(12);
+  const [padding, setPadding] = React.useState<string>("12px");
 
   useEffect(() => {
     if (isMobile) {
-      setPadding(12);
+      setPadding("12px 26px");
     }
     if (isTablet) {
-      setPadding(12);
+      setPadding("12px 24px");
     }
     if (isDesktop) {
-      setPadding(24);
+      setPadding("24px");
     }
   }, [isMobile, isTablet, isDesktop]);
   const renderMenuItems = (items: { name: string; link: string }[]) => {
@@ -101,18 +101,15 @@ export const Header = () => {
           alignItems: "center",
           maxWidth: "1350px",
           margin: "0 auto",
-          padding: `${padding}px`,
-          paddingBottom: `${padding}px`,
+          padding: `${padding}`,
         }}
       >
-        {(isMobile || isTablet) && (
-          <button
-            onClick={toggleDrawer(true)}
-            className={"iconContainer clickable"}
-          >
-            <MenuIcon />
-          </button>
-        )}
+        <button
+          onClick={toggleDrawer(true)}
+          className={"iconContainer clickable burger"}
+        >
+          <MenuIcon />
+        </button>
         <div
           style={{
             display: "flex",
@@ -123,15 +120,7 @@ export const Header = () => {
             <HeaderLogo />
           </Link>
         </div>
-        <div
-          style={{
-            width: "100%",
-            display: `${padding > 12 ? "flex" : "none"}`,
-            justifyContent: "space-evenly",
-          }}
-        >
-          {isDesktop && renderMenuItems(pages)}
-        </div>
+        <div className={"desktopNavigation"}>{renderMenuItems(pages)}</div>
         {isDesktop && renderIcon()}
         <div onClick={openModal} className={"iconContainer"}>
           <DialogBubbleIcon />

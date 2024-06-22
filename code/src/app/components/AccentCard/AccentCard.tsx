@@ -1,3 +1,4 @@
+import Image from "next/image";
 export interface IAccentCardProps {
   header: string;
   text: string;
@@ -25,12 +26,19 @@ export const AccentCard = ({
       <div
         className={"accentCardImage"}
         style={{
-          backgroundImage: `url(${source})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-      />
+      >
+        <Image
+          className={"accentCardImage"}
+          fill
+          src={source}
+          alt="background"
+          objectFit={"cover"}
+        />
+      </div>
     </div>
   );
 };

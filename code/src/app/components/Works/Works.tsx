@@ -64,7 +64,7 @@ export const Works: React.FC = () => {
             "Наши менеджеры всегда на связи - свяжитесь с нами и мы предложим решения конкретно под ваши задачи"
           }
         />
-        <div className="workEllipse"></div>
+        {/*<div className="workEllipse"></div>*/}
       </div>
     </div>
   );

@@ -65,11 +65,9 @@ export const Catalog = ({ projects }: ICatalogProps) => {
             gap: "36px",
           }}
         >
-          <img
-            src={`/logo_catalog.svg`}
-            alt={"logo"}
-            className={"logoCatalog"}
-          ></img>
+          <div className={"logoCatalog"}>
+            <Image src={`/logo_catalog.svg`} alt={"logo"} fill />
+          </div>
           <p>Мы предлагаем готовые проекты: </p>
           <p style={{ textAlign: "left" }}>
             - серийные, с выбором исполнения и планировки; <br />

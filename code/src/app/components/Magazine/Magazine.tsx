@@ -23,7 +23,7 @@ export const Magazine = () => {
           onClick={() => router.push("/magazine")}
           buttonText={"Все статьи"}
         />
-        <div className="magazineEllipse"></div>
+        {/*<div className="magazineEllipse"></div>*/}
       </div>
     </div>
   );

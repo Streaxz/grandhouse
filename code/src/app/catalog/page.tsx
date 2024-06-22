@@ -86,7 +86,7 @@ const CatalogPage = () => {
             }
           />
           {projects && projects?.length > 2 && (
-            <div className={"doubleItem "}>
+            <div className={"doubleItem"}>
               {projects
                 ?.slice(0, 2)
                 .map((project, index) => (
@@ -99,7 +99,7 @@ const CatalogPage = () => {
             </div>
           )}
           <Button onClick={() => {}} buttonText={"Читать все отзывы"} />
-          <div className={styles.ellipse}></div>
+          {/*<div className={styles.ellipse}></div>*/}
         </div>
       </div>
     </main>

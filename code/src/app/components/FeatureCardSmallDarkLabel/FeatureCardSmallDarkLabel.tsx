@@ -2,6 +2,8 @@ import { LabelDark } from "@/app/components/Labels/LabelDark/LabelDark";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { IProject } from "@/app/types/IProject";
+import { PHOTO_TYPE } from "@/app/types/IPhoto";
+import Image from "next/image";
 
 export interface ICardProps {
   descriptionText: string;
@@ -20,12 +22,22 @@ export const FeatureCardSmallDarkLabel = ({
       }}
       className={`featureCardSmallDarkLabel clickable`}
       style={{
-        backgroundImage: `url(/house.jpeg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Image
+        fill
+        src={`/${
+          project?.photos?.filter(
+            (photo) => photo.type === PHOTO_TYPE.GENERAL,
+          )[0].imageUrl || ""
+        }`}
+        className={"borderRadius"}
+        objectFit={"cover"}
+        alt="background"
+      />
       <div className="featureCardSmallDarkLabelGradient" />
       <div className="featureCardSmallDarkLabelContent">
         <LabelDark text={project.series?.comment || ""} />

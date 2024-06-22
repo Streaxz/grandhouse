@@ -1,3 +1,4 @@
+import Image from "next/image";
 export const ReviewCardSmall = () => {
   return (
     <div className={"reviewCard"}>
@@ -8,11 +9,21 @@ export const ReviewCardSmall = () => {
           “Грандхаус-1” в Московской области
         </h5>
         <div className={"emojiStarContainer"}>
-          <img src={"/star.png"} className={"emojiStar"} alt="star" />
-          <img src={"/star.png"} className={"emojiStar"} alt="star" />
-          <img src={"/star.png"} className={"emojiStar"} alt="star" />
-          <img src={"/star.png"} className={"emojiStar"} alt="star" />
-          <img src={"/star.png"} className={"emojiStar"} alt="star" />
+          <div className={"emojiStar"}>
+            <Image src={"/star.png"} alt="star" fill />
+          </div>
+          <div className={"emojiStar"}>
+            <Image src={"/star.png"} alt="star" fill />
+          </div>
+          <div className={"emojiStar"}>
+            <Image src={"/star.png"} alt="star" fill />
+          </div>
+          <div className={"emojiStar"}>
+            <Image src={"/star.png"} alt="star" fill />
+          </div>
+          <div className={"emojiStar"}>
+            <Image src={"/star.png"} alt="star" fill />
+          </div>
         </div>
         <p style={{ color: "#272B40" }}>
           Небольшой отзыв от одной из семей, построивших дом своей мечты с

@@ -60,7 +60,9 @@ export default function Home() {
               "Наши менеджеры всегда на связи - свяжитесь с нами и мы предложим решения конкретно под ваши задачи"
             }
           />
-          <div className="ellipse"></div>
+          {/*<div className="ellipse">*/}
+          {/*  <Image alt={"Ellipse"} fill src={"/Ellipse-2.png"} />*/}
+          {/*</div>*/}
         </div>
       </div>
       <div className={"shortcutContainer"} style={{ background: "#D4F2FF" }}>

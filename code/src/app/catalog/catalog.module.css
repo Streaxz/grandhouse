@@ -99,7 +99,7 @@
     bottom: 0;
     height: 1110px;
     border-radius:  1440px;
-    background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);
+    /*background: conic-gradient(from 180deg at 50% 50%, #79A7FF 0deg, #68D0FD 116.24999642372131deg, #46D3FF 211.87500715255737deg, #6B7AFF 286.875deg, #FA00FF 360deg);*/
     filter: blur(150px);
 }
 
@@ -168,4 +168,23 @@
     .imageGradient {
         height: 320px;
     }
+
+    .seriesContainer {
+        border-radius: 0;
+        max-width: unset;
+        background: transparent;
+        padding: unset;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 24px 18px;
+    }
+
+    .catalogContainer {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 24px 18px;
+    }
+
 }

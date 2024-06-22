@@ -65,7 +65,7 @@ const PhilosophyPage = () => {
             }
           />
         </div>
-        <div className="philosophyEllipse"></div>
+        {/*<div className="philosophyEllipse"></div>*/}
       </div>
     </main>
   );

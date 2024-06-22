@@ -7,6 +7,7 @@ import { MagazineNavigation } from "@/app/components/MagazineNavigation/Magazine
 import { MagazineCardSmall } from "@/app/components/Magazine/MagazineCardSmall/MagazineCardSmall";
 import { Button } from "@/app/components/Button/Button";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
+import Image from "next/image";
 
 const ArticlePage = () => {
   return (
@@ -14,9 +15,10 @@ const ArticlePage = () => {
       <div className={`${styles.pageWrapper} ${styles.lightBackground}`}>
         <div className={styles.pageContainer}>
           <div className={styles.magazineArticle}>
-            <img
+            <Image
               src={"/magazineArticle.png"}
-              style={{ width: "100%" }}
+              width={131}
+              height={44}
               alt={"cover"}
             />
           </div>
@@ -37,7 +39,7 @@ const ArticlePage = () => {
             <MagazineCardSmall />
           </div>
           <Button onClick={() => {}} buttonText={"Все статьи"}></Button>
-          <div className="magazineEllipse"></div>
+          {/*<div className="magazineEllipse"></div>*/}
         </div>
       </div>
     </main>

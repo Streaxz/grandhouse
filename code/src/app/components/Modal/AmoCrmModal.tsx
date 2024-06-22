@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@/app/components/Button/Button";
 import axios from "axios";
+import Image from "next/image";
 
 export interface IModalProps {
   closeModal?: () => void;
@@ -94,25 +95,19 @@ export const AmoCrmModal = ({ closeModal, isModal }: IModalProps) => {
           <p className={"inputButton"}>Чаты: </p>
           <div className={"modalSocialIconContainer"}>
             <a>
-              <img
-                src={"/emojiWhatsApp.png"}
-                className={"modalSocialIcon"}
-                alt={"WhatsApp"}
-              />
+              <div className={"modalSocialIcon"}>
+                <Image src={"/socialWhatsApp.png"} alt={"WhatsApp"} fill />
+              </div>
             </a>
             <a>
-              <img
-                src={"/emojiTelegram.png"}
-                className={"modalSocialIcon"}
-                alt={"Telegram"}
-              />
+              <div className={"modalSocialIcon"}>
+                <Image src={"/socialTelegram.png"} alt={"Telegram"} fill />
+              </div>
             </a>
             <a>
-              <img
-                src={"/emojiVk.png"}
-                className={"modalSocialIcon"}
-                alt={"VK"}
-              />
+              <div className={"modalSocialIcon"}>
+                <Image src={"/socialVk.png"} alt={"VK"} fill />
+              </div>
             </a>
           </div>
         </div>

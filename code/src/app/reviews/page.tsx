@@ -130,7 +130,7 @@ const ReviewsPage = () => {
             <CatalogItem />
             <CatalogItem />
           </Carousel>
-          <div className={styles.ellipse} />
+          {/*<div className={styles.ellipse} />*/}
         </div>
       </div>
     </main>

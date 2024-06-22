@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export interface IShortcutItemProps {
   emoji: string;
   title: string;
@@ -15,7 +17,9 @@ export const ShortcutItem = ({
   return (
     <div className={"shortcutItem"} style={{ textAlign: "center" }}>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <img src={emoji} className={"shortcutImage"} alt={"shortcut"} />
+        <div className={"shortcutImage"}>
+          <Image src={emoji} alt={"shortcut"} fill />
+        </div>
       </div>
       <h3 style={{ color }}>{title}</h3>
       <h5 style={{ color: descriptionColor }}>{description}</h5>

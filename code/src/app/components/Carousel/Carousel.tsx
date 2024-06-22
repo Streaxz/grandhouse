@@ -29,7 +29,7 @@ export const Carousel = ({
 }: ICarouselProps) => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [swiperSlides, setSwiperSlides] = useState(desktopSlides || 1);
+  const [swiperSlides, setSwiperSlides] = useState<number | undefined>(0);
   const [spaceBetween, setSpaceBetween] = useState(
     desktopSlides ? desktopSlides - 1 / 3 : 36,
   );
@@ -66,7 +66,8 @@ export const Carousel = ({
 
   useEffect(() => {
     const handleResize = () => {
-      const width = window.outerWidth;
+      const width = window.innerWidth;
+      console.log(width);
       if (width > 768) {
         setSwiperSlides(desktopSlides || 1);
         setSpaceBetween(desktopSlides ? 36 / (desktopSlides - 1) : 36);
@@ -83,7 +84,7 @@ export const Carousel = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  console.log(swiperSlides);
   return (
     <div
       style={{
@@ -99,32 +100,34 @@ export const Carousel = ({
           <ArrowIconLeft />
         </button>
         <div style={{ width: "90%" }}>
-          <Swiper
-            ref={swiperRef}
-            loop={true}
-            spaceBetween={spaceBetween}
-            slidesPerView={swiperSlides}
-            pagination={false}
-            effect={swiperEffect}
-            className={"swiper"}
-            modules={[EffectFade]}
-            onSlideChange={(swiper) => {
-              setActiveIndex(swiper.realIndex);
-            }}
-          >
-            {Children.map(children, (child, index) => (
-              <SwiperSlide
-                className={
-                  activeIndex === index && isActive ? "activeSlide" : ""
-                }
-                onClick={() => {
-                  isActive && setActiveIndex(index);
-                }}
-              >
-                {child}
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {swiperSlides && (
+            <Swiper
+              ref={swiperRef}
+              loop={true}
+              spaceBetween={spaceBetween}
+              slidesPerView={swiperSlides}
+              pagination={false}
+              effect={swiperEffect}
+              className={"swiper"}
+              modules={[EffectFade]}
+              onSlideChange={(swiper) => {
+                setActiveIndex(swiper.realIndex);
+              }}
+            >
+              {Children.map(children, (child, index) => (
+                <SwiperSlide
+                  className={
+                    activeIndex === index && isActive ? "activeSlide" : ""
+                  }
+                  onClick={() => {
+                    isActive && setActiveIndex(index);
+                  }}
+                >
+                  {child}
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
         </div>
         <button onClick={goNext} className={"rightArrow"}>
           <ArrowIconRight />

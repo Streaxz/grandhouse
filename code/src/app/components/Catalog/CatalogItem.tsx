@@ -16,14 +16,8 @@ export const CatalogItem = ({ project }: ICatalogItem) => {
       className={"clickable"}
       style={{ maxHeight: "468px", display: "flex", flexDirection: "column" }}
     >
-      <div
-        className="catalogPhoto"
-        style={{
-          backgroundImage: `url(${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""})`,
-        }}
-      >
+      <div className="catalogPhoto">
         <Image
-          objectFit={"cover"}
           fill
           className={"catalogPhoto"}
           style={{ zIndex: -5 }}
