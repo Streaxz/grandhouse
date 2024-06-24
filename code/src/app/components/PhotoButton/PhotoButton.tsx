@@ -26,18 +26,25 @@ export const PhotoButton = ({
         fill
         objectFit="cover"
         src={backgroundSrc}
-        className={"photoButtonContainer"}
+        className={"photoBorder"}
         alt={"backgroundImage"}
       />
       <div className="photoButtonGradient" />
       <div className="photoButtonContent">
         <div className={"imageContainer"}>
-          <img
-            src={buttonSrc}
+          <div
             style={{ maxWidth: "406px", width: "60%" }}
             className={"buttonImage"}
-            alt={"backgroundImage"}
-          />
+          >
+            <Image
+              src={buttonSrc}
+              style={{ overflow: "visible" }}
+              alt={"backgroundImage"}
+              priority
+              fill
+              objectFit={"cover"}
+            />
+          </div>
           <Button
             style={{ marginTop: 0, marginBottom: "12px" }}
             onClick={() => {}}

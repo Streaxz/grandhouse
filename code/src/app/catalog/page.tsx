@@ -1,7 +1,7 @@
 "use client";
 import styles from "./catalog.module.css";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Ideas } from "@/app/components/Ideas/Ideas";
 import { Button } from "@/app/components/Button/Button";
 import { FeatureCardSmallDarkLabel } from "@/app/components/FeatureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
@@ -12,14 +12,45 @@ import { Sberbank } from "@/app/components/Sberbank/Sberbank";
 import { PhotoButton } from "@/app/components/PhotoButton/PhotoButton";
 import { useProject } from "@/app/hooks/useProject";
 import { useRouter } from "next/navigation";
+import { ThreeDots } from "react-loader-spinner";
+
+export interface IFilters {
+  type?: ETYPE;
+  isArchive: boolean;
+  year?: Date;
+  serial?: string;
+  priceFrom?: number;
+  priceTo?: number;
+  squareFrom?: number;
+  squareTo?: number;
+  sizeFrom?: number;
+  sizeTo?: number;
+  floor?: number;
+  isBasement?: boolean;
+  isGarage?: boolean;
+  isIndividual?: boolean;
+  isSerial?: boolean;
+}
+
+export enum ETYPE {
+  WOOD = "WOOD",
+  STONE = "STONE",
+  COMBINED = "COMBINED",
+  ALL = "ALL",
+}
 
 const CatalogPage = () => {
-  const { getProjects, projects } = useProject();
   const router = useRouter();
+  const [filters, setFilters] = useState<IFilters>({
+    type: ETYPE.ALL,
+    isArchive: false,
+  });
+
+  const { getProjects, projects, loading } = useProject();
 
   useEffect(() => {
     const fetchData = async () => {
-      await getProjects();
+      await getProjects(filters);
     };
 
     if (!projects) {
@@ -38,29 +69,59 @@ const CatalogPage = () => {
             descriptionText={"Подзаголовок"}
             textColor={"#FFF"}
           />
-          <Filters />
-          <div className={styles.seriesContainer}>
-            {projects?.slice(0, 4).map((project, index) => (
-              <a
-                onClick={() => {
-                  router.push(`/project/${project.id}`);
+          <Filters
+            filters={filters}
+            setFilters={setFilters}
+            getProjects={getProjects}
+          />
+          {loading ? (
+            <div className={styles.loaderContainer}>
+              <ThreeDots
+                visible={true}
+                height="80"
+                width="80"
+                color=""
+                radius="#62698C"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
+            </div>
+          ) : (
+            <>
+              {projects && projects.length > 0 && (
+                <div className={styles.seriesContainer}>
+                  {projects.slice(0, 4).map((project, index) => (
+                    <a
+                      onClick={() => {
+                        router.push(`/project/${project.id}`);
+                      }}
+                      key={index}
+                      className={styles.flexItem}
+                    >
+                      <CatalogItem project={project} />
+                    </a>
+                  ))}
+                </div>
+              )}
+              <Sberbank />
+              {projects && projects.slice(4).length > 0 && (
+                <div className={styles.catalogContainer}>
+                  {projects.slice(4).map((project, index) => (
+                    <div key={index} className={styles.flexItem}>
+                      <CatalogItem project={project} />
+                    </div>
+                  ))}
+                </div>
+              )}
+              <Button
+                onClick={async () => {
+                  await getProjects(filters);
                 }}
-                key={index}
-                className={styles.flexItem}
-              >
-                <CatalogItem project={project} />
-              </a>
-            ))}
-          </div>
-          <Sberbank />
-          <div className={styles.catalogContainer}>
-            {projects?.slice(4).map((project, index) => (
-              <div key={index} className={styles.flexItem}>
-                <CatalogItem project={project} />
-              </div>
-            ))}
-          </div>
-          <Button onClick={() => {}} buttonText={"Загрузить еще"} />
+                buttonText={"Загрузить еще"}
+              />
+            </>
+          )}
           <Ideas text={"У нас и другие проекты"} />
         </div>
       </div>

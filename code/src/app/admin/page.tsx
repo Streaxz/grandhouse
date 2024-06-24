@@ -35,6 +35,7 @@ import { DescriptionTable } from "@/app/components/DescriptionTable/DescriptionT
 import { InformationTable } from "@/app/components/InformationTable/InformationTable";
 import { usePrices } from "@/app/hooks/usePrices";
 import { useSeries } from "@/app/hooks/useSeries";
+import { ETYPE } from "@/app/catalog/page";
 type FieldType = {
   title?: string;
 };
@@ -445,6 +446,14 @@ const AdminPage = () => {
                 options={series?.map(({ id, comment }) => ({
                   value: id,
                   label: comment,
+                }))}
+              />
+            </Form.Item>
+            <Form.Item name="type" label="Тип">
+              <Select
+                options={Object.values(ETYPE).map((type) => ({
+                  value: type,
+                  label: type,
                 }))}
               />
             </Form.Item>

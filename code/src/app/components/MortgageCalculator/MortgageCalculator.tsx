@@ -33,7 +33,7 @@ const specialOptions: Option[] = [
   {
     value: "one",
     data: {
-      percent: 8,
+      percent: 6,
     },
     label: (
       <div
@@ -44,9 +44,9 @@ const specialOptions: Option[] = [
           alignItems: "center",
         }}
       >
-        <h3 style={{ color: "#272B40" }}>8%</h3>
+        <h3 style={{ color: "#272B40" }}>6%</h3>
         <h6 style={{ color: "#272B40" }} className={"dropdownOption"}>
-          {"Программа поддержки семей с детьми"}
+          Семейная
         </h6>
       </div>
     ),
@@ -75,7 +75,7 @@ const specialOptions: Option[] = [
   {
     value: "three",
     data: {
-      percent: 8,
+      percent: 5,
     },
     label: (
       <div
@@ -86,9 +86,9 @@ const specialOptions: Option[] = [
           alignItems: "center",
         }}
       >
-        <h3 style={{ color: "#272B40" }}>8%</h3>
+        <h3 style={{ color: "#272B40" }}>5%</h3>
         <h6 style={{ color: "#272B40" }} className={"dropdownOption"}>
-          {"Программа поддержки семей с детьми"}
+          Ипотека для IT
         </h6>
       </div>
     ),
@@ -96,7 +96,7 @@ const specialOptions: Option[] = [
   {
     value: "four",
     data: {
-      percent: 8,
+      percent: 18.2,
     },
     label: (
       <div
@@ -107,9 +107,9 @@ const specialOptions: Option[] = [
           alignItems: "center",
         }}
       >
-        <h3 style={{ color: "#272B40" }}>8%</h3>
+        <h3 style={{ color: "#272B40" }}>18.2%</h3>
         <h6 style={{ color: "#272B40" }} className={"dropdownOption"}>
-          {"Программа поддержки семей с детьми"}
+          Базовая
         </h6>
       </div>
     ),
@@ -145,12 +145,18 @@ export const MortgageCalculator = ({ prices }: IMortgageCalculatorProps) => {
     };
   });
   const [estimate, setEstimate] = useState<number>(20);
-  const [price, setPrice] = useState<Option>(options[0]);
+  const [price, setPrice] = useState<Option | undefined>(options[0]);
   const [amount, setAmount] = useState<number>(7);
   const [percent, setPercent] = useState<Option>(specialOptions[0]);
 
-  const loanAmount = ((price.data?.price as number) || 0) - amount * 1000000;
-  const monthlyRate = ((percent.data?.percent as number) || 0) / 100 / 12; // Переводим процент в доли и месячную ставку
+  const loanAmount =
+    ((price && price?.data?.price && (price.data.price as number)) || 0) -
+    amount * 1000000;
+  const monthlyRate =
+    ((percent && percent?.data?.percent && (percent.data?.percent as number)) ||
+      0) /
+    100 /
+    12; // Переводим процент в доли и месячную ставку
   const loanTermMonths = estimate * 12; // Срок кредита в месяцах
 
   const monthlyPayment = Math.round(
@@ -164,7 +170,7 @@ export const MortgageCalculator = ({ prices }: IMortgageCalculatorProps) => {
           <div className={"mortgageHeader"}>
             <p style={{ color: "#272B40" }}>Цена</p>
             <Dropdown
-              className={"dropdown"}
+              className={"dropdownMortgage dropdownWidth"}
               options={options}
               value={price}
               onChange={(arg) => {
@@ -172,12 +178,15 @@ export const MortgageCalculator = ({ prices }: IMortgageCalculatorProps) => {
               }}
               arrowClassName={"dropdownArrow"}
               controlClassName={"dropdownControl"}
-              placeholderClassName={"dropdownPlaceholder"}
               menuClassName={"dropdownMenu"}
             />
           </div>
           <h3 style={{ color: "#272B40" }}>
-            {price.data?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+            {price &&
+              price.data?.price &&
+              price.data?.price
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
             рублей
           </h3>
           <p style={{ color: "#272B40" }}>

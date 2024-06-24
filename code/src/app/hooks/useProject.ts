@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { IProject } from "@/app/types/IProject";
 import { PHOTO_TYPE } from "@/app/types/IPhoto";
+import { IFilters } from "@/app/catalog/page";
 
 export interface ICreatePhoto {
   type: PHOTO_TYPE;
@@ -9,9 +10,12 @@ export interface ICreatePhoto {
   imageUrl: string;
   order?: number;
 }
+
+//TODO: сделать пагинацию для getProjects.
 export const useProject = (projectId?: string) => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
+  const [loading, setLoading] = useState<boolean>(false);
   const [project, setProject] = useState<IProject | undefined>();
   const [projects, setProjects] = useState<IProject[] | undefined>();
   const [error, setError] = useState<any | undefined>(undefined);
@@ -32,17 +36,28 @@ export const useProject = (projectId?: string) => {
     }
   };
 
-  const getProjects = async () => {
+  const getProjects = async (filters?: IFilters) => {
     try {
-      const { data }: AxiosResponse = await axios.get(`${apiUrl}/api/project`);
+      setLoading(true);
+      let params: string = "";
+      if (filters) {
+        params = `?${new URLSearchParams(filters as any).toString()}`;
+      }
+      console.log(params);
+      const { data }: AxiosResponse = await axios.get(
+        `${apiUrl}/api/project${params}`,
+      );
 
-      if (data.length > 0) {
+      if (data) {
         setProjects(data);
       } else {
         setError(data);
       }
+
+      setLoading(false);
     } catch (error) {
       setError(error);
+      setLoading(false);
     }
   };
 
@@ -124,6 +139,7 @@ export const useProject = (projectId?: string) => {
   return {
     project,
     projects,
+    loading,
     setProject,
     getProject,
     getProjects,

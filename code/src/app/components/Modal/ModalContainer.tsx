@@ -55,25 +55,25 @@ export const ModalContainer: React.FC = () => {
   return (
     <Modal
       isOpen={isOpen}
-      ariaHideApp={false}
       onRequestClose={closeModal}
-      aria={{
-        labelledby: "heading",
-        describedby: "full_description",
-      }}
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      bodyOpenClassName={"safari-only"}
       style={{
         overlay: {
+          position: "fixed",
+          zIndex: 100,
           display: "flex",
+          alignItems: "center",
           justifyContent: "center",
         },
         content: {
-          display: "table",
           top: `${typeof window !== "undefined" && window.scrollY + window.innerHeight / 2}px`,
+          justifyContent: "center",
           left: "50%",
           border: "unset",
           background: "transparent",
           padding: "0 0 0 0",
-          height: "fit-content",
           width: "80%",
           translate: "-50% -50%",
         },
@@ -82,16 +82,15 @@ export const ModalContainer: React.FC = () => {
       <div
         style={{
           display: "flex",
-          width: "100%",
           alignItems: "center",
-          height: "90%",
           top: 0,
+          scale: 0.8,
           flexDirection: "column",
         }}
       >
-        <div className={"modalScale"}>
-          <AmoCrmModal isModal={true} closeModal={closeModal} />
-        </div>
+        {/*<div className={"modalScale"}>*/}
+        <AmoCrmModal isModal={true} closeModal={closeModal} />
+        {/*</div>*/}
       </div>
     </Modal>
   );

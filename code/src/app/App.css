@@ -698,6 +698,8 @@ p, label {
 }
 
 .Dropdown-option {
+    padding: 10px 18px 12px 18px;
+    /*border-bottom: 1px solid #62698C;*/
     color: #62698C;
 }
 .whiteBox {
@@ -743,6 +745,9 @@ p, label {
     flex-shrink: 0;
 }
 
+.dropdownWidth {
+    width: 293px !important;
+}
 .dropdownPlaceholder {
     color: #62698C;
     display: flex;
@@ -760,6 +765,21 @@ p, label {
     border-radius: 12px;
     border: 1px solid var(--Main-MediumBlue, #62698C);
     background: rgba(255, 255, 255, 0.50);
+}
+
+.darkColor {
+    position: relative;
+    color: #62698C !important;
+}
+
+.dropdownControl {
+    display: flex;
+    width: 100%;
+}
+
+
+.dropdownYearOption {
+    font-size: 16px;
 }
 
 .dropdownMortgage {
@@ -836,12 +856,12 @@ p, label {
     translate: 0 100%;
     left: 0;
     gap: 12px;
-    border-radius: 0 0 12px 12px;
-    padding: 10px 18px 12px 18px;
+    border-radius: 12px;
     box-sizing: border-box;
     width: 100%;
     height: fit-content;
     background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #62698C;
 
     /* bgBlur */
     backdrop-filter: blur(36px);
@@ -1066,6 +1086,9 @@ p, label {
     border-radius: 48px;
 }
 
+_:default:not(:root:root), .safari-only { display: contents !important; }
+
+
 .photoButtonGradient {
     z-index: 2;
     position: absolute; /* Position the gradient absolutely over the photo */
@@ -1099,6 +1122,10 @@ p, label {
     background-repeat: no-repeat;
     border-radius: 48px;
     box-shadow: 0 4px 96px 0 rgba(34, 144, 255, 0.50);
+}
+
+.photoBorder {
+    border-radius: 48px;
 }
 
 .photoButtonContainer:hover {
@@ -1318,6 +1345,29 @@ p, label {
 .navigationButton:active {
     scale: 0.95;
 }
+
+.filtersButton:hover {
+    background: rgba(39, 43, 64, 0.75);
+
+    cursor: pointer;
+}
+.filtersButton:active {
+    scale: 0.95;
+    background: rgba(39, 43, 64, 0.90);
+}
+
+.normalBackground {
+    background: rgba(39, 43, 64, 0.50);
+}
+
+.activeBackground {
+    background: rgba(39, 43, 64, 0.75);
+}
+
+.activeFloor {
+    background: rgba(255, 255, 255, 0.5);;
+}
+
 .filtersButton {
     display: flex;
     padding: 18px 24px 14px 24px;
@@ -1325,7 +1375,6 @@ p, label {
     justify-content: center;
     align-items: baseline;
     border-radius: 24px;
-    background: rgba(39, 43, 64, 0.50);
     /* bgBlur */
     backdrop-filter: blur(36px);
     gap: 12px;
@@ -2459,6 +2508,7 @@ p {
     border-radius: var(--Variable-sizes-baseSize, 12px);
     border: 1px solid var(--Main-MediumBlue, #62698C);
     background: var(--Basics-White, #FFF);
+    color: #62698C;
 
 }
 
@@ -2495,8 +2545,22 @@ p {
     flex: 1 0 0;
     border-radius: var(--Variable-sizes-baseSize, 12px);
     border: 1px solid var(--Main-MediumBlue, #62698C);
+}
+
+
+.floor:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.floor:active {
+    background: rgba(255, 255, 255, 0.5);
+    scale: 0.95;
+}
+
+.normalFloor {
     background: rgba(255, 255, 255, 0.25);
 }
+
 
 .specials {
     display: flex;
@@ -2699,6 +2763,12 @@ span.MuiButtonBase-root > svg > path {
     scale: 0.9;
 }
 
+.buttonImage {
+    overflow: visible;
+    position: relative;
+    height: 308px;
+}
+
 @media (min-width: 768px) {
     h1 {
         font-size: var(--font-size-desktop-h1);
@@ -2799,8 +2869,9 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .navigationButton {
-        padding: 14px 18px 12px 18px;
+        padding: 14px 0 12px 0;
         border-radius: 18px;
+        width: 160px;
 
     }
 
@@ -2913,6 +2984,7 @@ span.MuiButtonBase-root > svg > path {
 
     .buttonImage {
         width: 20%;
+        height: 214px;
     }
 
     .photoButtonContent {
@@ -3384,12 +3456,15 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .dropdownMenu {
-        top: 40px;
         gap: 9px;
     }
 
     .dropdown {
         width: 206px;
+    }
+
+    .dropdownWidth {
+        width: 293px !important;
     }
 
     .specials {
@@ -3724,6 +3799,10 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .photoButtonContainer {
+        border-radius: 24px;
+    }
+
+    .photoBorder {
         border-radius: 24px;
     }
 
@@ -4222,12 +4301,20 @@ span.MuiButtonBase-root > svg > path {
 
     .dropdownMenu {
         top: 30px;
-        padding: 10px 18px 12px 12px;
+
         gap: 9px;
+    }
+
+    .Dropdown-option {
+        padding: 10px 18px 12px 12px;
     }
 
     .dropdown {
         width: 154px;
+    }
+
+    .dropdownWidth {
+        width: 293px !important;
     }
 
     .specials {
@@ -4324,4 +4411,17 @@ span.MuiButtonBase-root > svg > path {
         display: none;
     }
 
+}
+
+@media(max-width: 400px) {
+    .navigationButton {
+        width: 125px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 768px) {
+    .navigationButton {
+        padding: 12px 0 14px 0;
+        width: 295px;
+    }
 }

@@ -46,7 +46,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
   }, [getProject, params, project]);
   console.log(
     project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]
-      .imageUrl,
+      ?.imageUrl || "",
   );
   return (
     <main className={styles.page}>
@@ -63,8 +63,9 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
           src={`/${
             project?.photos?.filter(
               (photo) => photo.type === PHOTO_TYPE.GENERAL,
-            )[0].imageUrl || ""
+            )[0]?.imageUrl || ""
           }`}
+          priority
           alt="background"
         />
         <div
