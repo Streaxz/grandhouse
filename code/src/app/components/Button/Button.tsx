@@ -15,7 +15,9 @@ export const Button = ({
 }: IButtonProps) => {
   return (
     <a
-      className={notClickable ? "projectButton clickable" : "projectButton"}
+      className={
+        notClickable ? "projectButton clickable" : "projectButton clickable"
+      }
       style={style}
       onClick={onClick}
     >
