@@ -1121,6 +1121,7 @@ _:default:not(:root:root), .safari-only { display: contents !important; }
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 48px;
+    filter: saturate(1.2);
     box-shadow: 0 4px 96px 0 rgba(34, 144, 255, 0.50);
 }
 
@@ -1553,7 +1554,7 @@ _:default:not(:root:root), .safari-only { display: contents !important; }
     cursor: pointer;
 }
 
-.projectButton:active {
+.clickableButton:active {
     scale: 0.95;
 }
 
@@ -2983,7 +2984,6 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .buttonImage {
-        width: 20%;
         height: 214px;
     }
 
@@ -4392,6 +4392,9 @@ span.MuiButtonBase-root > svg > path {
         width: 150%;
     }
 
+    .buttonImage {
+        height: 118px;
+    }
 }
 
 @media(hover: hover) and (pointer: fine) {

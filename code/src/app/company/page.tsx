@@ -28,11 +28,11 @@ const CompanyPage = () => {
           />
           <Carousel swiperEffect={"slider"} isPagination={true}>
             <FeatureCardPicture
-              src={"company.jpeg"}
+              src={"/company.jpeg"}
               descriptionText={"Подпись"}
             />
             <FeatureCardPicture
-              src={"company.jpeg"}
+              src={"/company.jpeg"}
               descriptionText={"Подпись"}
             />
           </Carousel>
@@ -78,11 +78,11 @@ const CompanyPage = () => {
           {/*	/>*/}
           <Carousel swiperEffect={"slider"} isPagination={true}>
             <FeatureCardPicture
-              src={"company.jpeg"}
+              src={"/company.jpeg"}
               descriptionText={"Подпись"}
             />
             <FeatureCardPicture
-              src={"company.jpeg"}
+              src={"/company.jpeg"}
               descriptionText={"Подпись"}
             />
           </Carousel>

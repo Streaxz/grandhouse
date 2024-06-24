@@ -5,10 +5,20 @@ export interface IButtonProps {
   onClick: () => void;
   buttonText: string;
   style?: CSSProperties;
+  notClickable?: boolean;
 }
-export const Button = ({ onClick, buttonText, style }: IButtonProps) => {
+export const Button = ({
+  onClick,
+  buttonText,
+  style,
+  notClickable,
+}: IButtonProps) => {
   return (
-    <a className={`projectButton`} style={style} onClick={onClick}>
+    <a
+      className={notClickable ? "projectButton clickable" : "projectButton"}
+      style={style}
+      onClick={onClick}
+    >
       <h2 className={"projectButtonText"}>{buttonText}</h2>
     </a>
   );

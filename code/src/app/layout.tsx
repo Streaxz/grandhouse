@@ -3,11 +3,12 @@ import { Header } from "@/app/components/Header/Header";
 import "./App.css";
 import localFont from "next/font/local";
 import { Footer } from "@/app/components/Footer/Footer";
-import React from "react";
+import React, { Suspense } from "react";
 import {
   ModalContainer,
   ModalProvider,
 } from "@/app/components/Modal/ModalContainer";
+import { YMetrika } from "@/app/components/YMetrika/YMetrika";
 
 const objectSans = localFont({
   src: [
@@ -83,10 +84,13 @@ export default function RootLayout({
     >
       <body className={`body`} id={"body"}>
         <ModalProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ModalContainer />
+          <Suspense>
+            <YMetrika />
+            <Header />
+            {children}
+            <Footer />
+            <ModalContainer />
+          </Suspense>
         </ModalProvider>
       </body>
     </html>

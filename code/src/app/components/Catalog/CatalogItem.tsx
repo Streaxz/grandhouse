@@ -23,7 +23,7 @@ export const CatalogItem = ({ project }: ICatalogItem) => {
           style={{ zIndex: -5 }}
           alt={"project"}
           objectFit={"cover"}
-          src={`/${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""}`}
+          src={`${project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]?.imageUrl || ""}`}
         />
         <div className="catalogContentContainer">
           <div>

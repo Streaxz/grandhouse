@@ -63,7 +63,12 @@ export const Packages = ({ prices }: IPackagesProps) => {
       ))}
       <div className={"packagesFooter"}>
         <div className={"packagesPrice"}>
-          <h3 style={{ color: "#272B40" }}>{price.amount}₽</h3>
+          <h3 style={{ color: "#272B40" }}>
+            {Math.round(price.amount)
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
+            ₽
+          </h3>
           <h6 style={{ color: "#272B40" }}>
             со скидкой 7% при подписании договора до конца 2023 года
           </h6>

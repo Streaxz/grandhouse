@@ -1,7 +1,7 @@
 "use client";
 import styles from "../project.module.css";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Quote } from "@/app/components/Quote/Quote";
 import { Features } from "@/app/components/Features/Features";
 import { RectangleFeature } from "@/app/components/RectangleFeature/RectangleFeature";
@@ -31,6 +31,8 @@ import { useRouter } from "next/navigation";
 import { useModalFunctions } from "@/app/components/Modal/ModalContainer";
 const ProjectPage = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
+  const [is3D, setIs3D] = useState<boolean>(false);
+  const [isMirrored, setIsMirrored] = useState<boolean>(false);
   const { openModal } = useModalFunctions();
   const { project, projects, getProject, getProjects } = useProject(params.id);
 
@@ -148,11 +150,56 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
             descriptionText={"Подзаголовок"}
             textColor={"#272B40"}
           />
-          <SwitchContainer />
-          <Carousel swiperEffect={"slider"} isPagination={true}>
-            <FeatureCardPicture src={"2d.png"} contain />
-            <FeatureCardPicture src={"2d.png"} contain />
-          </Carousel>
+          <SwitchContainer
+            is3D={is3D}
+            setIs3D={setIs3D}
+            isMirrored={isMirrored}
+            setIsMirrored={setIsMirrored}
+          />
+          {project?.photos &&
+            project?.photos.filter((photo) => {
+              return is3D
+                ? isMirrored
+                  ? photo.type === PHOTO_TYPE.LAYOUT3D_MIRROR
+                  : photo.type === PHOTO_TYPE.LAYOUT3D
+                : isMirrored
+                  ? photo.type === PHOTO_TYPE.LAYOUT2D_MIRROR
+                  : photo.type === PHOTO_TYPE.LAYOUT2D;
+            }).length > 0 && (
+              <Carousel
+                projectsLength={
+                  project?.photos.filter((photo) => {
+                    return is3D
+                      ? isMirrored
+                        ? photo.type === PHOTO_TYPE.LAYOUT3D_MIRROR
+                        : photo.type === PHOTO_TYPE.LAYOUT3D
+                      : isMirrored
+                        ? photo.type === PHOTO_TYPE.LAYOUT2D_MIRROR
+                        : photo.type === PHOTO_TYPE.LAYOUT2D;
+                  }).length
+                }
+                swiperEffect={"slider"}
+                isPagination={true}
+              >
+                {project?.photos
+                  .filter((photo) => {
+                    return is3D
+                      ? isMirrored
+                        ? photo.type === PHOTO_TYPE.LAYOUT3D_MIRROR
+                        : photo.type === PHOTO_TYPE.LAYOUT3D
+                      : isMirrored
+                        ? photo.type === PHOTO_TYPE.LAYOUT2D_MIRROR
+                        : photo.type === PHOTO_TYPE.LAYOUT2D;
+                  })
+                  .map((photo) => (
+                    <FeatureCardPicture
+                      key={photo.id}
+                      src={photo.imageUrl}
+                      contain
+                    />
+                  ))}
+              </Carousel>
+            )}
           {project?.layoutText && (
             <TextContent color={"#272B40"} text={project.layoutText} />
           )}
@@ -205,9 +252,12 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
             descriptionText={"Вводка про отзывы и довольных клиентов"}
           />
           <Features>
-            <RoundFeaturesItem src={"/company.jpeg"} />
-            <RoundFeaturesItem src={"/wood.jpeg"} />
-            <RoundFeaturesItem src={"/autumn.jpeg"} />
+            {project?.photos?.filter(
+              (photo) => photo.type === PHOTO_TYPE.HISTORY,
+            ).length !== 0 &&
+              project?.photos
+                ?.filter((photo) => photo.type === PHOTO_TYPE.HISTORY)
+                .map((photo) => <RoundFeaturesItem src={photo.imageUrl} />)}
           </Features>
           {project?.historyText && <TextContent text={project?.historyText} />}
           {project?.historyQuoteText && project.historyQuoteAuthor && (
@@ -252,17 +302,21 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                 mainText={"Конструктивные решения"}
                 descriptionText={"подзаголовок"}
               />
-              {project?.photos?.filter(
-                (photo) => photo.type === PHOTO_TYPE.EXTERIOR,
-              ).length !== 0 && (
-                <Carousel isPagination={true} swiperEffect={"slide"}>
-                  {project?.photos
-                    ?.filter((photo) => photo.type === PHOTO_TYPE.EXTERIOR)
-                    .map((photo) => (
-                      <FeatureCardPicture key={photo.id} src={photo.imageUrl} />
-                    ))}
-                </Carousel>
-              )}
+              {project?.photos &&
+                project?.photos?.filter(
+                  (photo) => photo.type === PHOTO_TYPE.EXTERIOR,
+                ).length > 0 && (
+                  <Carousel isPagination={true} swiperEffect={"slide"}>
+                    {project?.photos
+                      ?.filter((photo) => photo.type === PHOTO_TYPE.EXTERIOR)
+                      .map((photo) => (
+                        <FeatureCardPicture
+                          key={photo.id}
+                          src={photo.imageUrl}
+                        />
+                      ))}
+                  </Carousel>
+                )}
               {project?.exteriorDescriptions &&
                 project?.exteriorDescriptions?.length > 0 && (
                   <div className={"doubleItem"}>
@@ -384,7 +438,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
         )}
       </div>
       {project &&
-        project.photos &&
+        project?.photos &&
         project?.photos?.filter(
           (photo) => photo.type === PHOTO_TYPE.POST_SCRIPTUM,
         ).length > 0 &&
@@ -419,11 +473,11 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
             />
             <div className={styles.pageContainer}>
               <h1 className={"italicText"}>{project.postScriptumText}</h1>
-              {project.photos?.filter(
+              {project?.photos?.filter(
                 (photo) => photo.type === PHOTO_TYPE.POST_SCRIPTUM,
               ).length !== 0 && (
                 <Features>
-                  {project.photos
+                  {project?.photos
                     ?.filter((photo) => photo.type === PHOTO_TYPE.POST_SCRIPTUM)
                     .map((photo) => (
                       <RoundFeaturesItem

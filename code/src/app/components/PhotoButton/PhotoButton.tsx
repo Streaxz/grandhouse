@@ -8,17 +8,21 @@ export interface IPhotoButton {
   buttonSrc: string;
   buttonText: string;
   descriptionText: string;
+  width?: string;
+  onClick?: () => void;
 }
 export const PhotoButton = ({
   backgroundSrc,
   buttonSrc,
   buttonText,
+  onClick,
+  width,
   descriptionText,
 }: IPhotoButton) => {
   const { openModal } = useModalFunctions();
   return (
     <div
-      onClick={openModal}
+      onClick={onClick ? onClick : () => openModal()}
       className={"photoButtonContainer"}
       style={{ backgroundImage: `url(${backgroundSrc})` }}
     >
@@ -33,7 +37,7 @@ export const PhotoButton = ({
       <div className="photoButtonContent">
         <div className={"imageContainer"}>
           <div
-            style={{ maxWidth: "406px", width: "60%" }}
+            style={{ maxWidth: "406px", width: width || "60%" }}
             className={"buttonImage"}
           >
             <Image
@@ -46,6 +50,7 @@ export const PhotoButton = ({
             />
           </div>
           <Button
+            notclickable
             style={{ marginTop: 0, marginBottom: "12px" }}
             onClick={() => {}}
             buttonText={buttonText}

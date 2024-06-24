@@ -37,9 +37,10 @@ export const Prices = ({}: IPagesProps) => {
         <Infographics />
         <Sberbank />
         <PhotoButton
-          backgroundSrc={"/clouds.jpeg"}
-          buttonSrc={"/photoButton.png"}
-          buttonText={"Обсудим ваши идеи?"}
+          backgroundSrc={"/abstractWater.jpeg"}
+          buttonSrc={"/photoMan.png"}
+          buttonText={"Менеджер на связи"}
+          width={"45%"}
           descriptionText={
             "Наши менеджеры всегда на связи - свяжитесь с нами и мы предложим решения конкретно под ваши задачи"
           }

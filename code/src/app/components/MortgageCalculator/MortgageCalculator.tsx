@@ -212,7 +212,7 @@ export const MortgageCalculator = ({ prices }: IMortgageCalculatorProps) => {
               value={"one"}
             />
           </div>
-          <h3 style={{ color: "#272B40" }}>3 000 000 рублей</h3>
+          {/*<h3 style={{ color: "#272B40" }}>3 000 000 рублей</h3>*/}
           <div className={"selectorPrice"}>
             <h5 style={{ color: "#272B40", width: "100%" }}>Срок ипотеки</h5>
             <Slider

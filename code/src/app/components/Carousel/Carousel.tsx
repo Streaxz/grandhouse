@@ -133,7 +133,7 @@ export const Carousel = ({
           <ArrowIconRight />
         </button>
       </div>
-      {isPagination && (
+      {isPagination && projectsLength > 1 && (
         <div className="carouselButtons">
           {Array.from({ length: projectsLength || 4 }).map((value, index) => (
             <div

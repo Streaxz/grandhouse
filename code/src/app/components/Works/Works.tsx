@@ -4,9 +4,11 @@ import { TextBlock } from "@/app/components/TextBlock/TextBlock";
 import { FeatureCardSmallDarkLabel } from "@/app/components/FeatureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
 import { PhotoButton } from "@/app/components/PhotoButton/PhotoButton";
 import { useProject } from "@/app/hooks/useProject";
+import { useRouter } from "next/navigation";
 
 export const Works: React.FC = () => {
   const { projects } = useProject();
+  const router = useRouter();
   return (
     <div className={"works"}>
       <div className={"worksWrapper"}>
@@ -57,11 +59,15 @@ export const Works: React.FC = () => {
         )}
         <div style={{ display: "flex", width: "83%" }}></div>
         <PhotoButton
-          backgroundSrc={"/clouds.jpeg"}
-          buttonSrc={"/photoButton.png"}
-          buttonText={"Обсудим ваши идеи?"}
+          backgroundSrc={"/abstractPaper.jpeg"}
+          buttonSrc={"/blondieWoman.png"}
+          buttonText={"Отзывы на 5 звезд"}
+          width={"50%"}
+          onClick={() => {
+            router.push("/reviews");
+          }}
           descriptionText={
-            "Наши менеджеры всегда на связи - свяжитесь с нами и мы предложим решения конкретно под ваши задачи"
+            "Посмотрите реальные отзывы клиентов о нашей работе на Яндекс.Картах"
           }
         />
         {/*<div className="workEllipse"></div>*/}

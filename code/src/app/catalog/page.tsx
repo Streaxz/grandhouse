@@ -16,6 +16,8 @@ import { ThreeDots } from "react-loader-spinner";
 
 export interface IFilters {
   type?: ETYPE;
+  page?: number;
+  limit?: number;
   isArchive: boolean;
   year?: Date;
   serial?: string;

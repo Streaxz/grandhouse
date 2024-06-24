@@ -23,7 +23,7 @@ export const FeatureCardPicture = ({
       <Image
         className={"featureCardLarge"}
         fill
-        src={`/${src}`}
+        src={`${src}`}
         objectFit={"cover"}
         alt="background"
       />
