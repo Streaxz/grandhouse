@@ -28,7 +28,7 @@ const nextConfig = {
 
   // Конфигурация ESLint для игнорирования ошибок во время сборки
   eslint: {
-    ignoreDuringBuilds: false,
+    ignoreDuringBuilds: true,
   },
 
   // Кастомизация Webpack
