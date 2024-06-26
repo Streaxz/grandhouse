@@ -1,7 +1,7 @@
 "use client";
 import Dropdown from "react-dropdown";
 import React, { useState } from "react";
-import { IPrice } from "@/app/types/IPrice";
+import { IPrice } from "@/app/utils/types/IPrice";
 import { random } from "@ctrl/tinycolor";
 
 export interface IPackagesProps {

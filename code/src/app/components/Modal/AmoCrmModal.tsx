@@ -44,6 +44,7 @@ export const AmoCrmModal = ({ closeModal, isModal }: IModalProps) => {
     if (ip) {
       region = await getRegion(ip);
     }
+    // eslint-disable-next-line
     // @ts-ignore
     const ym = window.ym;
     ym(97658068, "reachGoal", "amoCrmRequest");
@@ -57,7 +58,7 @@ export const AmoCrmModal = ({ closeModal, isModal }: IModalProps) => {
 
   const handleCompletionModalClose = () => {
     setShowCompletionModal(false);
-    closeModal();
+    closeModal && closeModal();
   };
 
   return (

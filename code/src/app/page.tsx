@@ -14,15 +14,19 @@ import { Carousel } from "@/app/components/Carousel/Carousel";
 import { PhotoButton } from "@/app/components/PhotoButton/PhotoButton";
 import { FeatureCardLarge } from "@/app/components/FeatureCardLarge/FeatureCardLarge";
 import { useProject } from "@/app/hooks/useProject";
+import styles from "@/app/catalog/catalog.module.css";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function Home() {
-  const { projects, getProjects } = useProject();
+  const { projects, getProjects, loading } = useProject();
   useEffect(() => {
     async function getData() {
-      await getProjects();
+      if (!projects) {
+        await getProjects();
+      }
     }
     getData();
-  }, []);
+  }, [projects]);
 
   return (
     <main className={"App"}>
@@ -30,27 +34,61 @@ export default function Home() {
         <div className={"mainPage"}>
           <MainLogo />
           <MainHeader />
-          {/*<PhotoCarousel />*/}
-          {projects && projects?.length > 0 && (
-            <Carousel
-              isPagination={true}
-              swiperEffect={"fade"}
-              projectsLength={projects.length}
-            >
-              {projects?.map((project) => (
-                <FeatureCardLarge
-                  key={"project-" + project.id}
-                  labelText={project.title || ""}
-                  headerText={"House for a family"}
-                  descriptionText={"Нажмите для просмотра"}
-                  project={project}
-                />
-              ))}
-            </Carousel>
+          {loading ? (
+            <div className={styles.loaderContainer}>
+              <ThreeDots
+                visible={true}
+                height="80"
+                width="80"
+                color=""
+                radius="#62698C"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
+            </div>
+          ) : (
+            <>
+              {/*<PhotoCarousel />*/}
+              {projects && projects?.length > 0 && (
+                <Carousel
+                  isPagination={true}
+                  swiperEffect={"fade"}
+                  projectsLength={projects.length}
+                >
+                  {projects?.map((project) => (
+                    <FeatureCardLarge
+                      key={"project-" + project.id}
+                      labelText={project.title || ""}
+                      headerText={"House for a family"}
+                      descriptionText={"Нажмите для просмотра"}
+                      project={project}
+                    />
+                  ))}
+                </Carousel>
+              )}
+            </>
           )}
           <Navigation />
-          {projects && projects?.length > 0 && (
-            <Catalog projects={projects || []} />
+          {loading ? (
+            <div className={styles.loaderContainer}>
+              <ThreeDots
+                visible={true}
+                height="80"
+                width="80"
+                color=""
+                radius="#62698C"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
+            </div>
+          ) : (
+            <>
+              {projects && projects?.length > 0 && (
+                <Catalog projects={projects || []} />
+              )}
+            </>
           )}
           <PhotoButton
             backgroundSrc={"/clouds.jpeg"}

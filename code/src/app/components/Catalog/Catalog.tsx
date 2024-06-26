@@ -5,7 +5,7 @@ import { CatalogItem } from "@/app/components/Catalog/CatalogItem";
 import { Button } from "@/app/components/Button/Button";
 import { Carousel } from "@/app/components/Carousel/Carousel";
 import { useRouter } from "next/navigation";
-import { IProject } from "@/app/types/IProject";
+import { IProject } from "@/app/utils/types/IProject";
 import { random } from "@ctrl/tinycolor";
 import Image from "next/image";
 
@@ -35,6 +35,7 @@ export const Catalog = ({ projects }: ICatalogProps) => {
     };
   }, []);
 
+  //TODO: сделать рандомные фотки в количестве 10 штук
   const roundPhotos = projects.slice(0, numOfPhotos).map((project, index) => (
     <div
       onClick={() => {
@@ -72,6 +73,7 @@ export const Catalog = ({ projects }: ICatalogProps) => {
           <p style={{ textAlign: "left" }}>
             - серийные, с выбором исполнения и планировки; <br />
             - готовые фирменные проекты; <br />
+            Ваш дом где-то здесь! <br />
           </p>
         </div>
       </div>
@@ -96,7 +98,7 @@ export const Catalog = ({ projects }: ICatalogProps) => {
           width: "100%",
         }}
       >
-        {roundPhotos}
+        {/*{roundPhotos}*/}
       </div>
       <Button
         onClick={() => {

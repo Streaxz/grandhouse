@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios, { AxiosResponse } from "axios";
-import { IPrice } from "@/app/types/IPrice";
+import { IPrice } from "@/app/utils/types/IPrice";
 
 export const usePrices = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;

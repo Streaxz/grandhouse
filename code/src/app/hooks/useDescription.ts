@@ -4,7 +4,7 @@ import {
   ICreateInformationCard,
   IInformationCard,
   IUpdateInformationCard,
-} from "@/app/types/IInformationCard";
+} from "@/app/utils/types/IInformationCard";
 
 export const useDescription = (getProjects: () => void) => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;

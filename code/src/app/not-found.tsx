@@ -7,6 +7,10 @@ import { CatalogItem } from "@/app/components/Catalog/CatalogItem";
 import { Ideas } from "@/app/components/Ideas/Ideas";
 
 const MagazinePage = () => {
+  // useEffect(() => {
+  //   const header = document.getElementById("header")!;
+  //   header.style.background = "#878faf";
+  // }, []);
   return (
     <main className={styles.page}>
       <div className={`${styles.pageWrapper}`}>

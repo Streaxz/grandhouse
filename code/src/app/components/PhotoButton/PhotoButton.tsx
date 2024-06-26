@@ -50,7 +50,7 @@ export const PhotoButton = ({
             />
           </div>
           <Button
-            notclickable
+            notClickable
             style={{ marginTop: 0, marginBottom: "12px" }}
             onClick={() => {}}
             buttonText={buttonText}

@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input, Table, Typography } from "antd";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import TextArea from "antd/es/input/TextArea";
-import { IInformation } from "@/app/types/IInformation";
+import { IInformation } from "@/app/utils/types/IInformation";
 import { useInformation } from "@/app/hooks/useInformation";
 
 export interface IDescriptionTableProps {

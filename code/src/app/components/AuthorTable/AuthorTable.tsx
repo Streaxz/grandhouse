@@ -11,7 +11,7 @@ import {
   UploadProps,
 } from "antd";
 import React, { useState } from "react";
-import { ICreateEmployee, IEmployee } from "@/app/types/IEmployee";
+import { ICreateEmployee, IEmployee } from "@/app/utils/types/IEmployee";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 
 export interface IAuthorTableProps {

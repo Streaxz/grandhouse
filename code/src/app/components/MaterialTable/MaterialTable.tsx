@@ -12,7 +12,7 @@ import {
 } from "antd";
 import React, { useState } from "react";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { ICreateMaterial, IMaterial } from "@/app/types/IMaterial";
+import { ICreateMaterial, IMaterial } from "@/app/utils/types/IMaterial";
 import TextArea from "antd/es/input/TextArea";
 
 export interface IMaterialTableProps {

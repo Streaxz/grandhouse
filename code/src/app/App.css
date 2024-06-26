@@ -95,6 +95,36 @@
 
 }
 
+.headerDropdown {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    font-size: var(--font-size-desktop-h5);
+    line-height: var(--font-size-desktop-h5-line-height);
+    height: 200%;
+    border-radius: 8px;
+    font-weight: 400;
+}
+
+.menu::-webkit-scrollbar {
+    width: 14px;
+}
+
+.menu::-webkit-scrollbar-track {
+    background: #E3E8F1;
+    border-radius: 18px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    border: 4px solid #E3E8F1;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
 button {
     border: none;
     background-color: transparent;
@@ -175,6 +205,13 @@ p, label {
     background: var(--Basics-Black, #000);
 }
 
+.headerDropdownArrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    color: white;
+}
+
 .footerTextGap {
     display: flex;
     flex-direction: column;
@@ -252,8 +289,8 @@ p, label {
     display: flex;
     flex-direction: column;
     padding: 18px;
-    height: 100%;
-    align-items: flex-start;
+    height: 100vh;
+    overflow: scroll;
     gap: 9px;
     flex-shrink: 0;
     background: linear-gradient(180deg, #f2f4f8 0%, #D5DEED 100%);
@@ -262,6 +299,43 @@ p, label {
     backdrop-filter: blur(36px);
 }
 
+
+.headerDropdownMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow: visible;
+    z-index: 2; /* Lower z-index value to be behind dropdownPlaceholder */
+    bottom: 0;
+    translate: 0 100%;
+    left: 0;
+    gap: 12px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.75);
+
+    /* bgBlur */
+    backdrop-filter: blur(36px);
+}
+
+.headerDropdownMenu::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Position above the menu */
+    left: 20px; /* Center the triangle horizontally */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(255, 255, 255, 0.75); /* Color of the triangle */
+}
+
+.headerDropdownMenu > .Dropdown-option {
+    border-radius: 12px;
+
+}
 .menuItem {
     display: flex;
     position: relative;
@@ -1126,7 +1200,9 @@ p, label {
 
 _:default:not(:root:root), .safari-only { display: contents !important; }
 
-
+.removeUnderline {
+    text-decoration: none;
+}
 .photoButtonGradient {
     z-index: 2;
     position: absolute; /* Position the gradient absolutely over the photo */
@@ -2694,6 +2770,7 @@ span.MuiButtonBase-root > svg > path {
     gap: 24px 24px;
 }
 
+
 .mortgageHeader {
     position: relative;
     box-sizing: content-box;
@@ -4024,7 +4101,8 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .footerNavigation {
-        display: none;
+        display: flex;
+        flex-direction: column;
     }
 
     .accentCardImage {
@@ -4433,6 +4511,10 @@ span.MuiButtonBase-root > svg > path {
     .buttonImage {
         height: 118px;
     }
+
+    .nestedLink {
+        padding-left: 24px;
+    }
 }
 
 @media(hover: hover) and (pointer: fine) {
@@ -4450,6 +4532,10 @@ span.MuiButtonBase-root > svg > path {
 
     .desktopNavigation {
         display: none;
+    }
+
+    .nestedLink {
+        padding-left: 36px;
     }
 
 }

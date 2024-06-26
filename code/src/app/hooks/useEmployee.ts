@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios, { AxiosResponse } from "axios";
-import { ICreateEmployee, IEmployee } from "@/app/types/IEmployee";
+import { ICreateEmployee, IEmployee } from "@/app/utils/types/IEmployee";
 
 export const useEmployee = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;

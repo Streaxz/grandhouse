@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios, { AxiosResponse } from "axios";
-import { ICreateMaterial, IMaterial } from "@/app/types/IMaterial";
+import { ICreateMaterial, IMaterial } from "@/app/utils/types/IMaterial";
 
 export const useMaterial = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;

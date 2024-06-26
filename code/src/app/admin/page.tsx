@@ -22,10 +22,10 @@ import {
   InputNumber,
 } from "antd";
 import { useProject } from "@/app/hooks/useProject";
-import { IProject } from "@/app/types/IProject";
+import { IProject } from "@/app/utils/types/IProject";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import TextArea from "antd/es/input/TextArea";
-import { IPhoto, PHOTO_TYPE } from "@/app/types/IPhoto";
+import { IPhoto, PHOTO_TYPE } from "@/app/utils/types/IPhoto";
 import { useEmployee } from "@/app/hooks/useEmployee";
 import { AuthorTable } from "@/app/components/AuthorTable/AuthorTable";
 import "./unsetColor.css";
@@ -35,7 +35,8 @@ import { DescriptionTable } from "@/app/components/DescriptionTable/DescriptionT
 import { InformationTable } from "@/app/components/InformationTable/InformationTable";
 import { usePrices } from "@/app/hooks/usePrices";
 import { useSeries } from "@/app/hooks/useSeries";
-import { ETYPE } from "@/app/catalog/page";
+import { EType } from "@/app/utils/enums/EType";
+
 type FieldType = {
   title?: string;
 };
@@ -441,6 +442,9 @@ const AdminPage = () => {
             <Form.Item name="title" label="Название">
               <Input />
             </Form.Item>
+            <Form.Item name="customOrder" label="Порядок">
+              <InputNumber />
+            </Form.Item>
             <Form.Item name="seriesId" label="Серия">
               <Select
                 options={series?.map(({ id, comment }) => ({
@@ -451,7 +455,7 @@ const AdminPage = () => {
             </Form.Item>
             <Form.Item name="type" label="Тип">
               <Select
-                options={Object.values(ETYPE).map((type) => ({
+                options={Object.values(EType).map((type) => ({
                   value: type,
                   label: type,
                 }))}

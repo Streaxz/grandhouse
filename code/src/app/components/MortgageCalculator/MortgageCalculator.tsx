@@ -1,7 +1,7 @@
 import Dropdown, { Option } from "react-dropdown";
 import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
-import { IPrice } from "@/app/types/IPrice";
+import { IPrice } from "@/app/utils/types/IPrice";
 
 function valuetext(value: number) {
   return `${value}°C`;

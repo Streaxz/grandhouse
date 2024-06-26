@@ -1,4 +1,4 @@
-import { IEmployee } from "@/app/types/IEmployee";
+import { IEmployee } from "@/app/utils/types/IEmployee";
 
 export interface IQuoteProps {
   quoteText: string;

@@ -40,28 +40,25 @@ export const Company = () => {
           <TextBlock
             rectangleColor={"white"}
             width={"100%"}
-            mainText={"Грандхауc — это люди, технологии и материалы"}
+            mainText={"Грандхаус - это люди, технологии и материалы."}
             descriptionText={
-              "Небольшая вводка про то, кто работает в Грандхаусе, какие технологии и материалы используются"
+              "Грандхаус основан в 2015 году в Нижнем Новгороде. Мы гордимся своими корнями и дорожим репутацией"
             }
             textColor={"white"}
           />
           <Features>
             <RoundFeaturesItem
-              headerText={"Заголовок элемента"}
-              descriptionText={"Подзаголовок элемента"}
+              headerText={"лучшие профессионалы"}
               src={"/company.jpeg"}
               link={"/company"}
             />
             <RoundFeaturesItem
-              headerText={"Заголовок Элемента"}
-              descriptionText={"Подзаголовок элемента"}
+              headerText={"собственное производство"}
               src={"/wood.jpeg"}
               link={"/offers"}
             />
             <RoundFeaturesItem
-              headerText={"Заголовок Элемента"}
-              descriptionText={"Подзаголовок элемента"}
+              headerText={"передовые технологии"}
               src={"/autumn.jpeg"}
               link={"/forest"}
             />
@@ -69,13 +66,13 @@ export const Company = () => {
           {/*TODO Добавить автора*/}
           <Quote
             quoteText={
-              "Каждый из нас понимает очевидную вещь: внедрение современных методик обеспечивает широкому кругу (специалистов) участие в формировании новых предложений."
+              "Мы строим такие дома, в каких хотелось бы жить нам самим."
             }
             author={{
-              position: "Инженер",
-              name: "Александр",
+              position: "Основатель и руководитель Грандхауса",
+              name: "Никита",
               imageUrl: "image.png",
-              surname: "Ломоносов",
+              surname: "Кузнецов",
               id: 1,
             }}
           />

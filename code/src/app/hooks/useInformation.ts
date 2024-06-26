@@ -4,7 +4,7 @@ import {
   ICreateInformation,
   IInformation,
   IUpdateInformation,
-} from "@/app/types/IInformation";
+} from "@/app/utils/types/IInformation";
 
 export const useInformation = (getProjects: () => void) => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;

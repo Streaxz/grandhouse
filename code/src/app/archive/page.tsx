@@ -1,5 +1,5 @@
 "use client";
-import styles from "./catalog.module.css";
+import styles from "./archive.module.css";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
 import React, { useEffect, useState } from "react";
 import { Ideas } from "@/app/components/Ideas/Ideas";
@@ -38,7 +38,7 @@ export interface IFilters {
   sortOrder?: "ASC" | "DESC";
 }
 
-const CatalogPage = () => {
+const ArchivePage = () => {
   const router = useRouter();
   const [filters, setFilters] = useState<IFilters>({
     type: EType.ALL,
@@ -69,6 +69,7 @@ const CatalogPage = () => {
             textColor={"#FFF"}
           />
           <Filters
+            isArchive
             filters={filters}
             setFilters={setFilters}
             getProjects={getProjects}
@@ -167,4 +168,4 @@ const CatalogPage = () => {
   );
 };
 
-export default CatalogPage;
+export default ArchivePage;

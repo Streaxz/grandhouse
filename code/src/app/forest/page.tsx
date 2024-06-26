@@ -12,6 +12,7 @@ import { OfferPdf } from "@/app/components/OfferPdf/OfferPdf";
 import { Ideas } from "@/app/components/Ideas/Ideas";
 import { Button } from "@/app/components/Button/Button";
 import { ReviewCardSmall } from "@/app/components/ReviewCardSmall/ReviewCardSmall";
+import Image from "next/image";
 
 const ProjectPage = () => {
   return (
@@ -19,12 +20,12 @@ const ProjectPage = () => {
       <div
         className={styles.background}
         style={{
-          background: 'url("/forest.jpeg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
+        <Image src={"/forest.jpeg"} alt={"background"} fill />
         <div
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.2)",
@@ -147,11 +148,11 @@ const ProjectPage = () => {
           <Carousel isPagination={true} swiperEffect={"slide"}>
             <FeatureCardPicture
               descriptionText={"Подпись"}
-              src={"forest.jpeg"}
+              src={"/forest.jpeg"}
             />
             <FeatureCardPicture
               descriptionText={"Нажмите для просмотра"}
-              src={"forest.jpeg"}
+              src={"/forest.jpeg"}
             />
           </Carousel>
           <TextContent

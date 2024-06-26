@@ -6,7 +6,9 @@ export const FooterContacts = () => {
   const router = useRouter();
   return (
     <div className={"footerContacts"}>
-      <div style={{ color: "#62698C" }} className={"footerNavigation"}>
+      <div
+        style={{ color: "#62698C", display: "flex", flexDirection: "column" }}
+      >
         <a
           style={{
             cursor: "pointer",
@@ -16,9 +18,14 @@ export const FooterContacts = () => {
             router.push("/philosophy");
           }}
         >
-          Философия
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Философия
+          </p>
         </a>
-        <br />
         <a
           style={{
             cursor: "pointer",
@@ -28,9 +35,14 @@ export const FooterContacts = () => {
             router.push("/catalog");
           }}
         >
-          Каталог проектов
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Каталог проектов
+          </p>
         </a>
-        <br />
         <a
           style={{
             cursor: "pointer",
@@ -40,9 +52,14 @@ export const FooterContacts = () => {
             router.push("/offers");
           }}
         >
-          Услуги
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Услуги
+          </p>
         </a>
-        <br />
         <a
           style={{
             cursor: "pointer",
@@ -52,9 +69,14 @@ export const FooterContacts = () => {
             router.push("/forest");
           }}
         >
-          Лес
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Лес
+          </p>
         </a>
-        <br />
         <a
           style={{
             cursor: "pointer",
@@ -64,9 +86,14 @@ export const FooterContacts = () => {
             router.push("/reviews");
           }}
         >
-          Работы и отзывы
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Работы и отзывы
+          </p>
         </a>
-        <br />
         <a
           style={{
             cursor: "pointer",
@@ -76,18 +103,28 @@ export const FooterContacts = () => {
             router.push("/company");
           }}
         >
-          Компания
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Компания
+          </p>
         </a>
-        <br />
         <a
           style={{
             cursor: "pointer",
             color: "#62698C",
           }}
         >
-          Вакансии
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Вакансии
+          </p>
         </a>
-        <br />
         <a
           style={{
             cursor: "pointer",
@@ -97,7 +134,13 @@ export const FooterContacts = () => {
             router.push("/magazine");
           }}
         >
-          Журнал
+          <p
+            style={{
+              color: "#62698C",
+            }}
+          >
+            Журнал
+          </p>
         </a>
       </div>
       <div className={"footerPhone"}>
@@ -114,7 +157,8 @@ export const FooterContacts = () => {
           </a>
         </h1>
         <h5 style={{ color: "#62698C" }}>
-          Звонок бесплатный
+          Мы на связи 24/7. Звонок бесплатный
+          <br />
           <br />
           <br />
         </h5>

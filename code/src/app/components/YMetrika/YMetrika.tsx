@@ -1,17 +1,9 @@
 "use client";
-
-import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 
 const YMetrikaId = 97658068;
 
 export function YMetrika() {
-  const pathName = usePathname();
-  const searchParams = useSearchParams();
-  useEffect(() => {
-    ym(YMetrikaId, "hit", window.location.href);
-  }, [pathName, searchParams]);
   return (
     <>
       <Script id="yandex-metrika">
@@ -33,7 +25,7 @@ export function YMetrika() {
         <div>
           <img
             src="https://mc.yandex.ru/watch/97658068"
-            style="position:absolute; left:-9999px;"
+            style={{ position: "absolute", left: "-9999px;" }}
             alt=""
           />
         </div>

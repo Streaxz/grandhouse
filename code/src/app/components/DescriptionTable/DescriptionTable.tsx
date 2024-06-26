@@ -1,6 +1,6 @@
 import { Button, Card, Form, Input, Table, Typography } from "antd";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { IInformationCard } from "@/app/types/IInformationCard";
+import { IInformationCard } from "@/app/utils/types/IInformationCard";
 import { useDescription } from "@/app/hooks/useDescription";
 import TextArea from "antd/es/input/TextArea";
 

@@ -1,4 +1,4 @@
-import { IInformation } from "@/app/types/IInformation";
+import { IInformation } from "@/app/utils/types/IInformation";
 
 export interface IInfoTableProps {
   information: IInformation[];

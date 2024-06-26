@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
-import { IProject } from "@/app/types/IProject";
-import { PHOTO_TYPE } from "@/app/types/IPhoto";
+import { IProject } from "@/app/utils/types/IProject";
+import { PHOTO_TYPE } from "@/app/utils/types/IPhoto";
 import { IFilters } from "@/app/catalog/page";
 
 export interface ICreatePhoto {

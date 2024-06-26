@@ -25,7 +25,7 @@ import { MortgageCalculator } from "@/app/components/MortgageCalculator/Mortgage
 import { PriceOffer } from "@/app/components/PriceOffer/PriceOffer";
 import { CatalogItem } from "@/app/components/Catalog/CatalogItem";
 import { useProject } from "@/app/hooks/useProject";
-import { PHOTO_TYPE } from "@/app/types/IPhoto";
+import { PHOTO_TYPE } from "@/app/utils/types/IPhoto";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useModalFunctions } from "@/app/components/Modal/ModalContainer";
