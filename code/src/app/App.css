@@ -152,6 +152,10 @@ p, label {
 
 }
 
+.headerPadding {
+    padding: 24px 24px 24px 24px;
+}
+
 .footer {
     position: relative;
     z-index: 1;
@@ -285,8 +289,13 @@ p, label {
     border: none;
 }
 
+.drawerContainer {
+    padding: 0;
+}
 .menu {
     display: flex;
+    box-sizing: border-box;
+    position: relative;
     flex-direction: column;
     padding: 18px;
     height: 100vh;
@@ -3714,6 +3723,10 @@ span.MuiButtonBase-root > svg > path {
         text-align: left;
     }
 
+    .headerPadding {
+        padding: 12px 24px 12px 24px;
+    }
+
     .projectDiscountText {
         font-size: 2vw;
     }
@@ -4538,6 +4551,9 @@ span.MuiButtonBase-root > svg > path {
         padding-left: 36px;
     }
 
+    .headerPadding {
+        padding: 12px 24px 12px 24px;
+    }
 }
 
 @media(max-width: 400px) {

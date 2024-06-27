@@ -73,14 +73,14 @@ export const CarouselAnimated = ({
         <button onClick={goPrev} className={"leftArrow"}>
           <ArrowIconLeft />
         </button>
-        <div style={{ width: "90%", overflow: "visible" }}>
+        <div style={{ width: "80%", overflow: "visible" }}>
           <Swiper
             ref={swiperRef}
             loop={swiperSlides !== 1}
             coverflowEffect={{
               rotate: 0,
-              depth: 300,
-              scale: 0.8,
+              depth: 400,
+              scale: 0.6,
             }}
             slidesPerView={swiperSlides}
             spaceBetween={spaceBetween}

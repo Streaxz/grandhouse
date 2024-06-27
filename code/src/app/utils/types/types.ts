@@ -8,5 +8,5 @@ export interface IPageLink {
   link: string;
   desktopVisible: boolean;
   mobileVisible: boolean;
-  nestedLinks?: INestedLink[];
+  nestedLinks: INestedLink[];
 }

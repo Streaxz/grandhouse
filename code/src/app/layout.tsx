@@ -9,6 +9,10 @@ import {
   ModalContainer,
   ModalProvider,
 } from "@/app/components/Modal/ModalContainer";
+import {
+  NavigationDrawer,
+  NavigationProvider,
+} from "@/app/components/NavigationDrawer/NavigationDrawer";
 
 const objectSans = localFont({
   src: [
@@ -84,13 +88,16 @@ export default function RootLayout({
     >
       <body className={`body`} id={"body"}>
         <ModalProvider>
-          <Suspense>
-            <YMetrika />
-            <Header />
-            {children}
-            <Footer />
-            <ModalContainer />
-          </Suspense>
+          <NavigationProvider>
+            <Suspense>
+              <YMetrika />
+              <Header />
+              {children}
+              <Footer />
+              <NavigationDrawer />
+              <ModalContainer />
+            </Suspense>
+          </NavigationProvider>
         </ModalProvider>
       </body>
     </html>
