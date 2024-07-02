@@ -1,16 +1,18 @@
 "use client";
-import styles from "./offers.module.css";
+import styles from "./profiled-brick.module.css";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
 import React, { useEffect } from "react";
 import { OfferPdf } from "@/app/components/OfferPdf/OfferPdf";
-import { Carousel } from "@/app/components/Carousel/Carousel";
-import { CatalogItem } from "@/app/components/Catalog/CatalogItem";
 import { AccentCard } from "@/app/components/AccentCard/AccentCard";
 import { Ideas } from "@/app/components/Ideas/Ideas";
 import { MagazineCardLarge } from "@/app/components/Magazine/MagazineCardLarge/MagazineCardLarge";
 import { useProject } from "@/app/hooks/useProject";
+import { Features } from "@/app/components/Features/Features";
+import { Button } from "@/app/components/Button/Button";
+import { RectangleFeature } from "@/app/components/RectangleFeature/RectangleFeature";
+import { FeatureCardSmallDarkLabel } from "@/app/components/FeatureCardSmallDarkLabel/FeatureCardSmallDarkLabel";
 
-const OffersPage = () => {
+const ProfiledBrickPage = () => {
   const { projects, getProjects } = useProject();
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const OffersPage = () => {
         <div className={styles.pageContainer}>
           <TextBlock
             rectangleColor={"#CC00FF"}
-            mainText={"Услуги"}
+            mainText={"Лес: профилированный брус"}
             descriptionText={
               "Принимая во внимание показатели успешности, выбранный нами инновационный путь требует определения и уточнения экономической целесообразности принимаемых решений."
             }
@@ -76,22 +78,55 @@ const OffersPage = () => {
             }
             source={"/happyFamily.jpeg"}
           />
-          <AccentCard
-            header={"Бизнесу"}
-            text={
-              "Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной"
-            }
-            source={"/happyFamily.jpeg"}
-            alternative
-          />
-          <OfferPdf text={"Все услуги в одной презентации"} source={""} />
           <Ideas />
         </div>
         {/*<div className={styles.ellipse}></div>*/}
-        <div
-          className={`${styles.pageWrapper} ${styles.darkBackground}`}
-          style={{ zIndex: 10 }}
-        >
+        <div className={`${styles.pageWrapper}`} style={{ zIndex: 10 }}>
+          <div className={styles.pageContainer}>
+            <TextBlock
+              rectangleColor={"#CC00FF"}
+              textColor={"#FFF"}
+              mainText={"Цены на профилированный брус"}
+              descriptionText={"Вводка про отзывы и довольных клиентов"}
+            />
+            <OfferPdf text={"Полный прайс-лист"} source={"/"} />
+          </div>
+        </div>
+        <div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
+          <div className={styles.pageContainer}>
+            <TextBlock
+              rectangleColor={"#CC00FF"}
+              mainText={"Профили и сечения"}
+              descriptionText={
+                "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса."
+              }
+              textColor={"#FFF"}
+            />
+            <Features>
+              <RectangleFeature
+                src={"/image.png"}
+                headerText={"Специальный"}
+                descriptionText={"Основной текст"}
+              />
+              <RectangleFeature
+                src={"/image.png"}
+                headerText={"Специальный"}
+                descriptionText={"Основной текст"}
+              />
+              <RectangleFeature
+                src={"/image.png"}
+                headerText={"Специальный"}
+                descriptionText={"Основной текст"}
+              />
+              <RectangleFeature
+                src={"/image.png"}
+                headerText={"Специальный"}
+                descriptionText={"Основной текст"}
+              />
+            </Features>
+          </div>
+        </div>
+        <div className={`${styles.pageWrapper} ${styles.darkBackground}`}>
           <div className={styles.pageContainer}>
             <MagazineCardLarge />
           </div>
@@ -101,23 +136,24 @@ const OffersPage = () => {
             <TextBlock
               rectangleColor={"#CC00FF"}
               textColor={"#FFF"}
-              mainText={"Наши проекты"}
-              descriptionText={
-                "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса."
-              }
+              mainText={"Отзывы"}
+              descriptionText={"Вводка про отзывы и довольных клиентов"}
             />
-            <Carousel
-              swiperEffect={"slider"}
-              desktopSlides={2}
-              tabletSlides={2}
-              mobileSlides={1}
-              spaceBetween={36}
-              projectsLength={projects?.length}
-            >
-              <CatalogItem />
-              <CatalogItem />
-            </Carousel>
-            {/*<div className={styles.ellipse} />*/}
+            {projects && projects?.length > 2 && (
+              <div className={"doubleItem"}>
+                {projects
+                  ?.slice(0, 2)
+                  .map((project, index) => (
+                    <FeatureCardSmallDarkLabel
+                      key={`key-${index}`}
+                      descriptionText={"Нажмите для просмотра"}
+                      project={project}
+                    />
+                  ))}
+              </div>
+            )}
+            <Button onClick={() => {}} buttonText={"Отзывы и карта работ"} />
+            {/*<div className={styles.ellipse}></div>*/}
           </div>
         </div>
       </div>
@@ -125,4 +161,4 @@ const OffersPage = () => {
   );
 };
 
-export default OffersPage;
+export default ProfiledBrickPage;

@@ -1,5 +1,5 @@
 "use client";
-import styles from "./offers.module.css";
+import styles from "./individual.module.css";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
 import React from "react";
 import { OfferPdf } from "@/app/components/OfferPdf/OfferPdf";

@@ -1,16 +1,16 @@
 "use client";
-import styles from "./offers.module.css";
+import styles from "./business.module.css";
 import { TextBlock } from "@/app/components/TextBlock/TextBlock";
 import React, { useEffect } from "react";
-import { OfferPdf } from "@/app/components/OfferPdf/OfferPdf";
-import { Carousel } from "@/app/components/Carousel/Carousel";
-import { CatalogItem } from "@/app/components/Catalog/CatalogItem";
 import { AccentCard } from "@/app/components/AccentCard/AccentCard";
 import { Ideas } from "@/app/components/Ideas/Ideas";
 import { MagazineCardLarge } from "@/app/components/Magazine/MagazineCardLarge/MagazineCardLarge";
 import { useProject } from "@/app/hooks/useProject";
+import { Features } from "@/app/components/Features/Features";
+import { RoundFeaturesItem } from "@/app/components/RoundFeaturesItem/RoundFeaturesItem";
+import { Button } from "@/app/components/Button/Button";
 
-const OffersPage = () => {
+const BusinessPage = () => {
   const { projects, getProjects } = useProject();
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const OffersPage = () => {
         <div className={styles.pageContainer}>
           <TextBlock
             rectangleColor={"#CC00FF"}
-            mainText={"Услуги"}
+            mainText={"Услуги: бизнесу"}
             descriptionText={
               "Принимая во внимание показатели успешности, выбранный нами инновационный путь требует определения и уточнения экономической целесообразности принимаемых решений."
             }
@@ -76,15 +76,6 @@ const OffersPage = () => {
             }
             source={"/happyFamily.jpeg"}
           />
-          <AccentCard
-            header={"Бизнесу"}
-            text={
-              "Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной России.Портфолио Грандхауса включает дома и объекты различной сложности, построенные по всей Западной"
-            }
-            source={"/happyFamily.jpeg"}
-            alternative
-          />
-          <OfferPdf text={"Все услуги в одной презентации"} source={""} />
           <Ideas />
         </div>
         {/*<div className={styles.ellipse}></div>*/}
@@ -101,23 +92,30 @@ const OffersPage = () => {
             <TextBlock
               rectangleColor={"#CC00FF"}
               textColor={"#FFF"}
-              mainText={"Наши проекты"}
-              descriptionText={
-                "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса."
-              }
+              mainText={"О компании кратко"}
+              descriptionText={"Вводка про отзывы и довольных клиентов"}
             />
-            <Carousel
-              swiperEffect={"slider"}
-              desktopSlides={2}
-              tabletSlides={2}
-              mobileSlides={1}
-              spaceBetween={36}
-              projectsLength={projects?.length}
-            >
-              <CatalogItem />
-              <CatalogItem />
-            </Carousel>
-            {/*<div className={styles.ellipse} />*/}
+            <Features>
+              <RoundFeaturesItem
+                headerText={"Заголовок элемента"}
+                descriptionText={"Подзаголовок элемента"}
+                src={"/company.jpeg"}
+                link={"/company"}
+              />
+              <RoundFeaturesItem
+                headerText={"Заголовок Элемента"}
+                descriptionText={"Подзаголовок элемента"}
+                src={"/wood.jpeg"}
+                link={"/offers"}
+              />
+              <RoundFeaturesItem
+                headerText={"Заголовок Элемента"}
+                descriptionText={"Подзаголовок элемента"}
+                src={"/autumn.jpeg"}
+                link={"/forest"}
+              />
+            </Features>
+            <Button onClick={() => {}} buttonText={"Подробнее о компании"} />
           </div>
         </div>
       </div>
@@ -125,4 +123,4 @@ const OffersPage = () => {
   );
 };
 
-export default OffersPage;
+export default BusinessPage;

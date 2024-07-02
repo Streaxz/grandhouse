@@ -12,57 +12,63 @@ import { OfferPdf } from "@/app/components/OfferPdf/OfferPdf";
 import { Ideas } from "@/app/components/Ideas/Ideas";
 import { Button } from "@/app/components/Button/Button";
 import { ReviewCardSmall } from "@/app/components/ReviewCardSmall/ReviewCardSmall";
-import Image from "next/image";
+import { FeatureCardYouTube } from "@/app/components/FeatureCardYouTube/FeatureCardYouTube";
+import { Quote } from "@/app/components/Quote/Quote";
 
 const ProjectPage = () => {
   return (
     <main className={styles.page}>
-      <div
-        className={styles.background}
-        style={{
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <Image src={"/forest.jpeg"} alt={"background"} fill />
-        <div
-          style={{
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
-            width: "100%",
-            height: "100%",
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        />
-        <div className={styles.imageGradient}>
-          <div className={styles.pageContainer}>
-            <TextBlock
-              rectangleColor={"#CC00FF"}
-              mainText={"Лес"}
-              descriptionText={
-                "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса. "
-              }
-              textColor={"#FFF"}
-            />
-          </div>
-        </div>
-      </div>
+      {/*<div*/}
+      {/*  className={styles.background}*/}
+      {/*  style={{*/}
+      {/*    backgroundSize: "cover",*/}
+      {/*    backgroundPosition: "center",*/}
+      {/*    backgroundRepeat: "no-repeat",*/}
+      {/*  }}*/}
+      {/*>*/}
+      {/*  <Image src={"/forest.jpeg"} alt={"background"} fill />*/}
+      {/*  <div*/}
+      {/*    style={{*/}
+      {/*      backgroundColor: "rgba(0, 0, 0, 0.2)",*/}
+      {/*      width: "100%",*/}
+      {/*      height: "100%",*/}
+      {/*      position: "absolute",*/}
+      {/*      top: 0,*/}
+      {/*      left: 0,*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*  <div className={styles.imageGradient}>*/}
+      {/*    <div className={styles.pageContainer}>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div className={styles.pageWrapper}>
         <div className={styles.pageContainer}>
-          {/*TODO добавить автора*/}
-          {/*<Quote quoteText={*/}
-          {/*		'Каждый из нас понимает очевидную вещь: внедрение современных методик обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.'*/}
-          {/*} src={*/}
-          {/*		'image.png'*/}
-          {/*} text={*/}
-          {/*		'Имя Фамилия, должность'*/}
-          {/*}*/}
-          {/*/>*/}
           <TextBlock
             rectangleColor={"#CC00FF"}
-            mainText={"Услуги"}
+            mainText={"Лес"}
+            descriptionText={
+              "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса. "
+            }
+            textColor={"#FFF"}
+          />
+          <FeatureCardYouTube src={"/forest.jpeg"} isVideo={false} />
+          {/*TODO добавить автора*/}
+          <Quote
+            author={{
+              position: "Генеральный директор",
+              name: "ООО «Лес»",
+              surname: "Александр Сергеевич",
+              imageUrl: "/author.jpeg",
+              id: 20,
+            }}
+            quoteText={
+              "Каждый из нас понимает очевидную вещь: внедрение современных методик обеспечивает широкому кругу (специалистов) участие в формировании новых предложений."
+            }
+          />
+          <TextBlock
+            rectangleColor={"#CC00FF"}
+            mainText={"Какую продукцию мы производим"}
             descriptionText={
               "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса. "
             }
