@@ -29,6 +29,10 @@ import { PHOTO_TYPE } from "@/app/utils/types/IPhoto";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useModalFunctions } from "@/app/components/Modal/ModalContainer";
+import {
+  useLightBox,
+  useLightBoxFunctions,
+} from "@/app/components/LightBox/LightBox";
 const ProjectPage = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
   const [is3D, setIs3D] = useState<boolean>(false);
@@ -46,10 +50,15 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
       fetchData();
     }
   }, [getProject, params, project]);
-  console.log(
-    project?.photos?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)[0]
-      ?.imageUrl || "",
-  );
+  const { setPhotos } = useLightBox();
+  const { openLightboxOnSlide } = useLightBoxFunctions();
+
+  useEffect(() => {
+    if (project?.photos) {
+      const photoUrls = project.photos.map((photo) => photo.imageUrl);
+      setPhotos(photoUrls);
+    }
+  }, [project, setPhotos]);
   return (
     <main className={styles.page}>
       <div
@@ -118,12 +127,18 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                 isPagination={true}
               >
                 {project?.photos
-                  ?.filter((photo) => photo.type === PHOTO_TYPE.GENERAL)
+                  ?.map((photo, originalIndex) => ({
+                    ...photo,
+                    originalIndex,
+                  }))
+                  .filter((photo) => photo.type === PHOTO_TYPE.GENERAL)
                   .map((photo) => (
                     <FeatureCardPicture
                       key={photo.id}
                       descriptionText={"Подпись"}
                       src={photo.imageUrl}
+                      openLightboxOnSlide={openLightboxOnSlide}
+                      index={photo.originalIndex}
                     />
                   ))}
               </Carousel>
@@ -182,6 +197,10 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                 isPagination={true}
               >
                 {project?.photos
+                  ?.map((photo, originalIndex) => ({
+                    ...photo,
+                    originalIndex,
+                  }))
                   .filter((photo) => {
                     return is3D
                       ? isMirrored
@@ -196,6 +215,8 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
                       key={photo.id}
                       src={photo.imageUrl}
                       contain
+                      openLightboxOnSlide={openLightboxOnSlide}
+                      index={photo.originalIndex}
                     />
                   ))}
               </Carousel>

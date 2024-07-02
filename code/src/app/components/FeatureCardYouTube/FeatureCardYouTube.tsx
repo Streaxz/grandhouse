@@ -4,8 +4,9 @@ import Image from "next/image";
 interface IPhotoProps {
   src: string;
   isSwiper?: boolean;
+  isVideo?: boolean;
 }
-export const FeatureCardYouTube = ({ src }: IPhotoProps) => {
+export const FeatureCardYouTube = ({ src, isVideo = true }: IPhotoProps) => {
   return (
     <div
       className={"featureCardYouTube"}
@@ -23,7 +24,9 @@ export const FeatureCardYouTube = ({ src }: IPhotoProps) => {
         objectFit={"cover"}
       />
       <div className="featureCardYouTubeContainer">
-        <img src={"youtube.png"} style={{ width: "100%" }} alt={"youtube"} />
+        {isVideo && (
+          <img src={"youtube.png"} style={{ width: "100%" }} alt={"youtube"} />
+        )}
       </div>
     </div>
   );

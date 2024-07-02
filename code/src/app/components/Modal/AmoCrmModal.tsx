@@ -36,7 +36,6 @@ export const AmoCrmModal = ({ closeModal, isModal }: IModalProps) => {
     }
   };
 
-  console.log(showCompletionModal);
   const handleSubmit = async () => {
     setShowCompletionModal(true);
     const ip = await getIp();

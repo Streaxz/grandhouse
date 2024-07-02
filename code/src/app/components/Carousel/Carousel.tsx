@@ -67,7 +67,6 @@ export const Carousel = ({
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      console.log(width);
       if (width > 768) {
         setSwiperSlides(desktopSlides || 1);
         setSpaceBetween(desktopSlides ? 36 / (desktopSlides - 1) : 36);
@@ -84,7 +83,6 @@ export const Carousel = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  console.log(swiperSlides);
   return (
     <div
       style={{

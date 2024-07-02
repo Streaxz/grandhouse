@@ -14,7 +14,7 @@ import { PhotoButton } from "@/app/components/PhotoButton/PhotoButton";
 import { Button } from "@/app/components/Button/Button";
 import { useRouter } from "next/navigation";
 
-const OffersPage = () => {
+const IndividualPage = () => {
   const router = useRouter();
   return (
     <main className={styles.page}>
@@ -42,10 +42,10 @@ const OffersPage = () => {
         <div className={styles.pageContainer}>
           <TextBlock
             rectangleColor={"#CC00FF"}
-            mainText={"Услуги"}
+            mainText={"Проектирование современных домов"}
             textColor={"#FFF"}
             descriptionText={
-              "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса.  "
+              "Вводка про философию компании. Мы строим по готовым и индивидуальным проектам - дома и любые другие строения под ключ — из камня, рубленного бревна, профилированного и клееного бруса. "
             }
           />
           <FeatureCardYouTube isVideo={false} src={"/office.jpeg"} />
@@ -188,4 +188,4 @@ const OffersPage = () => {
   );
 };
 
-export default OffersPage;
+export default IndividualPage;

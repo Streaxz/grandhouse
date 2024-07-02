@@ -5,12 +5,18 @@ interface IPhotoProps {
   src: string;
   descriptionText?: string;
   contain?: boolean;
+  isLightBox?: boolean;
+  openLightboxOnSlide?: (number: number) => void;
+  index?: number;
 }
 export const FeatureCardPicture = ({
   src,
   descriptionText,
   contain,
+  openLightboxOnSlide,
+  index,
 }: IPhotoProps) => {
+  console.log(index && index + 1);
   return (
     <div
       className={"featureCardLarge"}
@@ -19,6 +25,9 @@ export const FeatureCardPicture = ({
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
+      onClick={() =>
+        openLightboxOnSlide && openLightboxOnSlide(index ? index + 1 : 1)
+      }
     >
       <Image
         className={"featureCardLarge"}

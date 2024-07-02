@@ -170,13 +170,13 @@ export const MortgageCalculator = ({ prices }: IMortgageCalculatorProps) => {
           <div className={"mortgageHeader"}>
             <p style={{ color: "#272B40" }}>Цена</p>
             <Dropdown
-              className={"dropdownMortgage dropdownWidth"}
+              className={"dropdownPrice"}
               options={options}
               value={price}
               onChange={(arg) => {
                 setPrice(options.find((item) => item.value === arg.value)!);
               }}
-              arrowClassName={"dropdownArrow"}
+              arrowClassName={"mortgageArrow"}
               controlClassName={"dropdownControl"}
               menuClassName={"dropdownMenu"}
             />

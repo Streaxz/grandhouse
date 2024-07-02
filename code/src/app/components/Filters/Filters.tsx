@@ -323,7 +323,6 @@ export const Filters = ({
                 className={"inputTiny"}
                 value={filters.squareFrom}
                 onChange={(event) => {
-                  console.log(event);
                   setFilters({
                     ...filters,
                     squareFrom:

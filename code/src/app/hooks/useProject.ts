@@ -43,7 +43,7 @@ export const useProject = (projectId?: string) => {
       if (filters) {
         params = `?${new URLSearchParams(filters as any).toString()}`;
       }
-      console.log(params);
+
       const { data }: AxiosResponse = await axios.get(
         `${apiUrl}/api/project${params}`,
       );

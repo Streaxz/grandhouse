@@ -54,13 +54,17 @@ export const NavigationDrawer = () => {
   return (
     <Drawer
       open={isOpen}
-      anchor={"left"}
+      variant={"temporary"}
+      ModalProps={{
+        keepMounted: true,
+        hideBackdrop: false,
+      }}
       onClose={closeDrawer}
-      style={{ zIndex: 20000, position: "fixed", left: 0, top: 0 }}
+      disablePortal={true}
     >
       <div className={"menu"}>
         {PAGES.map((item, index) => (
-          <>
+          <div key={`route-${index}`}>
             <div className={"menuItem "}>
               <Link
                 key={index}
@@ -81,7 +85,10 @@ export const NavigationDrawer = () => {
             {item.nestedLinks &&
               item.nestedLinks?.length > 0 &&
               item.nestedLinks.map((item, index) => (
-                <div className={"menuItem nestedLink"}>
+                <div
+                  key={"nestedLink-" + index}
+                  className={"menuItem nestedLink"}
+                >
                   <Link
                     key={index}
                     href={item.link}
@@ -103,9 +110,14 @@ export const NavigationDrawer = () => {
                   </Link>
                 </div>
               ))}
-          </>
+          </div>
         ))}
-        <div style={{ height: "1000px" }} />
+        <div
+          style={{
+            width: "100%",
+            height: "100px",
+          }}
+        />
       </div>
     </Drawer>
   );

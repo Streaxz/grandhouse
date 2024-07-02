@@ -298,7 +298,6 @@ p, label {
     position: relative;
     flex-direction: column;
     padding: 18px;
-    height: 100vh;
     overflow: scroll;
     gap: 9px;
     flex-shrink: 0;
@@ -920,6 +919,31 @@ p, label {
     border: 1px solid var(--Main-MediumBlue, #62698C);
     background: rgba(255, 255, 255, 0.50);
 }
+
+
+
+.dropdownPrice{
+    display: flex;
+    position: relative;
+    box-sizing: content-box;
+    z-index: 4;
+    flex-direction: column;
+    padding: 12px 18px 10px 18px;
+    justify-content: space-between;
+    width: 300px;
+    align-items: baseline;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+    border: 1px solid var(--Main-MediumBlue, #62698C);
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.dropdownPrice:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
 
 .dropdownMortgage:hover {
     background: rgba(255, 255, 255, 0.75);
@@ -2344,7 +2368,6 @@ p {
     padding: 0;
     align-content: center;
     gap: 48px 48px;
-    flex-wrap: wrap;
 }
 
 .accentCardText {
@@ -2381,7 +2404,7 @@ p {
 .accentCardImage {
     display: flex;
     position: relative;
-    height: 600px;
+    height: 100%;
     width: 600px;
     border-radius: 48px;
 }
@@ -2837,6 +2860,7 @@ span.MuiButtonBase-root > svg > path {
 }
 
 .mortgageCalculator {
+    justify-content: center;
     display: flex;
     gap: 24px 24px;
     align-self: stretch;
@@ -3115,6 +3139,12 @@ span.MuiButtonBase-root > svg > path {
         width: 90%;
     }
 
+    .mortgagePackage {
+
+        padding: 24px 18px 18px 18px;
+
+    }
+
     .pricesWrapper {
         padding: 36px 0 48px 0;
     }
@@ -3319,7 +3349,8 @@ span.MuiButtonBase-root > svg > path {
 
     .accentCardImage {
         width: 318px;
-        height: 499px;
+        height: 100%;
+        min-height: 499px;
         border-radius: 36px;
     }
 
@@ -3834,6 +3865,16 @@ span.MuiButtonBase-root > svg > path {
         height: 6px;
     }
 
+    .mortgageResult {
+        display: flex;
+        box-sizing: border-box;
+        padding: 24px 12px 12px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        border-radius: 18px;
+        border: 1px solid #FFF;
+    }
     .mainPage {
         gap: 24px;
     }
@@ -3914,6 +3955,12 @@ span.MuiButtonBase-root > svg > path {
 
     .imageContainer {
         height: 170px;
+    }
+
+    .mortgagePackage {
+
+        padding: 18px 12px 12px 12px;
+
     }
 
     .vector {
@@ -4119,7 +4166,7 @@ span.MuiButtonBase-root > svg > path {
     }
 
     .accentCardImage {
-        width: 300px;
+        width: 100%;
         height: 300px;
         border-radius: 24px;
     }
@@ -4528,6 +4575,22 @@ span.MuiButtonBase-root > svg > path {
     .nestedLink {
         padding-left: 24px;
     }
+
+    .dropdownWidth {
+        width: 200px !important;
+    }
+
+    .dropdownMortgage {
+        width: 100% !important;
+    }
+
+    .dropdownPrice {
+        width: 230px !important;
+    }
+
+    .mortgageSelectors {
+        align-items: center;
+    }
 }
 
 @media(hover: hover) and (pointer: fine) {
@@ -4566,5 +4629,20 @@ span.MuiButtonBase-root > svg > path {
     .navigationButton {
         padding: 12px 0 14px 0;
         width: 295px;
+    }
+}
+
+@media(max-width: 400px) {
+    .navigationButton {
+        width: 125px;
+    }
+}
+
+
+@media(min-width: 400px) and (max-width: 500px) {
+
+
+    .dropdownPrice {
+        width: 250px !important;
     }
 }

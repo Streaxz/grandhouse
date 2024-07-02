@@ -13,6 +13,10 @@ import {
   NavigationDrawer,
   NavigationProvider,
 } from "@/app/components/NavigationDrawer/NavigationDrawer";
+import {
+  LightBoxContainer,
+  LightBoxProvider,
+} from "@/app/components/LightBox/LightBox";
 
 const objectSans = localFont({
   src: [
@@ -86,20 +90,25 @@ export default function RootLayout({
       className={`${objectSans.variable} ${petersburg.variable}`}
       style={{ fontWeight: "300" }}
     >
-      <body className={`body`} id={"body"}>
-        <ModalProvider>
-          <NavigationProvider>
-            <Suspense>
-              <YMetrika />
-              <Header />
-              {children}
-              <Footer />
-              <NavigationDrawer />
-              <ModalContainer />
-            </Suspense>
-          </NavigationProvider>
-        </ModalProvider>
-      </body>
+      <NavigationProvider>
+        <LightBoxProvider>
+          <body className={`body`} id={"body"}>
+            <ModalProvider>
+              <Suspense>
+                <YMetrika />
+                <Header />
+
+                {children}
+                <Footer />
+
+                <ModalContainer />
+              </Suspense>
+            </ModalProvider>
+          </body>
+          <LightBoxContainer />
+        </LightBoxProvider>
+        <NavigationDrawer />
+      </NavigationProvider>
     </html>
   );
 }

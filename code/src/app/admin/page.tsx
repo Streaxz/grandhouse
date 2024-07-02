@@ -141,7 +141,6 @@ const AdminPage = () => {
     }
   }, [jwt, auth]);
 
-  console.log(updatedProject);
   useEffect(() => {
     setUpdatedProject(
       projects?.find((project) => project.id == updatedProject?.id),
